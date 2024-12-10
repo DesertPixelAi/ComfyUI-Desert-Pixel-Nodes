@@ -1,0 +1,11 @@
+BlackAndWhite filter
+Contrast filter
+Cool filter
+HDR filter
+Monochrome filter
+Saturated filter
+Sepia filter
+Vignette filter
+Vintage filter
+Warm filter
+2d flat halftone comics dots effect filter

@@ -1,0 +1,10 @@
+Ambient lighting
+Artificial lighting
+Backlit lighting
+Diffused lighting
+Flash lighting
+Harsh lighting
+Natural lighting
+SideLit lighting
+Soft lighting
+Spotlight lighting

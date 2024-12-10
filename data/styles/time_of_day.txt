@@ -1,0 +1,10 @@
+Afternoon time
+BlueHour time
+Evening time
+GoldenHour time
+Midday time
+Morning time
+Night time
+Sunrise time
+Sunset time
+Twilight time
