@@ -18,7 +18,7 @@ from typing import Tuple, List, Dict, Optional
 from PIL import UnidentifiedImageError
 
 
-class DPImageColorAnalyzer:
+class DP_Image_Color_Analyzer:
     """
     ComfyUI node for analyzing image colors and generating SD-friendly descriptions
     """
@@ -601,9 +601,9 @@ class DPImageColorAnalyzer:
         
         return [cluster['color'] for cluster in final_palette[:num_colors]]
 NODE_CLASS_MAPPINGS = {
-    "DPImageColorAnalyzer": DPImageColorAnalyzer
+    "DP_Image_Color_Analyzer": DP_Image_Color_Analyzer
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
-    "DPImageColorAnalyzer": "DP Image Color Analyzer"
+    "DP_Image_Color_Analyzer": "DP Image Color Analyzer"
 }
