@@ -35,9 +35,7 @@ A collection of custom nodes for ComfyUI focused on animation, image processing,
 - **Multi Styler**: Apply multiple styles to prompts
 - **Zero-One Floats**: Simple float input/output controls
 
-- Full nodes ist:
-Here's the list formatted with numbers at the beginning of each line:
-
+Full nodes list
 1. DP_Animation_Calculator_5Inputs
 2. DP_Aspect_Ratio
 3. DP_Big_Letters
