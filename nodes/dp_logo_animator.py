@@ -8,9 +8,8 @@ class DPLogoAnimator:
         return {
             "required": {
                 "image": ("IMAGE",),
-                "frame_count": ("INT", {"default": 48, "min": 2, "max": 120, "step": 1}),
+                "frame_count": ("INT", {"default": 48, "min": 2, "max": 300, "step": 1}),
                 "min_scale": ("FLOAT", {"default": 0.2, "min": 0.1, "max": 0.99, "step": 0.01}),
-                "fps": ("INT", {"default": 24, "min": 1, "max": 60, "step": 1}),
                 "background": (["Auto", "Black", "White"],),
                 "loop_count": ("INT", {"default": 1, "min": 1, "max": 5, "step": 1}),
             }
@@ -81,8 +80,8 @@ class DPLogoAnimator:
         
         return bg_color
 
-    def animate_logo(self, image, frame_count=48, min_scale=0.2, fps=24, background="Black", loop_count=1):
-        print(f"\nAnimating logo with background mode: {background}")
+    def animate_logo(self, image, frame_count=48, min_scale=0.2, background="Black", loop_count=1):
+        print(f"\nAnimating logo with {frame_count} frames")
         
         # Ensure input format
         if len(image.shape) == 4:
