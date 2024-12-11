@@ -1,0 +1,5684 @@
+{
+  "last_node_id": 460,
+  "last_link_id": 676,
+  "nodes": [
+    {
+      "id": 134,
+      "type": "ShowText|pysssss",
+      "pos": [
+        -1994.58984375,
+        -2477.449951171875
+      ],
+      "size": [
+        315,
+        76
+      ],
+      "flags": {},
+      "order": 74,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 131,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "",
+        "QA2n9z16k5v47"
+      ]
+    },
+    {
+      "id": 132,
+      "type": "ShowText|pysssss",
+      "pos": [
+        -1994.5335693359375,
+        -2640.155517578125
+      ],
+      "size": [
+        315,
+        76
+      ],
+      "flags": {},
+      "order": 73,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 130,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "",
+        "7986032"
+      ]
+    },
+    {
+      "id": 130,
+      "type": "ShowText|pysssss",
+      "pos": [
+        -1992.7916259765625,
+        -2810.605712890625
+      ],
+      "size": [
+        315,
+        76
+      ],
+      "flags": {},
+      "order": 72,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 129,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "",
+        "SNPORuq"
+      ]
+    },
+    {
+      "id": 313,
+      "type": "DP_3Floats_0_1",
+      "pos": [
+        -1104.4923095703125,
+        -2343.884765625
+      ],
+      "size": [
+        315,
+        146
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 2,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "float_value1",
+          "type": "FLOAT",
+          "links": null
+        },
+        {
+          "name": "float_value2",
+          "type": "FLOAT",
+          "links": null
+        },
+        {
+          "name": "float_value3",
+          "type": "FLOAT",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DP_3Floats_0_1"
+      },
+      "widgets_values": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": 312,
+      "type": "DP_2Floats_0_1",
+      "pos": [
+        -1104.4923095703125,
+        -2133.884765625
+      ],
+      "size": [
+        315,
+        102
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 2,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "float_value1",
+          "type": "FLOAT",
+          "links": null
+        },
+        {
+          "name": "float_value2",
+          "type": "FLOAT",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DP_2Floats_0_1"
+      },
+      "widgets_values": [
+        1,
+        1
+      ]
+    },
+    {
+      "id": 359,
+      "type": "DP_Image_Slide_Show",
+      "pos": [
+        -4663.4091796875,
+        -4825.81591796875
+      ],
+      "size": [
+        418.1999816894531,
+        306
+      ],
+      "flags": {},
+      "order": 75,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "Image_01_Input",
+          "type": "IMAGE",
+          "link": 570,
+          "shape": 7
+        },
+        {
+          "name": "Image_02_Input",
+          "type": "IMAGE",
+          "link": 572,
+          "shape": 7
+        },
+        {
+          "name": "Image_03_Input",
+          "type": "IMAGE",
+          "link": 573,
+          "shape": 7
+        },
+        {
+          "name": "Image_04_Input",
+          "type": "IMAGE",
+          "link": 574,
+          "shape": 7
+        },
+        {
+          "name": "Image_05_Input",
+          "type": "IMAGE",
+          "link": 571,
+          "shape": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Image_Batch_Output",
+          "type": "IMAGE",
+          "links": [
+            506
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DP_Image_Slide_Show"
+      },
+      "widgets_values": [
+        96,
+        0,
+        24,
+        48,
+        72,
+        96,
+        8,
+        "Normal Blend"
+      ]
+    },
+    {
+      "id": 322,
+      "type": "DP_Video_Effect_Sender",
+      "pos": [
+        -3269.269287109375,
+        -6074.7333984375
+      ],
+      "size": [
+        393,
+        334
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "Load_video_frames",
+          "type": "IMAGE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "effect_frames",
+          "type": "IMAGE",
+          "links": [
+            596
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "all_frames",
+          "type": "IMAGE",
+          "links": [
+            595
+          ],
+          "slot_index": 1
+        },
+        {
+          "name": "frames_index",
+          "type": "STRING",
+          "links": [
+            594
+          ],
+          "slot_index": 2
+        },
+        {
+          "name": "process_info",
+          "type": "STRING",
+          "links": null,
+          "slot_index": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DP_Video_Effect_Sender"
+      },
+      "widgets_values": [
+        0,
+        0,
+        3,
+        1,
+        0,
+        3,
+        1,
+        0,
+        3,
+        1
+      ]
+    },
+    {
+      "id": 402,
+      "type": "PreviewImage",
+      "pos": [
+        -1025.68017578125,
+        -5761.64111328125
+      ],
+      "size": [
+        210,
+        246
+      ],
+      "flags": {},
+      "order": 45,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 597
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 286,
+      "type": "PreviewImage",
+      "pos": [
+        -1021.3397216796875,
+        -6067.2568359375
+      ],
+      "size": [
+        210,
+        246
+      ],
+      "flags": {},
+      "order": 44,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 340
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 254,
+      "type": "PreviewImage",
+      "pos": [
+        -436.8537292480469,
+        -6079.490234375
+      ],
+      "size": [
+        210,
+        246
+      ],
+      "flags": {},
+      "order": 39,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 564
+        }
+      ],
+      "outputs": [],
+      "title": "Output 01",
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 403,
+      "type": "PreviewImage",
+      "pos": [
+        -442.3053894042969,
+        -5776.58349609375
+      ],
+      "size": [
+        210,
+        246
+      ],
+      "flags": {},
+      "order": 42,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 600
+        }
+      ],
+      "outputs": [],
+      "title": "Output 03",
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 404,
+      "type": "PreviewImage",
+      "pos": [
+        -198.0778045654297,
+        -6080.39013671875
+      ],
+      "size": [
+        210,
+        246
+      ],
+      "flags": {},
+      "order": 40,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 598
+        }
+      ],
+      "outputs": [],
+      "title": "Output 02",
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 405,
+      "type": "PreviewImage",
+      "pos": [
+        -198.4302978515625,
+        -5780.63525390625
+      ],
+      "size": [
+        210,
+        246
+      ],
+      "flags": {},
+      "order": 41,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 599
+        }
+      ],
+      "outputs": [],
+      "title": "Output 04",
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 406,
+      "type": "ShowText|pysssss",
+      "pos": [
+        38.2686653137207,
+        -6081.6396484375
+      ],
+      "size": [
+        319.4671325683594,
+        76
+      ],
+      "flags": {},
+      "order": 38,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 601,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "title": "File name",
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "",
+        "big_fresh_red_apple_1024x1024_00001_"
+      ]
+    },
+    {
+      "id": 407,
+      "type": "ShowText|pysssss",
+      "pos": [
+        38.80111312866211,
+        -5945.97705078125
+      ],
+      "size": [
+        313.8832092285156,
+        124.0216064453125
+      ],
+      "flags": {},
+      "order": 43,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 602,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "title": "Prompt",
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "",
+        "a magnificent 3d puzzle - big fresh orange pumpkin madeOfPuzzle, a cool big fresh orange pumpkin made only of puzzle pieces, detailed 3d puzzle, lay on a cool fun cartoonish colorful background in the same concept and color theme, Made of cardboard puzzle pieces, gaps and holes between the puzzle pieces, shiny 3d puzzle, puzzle art, big fresh orange pumpkin as a cardboard 3d puzzle made 100% of realistic 3d puzzle pieces in different colors, colorful and fun atmosphere, sharp focus, high detail 3d puzzle, shadings and shadows, perfect puzzle pieces with 3d depth, puzzle texture"
+      ]
+    },
+    {
+      "id": 301,
+      "type": "DP_Image_Loader_Medium",
+      "pos": [
+        -785.9956665039062,
+        -6071.98828125
+      ],
+      "size": [
+        321.70068359375,
+        545.8390502929688
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "pipe_input",
+          "type": "IMAGE",
+          "link": null,
+          "shape": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "filename",
+          "type": "STRING",
+          "links": [
+            601
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "output1",
+          "type": "IMAGE",
+          "links": [
+            564
+          ],
+          "slot_index": 1
+        },
+        {
+          "name": "output2",
+          "type": "IMAGE",
+          "links": [
+            598
+          ],
+          "slot_index": 2
+        },
+        {
+          "name": "output3",
+          "type": "IMAGE",
+          "links": [
+            599
+          ],
+          "slot_index": 3
+        },
+        {
+          "name": "output4",
+          "type": "IMAGE",
+          "links": [
+            600
+          ],
+          "slot_index": 4
+        },
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "links": [
+            602
+          ],
+          "slot_index": 5
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DP_Image_Loader_Medium"
+      },
+      "widgets_values": [
+        "big_fresh_red_apple_1024x1024_00001_.png",
+        "flip_v",
+        "palette",
+        "sepia",
+        "vignette",
+        "image"
+      ]
+    },
+    {
+      "id": 409,
+      "type": "PreviewImage",
+      "pos": [
+        710,
+        -5780
+      ],
+      "size": [
+        210,
+        246
+      ],
+      "flags": {},
+      "order": 49,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 605
+        }
+      ],
+      "outputs": [],
+      "title": "Output 03",
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 410,
+      "type": "PreviewImage",
+      "pos": [
+        960,
+        -6080
+      ],
+      "size": [
+        210,
+        246
+      ],
+      "flags": {},
+      "order": 48,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 604
+        }
+      ],
+      "outputs": [],
+      "title": "Output 02",
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 411,
+      "type": "PreviewImage",
+      "pos": [
+        960,
+        -5780
+      ],
+      "size": [
+        210,
+        246
+      ],
+      "flags": {},
+      "order": 50,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 606
+        }
+      ],
+      "outputs": [],
+      "title": "Output 04",
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 412,
+      "type": "ShowText|pysssss",
+      "pos": [
+        1190,
+        -6080
+      ],
+      "size": [
+        319.4671325683594,
+        76
+      ],
+      "flags": {},
+      "order": 46,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 607,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "title": "File name",
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "",
+        "big_bright_red_strawberry_1024x1024_00001_"
+      ]
+    },
+    {
+      "id": 413,
+      "type": "ShowText|pysssss",
+      "pos": [
+        1200,
+        -5950
+      ],
+      "size": [
+        313.8832092285156,
+        124.0216064453125
+      ],
+      "flags": {},
+      "order": 51,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 608,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "title": "Prompt",
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "",
+        "a magnificent 3d puzzle - big white tiger head madeOfPuzzle, a cool big white tiger head made only of puzzle pieces, detailed 3d puzzle, lay on a cool fun cartoonish colorful background in the same concept and color theme, Made of cardboard puzzle pieces, gaps and holes between the puzzle pieces, shiny 3d puzzle, puzzle art, big white tiger head as a cardboard 3d puzzle made 100% of realistic 3d puzzle pieces in different colors, colorful and fun atmosphere, sharp focus, high detail 3d puzzle, shadings and shadows, perfect puzzle pieces with 3d depth, puzzle texture"
+      ]
+    },
+    {
+      "id": 408,
+      "type": "PreviewImage",
+      "pos": [
+        720,
+        -6080
+      ],
+      "size": [
+        210,
+        246
+      ],
+      "flags": {},
+      "order": 47,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 603
+        }
+      ],
+      "outputs": [],
+      "title": "Output 01",
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 302,
+      "type": "DP_Image_Loader_Small",
+      "pos": [
+        -1359.865478515625,
+        -6067.35302734375
+      ],
+      "size": [
+        304.1895446777344,
+        440.375732421875
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "pipe_input",
+          "type": "IMAGE",
+          "link": null,
+          "shape": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output1",
+          "type": "IMAGE",
+          "links": [
+            340
+          ]
+        },
+        {
+          "name": "output2",
+          "type": "IMAGE",
+          "links": [
+            597
+          ],
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DP_Image_Loader_Small"
+      },
+      "widgets_values": [
+        "big_snowy_owl_face_1024x1024_00001_.png",
+        "original",
+        "grayscale",
+        "image"
+      ]
+    },
+    {
+      "id": 306,
+      "type": "DP_Image_Loader_Big",
+      "pos": [
+        377.948974609375,
+        -6084.9140625
+      ],
+      "size": [
+        315,
+        730
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "pipe_input",
+          "type": "IMAGE",
+          "link": null,
+          "shape": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "filename",
+          "type": "STRING",
+          "links": [
+            607
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "output1",
+          "type": "IMAGE",
+          "links": [
+            603
+          ],
+          "slot_index": 1
+        },
+        {
+          "name": "output2",
+          "type": "IMAGE",
+          "links": [
+            604
+          ],
+          "slot_index": 2
+        },
+        {
+          "name": "output3",
+          "type": "IMAGE",
+          "links": [
+            605
+          ],
+          "slot_index": 3
+        },
+        {
+          "name": "output4",
+          "type": "IMAGE",
+          "links": [
+            606
+          ],
+          "slot_index": 4
+        },
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "links": [
+            608
+          ],
+          "slot_index": 5
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DP_Image_Loader_Big"
+      },
+      "widgets_values": [
+        "big_bright_red_strawberry_1024x1024_00001_.png",
+        "vignette",
+        "pencil_sketch",
+        "palette",
+        "depth_edges",
+        0.5,
+        1,
+        4,
+        5,
+        1,
+        4,
+        0.5,
+        3,
+        0.30000000000000004,
+        0.75,
+        "image"
+      ]
+    },
+    {
+      "id": 362,
+      "type": "DP_Five_Lora",
+      "pos": [
+        -2308.203369140625,
+        -6059.81298828125
+      ],
+      "size": [
+        315,
+        338
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": null
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "links": null
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "links": null
+        },
+        {
+          "name": "lora_info",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DP_Five_Lora"
+      },
+      "widgets_values": [
+        "ON",
+        "None",
+        0,
+        "None",
+        1,
+        "None",
+        1,
+        "None",
+        1,
+        "None",
+        1
+      ]
+    },
+    {
+      "id": 363,
+      "type": "DP_Five_Lora_Random",
+      "pos": [
+        -1953.037353515625,
+        -6067.39599609375
+      ],
+      "size": [
+        352.79998779296875,
+        578
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": null
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "links": null
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "links": null
+        },
+        {
+          "name": "lora_info",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DP_Five_Lora_Random"
+      },
+      "widgets_values": [
+        "ON",
+        "None",
+        1,
+        0.58,
+        1.03,
+        "None",
+        1,
+        0,
+        0,
+        "None",
+        1,
+        0,
+        0,
+        "None",
+        1,
+        0,
+        0,
+        "None",
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "id": 323,
+      "type": "DP_Video_Effect_Receiver",
+      "pos": [
+        -2818.16162109375,
+        -6076.42626953125
+      ],
+      "size": [
+        261.70574951171875,
+        102.5691909790039
+      ],
+      "flags": {},
+      "order": 37,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "all_frames",
+          "type": "IMAGE",
+          "link": 595
+        },
+        {
+          "name": "processed_frames",
+          "type": "IMAGE",
+          "link": 596
+        },
+        {
+          "name": "frames_index",
+          "type": "STRING",
+          "link": 594,
+          "widget": {
+            "name": "frames_index"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": null
+        },
+        {
+          "name": "process_info",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DP_Video_Effect_Receiver"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 318,
+      "type": "DP_Video_Flicker",
+      "pos": [
+        472.336669921875,
+        -5127.05029296875
+      ],
+      "size": [
+        380.4000244140625,
+        366
+      ],
+      "flags": {},
+      "order": 52,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "Load_video_frames",
+          "type": "IMAGE",
+          "link": 351
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            352
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "process_info",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DP_Video_Flicker"
+      },
+      "widgets_values": [
+        150,
+        10,
+        7,
+        1,
+        "#000000",
+        50,
+        6,
+        2,
+        "#2664C8",
+        90,
+        5,
+        3,
+        "#A148D8"
+      ]
+    },
+    {
+      "id": 42,
+      "type": "PreviewImage",
+      "pos": [
+        882.550537109375,
+        -5124.1435546875
+      ],
+      "size": [
+        629.6085815429688,
+        357.4409484863281
+      ],
+      "flags": {},
+      "order": 81,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 352
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 58,
+      "type": "VHS_LoadVideo",
+      "pos": [
+        201.44284057617188,
+        -5125.84033203125
+      ],
+      "size": [
+        247.455078125,
+        262
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "meta_batch",
+          "type": "VHS_BatchManager",
+          "link": null,
+          "shape": 7
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": null,
+          "shape": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            351
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "frame_count",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "links": null
+        },
+        {
+          "name": "video_info",
+          "type": "VHS_VIDEOINFO",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_LoadVideo"
+      },
+      "widgets_values": {
+        "video": "skater_768x768_B.mp4",
+        "force_rate": 0,
+        "force_size": "Disabled",
+        "custom_width": 512,
+        "custom_height": 512,
+        "frame_load_cap": 150,
+        "skip_first_frames": 0,
+        "select_every_nth": 1,
+        "choose video to upload": "image",
+        "videopreview": {
+          "hidden": true,
+          "paused": false,
+          "params": {
+            "force_rate": 0,
+            "frame_load_cap": 150,
+            "skip_first_frames": 0,
+            "select_every_nth": 1,
+            "filename": "skater_768x768_B.mp4",
+            "type": "input",
+            "format": "video/mp4"
+          },
+          "muted": false
+        }
+      }
+    },
+    {
+      "id": 57,
+      "type": "VHS_LoadVideo",
+      "pos": [
+        -1021.2109985351562,
+        -4817.74755859375
+      ],
+      "size": [
+        247.455078125,
+        262
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "meta_batch",
+          "type": "VHS_BatchManager",
+          "link": null,
+          "shape": 7
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": null,
+          "shape": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            37
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "frame_count",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "links": null
+        },
+        {
+          "name": "video_info",
+          "type": "VHS_VIDEOINFO",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_LoadVideo"
+      },
+      "widgets_values": {
+        "video": "skater_768x768_B.mp4",
+        "force_rate": 0,
+        "force_size": "Disabled",
+        "custom_width": 512,
+        "custom_height": 512,
+        "frame_load_cap": 70,
+        "skip_first_frames": 50,
+        "select_every_nth": 1,
+        "choose video to upload": "image",
+        "videopreview": {
+          "hidden": true,
+          "paused": false,
+          "params": {
+            "force_rate": 0,
+            "frame_load_cap": 70,
+            "skip_first_frames": 50,
+            "select_every_nth": 1,
+            "filename": "skater_768x768_B.mp4",
+            "type": "input",
+            "format": "video/mp4"
+          },
+          "muted": false
+        }
+      }
+    },
+    {
+      "id": 55,
+      "type": "VHS_LoadVideo",
+      "pos": [
+        -1019.7020874023438,
+        -5138.0810546875
+      ],
+      "size": [
+        247.455078125,
+        262
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "meta_batch",
+          "type": "VHS_BatchManager",
+          "link": null,
+          "shape": 7
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": null,
+          "shape": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            35
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "frame_count",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "links": null
+        },
+        {
+          "name": "video_info",
+          "type": "VHS_VIDEOINFO",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_LoadVideo"
+      },
+      "widgets_values": {
+        "video": "skater_768x768.mp4",
+        "force_rate": 0,
+        "force_size": "Disabled",
+        "custom_width": 512,
+        "custom_height": 512,
+        "frame_load_cap": 70,
+        "skip_first_frames": 0,
+        "select_every_nth": 1,
+        "choose video to upload": "image",
+        "videopreview": {
+          "hidden": true,
+          "paused": false,
+          "params": {
+            "force_rate": 0,
+            "frame_load_cap": 70,
+            "skip_first_frames": 0,
+            "select_every_nth": 1,
+            "filename": "skater_768x768.mp4",
+            "type": "input",
+            "format": "video/mp4"
+          },
+          "muted": false
+        }
+      }
+    },
+    {
+      "id": 23,
+      "type": "DP_Video_Transition",
+      "pos": [
+        -734.515625,
+        -4989.8955078125
+      ],
+      "size": [
+        315,
+        102
+      ],
+      "flags": {},
+      "order": 53,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "video1",
+          "type": "IMAGE",
+          "link": 35
+        },
+        {
+          "name": "video2",
+          "type": "IMAGE",
+          "link": 37
+        }
+      ],
+      "outputs": [
+        {
+          "name": "blended_image",
+          "type": "IMAGE",
+          "links": [
+            609
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DP_Video_Transition"
+      },
+      "widgets_values": [
+        20,
+        "Dissolve"
+      ]
+    },
+    {
+      "id": 414,
+      "type": "PreviewImage",
+      "pos": [
+        -394.6563720703125,
+        -4989.17919921875
+      ],
+      "size": [
+        433.8844909667969,
+        386.6565856933594
+      ],
+      "flags": {},
+      "order": 82,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 609
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 36,
+      "type": "VHS_LoadVideoFFmpeg",
+      "pos": [
+        -2118.210693359375,
+        -5134.01806640625
+      ],
+      "size": [
+        303.46875,
+        238
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "meta_batch",
+          "type": "VHS_BatchManager",
+          "link": null,
+          "shape": 7
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": null,
+          "shape": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            355
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "mask",
+          "type": "MASK",
+          "links": null
+        },
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "links": null
+        },
+        {
+          "name": "video_info",
+          "type": "VHS_VIDEOINFO",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_LoadVideoFFmpeg"
+      },
+      "widgets_values": {
+        "video": "skater_768x768_B.mp4",
+        "force_rate": 0,
+        "force_size": "Disabled",
+        "custom_width": 512,
+        "custom_height": 512,
+        "frame_load_cap": 101,
+        "start_time": 0,
+        "choose video to upload": "image",
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "force_rate": 0,
+            "frame_load_cap": 101,
+            "start_time": 0,
+            "filename": "skater_768x768_B.mp4",
+            "type": "input",
+            "format": "video/mp4"
+          },
+          "muted": false
+        }
+      }
+    },
+    {
+      "id": 415,
+      "type": "PreviewImage",
+      "pos": [
+        -1400.4443359375,
+        -5133.36572265625
+      ],
+      "size": [
+        244.62020874023438,
+        218.97390747070312
+      ],
+      "flags": {},
+      "order": 83,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 610
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 319,
+      "type": "DP_Fast_Slow_Motion",
+      "pos": [
+        -1767.1290283203125,
+        -5132.37548828125
+      ],
+      "size": [
+        315,
+        106
+      ],
+      "flags": {},
+      "order": 54,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "frames",
+          "type": "IMAGE",
+          "link": 355
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            610
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DP_Fast_Slow_Motion"
+      },
+      "widgets_values": [
+        30,
+        50,
+        -4
+      ]
+    },
+    {
+      "id": 418,
+      "type": "CreateFadeMaskAdvanced",
+      "pos": [
+        -4233.4326171875,
+        -5844.39501953125
+      ],
+      "size": [
+        218.22274780273438,
+        154
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 97,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "points_string",
+          "type": "STRING",
+          "link": 616,
+          "widget": {
+            "name": "points_string"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            612
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CreateFadeMaskAdvanced"
+      },
+      "widgets_values": [
+        "0:(0.0),\n7:(1.0),\n15:(0.0)\n",
+        false,
+        96,
+        512,
+        512,
+        "linear"
+      ]
+    },
+    {
+      "id": 419,
+      "type": "MaskToImage",
+      "pos": [
+        -4223.4326171875,
+        -5804.39501953125
+      ],
+      "size": [
+        209.22238159179688,
+        38.92144012451172
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 100,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 612
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            613
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MaskToImage"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 420,
+      "type": "PreviewImage",
+      "pos": [
+        -4243.4326171875,
+        -5754.39501953125
+      ],
+      "size": [
+        210,
+        246
+      ],
+      "flags": {},
+      "order": 103,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 613
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 423,
+      "type": "MaskToImage",
+      "pos": [
+        -3973.43115234375,
+        -5794.39501953125
+      ],
+      "size": [
+        209.22238159179688,
+        38.92144012451172
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 101,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 617
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            618
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MaskToImage"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 424,
+      "type": "PreviewImage",
+      "pos": [
+        -3993.43115234375,
+        -5744.39501953125
+      ],
+      "size": [
+        210,
+        246
+      ],
+      "flags": {},
+      "order": 104,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 618
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 422,
+      "type": "CreateFadeMaskAdvanced",
+      "pos": [
+        -3983.43115234375,
+        -5834.39501953125
+      ],
+      "size": [
+        218.22274780273438,
+        154
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 98,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "points_string",
+          "type": "STRING",
+          "link": 619,
+          "widget": {
+            "name": "points_string"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            617
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CreateFadeMaskAdvanced"
+      },
+      "widgets_values": [
+        "0:(0.0),\n7:(1.0),\n15:(0.0)\n",
+        false,
+        96,
+        512,
+        512,
+        "linear"
+      ]
+    },
+    {
+      "id": 398,
+      "type": "ShowText|pysssss",
+      "pos": [
+        -3993.43115234375,
+        -6074.39501953125
+      ],
+      "size": [
+        210,
+        194.7849578857422
+      ],
+      "flags": {},
+      "order": 87,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 641,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            619
+          ],
+          "slot_index": 0,
+          "shape": 6
+        }
+      ],
+      "title": "Fade mask timing 02",
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "",
+        "0:(0.7),\n18:(0.7),\n24:(0.3),\n30:(0.7),\n42:(0.7),\n48:(0.3),\n54:(0.7),\n66:(0.7),\n72:(0.3),\n78:(0.7),\n95:(0.7)"
+      ]
+    },
+    {
+      "id": 426,
+      "type": "MaskToImage",
+      "pos": [
+        -3743.432861328125,
+        -5794.39501953125
+      ],
+      "size": [
+        209.22238159179688,
+        38.92144012451172
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 102,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 620
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            621
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MaskToImage"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 333,
+      "type": "PreviewImage",
+      "pos": [
+        -4613.4326171875,
+        -6074.39501953125
+      ],
+      "size": [
+        331.6175231933594,
+        356.5613708496094
+      ],
+      "flags": {},
+      "order": 84,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 638
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 427,
+      "type": "PreviewImage",
+      "pos": [
+        -3753.4326171875,
+        -5744.39501953125
+      ],
+      "size": [
+        210,
+        246
+      ],
+      "flags": {},
+      "order": 105,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 621
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 425,
+      "type": "CreateFadeMaskAdvanced",
+      "pos": [
+        -3753.4326171875,
+        -5834.39501953125
+      ],
+      "size": [
+        218.22274780273438,
+        154
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 99,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "points_string",
+          "type": "STRING",
+          "link": 622,
+          "widget": {
+            "name": "points_string"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            620
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CreateFadeMaskAdvanced"
+      },
+      "widgets_values": [
+        "0:(0.0),\n7:(1.0),\n15:(0.0)\n",
+        false,
+        96,
+        512,
+        512,
+        "linear"
+      ]
+    },
+    {
+      "id": 421,
+      "type": "ShowText|pysssss",
+      "pos": [
+        -3753.4326171875,
+        -6074.39501953125
+      ],
+      "size": [
+        210,
+        185.55535888671875
+      ],
+      "flags": {},
+      "order": 88,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 642,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            622
+          ],
+          "slot_index": 0,
+          "shape": 6
+        }
+      ],
+      "title": "Fade mask timing 03",
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "",
+        "0:(0.0),\n18:(0.0),\n24:(1.0),\n30:(0.0),\n42:(0.0),\n48:(1.0),\n54:(0.0),\n66:(0.0),\n72:(1.0),\n78:(0.0),\n95:(0.0)"
+      ]
+    },
+    {
+      "id": 334,
+      "type": "DP_Image_Loader_Big",
+      "pos": [
+        -5433.4326171875,
+        -6084.39501953125
+      ],
+      "size": [
+        329.74151611328125,
+        730
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "pipe_input",
+          "type": "IMAGE",
+          "link": null,
+          "shape": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "filename",
+          "type": "STRING",
+          "links": null
+        },
+        {
+          "name": "output1",
+          "type": "IMAGE",
+          "links": [
+            633,
+            637
+          ],
+          "slot_index": 1
+        },
+        {
+          "name": "output2",
+          "type": "IMAGE",
+          "links": [
+            634
+          ],
+          "slot_index": 2
+        },
+        {
+          "name": "output3",
+          "type": "IMAGE",
+          "links": [
+            635
+          ],
+          "slot_index": 3
+        },
+        {
+          "name": "output4",
+          "type": "IMAGE",
+          "links": [
+            636
+          ],
+          "slot_index": 4
+        },
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DP_Image_Loader_Big"
+      },
+      "widgets_values": [
+        "bunny_00028_.png",
+        "original",
+        "grayscale",
+        "vignette",
+        "pencil_sketch",
+        0.5,
+        1,
+        4,
+        5,
+        1,
+        8,
+        0.5,
+        3,
+        0.75,
+        0.75,
+        "image"
+      ]
+    },
+    {
+      "id": 397,
+      "type": "ShowText|pysssss",
+      "pos": [
+        -4236.78271484375,
+        -6076.62841796875
+      ],
+      "size": [
+        216.9704132080078,
+        191.5956268310547
+      ],
+      "flags": {},
+      "order": 86,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 640,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            616
+          ],
+          "slot_index": 0,
+          "shape": 6
+        }
+      ],
+      "title": "Fade mask timing 01",
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "",
+        "0:(1.0),\n18:(1.0),\n24:(0.0),\n30:(1.0),\n42:(1.0),\n48:(0.0),\n54:(1.0),\n66:(1.0),\n72:(0.0),\n78:(1.0),\n95:(1.0)"
+      ]
+    },
+    {
+      "id": 429,
+      "type": "DP_Animation_Calculator_5Inputs",
+      "pos": [
+        -5070.73046875,
+        -6078.990234375
+      ],
+      "size": [
+        428.4000244140625,
+        566
+      ],
+      "flags": {},
+      "order": 55,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "Image_01_Input",
+          "type": "IMAGE",
+          "link": 633,
+          "shape": 7
+        },
+        {
+          "name": "Image_02_Input",
+          "type": "IMAGE",
+          "link": 634,
+          "shape": 7
+        },
+        {
+          "name": "Image_03_Input",
+          "type": "IMAGE",
+          "link": 635,
+          "shape": 7
+        },
+        {
+          "name": "Image_04_Input",
+          "type": "IMAGE",
+          "link": 636,
+          "shape": 7
+        },
+        {
+          "name": "Image_05_Input",
+          "type": "IMAGE",
+          "link": 637,
+          "shape": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Image_Batch_Output",
+          "type": "IMAGE",
+          "links": [
+            638
+          ]
+        },
+        {
+          "name": "Text_Prompt_Timing",
+          "type": "STRING",
+          "links": [
+            639
+          ]
+        },
+        {
+          "name": "fade_mask_01_timing",
+          "type": "STRING",
+          "links": [
+            640
+          ]
+        },
+        {
+          "name": "fade_mask_02_timing",
+          "type": "STRING",
+          "links": [
+            641
+          ]
+        },
+        {
+          "name": "fade_mask_03_timing",
+          "type": "STRING",
+          "links": [
+            642
+          ]
+        },
+        {
+          "name": "Check_Log",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DP_Animation_Calculator_5Inputs"
+      },
+      "widgets_values": [
+        96,
+        0,
+        24,
+        48,
+        72,
+        96,
+        "prompt 01",
+        "prompt 02",
+        "prompt 03",
+        "prompt 04",
+        "prompt 05",
+        12,
+        0,
+        1,
+        0.30000000000000004,
+        0.7000000000000001,
+        1,
+        0
+      ]
+    },
+    {
+      "id": 365,
+      "type": "ShowText|pysssss",
+      "pos": [
+        -4582.11083984375,
+        -5644.45947265625
+      ],
+      "size": [
+        210,
+        159.70021057128906
+      ],
+      "flags": {},
+      "order": 85,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 639,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "title": "Prompt timing",
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "",
+        "\"0\":\"prompt 01\"\n\"24\":\"prompt 02\"\n\"48\":\"prompt 03\"\n\"72\":\"prompt 04\"\n\"95\":\"prompt 05\""
+      ]
+    },
+    {
+      "id": 2,
+      "type": "DP_Big_Letters",
+      "pos": [
+        -3163.82470703125,
+        -4619.92138671875
+      ],
+      "size": [
+        315,
+        298
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 2,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            6
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DP_Big_Letters"
+      },
+      "widgets_values": [
+        "DESERT PIXEL",
+        1024,
+        1024,
+        120,
+        120,
+        100,
+        100,
+        "Aharoni",
+        "black",
+        "white",
+        "black"
+      ]
+    },
+    {
+      "id": 26,
+      "type": "PreviewImage",
+      "pos": [
+        -2821.367431640625,
+        -4626.30029296875
+      ],
+      "size": [
+        1082.3521728515625,
+        384.5179748535156
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 56,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 6
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 105,
+      "type": "ShowText|pysssss",
+      "pos": [
+        -694.92431640625,
+        -4317.71484375
+      ],
+      "size": [
+        308.7884826660156,
+        198.81593322753906
+      ],
+      "flags": {},
+      "order": 57,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 643,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "title": "json_text",
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "",
+        "[\n  {\n    \"item1_name\": \"wakeup\",\n    \"item2_name\": \"world\",\n    \"item3_name\": \"06758\"\n  },\n  {\n    \"item1_name\": \"desert\",\n    \"item2_name\": \"pixel\",\n    \"item3_name\": \"1235\"\n  }\n]"
+      ]
+    },
+    {
+      "id": 106,
+      "type": "ShowText|pysssss",
+      "pos": [
+        -693.0598754882812,
+        -4068.68017578125
+      ],
+      "size": [
+        305.8529968261719,
+        106.66462707519531
+      ],
+      "flags": {},
+      "order": 58,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 644,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "title": "log_info",
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "",
+        "File created successfully and saved to: output\\json\\my_json_file.json"
+      ]
+    },
+    {
+      "id": 431,
+      "type": "DP_Create_JSON",
+      "pos": [
+        -1021.2946166992188,
+        -4313.37451171875
+      ],
+      "size": [
+        298.5506896972656,
+        340.3326110839844
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 2,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "json_text",
+          "type": "STRING",
+          "links": [
+            643
+          ]
+        },
+        {
+          "name": "log_info",
+          "type": "STRING",
+          "links": [
+            644
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DP_Create_JSON"
+      },
+      "widgets_values": [
+        "my_json_file",
+        "output\\json",
+        "|",
+        "item1 name | item2 name | item3 name\nwakeup | world| 06758\ndesert | pixel | 12354",
+        true,
+        false
+      ]
+    },
+    {
+      "id": 107,
+      "type": "LoadImage",
+      "pos": [
+        246.91265869140625,
+        -4475.76123046875
+      ],
+      "size": [
+        315,
+        314
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            675
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "tiger_1024x1024_00003_ (1).png",
+        "image"
+      ]
+    },
+    {
+      "id": 118,
+      "type": "ShowText|pysssss",
+      "pos": [
+        922.6080932617188,
+        -3406.796142578125
+      ],
+      "size": [
+        321.7695617675781,
+        304.4821472167969
+      ],
+      "flags": {},
+      "order": 60,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 543,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "title": "Modified_prompt",
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "",
+        "your prompt, Architecture Depth of Field, Static Shot, warm autumn earth tones color theme, flustered face mood, Evening time, Aggressive atmosphere, Diffused lighting, Saturated filter, captured on a Hasselblad 907X 50C, your extras"
+      ]
+    },
+    {
+      "id": 315,
+      "type": "DP_Prompt_Styler",
+      "pos": [
+        574.7244262695312,
+        -3402.191162109375
+      ],
+      "size": [
+        315,
+        298
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 2,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "Modified Prompt",
+          "type": "STRING",
+          "links": [
+            543
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DP_Prompt_Styler"
+      },
+      "widgets_values": [
+        "your prompt",
+        "Architecture Depth of Field",
+        "Static Shot",
+        "warm autumn earth tones color theme",
+        "flustered face mood",
+        "Evening time",
+        "Aggressive atmosphere",
+        "Diffused lighting",
+        "Saturated filter",
+        "captured on a Hasselblad 907X 50C",
+        "your extras"
+      ]
+    },
+    {
+      "id": 317,
+      "type": "DP_Clean_Prompt",
+      "pos": [
+        2570,
+        -3430
+      ],
+      "size": [
+        434.806884765625,
+        226.75180053710938
+      ],
+      "flags": {},
+      "order": 17,
+      "mode": 2,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "clean_text",
+          "type": "STRING",
+          "links": [],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DP_Clean_Prompt"
+      },
+      "widgets_values": [
+        "street photography, ,,\nsuperhero squirrel with a cape made of acorns, inward-spiraling focal point, marine\n\n current pearl  shine, quantum rust garden color palette, tech,nologically ancient atmosphere, rendered by mineral growth, in a cyclone of    floating soap bubbles,.. \nin the style of crystalline charcoal, Secession style, impressionist digital, mecha art, minimal ,,color palette , rococo''' ... ,,, style, monochrome art, digital sculpture, landscape painting, documentary photography,   abstract math art, photorealism, generative art, tribal art, cityscape painting"
+      ]
+    },
+    {
+      "id": 439,
+      "type": "DP_Image_Loader_Small",
+      "pos": [
+        4000,
+        -3420
+      ],
+      "size": [
+        293.1845703125,
+        430.8024597167969
+      ],
+      "flags": {},
+      "order": 18,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "pipe_input",
+          "type": "IMAGE",
+          "link": null,
+          "shape": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output1",
+          "type": "IMAGE",
+          "links": null
+        },
+        {
+          "name": "output2",
+          "type": "IMAGE",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DP_Image_Loader_Small"
+      },
+      "widgets_values": [
+        "platypus.png",
+        "original",
+        "grayscale",
+        "image"
+      ]
+    },
+    {
+      "id": 121,
+      "type": "ShowText|pysssss",
+      "pos": [
+        3580,
+        -3280
+      ],
+      "size": [
+        375.254150390625,
+        187.41661071777344
+      ],
+      "flags": {},
+      "order": 61,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 649,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "title": "clean_text",
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "",
+        "recursive art, a sacred dance facilitator, dancing through grass stems, waterfall spray rainbow light, etherial cloudburst harmony color palette, art studio focus atmosphere, tracked through sundials, amid a storm of levitating gumball machines, in the style of shading-heavy style, techno-organic, dimensional surrealism, creature design, planetary art, minimal illustration, sumi-e, pictogram art, digital fractals, optical illusion style, parallel universe aesthetic, dreamscape art, gouache painting, portraiture, character concept art"
+      ]
+    },
+    {
+      "id": 344,
+      "type": "DP_Crazy_Prompt",
+      "pos": [
+        3590,
+        -3410
+      ],
+      "size": [
+        363.2837829589844,
+        61.81388854980469
+      ],
+      "flags": {},
+      "order": 19,
+      "mode": 2,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "links": [
+            649
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DP_Crazy_Prompt"
+      },
+      "widgets_values": [
+        5
+      ]
+    },
+    {
+      "id": 124,
+      "type": "Note",
+      "pos": [
+        3075.77197265625,
+        -3266.29443359375
+      ],
+      "size": [
+        210,
+        144.2484130859375
+      ],
+      "flags": {},
+      "order": 20,
+      "mode": 2,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "you can edit the txt file in ComfyUI-Desert-Pixel-Nodes\\data\\aspect_ratio.\neach line is an item,\neach item subitems divided by \",\" in this form:\npreset name, width, height"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 311,
+      "type": "DP_Aspect_Ratio",
+      "pos": [
+        3070,
+        -3417.650390625
+      ],
+      "size": [
+        402.7940979003906,
+        78
+      ],
+      "flags": {},
+      "order": 21,
+      "mode": 2,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "width",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DP_Aspect_Ratio"
+      },
+      "widgets_values": [
+        "1024x1024 1:1 square"
+      ]
+    },
+    {
+      "id": 441,
+      "type": "XlabsSampler",
+      "pos": [
+        1900,
+        -2500
+      ],
+      "size": [
+        382.3819580078125,
+        278
+      ],
+      "flags": {},
+      "order": 90,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": null,
+          "slot_index": 0,
+          "label": "model"
+        },
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": null,
+          "label": "conditioning"
+        },
+        {
+          "name": "neg_conditioning",
+          "type": "CONDITIONING",
+          "link": null,
+          "label": "neg_conditioning"
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 655,
+          "label": "latent_image",
+          "shape": 7
+        },
+        {
+          "name": "controlnet_condition",
+          "type": "ControlNetCondition",
+          "link": null,
+          "label": "controlnet_condition",
+          "shape": 7
+        },
+        {
+          "name": "image_to_image_strength",
+          "type": "FLOAT",
+          "link": 656,
+          "widget": {
+            "name": "image_to_image_strength"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "links": [],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "latent"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "XlabsSampler"
+      },
+      "widgets_values": [
+        875780221412152,
+        "randomize",
+        10,
+        5,
+        2.5,
+        0,
+        1
+      ],
+      "color": "#222",
+      "bgcolor": "#000",
+      "shape": 1
+    },
+    {
+      "id": 12,
+      "type": "DP_Image_Empty_Latent_Switch",
+      "pos": [
+        1486.2158203125,
+        -2494.5947265625
+      ],
+      "size": [
+        393,
+        254
+      ],
+      "flags": {},
+      "order": 62,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "Image_Input_01",
+          "type": "IMAGE",
+          "link": 650,
+          "shape": 7
+        },
+        {
+          "name": "Image_Input_02",
+          "type": "IMAGE",
+          "link": 651,
+          "shape": 7
+        },
+        {
+          "name": "Image_Input_03",
+          "type": "IMAGE",
+          "link": 652,
+          "shape": 7
+        },
+        {
+          "name": "Image_Input_04",
+          "type": "IMAGE",
+          "link": 653,
+          "shape": 7
+        },
+        {
+          "name": "Image_Input_05",
+          "type": "IMAGE",
+          "link": 654,
+          "shape": 7
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": null,
+          "shape": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            655
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "img2img_strength",
+          "type": "FLOAT",
+          "links": [
+            656
+          ],
+          "slot_index": 1
+        },
+        {
+          "name": "denoise",
+          "type": "FLOAT",
+          "links": null
+        },
+        {
+          "name": "selected_switch",
+          "type": "INT",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DP_Image_Empty_Latent_Switch"
+      },
+      "widgets_values": [
+        "empty_latent_image",
+        0,
+        1,
+        1024,
+        1024
+      ]
+    },
+    {
+      "id": 440,
+      "type": "DP_Image_Loader_Big",
+      "pos": [
+        1137.29736328125,
+        -2493.514404296875
+      ],
+      "size": [
+        315,
+        730
+      ],
+      "flags": {},
+      "order": 22,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "pipe_input",
+          "type": "IMAGE",
+          "link": null,
+          "shape": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "filename",
+          "type": "STRING",
+          "links": null
+        },
+        {
+          "name": "output1",
+          "type": "IMAGE",
+          "links": [
+            650,
+            654
+          ],
+          "slot_index": 1
+        },
+        {
+          "name": "output2",
+          "type": "IMAGE",
+          "links": [
+            651
+          ],
+          "slot_index": 2
+        },
+        {
+          "name": "output3",
+          "type": "IMAGE",
+          "links": [
+            652
+          ],
+          "slot_index": 3
+        },
+        {
+          "name": "output4",
+          "type": "IMAGE",
+          "links": [
+            653
+          ],
+          "slot_index": 4
+        },
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DP_Image_Loader_Big"
+      },
+      "widgets_values": [
+        "000000.jpg",
+        "original",
+        "grayscale",
+        "flip_h",
+        "flip_v",
+        0.5,
+        1,
+        4,
+        5,
+        1,
+        8,
+        0.5,
+        3,
+        0.75,
+        0.75,
+        "image"
+      ]
+    },
+    {
+      "id": 395,
+      "type": "Note",
+      "pos": [
+        1491.2921142578125,
+        -2188.45068359375
+      ],
+      "size": [
+        379.64764404296875,
+        90.56969451904297
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 23,
+      "mode": 2,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "when switch in empty latent mode\nimg2img_strength output will allways be 0\nand denoise output will always be 1"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 445,
+      "type": "CR Float To String",
+      "pos": [
+        45.50753402709961,
+        -2463.884765625
+      ],
+      "size": [
+        315,
+        78
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 63,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "float_",
+          "type": "FLOAT",
+          "link": 659,
+          "widget": {
+            "name": "float_"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            660
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "show_help",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CR Float To String"
+      },
+      "widgets_values": [
+        0
+      ]
+    },
+    {
+      "id": 448,
+      "type": "CR Float To String",
+      "pos": [
+        305.50750732421875,
+        -2463.884765625
+      ],
+      "size": [
+        315,
+        78
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 64,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "float_",
+          "type": "FLOAT",
+          "link": 662,
+          "widget": {
+            "name": "float_"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            661
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "show_help",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CR Float To String"
+      },
+      "widgets_values": [
+        0
+      ]
+    },
+    {
+      "id": 449,
+      "type": "CR Integer To String",
+      "pos": [
+        35.50753402709961,
+        -2263.884765625
+      ],
+      "size": [
+        210,
+        54
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 65,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "int_",
+          "type": "INT",
+          "link": 663,
+          "widget": {
+            "name": "int_"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            666
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "show_help",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CR Integer To String"
+      },
+      "widgets_values": [
+        0
+      ]
+    },
+    {
+      "id": 452,
+      "type": "ShowText|pysssss",
+      "pos": [
+        35.50753402709961,
+        -2223.884765625
+      ],
+      "size": [
+        210,
+        76
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 93,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 666,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "title": "int to string",
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "",
+        "29"
+      ]
+    },
+    {
+      "id": 451,
+      "type": "ShowText|pysssss",
+      "pos": [
+        325.5075378417969,
+        -2223.884765625
+      ],
+      "size": [
+        210,
+        76
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 94,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 665,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "title": "int to string",
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "",
+        "38"
+      ]
+    },
+    {
+      "id": 450,
+      "type": "CR Integer To String",
+      "pos": [
+        335.5075378417969,
+        -2273.884765625
+      ],
+      "size": [
+        210,
+        54
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 66,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "int_",
+          "type": "INT",
+          "link": 664,
+          "widget": {
+            "name": "int_"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            665
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "show_help",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CR Integer To String"
+      },
+      "widgets_values": [
+        0
+      ]
+    },
+    {
+      "id": 446,
+      "type": "ShowText|pysssss",
+      "pos": [
+        35.50753402709961,
+        -2413.884765625
+      ],
+      "size": [
+        210,
+        89.21129608154297
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 91,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 660,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "title": "float to string",
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "",
+        "11.8"
+      ]
+    },
+    {
+      "id": 447,
+      "type": "ShowText|pysssss",
+      "pos": [
+        305.50750732421875,
+        -2413.884765625
+      ],
+      "size": [
+        210,
+        76
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 92,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 661,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "title": "float to string",
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "",
+        "21.4"
+      ]
+    },
+    {
+      "id": 310,
+      "type": "DP_Random_MinMax",
+      "pos": [
+        -311.7236328125,
+        -2473.265625
+      ],
+      "size": [
+        315,
+        166
+      ],
+      "flags": {},
+      "order": 24,
+      "mode": 2,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "random_float_1",
+          "type": "FLOAT",
+          "links": [
+            659
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "random_float_2",
+          "type": "FLOAT",
+          "links": [
+            662
+          ],
+          "slot_index": 1
+        },
+        {
+          "name": "random_int_1",
+          "type": "INT",
+          "links": [
+            663
+          ],
+          "slot_index": 2
+        },
+        {
+          "name": "random_int_2",
+          "type": "INT",
+          "links": [
+            664
+          ],
+          "slot_index": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DP_Random_MinMax"
+      },
+      "widgets_values": [
+        0,
+        40,
+        "float_0.1"
+      ]
+    },
+    {
+      "id": 123,
+      "type": "Note",
+      "pos": [
+        -740.5548706054688,
+        -2471.421142578125
+      ],
+      "size": [
+        368.2930908203125,
+        429.6229553222656
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 25,
+      "mode": 2,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "In the folder node_data there are 3 text files to set the min, max, step, and display type in each node (1-3 inputs). You can change these values to customize the nodes:\n\nfloat_min_max_1_input.txt:\nmin=0.00\nmax=1.00\ndefault=1.00\nstep=0.01\nslider=false\n\nfloat_min_max_2_input.txt:\nmin=0.00\nmax=1.00\ndefault=1.00\nstep=0.01\nslider=false\n\nmin=0.00\nmax=1.00\ndefault=1.00\nstep=0.01\nslider=false\n\nfloat_min_max_3_input.txt:\nmin=0.00\nmax=1.00\ndefault=1.00\nstep=0.01\nslider=false\n\nmin=0.00\nmax=1.00\ndefault=1.00\nstep=0.01\nslider=false\n\nmin=0.00\nmax=1.00\ndefault=1.00\nstep=0.01\nslider=false\n\nSet slider=true to display the input as a slider, or slider=false to display it as a number input field.\n\n"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 314,
+      "type": "DP_Float_0_1",
+      "pos": [
+        -1104.4923095703125,
+        -2463.884765625
+      ],
+      "size": [
+        315,
+        58
+      ],
+      "flags": {},
+      "order": 26,
+      "mode": 2,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "float_value",
+          "type": "FLOAT",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DP_Float_0_1"
+      },
+      "widgets_values": [
+        1
+      ]
+    },
+    {
+      "id": 146,
+      "type": "ShowText|pysssss",
+      "pos": [
+        -1980,
+        -3710
+      ],
+      "size": [
+        323.2449035644531,
+        116.04578399658203
+      ],
+      "flags": {},
+      "order": 69,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 668,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "",
+        "No symbolic links found."
+      ]
+    },
+    {
+      "id": 330,
+      "type": "DP_Quick_Link",
+      "pos": [
+        -2340,
+        -3300
+      ],
+      "size": [
+        320.8733825683594,
+        131.67811584472656
+      ],
+      "flags": {},
+      "order": 27,
+      "mode": 2,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            375
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DP_Quick_Link"
+      },
+      "widgets_values": [
+        "delete",
+        "",
+        "",
+        "F:\\my_checkpoints\\temp_models"
+      ]
+    },
+    {
+      "id": 149,
+      "type": "ShowText|pysssss",
+      "pos": [
+        -1990,
+        -3510
+      ],
+      "size": [
+        327.9020080566406,
+        132.80813598632812
+      ],
+      "flags": {},
+      "order": 68,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 374,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "",
+        "Successfully created symlink:\nTarget: F:\\my_checkpoints\\temp_models\nSource: F:\\temp_models"
+      ]
+    },
+    {
+      "id": 329,
+      "type": "DP_Quick_Link",
+      "pos": [
+        -2340,
+        -3510
+      ],
+      "size": [
+        308.5392761230469,
+        136.46072387695312
+      ],
+      "flags": {},
+      "order": 28,
+      "mode": 2,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            374
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DP_Quick_Link"
+      },
+      "widgets_values": [
+        "create",
+        "F:\\my_checkpoints",
+        "F:\\temp_models",
+        ""
+      ]
+    },
+    {
+      "id": 456,
+      "type": "DP_Quick_Link",
+      "pos": [
+        -2350,
+        -3710
+      ],
+      "size": [
+        315,
+        130
+      ],
+      "flags": {},
+      "order": 29,
+      "mode": 2,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            668
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DP_Quick_Link"
+      },
+      "widgets_values": [
+        "list",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "id": 150,
+      "type": "ShowText|pysssss",
+      "pos": [
+        -1987.969482421875,
+        -3304.924072265625
+      ],
+      "size": [
+        324.2296142578125,
+        90.7673568725586
+      ],
+      "flags": {},
+      "order": 67,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 375,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "",
+        "Successfully deleted symlink:\nF:\\my_checkpoints\\temp_models"
+      ]
+    },
+    {
+      "id": 114,
+      "type": "PreviewImage",
+      "pos": [
+        -1057.2828369140625,
+        -3652.5419921875
+      ],
+      "size": [
+        222.2845916748047,
+        248.2335662841797
+      ],
+      "flags": {},
+      "order": 70,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 117
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 116,
+      "type": "ShowText|pysssss",
+      "pos": [
+        -802.6576538085938,
+        -3651.09521484375
+      ],
+      "size": [
+        390.18603515625,
+        253.68856811523438
+      ],
+      "flags": {},
+      "order": 71,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 120,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "title": "detailed_info",
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "",
+        "medium skin  |  19.0%  |  r=238 g=171 b=135  |  #eeab87\nlight blue  |  13.8%  |  r=142 g=207 b=211  |  #8ecfd3\nmedium skin  |  12.5%  |  r=219 g=153 b=123  |  #db997b\nblack  |  6.5%  |  r=11 g=13 b=11  |  #0b0d0b\nchocolate brown  |  6.4%  |  r=34 g=48 b=36  |  #223024\nlight blue  |  5.8%  |  r=164 g=222 b=224  |  #a4dee0\nhunter green  |  5.4%  |  r=77 g=92 b=57  |  #4d5c39\nteal  |  4.1%  |  r=77 g=139 b=141  |  #4d8b8d\ngolden shadow  |  3.9%  |  r=125 g=112 b=69  |  #7d7045\nsky blue  |  3.7%  |  r=109 g=176 b=181  |  #6db0b5\ncharcoal  |  3.5%  |  r=42 g=92 b=93  |  #2a5c5d\npine wood  |  3.3%  |  r=165 g=154 b=111  |  #a59a6f\ntan  |  3.2%  |  r=226 g=210 b=161  |  #e2d2a1\nlight blue  |  3.1%  |  r=181 g=243 b=241  |  #b5f3f1\nwalnut wood  |  2.9%  |  r=82 g=49 b=28  |  #52311c\nfair skin  |  2.7%  |  r=247 g=232 b=200  |  #f7e8c8"
+      ]
+    },
+    {
+      "id": 8,
+      "type": "DPImageColorAnalyzer",
+      "pos": [
+        -1410.5142822265625,
+        -3659.105712890625
+      ],
+      "size": [
+        315,
+        446
+      ],
+      "flags": {},
+      "order": 30,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "pipe_input",
+          "type": "IMAGE",
+          "link": null,
+          "shape": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "color_panels",
+          "type": "IMAGE",
+          "links": [
+            117
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "color_names",
+          "type": "STRING",
+          "links": [],
+          "slot_index": 1
+        },
+        {
+          "name": "color_theme",
+          "type": "STRING",
+          "links": [],
+          "slot_index": 2
+        },
+        {
+          "name": "detailed_info",
+          "type": "STRING",
+          "links": [
+            120
+          ],
+          "slot_index": 3
+        },
+        {
+          "name": "hex_values",
+          "type": "STRING",
+          "links": [],
+          "slot_index": 4
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DPImageColorAnalyzer"
+      },
+      "widgets_values": [
+        "big_green_chameleon_head_1024x1024_00001_.png",
+        16,
+        512,
+        512,
+        "image"
+      ]
+    },
+    {
+      "id": 17,
+      "type": "DP_Random_Char",
+      "pos": [
+        -2375.126708984375,
+        -2824.373779296875
+      ],
+      "size": [
+        315,
+        106
+      ],
+      "flags": {},
+      "order": 31,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "Characters",
+          "type": "STRING",
+          "links": [
+            129
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DP_Random_Char"
+      },
+      "widgets_values": [
+        "random_letter",
+        "mixed",
+        7
+      ]
+    },
+    {
+      "id": 131,
+      "type": "DP_Random_Char",
+      "pos": [
+        -2377.51025390625,
+        -2648.588623046875
+      ],
+      "size": [
+        315,
+        106
+      ],
+      "flags": {},
+      "order": 32,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "Characters",
+          "type": "STRING",
+          "links": [
+            130
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DP_Random_Char"
+      },
+      "widgets_values": [
+        "random_number",
+        "mixed",
+        7
+      ]
+    },
+    {
+      "id": 133,
+      "type": "DP_Random_Char",
+      "pos": [
+        -2365.76708984375,
+        -2473.3212890625
+      ],
+      "size": [
+        315,
+        106
+      ],
+      "flags": {},
+      "order": 33,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "Characters",
+          "type": "STRING",
+          "links": [
+            131
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DP_Random_Char"
+      },
+      "widgets_values": [
+        "random_mixed",
+        "mixed",
+        13
+      ]
+    },
+    {
+      "id": 399,
+      "type": "DP_Image_Loader_Big",
+      "pos": [
+        -5015.32177734375,
+        -4825.00634765625
+      ],
+      "size": [
+        315,
+        730
+      ],
+      "flags": {},
+      "order": 34,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "pipe_input",
+          "type": "IMAGE",
+          "link": null,
+          "shape": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "filename",
+          "type": "STRING",
+          "links": null
+        },
+        {
+          "name": "output1",
+          "type": "IMAGE",
+          "links": [
+            570,
+            571
+          ]
+        },
+        {
+          "name": "output2",
+          "type": "IMAGE",
+          "links": [
+            572
+          ]
+        },
+        {
+          "name": "output3",
+          "type": "IMAGE",
+          "links": [
+            573
+          ]
+        },
+        {
+          "name": "output4",
+          "type": "IMAGE",
+          "links": [
+            574
+          ]
+        },
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DP_Image_Loader_Big"
+      },
+      "widgets_values": [
+        "big_bright_red_strawberry_1024x1024_00001_.png",
+        "original",
+        "grayscale",
+        "flip_h",
+        "flip_v",
+        0.5,
+        1,
+        4,
+        5,
+        1,
+        8,
+        0.5,
+        3,
+        0.75,
+        0.75,
+        "image"
+      ]
+    },
+    {
+      "id": 353,
+      "type": "PreviewImage",
+      "pos": [
+        -4211.21435546875,
+        -4819.80078125
+      ],
+      "size": [
+        406.95965576171875,
+        444.99017333984375
+      ],
+      "flags": {},
+      "order": 95,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 506
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 153,
+      "type": "LoadImage",
+      "pos": [
+        -4677.8681640625,
+        -3694.043212890625
+      ],
+      "size": [
+        236.20611572265625,
+        335.9589538574219
+      ],
+      "flags": {},
+      "order": 35,
+      "mode": 2,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            671
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "Part_A+B+C+D_blended_00034.png",
+        "image"
+      ]
+    },
+    {
+      "id": 458,
+      "type": "DP_Logo_Animator",
+      "pos": [
+        -4417.8681640625,
+        -3694.043212890625
+      ],
+      "size": [
+        315,
+        130
+      ],
+      "flags": {},
+      "order": 76,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 671
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            672
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DP_Logo_Animator"
+      },
+      "widgets_values": [
+        48,
+        0.2,
+        "Auto",
+        2
+      ]
+    },
+    {
+      "id": 366,
+      "type": "PreviewImage",
+      "pos": [
+        -4077.86962890625,
+        -3694.043212890625
+      ],
+      "size": [
+        956.0100708007812,
+        527.428955078125
+      ],
+      "flags": {},
+      "order": 96,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 672
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 316,
+      "type": "DP_Broken_Token",
+      "pos": [
+        1325.6297607421875,
+        -3441.558349609375
+      ],
+      "size": [
+        273.98541259765625,
+        374.04217529296875
+      ],
+      "flags": {},
+      "order": 36,
+      "mode": 2,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "total_tokens",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "info",
+          "type": "STRING",
+          "links": [
+            544
+          ],
+          "slot_index": 1
+        },
+        {
+          "name": "Text part 1",
+          "type": "STRING",
+          "links": [
+            645
+          ],
+          "slot_index": 2
+        },
+        {
+          "name": "Text part 2",
+          "type": "STRING",
+          "links": [
+            646
+          ],
+          "slot_index": 3
+        },
+        {
+          "name": "Text part 3",
+          "type": "STRING",
+          "links": [
+            647
+          ],
+          "slot_index": 4
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DP_Broken_Token"
+      },
+      "widgets_values": [
+        "street photography, a superhero squirrel with a cape made of acorns, inward-spiraling focal point, marine current pearl shine, quantum rust garden color palette, technologically ancient atmosphere, rendered by mineral growth, in a cyclone of floating soap bubbles, in the style of crystalline charcoal, Secession style, impressionist digital, mecha art, minimal color palette, rococo style, monochrome art, digital sculpture, landscape painting, documentary photography, abstract math art, photorealism, generative art, tribal art, cityscape painting",
+        40,
+        21
+      ]
+    },
+    {
+      "id": 119,
+      "type": "ShowText|pysssss",
+      "pos": [
+        1631.578857421875,
+        -3438.721923828125
+      ],
+      "size": [
+        337.96820068359375,
+        150.21632385253906
+      ],
+      "flags": {},
+      "order": 77,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 544,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "title": "info",
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "",
+        "Total token count = 96\nPart 01 = 40 tokens\nPart 02 = 21 tokens\nPart 03 = 35 tokens"
+      ]
+    },
+    {
+      "id": 432,
+      "type": "ShowText|pysssss",
+      "pos": [
+        1625.1676025390625,
+        -3226.810546875
+      ],
+      "size": [
+        337.96820068359375,
+        150.21632385253906
+      ],
+      "flags": {},
+      "order": 78,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 645,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "title": "part 01",
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "",
+        "street photography, a superhero squirrel with a cape made of acorns, inward - spiraling focal point, marine current pearl shine, quantum rust garden color palette, technologically ancient atmosphere, rendered by mineral growth, in"
+      ]
+    },
+    {
+      "id": 436,
+      "type": "ShowText|pysssss",
+      "pos": [
+        1995.5413818359375,
+        -3235.482421875
+      ],
+      "size": [
+        337.96820068359375,
+        150.21632385253906
+      ],
+      "flags": {},
+      "order": 80,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 647,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "title": "part 03",
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "",
+        "art, minimal color palette, rococo style, monochrome art, digital sculpture, landscape painting, documentary photography, abstract math art, photorealism, generative art, tribal art, cityscape painting"
+      ]
+    },
+    {
+      "id": 435,
+      "type": "ShowText|pysssss",
+      "pos": [
+        1991.3804931640625,
+        -3440.97021484375
+      ],
+      "size": [
+        337.96820068359375,
+        150.21632385253906
+      ],
+      "flags": {},
+      "order": 79,
+      "mode": 2,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 646,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "title": "part 02",
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "",
+        "a cyclone of floating soap bubbles, in the style of crystalline charcoal, Secession style, impressionist digital, mecha"
+      ]
+    },
+    {
+      "id": 460,
+      "type": "DP_Smart_Saver",
+      "pos": [
+        575.8646240234375,
+        -4476.87158203125
+      ],
+      "size": [
+        315,
+        414
+      ],
+      "flags": {},
+      "order": 59,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 675
+        }
+      ],
+      "outputs": [
+        {
+          "name": "file_info",
+          "type": "STRING",
+          "links": [
+            676
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DP_Smart_Saver"
+      },
+      "widgets_values": [
+        "SAVE_IMAGE",
+        "folder_name",
+        "my_file_name",
+        "",
+        false,
+        false,
+        ""
+      ]
+    },
+    {
+      "id": 108,
+      "type": "ShowText|pysssss",
+      "pos": [
+        920.1015014648438,
+        -4474.44580078125
+      ],
+      "size": [
+        365.2377624511719,
+        123.47956085205078
+      ],
+      "flags": {},
+      "order": 89,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 676,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "title": "File info",
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "",
+        "F:\\BestComfyui_2026\\comfyui\\ComfyUI\\output\\folder_name\nfile name: my_file_name.png\ndimensions WxH: 1024x1024\nsize: 1.4 mb"
+      ]
+    }
+  ],
+  "links": [
+    [
+      6,
+      2,
+      0,
+      26,
+      0,
+      "IMAGE"
+    ],
+    [
+      35,
+      55,
+      0,
+      23,
+      0,
+      "IMAGE"
+    ],
+    [
+      37,
+      57,
+      0,
+      23,
+      1,
+      "IMAGE"
+    ],
+    [
+      117,
+      8,
+      0,
+      114,
+      0,
+      "IMAGE"
+    ],
+    [
+      120,
+      8,
+      3,
+      116,
+      0,
+      "STRING"
+    ],
+    [
+      129,
+      17,
+      0,
+      130,
+      0,
+      "STRING"
+    ],
+    [
+      130,
+      131,
+      0,
+      132,
+      0,
+      "STRING"
+    ],
+    [
+      131,
+      133,
+      0,
+      134,
+      0,
+      "STRING"
+    ],
+    [
+      340,
+      302,
+      0,
+      286,
+      0,
+      "IMAGE"
+    ],
+    [
+      351,
+      58,
+      0,
+      318,
+      0,
+      "IMAGE"
+    ],
+    [
+      352,
+      318,
+      0,
+      42,
+      0,
+      "IMAGE"
+    ],
+    [
+      355,
+      36,
+      0,
+      319,
+      0,
+      "IMAGE"
+    ],
+    [
+      374,
+      329,
+      0,
+      149,
+      0,
+      "STRING"
+    ],
+    [
+      375,
+      330,
+      0,
+      150,
+      0,
+      "STRING"
+    ],
+    [
+      506,
+      359,
+      0,
+      353,
+      0,
+      "IMAGE"
+    ],
+    [
+      543,
+      315,
+      0,
+      118,
+      0,
+      "STRING"
+    ],
+    [
+      544,
+      316,
+      1,
+      119,
+      0,
+      "STRING"
+    ],
+    [
+      564,
+      301,
+      1,
+      254,
+      0,
+      "IMAGE"
+    ],
+    [
+      570,
+      399,
+      1,
+      359,
+      0,
+      "IMAGE"
+    ],
+    [
+      571,
+      399,
+      1,
+      359,
+      4,
+      "IMAGE"
+    ],
+    [
+      572,
+      399,
+      2,
+      359,
+      1,
+      "IMAGE"
+    ],
+    [
+      573,
+      399,
+      3,
+      359,
+      2,
+      "IMAGE"
+    ],
+    [
+      574,
+      399,
+      4,
+      359,
+      3,
+      "IMAGE"
+    ],
+    [
+      594,
+      322,
+      2,
+      323,
+      2,
+      "STRING"
+    ],
+    [
+      595,
+      322,
+      1,
+      323,
+      0,
+      "IMAGE"
+    ],
+    [
+      596,
+      322,
+      0,
+      323,
+      1,
+      "IMAGE"
+    ],
+    [
+      597,
+      302,
+      1,
+      402,
+      0,
+      "IMAGE"
+    ],
+    [
+      598,
+      301,
+      2,
+      404,
+      0,
+      "IMAGE"
+    ],
+    [
+      599,
+      301,
+      3,
+      405,
+      0,
+      "IMAGE"
+    ],
+    [
+      600,
+      301,
+      4,
+      403,
+      0,
+      "IMAGE"
+    ],
+    [
+      601,
+      301,
+      0,
+      406,
+      0,
+      "STRING"
+    ],
+    [
+      602,
+      301,
+      5,
+      407,
+      0,
+      "STRING"
+    ],
+    [
+      603,
+      306,
+      1,
+      408,
+      0,
+      "IMAGE"
+    ],
+    [
+      604,
+      306,
+      2,
+      410,
+      0,
+      "IMAGE"
+    ],
+    [
+      605,
+      306,
+      3,
+      409,
+      0,
+      "IMAGE"
+    ],
+    [
+      606,
+      306,
+      4,
+      411,
+      0,
+      "IMAGE"
+    ],
+    [
+      607,
+      306,
+      0,
+      412,
+      0,
+      "STRING"
+    ],
+    [
+      608,
+      306,
+      5,
+      413,
+      0,
+      "STRING"
+    ],
+    [
+      609,
+      23,
+      0,
+      414,
+      0,
+      "IMAGE"
+    ],
+    [
+      610,
+      319,
+      0,
+      415,
+      0,
+      "IMAGE"
+    ],
+    [
+      612,
+      418,
+      0,
+      419,
+      0,
+      "MASK"
+    ],
+    [
+      613,
+      419,
+      0,
+      420,
+      0,
+      "IMAGE"
+    ],
+    [
+      616,
+      397,
+      0,
+      418,
+      0,
+      "STRING"
+    ],
+    [
+      617,
+      422,
+      0,
+      423,
+      0,
+      "MASK"
+    ],
+    [
+      618,
+      423,
+      0,
+      424,
+      0,
+      "IMAGE"
+    ],
+    [
+      619,
+      398,
+      0,
+      422,
+      0,
+      "STRING"
+    ],
+    [
+      620,
+      425,
+      0,
+      426,
+      0,
+      "MASK"
+    ],
+    [
+      621,
+      426,
+      0,
+      427,
+      0,
+      "IMAGE"
+    ],
+    [
+      622,
+      421,
+      0,
+      425,
+      0,
+      "STRING"
+    ],
+    [
+      633,
+      334,
+      1,
+      429,
+      0,
+      "IMAGE"
+    ],
+    [
+      634,
+      334,
+      2,
+      429,
+      1,
+      "IMAGE"
+    ],
+    [
+      635,
+      334,
+      3,
+      429,
+      2,
+      "IMAGE"
+    ],
+    [
+      636,
+      334,
+      4,
+      429,
+      3,
+      "IMAGE"
+    ],
+    [
+      637,
+      334,
+      1,
+      429,
+      4,
+      "IMAGE"
+    ],
+    [
+      638,
+      429,
+      0,
+      333,
+      0,
+      "IMAGE"
+    ],
+    [
+      639,
+      429,
+      1,
+      365,
+      0,
+      "STRING"
+    ],
+    [
+      640,
+      429,
+      2,
+      397,
+      0,
+      "STRING"
+    ],
+    [
+      641,
+      429,
+      3,
+      398,
+      0,
+      "STRING"
+    ],
+    [
+      642,
+      429,
+      4,
+      421,
+      0,
+      "STRING"
+    ],
+    [
+      643,
+      431,
+      0,
+      105,
+      0,
+      "STRING"
+    ],
+    [
+      644,
+      431,
+      1,
+      106,
+      0,
+      "STRING"
+    ],
+    [
+      645,
+      316,
+      2,
+      432,
+      0,
+      "STRING"
+    ],
+    [
+      646,
+      316,
+      3,
+      435,
+      0,
+      "STRING"
+    ],
+    [
+      647,
+      316,
+      4,
+      436,
+      0,
+      "STRING"
+    ],
+    [
+      649,
+      344,
+      0,
+      121,
+      0,
+      "STRING"
+    ],
+    [
+      650,
+      440,
+      1,
+      12,
+      0,
+      "IMAGE"
+    ],
+    [
+      651,
+      440,
+      2,
+      12,
+      1,
+      "IMAGE"
+    ],
+    [
+      652,
+      440,
+      3,
+      12,
+      2,
+      "IMAGE"
+    ],
+    [
+      653,
+      440,
+      4,
+      12,
+      3,
+      "IMAGE"
+    ],
+    [
+      654,
+      440,
+      1,
+      12,
+      4,
+      "IMAGE"
+    ],
+    [
+      655,
+      12,
+      0,
+      441,
+      3,
+      "LATENT"
+    ],
+    [
+      656,
+      12,
+      1,
+      441,
+      5,
+      "FLOAT"
+    ],
+    [
+      659,
+      310,
+      0,
+      445,
+      0,
+      "FLOAT"
+    ],
+    [
+      660,
+      445,
+      0,
+      446,
+      0,
+      "STRING"
+    ],
+    [
+      661,
+      448,
+      0,
+      447,
+      0,
+      "STRING"
+    ],
+    [
+      662,
+      310,
+      1,
+      448,
+      0,
+      "FLOAT"
+    ],
+    [
+      663,
+      310,
+      2,
+      449,
+      0,
+      "INT"
+    ],
+    [
+      664,
+      310,
+      3,
+      450,
+      0,
+      "INT"
+    ],
+    [
+      665,
+      450,
+      0,
+      451,
+      0,
+      "STRING"
+    ],
+    [
+      666,
+      449,
+      0,
+      452,
+      0,
+      "STRING"
+    ],
+    [
+      668,
+      456,
+      0,
+      146,
+      0,
+      "STRING"
+    ],
+    [
+      671,
+      153,
+      0,
+      458,
+      0,
+      "IMAGE"
+    ],
+    [
+      672,
+      458,
+      0,
+      366,
+      0,
+      "IMAGE"
+    ],
+    [
+      675,
+      107,
+      0,
+      460,
+      0,
+      "IMAGE"
+    ],
+    [
+      676,
+      460,
+      0,
+      108,
+      0,
+      "STRING"
+    ]
+  ],
+  "groups": [
+    {
+      "id": 1,
+      "title": "Video slow fastmotion",
+      "bounding": [
+        -2132.914306640625,
+        -5224.234375,
+        1013.4802856445312,
+        404.932373046875
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 2,
+      "title": "DP Video Flicker",
+      "bounding": [
+        172.62435913085938,
+        -5211.9775390625,
+        1369.4736328125,
+        494.3412780761719
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 3,
+      "title": "DP Video Transition",
+      "bounding": [
+        -1040.5296630859375,
+        -5218.31396484375,
+        1125.518310546875,
+        684.9330444335938
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 6,
+      "title": "DP Video Effect Sender",
+      "bounding": [
+        -3315.96533203125,
+        -6167.46435546875,
+        822.2853393554688,
+        477.95147705078125
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 7,
+      "title": "DP Big Letters",
+      "bounding": [
+        -3182.67138671875,
+        -4717.3037109375,
+        1480.1939697265625,
+        519.263671875
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 8,
+      "title": "DP Create JSON File",
+      "bounding": [
+        -1031.294677734375,
+        -4391.31494140625,
+        655.1588134765625,
+        439.2992248535156
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 9,
+      "title": "DP Smart Image Saver",
+      "bounding": [
+        187.0054473876953,
+        -4571.23046875,
+        1113.6644287109375,
+        648.9581909179688
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 11,
+      "title": "Image color analyser",
+      "bounding": [
+        -1433.5758056640625,
+        -3756.62744140625,
+        1066.0272216796875,
+        592.3472900390625
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 12,
+      "title": "DP Image Empty Latent Switch",
+      "bounding": [
+        1110,
+        -2620,
+        1218.215087890625,
+        911.5971069335938
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 13,
+      "title": "DP Multi Styler + DP Broken Token + DP Crazy Prompt Generator",
+      "bounding": [
+        501.3399658203125,
+        -3534.21044921875,
+        3851.20263671875,
+        735.650634765625
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 15,
+      "title": "DP Floats 0-1",
+      "bounding": [
+        -1148.8343505859375,
+        -2562.618408203125,
+        1748.06494140625,
+        579.92724609375
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 17,
+      "title": "DP Random Character",
+      "bounding": [
+        -2416.386474609375,
+        -2911.734619140625,
+        782.0599365234375,
+        575.3734741210938
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 19,
+      "title": "Group",
+      "bounding": [
+        -2381.1865234375,
+        -3811.411376953125,
+        772.5645141601562,
+        679.744140625
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 20,
+      "title": "DP Logo Animator",
+      "bounding": [
+        -4720.03076171875,
+        -3803.57470703125,
+        1673.188720703125,
+        687.7647705078125
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 21,
+      "title": "Image loader",
+      "bounding": [
+        -1374.332763671875,
+        -6158.51416015625,
+        2908.368408203125,
+        826.7982788085938
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 22,
+      "title": "Animation calculator",
+      "bounding": [
+        -5455.8564453125,
+        -6167.2939453125,
+        1939.458740234375,
+        861.9533081054688
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 23,
+      "title": "DP image slide show",
+      "bounding": [
+        -5046.1572265625,
+        -4952.26416015625,
+        1282.98388671875,
+        892.75
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 24,
+      "title": "DP Five LoRA Loaders",
+      "bounding": [
+        -2347.317138671875,
+        -6168.6611328125,
+        802.1397705078125,
+        800.2459716796875
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    }
+  ],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.2853116706110006,
+      "offset": [
+        5420.902443597796,
+        6733.16008462899
+      ]
+    },
+    "ue_links": []
+  },
+  "version": 0.4
+}
