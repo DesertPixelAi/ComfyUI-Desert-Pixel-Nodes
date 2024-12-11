@@ -9,11 +9,10 @@ class DP_create_json_file:
     def INPUT_TYPES(cls):
         return {
             "required": {
-                "file_name": ("STRING", {"default": "data"}),
-                "save_path": ("STRING", {"default": "output"}),
-                "columns": ("INT", {"default": 3, "min": 1, "max": 100}),
+                "file_name": ("STRING", {"default": "my_json_file"}),
+                "save_path": ("STRING", {"default": "output\\json"}),
                 "line_separator": ("STRING", {"default": "|"}),
-                "json_data": ("STRING", {"multiline": True}),
+                "json_data": ("STRING", {"multiline": True, "default": "item1 name | item2 name | item3 name\nwakeup | world | 06758\ndesert | pixel | 12354"}),
                 "save_file": ("BOOLEAN", {"default": True}),
                 "overwrite": ("BOOLEAN", {"default": False}),
             }
@@ -24,17 +23,16 @@ class DP_create_json_file:
     FUNCTION = "process"
     CATEGORY = "DP/utils"
 
-    def process(self, file_name: str, save_path: str, columns: int, line_separator: str, json_data: str, save_file: bool, overwrite: bool):
+    def process(self, file_name: str, save_path: str, line_separator: str, json_data: str, save_file: bool, overwrite: bool):
         try:
             # Clean and validate input data
             lines = [line.strip() for line in json_data.split('\n') if line.strip()]
             if not lines:
                 return "", "Error: No data provided"
             
-            # Parse header using custom separator
+            # Parse header using custom separator and get column count
             headers = [h.strip() for h in lines[0].split(line_separator)]
-            if len(headers) != columns:
-                return "", f"Error: Header line has {len(headers)} columns but expected {columns}"
+            columns = len(headers)
             
             # Convert headers to valid JSON keys (remove spaces, special chars)
             headers = [h.lower().replace(' ', '_') for h in headers]

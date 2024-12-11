@@ -27,12 +27,12 @@ class DP_Animation_Calculator_5Inputs:
                 }) for i in range(2, 6)},
                 **{f"Prompt_Image_{i:02d}": ("STRING", {"default": f"prompt {i:02d}", "multiline": False}) for i in range(1, 6)},
                 "Transition_Frames": ("INT", {"default": 8, "min": 0, "max": 32, "step": 4, "display": "number"}),
-                "IP_Min": ("FLOAT", {"default": 0.0, "min": 0.0, "max": 1.0, "step": 0.1}),
-                "IP_Max": ("FLOAT", {"default": 1.0, "min": 0.0, "max": 1.0, "step": 0.1}),
-                "CN_01_Min": ("FLOAT", {"default": 0.0, "min": 0.0, "max": 1.0, "step": 0.1}),
-                "CN_01_Max": ("FLOAT", {"default": 1.0, "min": 0.0, "max": 1.0, "step": 0.1}),
-                "CN_02_Min": ("FLOAT", {"default": 0.0, "min": 0.0, "max": 1.0, "step": 0.1}),
-                "CN_02_Max": ("FLOAT", {"default": 1.0, "min": 0.0, "max": 1.0, "step": 0.1})
+                "fade_mask_01_Min": ("FLOAT", {"default": 0.0, "min": 0.0, "max": 1.0, "step": 0.1}),
+                "fade_mask_01_Max": ("FLOAT", {"default": 1.0, "min": 0.0, "max": 1.0, "step": 0.1}),
+                "fade_mask_02_Min": ("FLOAT", {"default": 0.0, "min": 0.0, "max": 1.0, "step": 0.1}),
+                "fade_mask_02_Max": ("FLOAT", {"default": 1.0, "min": 0.0, "max": 1.0, "step": 0.1}),
+                "fade_mask_03_Min": ("FLOAT", {"default": 0.0, "min": 0.0, "max": 1.0, "step": 0.1}),
+                "fade_mask_03_Max": ("FLOAT", {"default": 1.0, "min": 0.0, "max": 1.0, "step": 0.1})
             },
             "optional": {
                 **{f"Image_{i:02d}_Input": ("IMAGE",) for i in range(1, 6)}
@@ -40,7 +40,7 @@ class DP_Animation_Calculator_5Inputs:
         }
 
     RETURN_TYPES = ("IMAGE", "STRING", "STRING", "STRING", "STRING", "STRING",)
-    RETURN_NAMES = ("Image_Batch_Output", "Text_Prompt_Timing", "Text_IPA_Timing", "Text_CN_01_Timing", "Text_CN_02_Timing", "Check_Log",)
+    RETURN_NAMES = ("Image_Batch_Output", "Text_Prompt_Timing", "fade_mask_01_timing", "fade_mask_02_timing", "fade_mask_03_timing", "Check_Log",)
     FUNCTION = "calc"
     CATEGORY = "DP/animation"
 
@@ -216,9 +216,17 @@ class DP_Animation_Calculator_5Inputs:
                 pre_size = kwargs['Pre_Transition_Size']
                 post_size = kwargs['Post_Transition_Size']
                 
+                # Determine if we need to swap min and max
+                should_swap = min_value > max_value
+                actual_min = max_value if should_swap else min_value
+                actual_max = min_value if should_swap else max_value
+                
+                # Invert logic is now combined with the swap logic
+                final_invert = invert != should_swap
+                
                 # Set initial value
-                first_val = min_value if invert else max_value
-                timing_entries.append(f"{valid_keyframes[0]}:({first_val:.1f})")
+                first_val = actual_min if final_invert else actual_max
+                timing_entries.append(f"{valid_keyframes[0]}:({first_val:.1f}),")
                 
                 for frame in valid_keyframes[1:]:
                     if frame >= total_frames:
@@ -227,29 +235,29 @@ class DP_Animation_Calculator_5Inputs:
                     # Pre-transition point
                     pre_frame = frame - pre_size
                     if pre_frame > 0:
-                        val = min_value if invert else max_value
-                        timing_entries.append(f"{pre_frame}:({val:.1f})")
+                        val = actual_min if final_invert else actual_max
+                        timing_entries.append(f"{pre_frame}:({val:.1f}),")
                     
                     # Keyframe point
-                    val = max_value if invert else min_value
-                    timing_entries.append(f"{frame}:({val:.1f})")
+                    val = actual_max if final_invert else actual_min
+                    timing_entries.append(f"{frame}:({val:.1f}),")
                     
                     # Post-transition point
                     post_frame = frame + post_size
                     if post_frame < total_frames:
-                        val = min_value if invert else max_value
-                        timing_entries.append(f"{post_frame}:({val:.1f})")
+                        val = actual_min if final_invert else actual_max
+                        timing_entries.append(f"{post_frame}:({val:.1f}),")
                 
                 # Add final frame if needed
                 if valid_keyframes[-1] != total_frames - 1:
-                    val = min_value if invert else max_value
+                    val = actual_min if final_invert else actual_max
                     timing_entries.append(f"{total_frames - 1}:({val:.1f})")
                 
                 return "\n".join(timing_entries)
 
-            Text_output_02_IP = generate_timing_string(kwargs['IP_Min'], kwargs['IP_Max'])
-            Text_output_03_CN01 = generate_timing_string(kwargs['CN_01_Min'], kwargs['CN_01_Max'])
-            Text_output_04_CN02 = generate_timing_string(kwargs['CN_02_Min'], kwargs['CN_02_Max'], invert=True)
+            Text_output_02_IP = generate_timing_string(kwargs['fade_mask_01_Min'], kwargs['fade_mask_01_Max'])
+            Text_output_03_CN01 = generate_timing_string(kwargs['fade_mask_02_Min'], kwargs['fade_mask_02_Max'])
+            Text_output_04_CN02 = generate_timing_string(kwargs['fade_mask_03_Min'], kwargs['fade_mask_03_Max'])
 
             validation_message = "All keyframes are in correct order"
 

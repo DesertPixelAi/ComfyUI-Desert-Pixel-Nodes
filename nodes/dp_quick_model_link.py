@@ -37,8 +37,8 @@ class DP_symlink:
                 "action": (["create", "delete", "list"], {"default": "list"}),
             },
             "optional": {
-                "target_folder": ("STRING", {"default": ""}),
-                "source_folder": ("STRING", {"default": ""}),
+                "your_model_folder": ("STRING", {"default": ""}),
+                "the_other_model_folder": ("STRING", {"default": ""}),
                 "link_to_delete": ("STRING", {"default": ""})
             }
         }
@@ -54,11 +54,11 @@ class DP_symlink:
     def create_symlink(self, target, source):
         if not os.path.exists(source):
             return f"Error: Source folder does not exist: {source}"
-        # Check if target is an existing folder with content
-        if os.path.isdir(target) and os.listdir(target):
-            # Create a subfolder automatically
-            subfolder_name = os.path.basename(source)
-            target = os.path.join(target, subfolder_name)
+        
+        # Create link inside the target folder using source folder name
+        subfolder_name = os.path.basename(source)
+        target = os.path.join(target, subfolder_name)
+        
         try:
             # Check if the exact target path exists
             if os.path.exists(target):
@@ -66,6 +66,7 @@ class DP_symlink:
                     subprocess.run(['rmdir', target], shell=True, check=True)
                 else:
                     os.remove(target)
+                
             # Create symlink using mklink /D
             cmd = f'cmd /c mklink /D "{target}" "{source}"'
             process = subprocess.run(cmd, shell=True, capture_output=True, text=True)
@@ -77,6 +78,7 @@ class DP_symlink:
             else:
                 error_msg = process.stderr.strip() if process.stderr else "Unknown error"
                 return f"Failed to create symlink:\n{error_msg}"
+            
         except Exception as e:
             return f"Error creating symlink:\n{str(e)}"
     def delete_symlink(self, target):
@@ -97,13 +99,13 @@ class DP_symlink:
             exists = "✓" if os.path.exists(target) else "✗"
             result += f"{exists} Target: {target}\n   Source: {source}\n\n"
         return result
-    def execute(self, action, target_folder="", source_folder="", link_to_delete=""):
+    def execute(self, action, your_model_folder="", the_other_model_folder="", link_to_delete=""):
         if not self.is_admin():
             return ("This node requires administrator privileges. Please run ComfyUI as administrator.",)
         if action == "create":
-            if not target_folder or not source_folder:
+            if not your_model_folder or not the_other_model_folder:
                 return ("Please provide both target and source folders.",)
-            result = self.create_symlink(target_folder, source_folder)
+            result = self.create_symlink(your_model_folder, the_other_model_folder)
             
         elif action == "delete":
             if not link_to_delete:
