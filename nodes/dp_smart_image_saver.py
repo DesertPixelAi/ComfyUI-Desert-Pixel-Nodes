@@ -19,6 +19,7 @@ class DP_smart_saver:
     def INPUT_TYPES(s):
         return {
             "required": {
+                "mode": (["SAVE_IMAGE", "PREVIEW_ONLY"], {"default": "SAVE_IMAGE"}),
                 "image": ("IMAGE",),
                 "folder_name": ("STRING", {"default": ""}),
                 "file_name": ("STRING", {"default": "comfyUiImage"}),
@@ -50,7 +51,7 @@ class DP_smart_saver:
             counter += 1
         return file_path
 
-    def save_image(self, image, folder_name, file_name, extra_text, add_size_to_name, save_caption, caption_text, prompt=None, extra_pnginfo=None):
+    def save_image(self, mode, image, folder_name, file_name, extra_text, add_size_to_name, save_caption, caption_text, prompt=None, extra_pnginfo=None):
         # Sanitize inputs
         folder_name = self.sanitize_filename(folder_name)
         file_name = self.sanitize_filename(file_name)
@@ -60,7 +61,8 @@ class DP_smart_saver:
         full_output_folder = self.output_dir
         if folder_name:
             full_output_folder = os.path.join(self.output_dir, folder_name)
-            os.makedirs(full_output_folder, exist_ok=True)
+            if mode == "SAVE_IMAGE":
+                os.makedirs(full_output_folder, exist_ok=True)
 
         # Prepare filename components
         name_parts = [file_name]
@@ -113,21 +115,25 @@ class DP_smart_saver:
             "type": self.type
         })
 
-        # Get file size in bytes and convert to appropriate unit
-        file_size_bytes = os.path.getsize(image_path)
-        if file_size_bytes >= 1024 * 1024:  # If size is 1MB or more
-            file_size = round(file_size_bytes / (1024 * 1024), 1)
-            size_str = f"{file_size} mb"
-        else:
-            file_size = round(file_size_bytes / 1024)
-            size_str = f"{file_size} kb"
-        
-        # Get dimensions
+        # Get dimensions for output
         height, width = image.shape[1:3]
         
-        # Create detailed output string with line breaks
-        output_text = f"{full_output_folder}\nfile name: {file}\ndimensions WxH: {width}x{height}\nsize: {size_str}"
-        
+        if mode == "SAVE_IMAGE":
+            # Get file size in bytes and convert to appropriate unit
+            file_size_bytes = os.path.getsize(image_path)
+            if file_size_bytes >= 1024 * 1024:
+                file_size = round(file_size_bytes / (1024 * 1024), 1)
+                size_str = f"{file_size} mb"
+            else:
+                file_size = round(file_size_bytes / 1024)
+                size_str = f"{file_size} kb"
+            
+            output_text = f"{full_output_folder}\nfile name: {file}\ndimensions WxH: {width}x{height}\nsize: {size_str}"
+        else:
+            # Preview mode - only show dimensions
+            output_text = f"PREVIEW MODE\ndimensions WxH: {width}x{height}"
+            file = "preview_only.png"  # Dummy filename for preview
+
         # Return both the folder path and UI data for preview
         return {"ui": {"images": results}, "result": (output_text,)}
 
