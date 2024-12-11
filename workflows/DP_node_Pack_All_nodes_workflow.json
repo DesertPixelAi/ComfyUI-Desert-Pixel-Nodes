@@ -1,6 +1,6 @@
 {
-  "last_node_id": 460,
-  "last_link_id": 676,
+  "last_node_id": 461,
+  "last_link_id": 678,
   "nodes": [
     {
       "id": 134,
@@ -14,7 +14,7 @@
         76
       ],
       "flags": {},
-      "order": 74,
+      "order": 72,
       "mode": 0,
       "inputs": [
         {
@@ -39,7 +39,7 @@
       },
       "widgets_values": [
         "",
-        "QA2n9z16k5v47"
+        "3Z9v82XYt9pNq"
       ]
     },
     {
@@ -54,7 +54,7 @@
         76
       ],
       "flags": {},
-      "order": 73,
+      "order": 71,
       "mode": 0,
       "inputs": [
         {
@@ -79,7 +79,7 @@
       },
       "widgets_values": [
         "",
-        "7986032"
+        "0746182"
       ]
     },
     {
@@ -94,7 +94,7 @@
         76
       ],
       "flags": {},
-      "order": 72,
+      "order": 70,
       "mode": 0,
       "inputs": [
         {
@@ -119,7 +119,7 @@
       },
       "widgets_values": [
         "",
-        "SNPORuq"
+        "YJNADmG"
       ]
     },
     {
@@ -210,7 +210,7 @@
         306
       ],
       "flags": {},
-      "order": 75,
+      "order": 73,
       "mode": 2,
       "inputs": [
         {
@@ -3066,7 +3066,7 @@
         "Node name for S&R": "XlabsSampler"
       },
       "widgets_values": [
-        875780221412152,
+        1033096031378622,
         "randomize",
         10,
         5,
@@ -3995,13 +3995,13 @@
         248.2335662841797
       ],
       "flags": {},
-      "order": 70,
+      "order": 79,
       "mode": 2,
       "inputs": [
         {
           "name": "images",
           "type": "IMAGE",
-          "link": 117
+          "link": 677
         }
       ],
       "outputs": [],
@@ -4022,13 +4022,13 @@
         253.68856811523438
       ],
       "flags": {},
-      "order": 71,
+      "order": 80,
       "mode": 2,
       "inputs": [
         {
           "name": "text",
           "type": "STRING",
-          "link": 120,
+          "link": 678,
           "widget": {
             "name": "text"
           }
@@ -4052,75 +4052,6 @@
       ]
     },
     {
-      "id": 8,
-      "type": "DPImageColorAnalyzer",
-      "pos": [
-        -1410.5142822265625,
-        -3659.105712890625
-      ],
-      "size": [
-        315,
-        446
-      ],
-      "flags": {},
-      "order": 30,
-      "mode": 2,
-      "inputs": [
-        {
-          "name": "pipe_input",
-          "type": "IMAGE",
-          "link": null,
-          "shape": 7
-        }
-      ],
-      "outputs": [
-        {
-          "name": "color_panels",
-          "type": "IMAGE",
-          "links": [
-            117
-          ],
-          "slot_index": 0
-        },
-        {
-          "name": "color_names",
-          "type": "STRING",
-          "links": [],
-          "slot_index": 1
-        },
-        {
-          "name": "color_theme",
-          "type": "STRING",
-          "links": [],
-          "slot_index": 2
-        },
-        {
-          "name": "detailed_info",
-          "type": "STRING",
-          "links": [
-            120
-          ],
-          "slot_index": 3
-        },
-        {
-          "name": "hex_values",
-          "type": "STRING",
-          "links": [],
-          "slot_index": 4
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "DPImageColorAnalyzer"
-      },
-      "widgets_values": [
-        "big_green_chameleon_head_1024x1024_00001_.png",
-        16,
-        512,
-        512,
-        "image"
-      ]
-    },
-    {
       "id": 17,
       "type": "DP_Random_Char",
       "pos": [
@@ -4132,7 +4063,7 @@
         106
       ],
       "flags": {},
-      "order": 31,
+      "order": 30,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -4166,7 +4097,7 @@
         106
       ],
       "flags": {},
-      "order": 32,
+      "order": 31,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -4200,7 +4131,7 @@
         106
       ],
       "flags": {},
-      "order": 33,
+      "order": 32,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -4234,7 +4165,7 @@
         730
       ],
       "flags": {},
-      "order": 34,
+      "order": 33,
       "mode": 2,
       "inputs": [
         {
@@ -4346,7 +4277,7 @@
         335.9589538574219
       ],
       "flags": {},
-      "order": 35,
+      "order": 34,
       "mode": 2,
       "inputs": [],
       "outputs": [
@@ -4384,7 +4315,7 @@
         130
       ],
       "flags": {},
-      "order": 76,
+      "order": 74,
       "mode": 2,
       "inputs": [
         {
@@ -4451,7 +4382,7 @@
         374.04217529296875
       ],
       "flags": {},
-      "order": 36,
+      "order": 35,
       "mode": 2,
       "inputs": [],
       "outputs": [
@@ -4514,7 +4445,7 @@
         150.21632385253906
       ],
       "flags": {},
-      "order": 77,
+      "order": 75,
       "mode": 2,
       "inputs": [
         {
@@ -4555,7 +4486,7 @@
         150.21632385253906
       ],
       "flags": {},
-      "order": 78,
+      "order": 76,
       "mode": 2,
       "inputs": [
         {
@@ -4596,7 +4527,7 @@
         150.21632385253906
       ],
       "flags": {},
-      "order": 80,
+      "order": 78,
       "mode": 2,
       "inputs": [
         {
@@ -4637,7 +4568,7 @@
         150.21632385253906
       ],
       "flags": {},
-      "order": 79,
+      "order": 77,
       "mode": 2,
       "inputs": [
         {
@@ -4747,7 +4678,73 @@
       },
       "widgets_values": [
         "",
-        "F:\\BestComfyui_2026\\comfyui\\ComfyUI\\output\\folder_name\nfile name: my_file_name.png\ndimensions WxH: 1024x1024\nsize: 1.4 mb"
+        "F:\\BestComfyui_2026\\comfyui\\ComfyUI\\output\\folder_name\nfile name: my_file_name_0001.png\ndimensions WxH: 1024x1024\nsize: 1.4 mb"
+      ]
+    },
+    {
+      "id": 461,
+      "type": "DP_Image_Color_Analyzer",
+      "pos": [
+        -1401.4918212890625,
+        -3650.807373046875
+      ],
+      "size": [
+        315,
+        446
+      ],
+      "flags": {},
+      "order": 36,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pipe_input",
+          "type": "IMAGE",
+          "link": null,
+          "shape": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "color_panels",
+          "type": "IMAGE",
+          "links": [
+            677
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "color_names",
+          "type": "STRING",
+          "links": null
+        },
+        {
+          "name": "color_theme",
+          "type": "STRING",
+          "links": null
+        },
+        {
+          "name": "detailed_info",
+          "type": "STRING",
+          "links": [
+            678
+          ],
+          "slot_index": 3
+        },
+        {
+          "name": "hex_values",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DP_Image_Color_Analyzer"
+      },
+      "widgets_values": [
+        "000000.jpg",
+        5,
+        512,
+        512,
+        "image"
       ]
     }
   ],
@@ -4775,22 +4772,6 @@
       23,
       1,
       "IMAGE"
-    ],
-    [
-      117,
-      8,
-      0,
-      114,
-      0,
-      "IMAGE"
-    ],
-    [
-      120,
-      8,
-      3,
-      116,
-      0,
-      "STRING"
     ],
     [
       129,
@@ -5431,6 +5412,22 @@
       108,
       0,
       "STRING"
+    ],
+    [
+      677,
+      461,
+      0,
+      114,
+      0,
+      "IMAGE"
+    ],
+    [
+      678,
+      461,
+      3,
+      116,
+      0,
+      "STRING"
     ]
   ],
   "groups": [
@@ -5672,10 +5669,10 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.2853116706110006,
+      "scale": 0.3452271214393107,
       "offset": [
-        5420.902443597796,
-        6733.16008462899
+        3753.7585842893805,
+        4823.247618072828
       ]
     },
     "ue_links": []
