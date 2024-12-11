@@ -21,8 +21,8 @@ class DP_smart_saver:
             "required": {
                 "mode": (["SAVE_IMAGE", "PREVIEW_ONLY"], {"default": "SAVE_IMAGE"}),
                 "image": ("IMAGE",),
-                "folder_name": ("STRING", {"default": ""}),
-                "file_name": ("STRING", {"default": "comfyUiImage"}),
+                "folder_name": ("STRING", {"default": "folder_name"}),
+                "file_name": ("STRING", {"default": "my_file_name"}),
                 "extra_text": ("STRING", {"default": ""}),
                 "add_size_to_name": ("BOOLEAN", {"default": False}),
                 "save_caption": ("BOOLEAN", {"default": False}),
