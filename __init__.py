@@ -3,7 +3,7 @@ from .nodes.dp_broken_token import DPBrokenToken
 from .nodes.dp_clean_prompt import DP_clean_prompt
 from .nodes.dp_create_simple_json import DP_create_json_file
 from .nodes.dp_fast_slow_motion import DP_FastSlowMotion
-from .nodes.dp_image_color_analyzer import DPImageColorAnalyzer
+from .nodes.dp_image_color_analyzer import DP_Image_Color_Analyzer
 from .nodes.dp_image_empty_latent_switch import DP_Image_Empty_Latent_Switch
 from .nodes.dp_load_image_kit import DP_Image_Loader_Medium, DP_Image_Loader_Big, DP_Image_Loader_Small
 from .nodes.dp_multi_styler import DpPromptStyler
@@ -31,7 +31,7 @@ NODE_CLASS_MAPPINGS = {
     "DP_Big_Letters": DP_Big_Letters,
     "DP_Image_Empty_Latent_Switch": DP_Image_Empty_Latent_Switch,
     "DP_Smart_Saver": DP_smart_saver,
-    "DPImageColorAnalyzer": DPImageColorAnalyzer,
+    "DP_Image_Color_Analyzer": DP_Image_Color_Analyzer,
 
     # DP/animation category
     "DP_Logo_Animator": DPLogoAnimator,
@@ -74,7 +74,7 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "DP_Big_Letters": "DP Big Letters",
     "DP_Image_Empty_Latent_Switch": "DP Image/Empty Latent Switch",
     "DP_Smart_Saver": "DP Smart Image Saver",
-    "DPImageColorAnalyzer": "DP Image Color Analyzer",
+    "DP_Image_Color_Analyzer": "DP Image Color Analyzer",
 
     # DP/animation category
     "DP_Logo_Animator": "DP Logo Animator",
