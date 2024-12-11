@@ -4,36 +4,49 @@ A collection of custom nodes for ComfyUI focused on animation, image processing,
 
 ## Features
 
-### Animation & Video
-- **Animation Calculator (5 Inputs)**: Complex animation timing calculator
-- **Fast/Slow Motion**: Control video playback speed
-- **Video Effects**: 
-  - Sender/Receiver system for effect application
-  - Flicker effects
-  - Transition effects
+Node Categories
+🎬 Animation & Video
 
-### Image Processing
-- **Big Letters**: Create text-based images
-- **Color Analyzer**: Analyze and generate color palettes
-- **Logo Animator**: Create animated logos
-- **Smart Image Saver**: Enhanced image saving with metadata
-- **Image Effects**: Various image processing effects including:
-  - Sepia
-  - Vignette
-  - Edge detection
-  - Sketch effects
-  - Relief shadows
-  - And more...
+DP_Animation_Calculator_5Inputs: Advanced calculator for complex animation timing with 5 input parameters for precise control over animation sequences
+DP_Fast_Slow_Motion: Control node for adjusting video playback speed, enabling dynamic fast-forward and slow-motion effects
+DP_Video_Effect_Sender & DP_Video_Effect_Receiver: A paired system for applying and managing video effects across workflow nodes
+DP_Video_Flicker: Creates customizable flicker effects for video sequences, useful for stylistic and atmospheric effects
+DP_Video_Transition: Handles smooth transitions between video sequences with multiple transition effect options
+DP_Logo_Animator: Specialized node for creating animated logo sequences with customizable parameters
 
-### Utility Nodes
-- **Random Min/Max**: Generate random numbers with control
-- **Random Characters**: Generate random characters/strings
-- **Aspect Ratio Picker**: Easy aspect ratio selection
-- **Clean Prompt**: Clean and format prompt text
-- **Broken Token**: Analyze and split Flux prompts
-- **Quick Model Link**: Manage symbolic links for models
-- **Multi Styler**: Apply multiple styles to prompts
-- **Zero-One Floats**: Simple float input/output controls
+🖼️ Image Processing
+
+DP_Image_Loader_Big: Optimized loader for high-resolution images with enhanced memory management
+DP_Image_Loader_Medium: Balanced image loader for standard resolution images with memory optimization
+DP_Image_Loader_Small: Efficient loader for smaller images with fast processing capabilities
+DP_Big_Letters: Generates large-scale text-based images with customizable properties
+DP_Image_Empty_Latent_Switch: Switches between image inputs and empty latent space for flexible workflow control
+DP_Smart_Saver: Advanced image saving node with metadata handling and automatic formatting options
+DPImageColorAnalyzer: Analyzes image color composition and generates color palettes
+DP_Image_Slide_Show: Creates image sequences with customizable transition effects
+
+📝 Text Processing
+
+DP_Prompt_Styler: Applies predefined styles to text prompts for consistent output
+DP_Clean_Prompt: Sanitizes and formats prompt text for optimal processing
+DP_Broken_Token: Analyzes and splits complex prompts into manageable tokens
+DP_Random_Char: Generates random characters based on specified parameters
+DP_Crazy_Prompt: Creates varied and dynamic prompt combinations for experimental outputs
+
+🛠️ Utility Nodes
+
+DP_Float_0_1: Simple float value control within 0-1 range
+DP_2Floats_0_1: Dual float value control system within 0-1 range
+DP_3Floats_0_1: Triple float value control system within 0-1 range
+DP_Create_JSON: Generates and manages JSON files for workflow data
+DP_Quick_Link: Creates and manages symbolic links for model files
+DP_Aspect_Ratio: Provides easy selection and management of image aspect ratios
+DP_Random_MinMax: Generates random values within specified minimum and maximum ranges
+
+🔄 LoRA Loading
+
+DP_Five_Lora: Loads and manages up to five LoRA models simultaneously
+DP_Five_Lora_Random: Randomly selects and loads LoRA models from a specified pool, supports up to five simultaneous models
 
 ## Installation
 
