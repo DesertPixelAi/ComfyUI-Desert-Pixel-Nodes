@@ -1,0 +1,27 @@
+# Desert Pixel Nodes Documentation
+## Animation Nodes
+- [Animation Calculator](animation/animation_calculator.md)
+- [Image Slide Show](animation/image_slide_show.md)
+- [Logo Animator](animation/logo_animator.md)
+- [Video Effects](animation/video_effects_sender_receiver.md)
+- [Video Flicker](animation/video_flicker.md)
+- [Video Transition](animation/video_transition.md)
+- [Fast/Slow Motion](animation/fast_slow_motion.md)
+## Image Processing Nodes
+- [Smart Saver](image_processing/smart_saver.md)
+- [Big Letters](image_processing/big_letters.md)
+- [Color Analyzer](image_processing/color_analyzer.md)
+- [Image Loaders](image_processing/image_loaders.md)
+## Utility Nodes
+- [Broken Token](utility/broken_token.md)
+- [Clean Prompt](utility/clean_prompt.md)
+- [Create JSON](utility/create_json.md)
+- [Crazy Prompt](utility/crazy_prompt.md)
+- [LoRA Loaders](utility/lora_loaders.md)
+- [Float Controls](utility/float_controls.md)
+- [Empty Latent Switch](utility/empty_latent_switch.md)
+- [Prompt Styler](utility/prompt_styler.md)
+- [Quick Link](utility/quick_link.md)
+- [Random Character](utility/random_char.md)
+- [Random Min/Max](utility/random_minmax.md)
+- [Aspect Ratio](utility/aspect_ratio.md) 
