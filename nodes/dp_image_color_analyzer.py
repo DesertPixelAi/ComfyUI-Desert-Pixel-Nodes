@@ -237,24 +237,18 @@ class DP_Image_Color_Analyzer:
         try:
             if not colors:
                 return "undefined theme"
-                
-            main_colors = [color.lower() for color in colors]
+
+            # Remove duplicates while preserving order
+            unique_colors = []
+            seen = set()
+            for color in colors:
+                if color.lower() not in seen:
+                    unique_colors.append(color)
+                    seen.add(color.lower())
             
-            # Find matching theme
-            for category, themes in self.theme_data.items():
-                for theme_name, theme_info in themes.items():
-                    if not isinstance(theme_info, dict):
-                        continue
-                        
-                    compatible_colors = theme_info.get('compatible_colors', [])
-                    matching_colors = sum(1 for mc in main_colors 
-                                       for cc in compatible_colors 
-                                       if cc.lower() in mc.lower())
-                                       
-                    if matching_colors >= len(main_colors) // 2:
-                        return theme_info['sd_prompt']
+            # Join colors with "and" and append "color palette"
+            return " and ".join(unique_colors) + " color palette"
             
-            return self.generate_basic_theme_description(colors, percentages)
         except Exception as e:
             print(f"Error detecting theme: {e}")
             return "undefined theme"
@@ -385,9 +379,17 @@ class DP_Image_Color_Analyzer:
             # Generate theme
             theme = self.detect_color_theme(sd_colors, percentages)
             
+            # Remove duplicates while preserving order for color_names
+            unique_color_names = []
+            seen_names = set()
+            for name in color_names:
+                if name.lower() not in seen_names:
+                    unique_color_names.append(name)
+                    seen_names.add(name.lower())
+
             return (
                 final_panels,
-                "\n".join(color_names),
+                "\n".join(unique_color_names),
                 theme,
                 "\n".join(detailed_info),
                 "\n".join(hex_values)
