@@ -120,9 +120,6 @@ ComfyUI node for creating image sequences with blend mode transitions. Ideal for
   
 *for seamless loops, set the last Image_startPoint same as Total_Frames and use identical first/last images
 
-
-*for seamless loops, set the last Image_startPoint same as Total_Frames and use identical first/last images
-
 ## DP_Logo_Animator
 ![DP_Logo_Animator](https://github.com/user-attachments/assets/d56d6536-ea7a-4819-98b6-cc5c4b19f5f3)
 
