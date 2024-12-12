@@ -30,7 +30,7 @@ Clone this repository into your ComfyUI custom_nodes folder:
 git clone [your-repo-url] custom_nodes/desert-pixel-nodes
 ```
 
-For detailed node documentation, see [DOCUMENTATION.md](DOCUMENTATION.md)
+For detailed node documentation, see [Documentation](./nodes_documentation/index.md)
 
 ## Nodes Overview
 
