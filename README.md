@@ -55,10 +55,10 @@ Full nodes list:
 ## DP_Video_Transition
 ![DP_Video_Transition](https://github.com/user-attachments/assets/67234ca8-2496-405b-a1a7-3211fb225887)
 
-DP_Smart_Saver
+## DP_Smart_Saver
 ![DP_Smart_Saver](https://github.com/user-attachments/assets/704ed83f-daa9-46aa-aadc-7e89a3943010)
 
-DP_Big_Letters
+## DP_Big_Letters
 ![DP_Big_Letters](https://github.com/user-attachments/assets/c40205d0-6327-47f3-b9f0-29fb3d048ef8)
 
 ## DP_Broken_Token
@@ -91,10 +91,10 @@ DP_Big_Letters
 ## DP_Image_Empty_Latent_Switch
 ![DP_Image_Empty_Latent_Switch](https://github.com/user-attachments/assets/04c21510-a1d2-41d6-901c-ad70dd4f8ec6)
 
-DP_Image_Loader_Small
+## DP_Image_Loader_Small
 ![DP_Image_Loader_Small](https://github.com/user-attachments/assets/14545cb5-6868-4446-b6ec-711bed60c956)
 
-DP_Image_Loader_Medium
+## DP_Image_Loader_Medium
 ![DP_Image_Loader_Medium](https://github.com/user-attachments/assets/5ab0c438-8841-4e1f-b7e2-23ac449d7475)
 
 ## DP_Image_Loader_Big
