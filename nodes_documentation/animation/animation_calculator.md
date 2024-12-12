@@ -1,4 +1,5 @@
 # DP Animation Calculator (5 Inputs)
+![DP_Animation_Calculator_5Inputs_detailed](https://github.com/user-attachments/assets/fa45806e-76f5-4d25-a0a5-8b6d494d9f90)
 ## Description
 animation calculator helper for switch between images/styles with img2video & video2video with animatediff, helps to create timing data for prompt schedule, fade masks, and ip adapter batch.
 each image has keyFrame start point and a prompt text, but you can use it also without image input to generate schedule prompt or fade masks timing.
