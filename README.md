@@ -64,7 +64,8 @@ Creates image sequences with customizable blend mode transitions. Supports up to
 Creates looping animations for logos with smooth scale effects and automatic background handling. Features customizable minimum shrink size and background detection, ideal for creating professional logo animations for video content. [doc DP Logo Animator](./nodes_documentation/animation/logo_animator.md)
 
 ### DP_Video_Effect_Sender & DP_Video_Effect_Receiver
-<img src="https://github.com/user-attachments/assets/9b2ef2f5-0888-42c8-8c59-978bd2f43b93" alt="DP_Video_Effect_Sender_reciver" style="float: left; margin-right: 10px;"/>
+<img src="https://github.com/user-attachments/assets/d6fb3fb7-f58a-452c-9454-1d23092e5461" alt="DP_Video_Effect_Sender_reciver" style="float: left; margin-right: 10px;"/>
+
 
 A paired system for applying effects to specific frames in video sequences. The Sender extracts frames in a pattern for processing, while the Receiver places the processed frames back into their original positions. [doc DP Video Effects](./nodes_documentation/animation/video_effects_sender_receiver.md)
 
