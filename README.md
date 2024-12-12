@@ -37,7 +37,73 @@ A collection of custom nodes for ComfyUI focused on animation, image processing,
 
 Full nodes list:
 
+Here's the formatted version for GitHub markdown:
+
 ## DP_Animation_Calculator_5Inputs
+Animation calculator helper for switching between images/styles with img2video & video2video using AnimateDiff. Creates timing data for prompt scheduling, fade masks, and IP Adapter batch processing.
+
+Each image has a keyframe start point and associated prompt text. The node can be used with or without image inputs to generate scheduling prompts or fade mask timing.
+
+### Inputs:
+- **Image Inputs (Optional, 5 slots)**
+  - When connected, creates an image batch sized to Total_Frames for IP Adapter
+  - Includes crossfade transitions controlled by Transition_Frames parameter
+
+- **Total_Frames** (INT)
+  - Defines total number of frames to process
+  - Default: 96, Range: 16-2000
+
+- **Image_startPoint_XX** (INT, XX: 01-05)
+  - Keyframe starting point for each image/style
+  - Image_01_startPoint fixed at 0
+  - Each keyframe must be larger than previous ones
+  - Range: 0-1000
+
+- **Prompt_Image_XX** (STRING, XX: 01-05)
+  - Prompt text for each image/keyframe
+  - Used in prompt scheduling
+
+- **Transition_Frames** (INT)
+  - Controls transition length between images
+  - Affects fade mask timing and image batch output
+  - Does not affect prompt timing
+  - Default: 8, Range: 0-32, Step: 4
+  - Creates pre & post transition points:
+    - Pre-transition: Transition_Frames/2 frames before keyframe
+    - Post-transition: Transition_Frames/2 frames after keyframe
+  - Allows control of ControlNet & IP Adapter strength during transitions
+
+- **Fade Mask Controls** (6x FLOAT)
+  - fade_mask_XX_Min (XX: 01-03)
+    - Minimum weight for fade mask
+    - Range: 0.0-1.0, Step: 0.1
+  - fade_mask_XX_Max (XX: 01-03)
+    - Maximum weight for fade mask
+    - Range: 0.0-1.0, Step: 0.1
+  - Set Min > Max to invert mask
+
+### Outputs:
+- **Image_Batch_Output** (IMAGE)
+  - Generated when images are connected
+  - Batch sized to Total_Frames
+  - Each image spans its keyframe duration
+  - Includes crossfade transitions between images
+
+- **Text_Prompt_Timing** (STRING)
+  - Formatted timing string for prompt schedule node
+
+- **fade_mask_timing_XX** (3x STRING, XX: 01-03)
+  - Formatted timing strings for fade mask advanced node
+  - Controls transition strength and mask behavior
+
+### Creating Loops:
+For img2video loops:
+1. Set last Image_startPoint equal to Total_Frames
+2. Use identical first and last Prompt_Image and Image inputs
+
+### Note:
+Transition system uses three control points (Pre-transition, Keyframe, Post-transition) for smooth blending of ControlNet and IP Adapter weights during transitions.
+    
 ![DP_Animation_Calculator_5Inputs_detailed](https://github.com/user-attachments/assets/fa45806e-76f5-4d25-a0a5-8b6d494d9f90)
 
 ## DP_Image_Slide_Show
