@@ -113,8 +113,7 @@ ComfyUI node for creating image sequences with blend mode transitions. Ideal for
   - INT - Total_Frames - how many frames will be processed (16-2000)
   - 5*INT - Image_startPoint 01-05 - the start key frame for each image, image_01_startPoint is set to 0. *notice that each keyFrame has to be bigger than the previous ones
   - INT - Transition_Frames - the number of frames for transition between images (0-32, step: 4)
-  - COMBO - blend_mode - transition effect between images:
-    - Normal Blend - Dissolve  - Overlay - Multiply - Screen - Soft Light
+  - COMBO - blend_mode - transition effect between images: [Normal Blend - Dissolve - Overlay - Multiply - Screen - Soft Light]
 
 - **Output:**
   - Image - Image_Batch_Output - exports image batch in the size of Total_Frames, with selected blend mode transitions between images
