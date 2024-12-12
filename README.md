@@ -165,7 +165,7 @@ Cleans and formats prompt text for consistent results.
 Creates JSON files from structured data with customizable formatting.
 
 ### DP_Crazy_Prompt
-<img src="https://github.com/user-attachments/assets/b25e622d-151a-4a9f-9275-86398d7ea7f3" alt="DP_Crazy_Prompt" style="float: left; margin-right: 10px;"/>
+<img src="https://github.com/user-attachments/assets/189e61b6-336a-4861-8959-3782a699b522" alt="DP_Crazy_Prompt" style="float: left; margin-right: 10px;"/>
 
 Generates creative prompt combinations from predefined categories.
 
