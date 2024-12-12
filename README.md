@@ -45,8 +45,17 @@ DP_Image_Slide_Show
 DP_Logo_Animator
 ![DP_Logo_Animator](https://github.com/user-attachments/assets/d56d6536-ea7a-4819-98b6-cc5c4b19f5f3)
 
-DP_Aspect_Ratio
-![DP_Aspect_Ratio_detailed](https://github.com/user-attachments/assets/df6f4db1-2b2c-4f59-90d2-23d04b5293a3)
+DP_Video_Effect_Sender & DP_Video_Effect_Receiver
+![DP_Video_Effect_Sender_reciver](https://github.com/user-attachments/assets/9b2ef2f5-0888-42c8-8c59-978bd2f43b93)
+
+DP_Video_Flicker
+![DP_Video_Flicker](https://github.com/user-attachments/assets/ffe900e0-2cac-445e-8b39-64e77d6f6081)
+
+DP_Video_Transition
+![DP_Video_Transition](https://github.com/user-attachments/assets/67234ca8-2496-405b-a1a7-3211fb225887)
+
+DP_Smart_Saver
+![DP_Smart_Saver](https://github.com/user-attachments/assets/704ed83f-daa9-46aa-aadc-7e89a3943010)
 
 DP_Big_Letters
 ![DP_Big_Letters](https://github.com/user-attachments/assets/c40205d0-6327-47f3-b9f0-29fb3d048ef8)
@@ -57,19 +66,23 @@ DP_Broken_Token
 DP_Clean_Prompt
 ![DP_Clean_Prompt](https://github.com/user-attachments/assets/678363ab-5a2d-473f-9132-2487152f588b)
 
-DP_Create_JSON
+DP_Create_JSON:
+
 ![DP_Create_JSON](https://github.com/user-attachments/assets/e3c210b5-d718-4b8b-8e9b-c0963497b22b)
 
-DP_Crazy_Prompt
+DP_Crazy_Prompt:
+
 ![DPImageColorAnalyzer](https://github.com/user-attachments/assets/b25e622d-151a-4a9f-9275-86398d7ea7f3)
 
 DP_Image_Color_Analyzer
 ![DPImageColorAnalyzer](https://github.com/user-attachments/assets/bf90ffac-3925-40ed-9873-2ea3a7d42d1c)
 
-DP_Fast_Slow_Motion
+DP_Fast_Slow_Motion:
+
 ![DP_Fast_Slow_Motion](https://github.com/user-attachments/assets/b64a26ea-54ad-421a-a8bf-a573389fbae9)
 
-DP_Five_Lora
+DP_Five_Lora:
+
 ![DP_Five_Lora](https://github.com/user-attachments/assets/7de97607-c5cc-4186-a9c0-250ee55548b4)
 
 DP_Five_Lora_Random
@@ -102,17 +115,8 @@ DP_Random_Char
 DP_Random_MinMax
 ![DP_Random_MinMax](https://github.com/user-attachments/assets/99bb875f-3d9b-462c-b781-0c179077af6c)
 
-DP_Smart_Saver
-![DP_Smart_Saver](https://github.com/user-attachments/assets/704ed83f-daa9-46aa-aadc-7e89a3943010)
-
-DP_Video_Effect_Sender & DP_Video_Effect_Receiver
-![DP_Video_Effect_Sender_reciver](https://github.com/user-attachments/assets/9b2ef2f5-0888-42c8-8c59-978bd2f43b93)
-
-DP_Video_Flicker
-![DP_Video_Flicker](https://github.com/user-attachments/assets/ffe900e0-2cac-445e-8b39-64e77d6f6081)
-
-DP_Video_Transition
-![DP_Video_Transition](https://github.com/user-attachments/assets/67234ca8-2496-405b-a1a7-3211fb225887)
+DP_Aspect_Ratio
+![DP_Aspect_Ratio_detailed](https://github.com/user-attachments/assets/df6f4db1-2b2c-4f59-90d2-23d04b5293a3)
 
 ## Installation
 
