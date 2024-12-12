@@ -23,5 +23,3 @@ each image has keyFrame start point and a prompt text, but you can use it also w
 - 3*String - fade_mask_timing 01-03 - formatted string for fade mask advanced node.
 
 *for img2video loop, set the last Image_startPoint same as Total_Frames, and the last PromptImage+Image same as the first.
-
-## Example Usage 
