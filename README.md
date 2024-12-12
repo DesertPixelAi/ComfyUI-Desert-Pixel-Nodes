@@ -51,129 +51,129 @@ For detailed node documentation, see [Documentation](./nodes_documentation/index
 ### DP_Animation_Calculator_5Inputs
 <img src="https://github.com/user-attachments/assets/fa45806e-76f5-4d25-a0a5-8b6d494d9f90" alt="DP_Animation_Calculator_5Inputs_detailed" style="float: left; margin-right: 10px;"/>
 
-A utility node for managing animations with image transitions and prompt scheduling. Helps create timing data for prompt schedules, fade masks, and IP adapter batches. Can generate timing data with or without image inputs, perfect for keyframe-based animations.
+A utility node for managing animations with image transitions and prompt scheduling. Helps create timing data for prompt schedules, fade masks, and IP adapter batches. Can generate timing data with or without image inputs, perfect for keyframe-based animations. [doc DP Animation Calculator](./nodes_documentation/animation/animation_calculator.md)
 
 ### DP_Image_Slide_Show
 <img src="https://github.com/user-attachments/assets/c3001c1e-4d57-46fd-9d0f-4a62109a46dd" alt="DP_Image_Slide_Show" style="float: left; margin-right: 10px;"/>
 
-Creates image sequences with customizable blend mode transitions. Supports up to 5 images with various blend modes including Normal Blend, Dissolve, Overlay, Multiply, Screen, and Soft Light. Perfect for creating GIFs and videos with smooth transitions.
+Creates image sequences with customizable blend mode transitions. Supports up to 5 images with various blend modes including Normal Blend, Dissolve, Overlay, Multiply, Screen, and Soft Light. Perfect for creating GIFs and videos with smooth transitions. [doc DP Image Slide Show](./nodes_documentation/animation/image_slide_show.md)
 
 ### DP_Logo_Animator
 <img src="https://github.com/user-attachments/assets/d56d6536-ea7a-4819-98b6-cc5c4b19f5f3" alt="DP_Logo_Animator" style="float: left; margin-right: 10px;"/>
 
-Creates looping animations for logos with smooth scale effects and automatic background handling. Features customizable minimum shrink size and background detection, ideal for creating professional logo animations for video content.
+Creates looping animations for logos with smooth scale effects and automatic background handling. Features customizable minimum shrink size and background detection, ideal for creating professional logo animations for video content. [doc DP Logo Animator](./nodes_documentation/animation/logo_animator.md)
 
 ### DP_Video_Effect_Sender & DP_Video_Effect_Receiver
 <img src="https://github.com/user-attachments/assets/9b2ef2f5-0888-42c8-8c59-978bd2f43b93" alt="DP_Video_Effect_Sender_reciver" style="float: left; margin-right: 10px;"/>
 
-A paired system for applying effects to specific frames in video sequences. The Sender extracts frames in a pattern for processing, while the Receiver places the processed frames back into their original positions.
+A paired system for applying effects to specific frames in video sequences. The Sender extracts frames in a pattern for processing, while the Receiver places the processed frames back into their original positions. [doc DP Video Effects](./nodes_documentation/animation/video_effects_sender_receiver.md)
 
 ### DP_Video_Flicker
 <img src="https://github.com/user-attachments/assets/ffe900e0-2cac-445e-8b39-64e77d6f6081" alt="DP_Video_Flicker" style="float: left; margin-right: 10px;"/>
 
-Creates customizable flicker effects for video sequences with up to three flicker points. Features adjustable colors, sizes, and speeds for each flicker effect, perfect for creating dynamic video transitions.
+Creates customizable flicker effects for video sequences with up to three flicker points. Features adjustable colors, sizes, and speeds for each flicker effect, perfect for creating dynamic video transitions. [doc DP Video Flicker](./nodes_documentation/animation/video_flicker.md)
 
 ### DP_Video_Transition
 <img src="https://github.com/user-attachments/assets/67234ca8-2496-405b-a1a7-3211fb225887" alt="DP_Video_Transition" style="float: left; margin-right: 10px;"/>
 
-Handles video transitions with multiple blend modes and timing controls. Creates smooth transitions between two video sequences with customizable duration and blend effects.
+Handles video transitions with multiple blend modes and timing controls. Creates smooth transitions between two video sequences with customizable duration and blend effects. [doc DP Video Transition](./nodes_documentation/animation/video_transition.md)
 
 ### DP_Smart_Saver
 <img src="https://github.com/user-attachments/assets/704ed83f-daa9-46aa-aadc-7e89a3943010" alt="DP_Smart_Saver" style="float: left; margin-right: 10px;"/>
 
-Enhanced image saving with metadata preservation, customizable folder/file naming, and caption text file support. Features preview mode and optional dimension inclusion in filenames.
+Enhanced image saving with metadata preservation, customizable folder/file naming, and caption text file support. Features preview mode and optional dimension inclusion in filenames. [doc DP Smart Saver](./nodes_documentation/image_processing/smart_saver.md)
 
 ### DP_Big_Letters
 <img src="https://github.com/user-attachments/assets/c40205d0-6327-47f3-b9f0-29fb3d048ef8" alt="DP_Big_Letters" style="float: left; margin-right: 10px;"/>
 
-Creates text-based images by splitting text into individual letters. Features customizable size, padding, font, color, and background settings for each letter.
+Creates text-based images by splitting text into individual letters. Features customizable size, padding, font, color, and background settings for each letter. [doc DP Big Letters](./nodes_documentation/image_processing/big_letters.md)
 
 ### DP_Broken_Token
 <img src="https://github.com/user-attachments/assets/f9bfacd1-1b87-4225-ab67-12d5804ef2aa" alt="DP_Broken_Token" style="float: left; margin-right: 10px;"/>
 
-Analyzes and splits Flux prompts based on user-defined token counts. Outputs multiple text parts with configurable maximum token limits.
+Analyzes and splits Flux prompts based on user-defined token counts. Outputs multiple text parts with configurable maximum token limits. [doc DP Broken Token](./nodes_documentation/utility/broken_token.md)
 
 ### DP_Clean_Prompt
 <img src="https://github.com/user-attachments/assets/678363ab-5a2d-473f-9132-2487152f588b" alt="DP_Clean_Prompt" style="float: left; margin-right: 10px;"/>
 
-Cleans and formats prompt text by removing unnecessary characters and fixing formatting issues for consistent results.
+Cleans and formats prompt text by removing unnecessary characters and fixing formatting issues for consistent results. [doc DP Clean Prompt](./nodes_documentation/utility/clean_prompt.md)
 
 ### DP_Create_JSON
 <img src="https://github.com/user-attachments/assets/e3c210b5-d718-4b8b-8e9b-c0963497b22b" alt="DP_Create_JSON" style="float: left; margin-right: 10px;"/>
 
-Creates JSON files from structured data with customizable formatting, file naming, and save options. Supports data separation and file overwrite controls.
+Creates JSON files from structured data with customizable formatting, file naming, and save options. Supports data separation and file overwrite controls. [doc DP Create JSON](./nodes_documentation/utility/create_json.md)
 
 ### DP_Crazy_Prompt
 <img src="https://github.com/user-attachments/assets/d5d970b6-0db3-4f02-9769-194807547d52" alt="DP_Crazy_Prompt" style="float: left; margin-right: 10px;"/>
 
-Generates creative prompt combinations from predefined categories including styles, subjects, composition, lighting, color palettes, and atmospheres.
+Generates creative prompt combinations from predefined categories including styles, subjects, composition, lighting, color palettes, and atmospheres. [doc DP Crazy Prompt](./nodes_documentation/utility/crazy_prompt.md)
 
 ### DP_Image_Color_Analyzer
 <img src="https://github.com/user-attachments/assets/bf90ffac-3925-40ed-9873-2ea3a7d42d1c" alt="DP_Image_Color_Analyzer" style="float: left; margin-right: 10px;"/>
 
-Analyzes image colors and generates detailed color descriptions including RGB values, hex codes, and overall theme detection. Creates color palettes with customizable number of colors.
+Analyzes image colors and generates detailed color descriptions including RGB values, hex codes, and overall theme detection. Creates color palettes with customizable number of colors. [doc DP Color Analyzer](./nodes_documentation/image_processing/color_analyzer.md)
 
 ### DP_Fast_Slow_Motion
 <img src="https://github.com/user-attachments/assets/b64a26ea-54ad-421a-a8bf-a573389fbae9" alt="DP_Fast_Slow_Motion" style="float: left; margin-right: 10px;"/>
 
-Controls video playback speed by manipulating frame sequences. Features adjustable speed factors for creating fast or slow motion effects within specified frame ranges.
+Controls video playback speed by manipulating frame sequences. Features adjustable speed factors for creating fast or slow motion effects within specified frame ranges. [doc DP Fast Slow Motion](./nodes_documentation/animation/fast_slow_motion.md)
 
 ### DP_Five_Lora
 <img src="https://github.com/user-attachments/assets/7de97607-c5cc-4186-a9c0-250ee55548b4" alt="DP_Five_Lora" style="float: left; margin-right: 10px;"/>
 
-Loads up to five LoRA models with individual strength control. Provides detailed information about applied LoRAs and their settings.
+Loads up to five LoRA models with individual strength control. Provides detailed information about applied LoRAs and their settings. [doc DP LoRA Loaders](./nodes_documentation/utility/lora_loaders.md)
 
 ### DP_Five_Lora_Random
 <img src="https://github.com/user-attachments/assets/1a0fcc29-de16-4efc-bc96-f3d51e94352a" alt="DP_Five_Lora_Random" style="float: left; margin-right: 10px;"/>
 
-Loads LoRA models with randomized strength values within specified ranges. Features individual min/max controls for each LoRA's strength.
+Loads LoRA models with randomized strength values within specified ranges. Features individual min/max controls for each LoRA's strength. [doc DP LoRA Loaders](./nodes_documentation/utility/lora_loaders.md)
 
 ### DP_Float_0_1 | DP_2Floats_0_1 | DP_3Floats_0_1
 <img src="https://github.com/user-attachments/assets/64a249c6-4c48-4dcf-a4ba-ddcb6e70736c" alt="DP_Float_0_1" style="float: left; margin-right: 10px;"/>
 
-Simple float input/output controls with customizable ranges, defaults, and slider appearance. Available in single, double, and triple float variants.
+Simple float input/output controls with customizable ranges, defaults, and slider appearance. Available in single, double, and triple float variants. [doc DP Float Controls](./nodes_documentation/utility/float_controls.md)
 
 ### DP_Image_Empty_Latent_Switch
 <img src="https://github.com/user-attachments/assets/04c21510-a1d2-41d6-901c-ad70dd4f8ec6" alt="DP_Image_Empty_Latent_Switch" style="float: left; margin-right: 10px;"/>
 
-Switches between empty latent (for txt2img) and up to 5 input images (for img2img). Automatically adjusts strength and denoise settings based on mode.
+Switches between empty latent (for txt2img) and up to 5 input images (for img2img). Automatically adjusts strength and denoise settings based on mode. [doc DP Empty Latent Switch](./nodes_documentation/utility/empty_latent_switch.md)
 
 ### DP_Image_Loader_Small
 <img src="https://github.com/user-attachments/assets/14545cb5-6868-4446-b6ec-711bed60c956" alt="DP_Image_Loader_Small" style="float: left; margin-right: 10px;"/>
 
-Basic image loader with essential effects including grayscale, enhance, flip, and posterize.
+Basic image loader with essential effects including grayscale, enhance, flip, and posterize. [doc DP Image Loaders](./nodes_documentation/image_processing/image_loaders.md)
 
 ### DP_Image_Loader_Medium
 <img src="https://github.com/user-attachments/assets/5ab0c438-8841-4e1f-b7e2-23ac449d7475" alt="DP_Image_Loader_Medium" style="float: left; margin-right: 10px;"/>
 
-Image loader with expanded effect options including artistic effects like sepia, emboss, and lineart.
+Image loader with expanded effect options including artistic effects like sepia, emboss, and lineart. [doc DP Image Loaders](./nodes_documentation/image_processing/image_loaders.md)
 
 ### DP_Image_Loader_Big
 <img src="https://github.com/user-attachments/assets/c76ec189-1634-4972-bdc4-81f32167abe9" alt="DP_Image_Loader_Big" style="float: left; margin-right: 10px;"/>
 
-Comprehensive image loader with full effect suite including technical and enhancement options.
+Comprehensive image loader with full effect suite including technical and enhancement options. [doc DP Image Loaders](./nodes_documentation/image_processing/image_loaders.md)
 
 ### DP_Prompt_Styler
 <img src="https://github.com/user-attachments/assets/5a2eec5a-000d-4837-aaf5-f098273d1e2d" alt="DP_Prompt_Styler" style="float: left; margin-right: 10px;"/>
 
-Applies multiple style modifiers to prompts with customizable categories including depth, camera angles, color themes, moods, and effects.
+Applies multiple style modifiers to prompts with customizable categories including depth, camera angles, color themes, moods, and effects. [doc DP Prompt Styler](./nodes_documentation/utility/prompt_styler.md)
 
 ### DP_Quick_Link
 <img src="https://github.com/user-attachments/assets/b58b9557-e3be-4639-9958-ea0a901210e8" alt="DP_Quick_Link" style="float: left; margin-right: 10px;"/>
 
-Manages symbolic links for model organization. Creates shortcuts to external model folders without copying files, saving disk space.
+Manages symbolic links for model organization. Creates shortcuts to external model folders without copying files, saving disk space. [doc DP Quick Link](./nodes_documentation/utility/quick_link.md)
 
 ### DP_Random_Char
 <img src="https://github.com/user-attachments/assets/414bfb42-9cef-4aed-afa4-7938449ae6e8" alt="DP_Random_Char" style="float: left; margin-right: 10px;"/>
 
-Generates random characters with intelligent selection to avoid similar-looking characters and recent repetitions. Perfect for creating readable random strings and passwords.
+Generates random characters with intelligent selection to avoid similar-looking characters and recent repetitions. Perfect for creating readable random strings and passwords. [doc DP Random Char](./nodes_documentation/utility/random_char.md)
 
 ### DP_Random_MinMax
 <img src="https://github.com/user-attachments/assets/99bb875f-3d9b-462c-b781-0c179077af6c" alt="DP_Random_MinMax" style="float: left; margin-right: 10px;"/>
 
-Generates random numbers within specified ranges with configurable step sizes. Provides both float and integer outputs.
+Generates random numbers within specified ranges with configurable step sizes. Provides both float and integer outputs. [doc DP Random MinMax](./nodes_documentation/utility/random_minmax.md)
 
 ### DP_Aspect_Ratio
 <img src="https://github.com/user-attachments/assets/514f81d2-3b50-442c-b9e1-d95f93647747" alt="DP_Aspect_Ratio" style="float: left; margin-right: 10px;"/>
 
-Quick aspect ratio selection for common image sizes. Supports custom ratios through configuration file and provides standard presets.
+Quick aspect ratio selection for common image sizes. Supports custom ratios through configuration file and provides standard presets. [doc DP Aspect Ratio](./nodes_documentation/utility/aspect_ratio.md)
