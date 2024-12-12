@@ -4,6 +4,7 @@
 ## Description
 
 A paired system of nodes for applying effects to specific frames in a video sequence. The Sender extracts frames in a pattern for processing, while the Receiver places the processed frames back into their original positions.
+[Electrify example workflow](/workflows/Desert_pixel_Electrify_sender_receiver.json)
 
 ## Sender Node
 
