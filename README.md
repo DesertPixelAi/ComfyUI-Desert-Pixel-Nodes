@@ -37,8 +37,8 @@ A collection of custom nodes for ComfyUI focused on animation, image processing,
 
 Full nodes list:
 
-DP_Animation_Calculator_5Inputs
-![DP_Animation_Calculator_5Inputs_detailed](https://github.com/user-attachments/assets/fa45806e-76f5-4d25-a0a5-8b6d494d9f90)
+## DP_Animation_Calculator_5Inputs
+## ![DP_Animation_Calculator_5Inputs_detailed](https://github.com/user-attachments/assets/fa45806e-76f5-4d25-a0a5-8b6d494d9f90)
 
 DP_Image_Slide_Show
 ![DP_Image_Slide_Show](https://github.com/user-attachments/assets/c3001c1e-4d57-46fd-9d0f-4a62109a46dd)
