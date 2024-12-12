@@ -109,62 +109,47 @@ I'll create a comprehensive markdown documentation for the DP_Image_Slide_Show n
 
 ## DP_Image_Slide_Show
 ![DP_Image_Slide_Show](https://github.com/user-attachments/assets/c3001c1e-4d57-46fd-9d0f-4a62109a46dd)
-A streamlined ComfyUI node for creating image sequences and animations with customizable transition effects. Perfect for creating GIFs and videos with various blend modes between images.
+DP_Image_Slide_Show
+ComfyUI node for creating image sequences with blend mode transitions. Ideal for GIFs and videos.
+Inputs:
 
-### Inputs:
-- **Image Inputs (Optional, 5 slots)**
-  - Image_01_Input through Image_05_Input
-  - Source images for creating the animation sequence
-  - When connected, creates an image batch with specified transitions
+Image Inputs (Optional, 5 slots)
 
-- **Total_Frames** (INT)
-  - Total number of frames in the sequence
-  - Default: 96
-  - Range: 16-2000
-  - Step: 1
+When connected, creates image batch with transitions
 
-- **Image_startPoint_XX** (INT, XX: 01-05)
-  - Keyframe position for each image
-  - Image_01_startPoint fixed at 0
-  - Default values:
-    - Image_02: 24
-    - Image_03: 48
-    - Image_04: 72
-    - Image_05: 96
-  - Each keyframe must be larger than previous ones
-  - Range: 0-1000
-  - Step: 1
 
-- **Transition_Frames** (INT)
-  - Length of transition effect between images
-  - Default: 8
-  - Range: 0-32
-  - Step: 4
-  - Set to 0 to disable transitions
+Total_Frames (INT)
 
-- **blend_mode** (COMBO)
-  - Determines how images blend during transitions
-  - Options:
-    - Normal Blend: Standard opacity transition
-    - Dissolve: Creates a dissolve effect
-    - Overlay: Combines images using overlay blend
-    - Multiply: Darkens transition using multiplication
-    - Screen: Lightens transition using screen blend
-    - Soft Light: Subtle blend using soft light mode
+Range: 16-2000
 
-### Output:
-- **Image_Batch_Output** (IMAGE)
-  - Generated sequence of frames
-  - Includes specified transitions between images
-  - Size matches Total_Frames parameter
-  - If no valid images provided, returns a black 512x512 frame
 
-### Creating Loops:
-For seamless animations:
-1. Set last Image_startPoint equal to Total_Frames
-2. Use identical first and last images
+Image_startPoint_XX (INT, XX: 01-05)
+
+Keyframe positions (must be ascending)
+First keyframe fixed at 0
+
+
+Transition_Frames (INT)
+
+Range: 0-32, Step: 4
+Controls transition length between images
+
+
+blend_mode
+
+Normal Blend, Dissolve, Overlay
+Multiply, Screen, Soft Light
+
+
+Output:
+
+Image_Batch_Output (IMAGE)
+
+Frame sequence with selected blend transitions
+Size matches Total_Frames
 
 ### Usage Notes:
+- For loops, set last Image_startPoint to Total_Frames and use identical first/last images.
 - Transitions are automatically split between pre and post keyframes
 - Each image spans from its keyframe to the next image's keyframe
 - Missing or invalid images are skipped in the sequence
