@@ -40,6 +40,7 @@ Full nodes list:
 Here's the formatted version for GitHub markdown:
 
 ## DP_Animation_Calculator_5Inputs
+![DP_Animation_Calculator_5Inputs_detailed](https://github.com/user-attachments/assets/fa45806e-76f5-4d25-a0a5-8b6d494d9f90)
 Animation calculator helper for switching between images/styles with img2video & video2video using AnimateDiff. Creates timing data for prompt scheduling, fade masks, and IP Adapter batch processing.
 
 Each image has a keyframe start point and associated prompt text. The node can be used with or without image inputs to generate scheduling prompts or fade mask timing.
@@ -103,8 +104,6 @@ For img2video loops:
 
 ### Note:
 Transition system uses three control points (Pre-transition, Keyframe, Post-transition) for smooth blending of ControlNet and IP Adapter weights during transitions.
-    
-![DP_Animation_Calculator_5Inputs_detailed](https://github.com/user-attachments/assets/fa45806e-76f5-4d25-a0a5-8b6d494d9f90)
 
 ## DP_Image_Slide_Show
 ![DP_Image_Slide_Show](https://github.com/user-attachments/assets/c3001c1e-4d57-46fd-9d0f-4a62109a46dd)
