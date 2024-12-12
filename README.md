@@ -36,9 +36,6 @@ A collection of custom nodes for ComfyUI focused on animation, image processing,
 - **Zero-One Floats**: Simple float input/output controls
 
 Full nodes list:
-
-Here's the formatted version for GitHub markdown:
-
 ## DP_Animation_Calculator_5Inputs
 ![DP_Animation_Calculator_5Inputs_detailed](https://github.com/user-attachments/assets/fa45806e-76f5-4d25-a0a5-8b6d494d9f90)
 Animation calculator helper for switching between images/styles with img2video & video2video using AnimateDiff. Creates timing data for prompt scheduling, fade masks, and IP Adapter batch processing.
