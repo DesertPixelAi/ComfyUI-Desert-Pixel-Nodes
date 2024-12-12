@@ -67,22 +67,18 @@ DP_Clean_Prompt
 ![DP_Clean_Prompt](https://github.com/user-attachments/assets/678363ab-5a2d-473f-9132-2487152f588b)
 
 DP_Create_JSON:
-
 ![DP_Create_JSON](https://github.com/user-attachments/assets/e3c210b5-d718-4b8b-8e9b-c0963497b22b)
 
 DP_Crazy_Prompt:
-
 ![DPImageColorAnalyzer](https://github.com/user-attachments/assets/b25e622d-151a-4a9f-9275-86398d7ea7f3)
 
 DP_Image_Color_Analyzer
 ![DPImageColorAnalyzer](https://github.com/user-attachments/assets/bf90ffac-3925-40ed-9873-2ea3a7d42d1c)
 
 DP_Fast_Slow_Motion:
-
 ![DP_Fast_Slow_Motion](https://github.com/user-attachments/assets/b64a26ea-54ad-421a-a8bf-a573389fbae9)
 
 DP_Five_Lora:
-
 ![DP_Five_Lora](https://github.com/user-attachments/assets/7de97607-c5cc-4186-a9c0-250ee55548b4)
 
 DP_Five_Lora_Random
@@ -116,7 +112,7 @@ DP_Random_MinMax
 ![DP_Random_MinMax](https://github.com/user-attachments/assets/99bb875f-3d9b-462c-b781-0c179077af6c)
 
 DP_Aspect_Ratio
-![DP_Aspect_Ratio_detailed](https://github.com/user-attachments/assets/df6f4db1-2b2c-4f59-90d2-23d04b5293a3)
+![DP_Aspect_Ratio](https://github.com/user-attachments/assets/514f81d2-3b50-442c-b9e1-d95f93647747)
 
 ## Installation
 
