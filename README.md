@@ -109,56 +109,28 @@ I'll create a comprehensive markdown documentation for the DP_Image_Slide_Show n
 
 ## DP_Image_Slide_Show
 ![DP_Image_Slide_Show](https://github.com/user-attachments/assets/c3001c1e-4d57-46fd-9d0f-4a62109a46dd)
-DP_Image_Slide_Show
 ComfyUI node for creating image sequences with blend mode transitions. Ideal for GIFs and videos.
-Inputs:
 
-Image Inputs (Optional, 5 slots)
+- **Inputs:**
+  - 5*optional image inputs - when connected, creates an image batch with transitions between images
+  - INT - Total_Frames - how many frames will be processed (16-2000)
+  - 5*INT - Image_startPoint 01-05 - the start key frame for each image, image_01_startPoint is set to 0. *notice that each keyFrame has to be bigger than the previous ones
+  - INT - Transition_Frames - the number of frames for transition between images (0-32, step: 4)
+  - COMBO - blend_mode - transition effect between images:
+    - Normal Blend
+    - Dissolve  
+    - Overlay
+    - Multiply
+    - Screen
+    - Soft Light
 
-When connected, creates image batch with transitions
-
-
-Total_Frames (INT)
-
-Range: 16-2000
-
-
-Image_startPoint_XX (INT, XX: 01-05)
-
-Keyframe positions (must be ascending)
-First keyframe fixed at 0
-
-
-Transition_Frames (INT)
-
-Range: 0-32, Step: 4
-Controls transition length between images
+- **Output:**
+  - Image - Image_Batch_Output - exports image batch in the size of Total_Frames, with selected blend mode transitions between images
+  
+*for seamless loops, set the last Image_startPoint same as Total_Frames and use identical first/last images
 
 
-blend_mode
-
-Normal Blend, Dissolve, Overlay
-Multiply, Screen, Soft Light
-
-
-Output:
-
-Image_Batch_Output (IMAGE)
-
-Frame sequence with selected blend transitions
-Size matches Total_Frames
-
-### Usage Notes:
-- For loops, set last Image_startPoint to Total_Frames and use identical first/last images.
-- Transitions are automatically split between pre and post keyframes
-- Each image spans from its keyframe to the next image's keyframe
-- Missing or invalid images are skipped in the sequence
-- Different blend modes can create unique transition effects
-- Perfect for creating:
-  - GIF animations
-  - Video transitions
-  - Slideshow sequences
-  - Visual effects
+*for seamless loops, set the last Image_startPoint same as Total_Frames and use identical first/last images
 
 ## DP_Logo_Animator
 ![DP_Logo_Animator](https://github.com/user-attachments/assets/d56d6536-ea7a-4819-98b6-cc5c4b19f5f3)
