@@ -1,5 +1,5 @@
 # DP Video Effects (Sender/Receiver)
-<img src="https://github.com/user-attachments/assets/9b2ef2f5-0888-42c8-8c59-978bd2f43b93" alt="DP_Video_Effect_Sender_reciver" style="float: left; margin-right: 10px;"/>
+<img src="https://github.com/user-attachments/assets/d6fb3fb7-f58a-452c-9454-1d23092e5461" alt="DP_Video_Effect_Sender_reciver" style="float: left; margin-right: 10px;"/>
 
 ## Description
 
