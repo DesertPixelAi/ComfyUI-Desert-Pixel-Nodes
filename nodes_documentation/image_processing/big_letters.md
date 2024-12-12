@@ -1,6 +1,8 @@
 # DP Big Letters
 <img src="https://github.com/user-attachments/assets/c40205d0-6327-47f3-b9f0-29fb3d048ef8" alt="DP_Big_Letters" style="float: left; margin-right: 10px;"/>
+
 ## Description
+
 The DP Big Letters node splits user-provided text into individual letters and creates an image for each letter in the selected size. This is useful for later effects or animations. Users can customize the color, background, font, and padding for each letter, allowing for a wide range of creative possibilities.
 
 ## Inputs
