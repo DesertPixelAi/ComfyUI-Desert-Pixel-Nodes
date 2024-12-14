@@ -1,18 +1,40 @@
 import os
 import random
 
+# Move file loading to module level
+def _load_category_files():
+    current_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    data_dir = os.path.join(current_dir, "data", "crazyPrompt")
+    
+    categories = {}
+    files = [
+        "subject.txt", "composition.txt", "lighting.txt", 
+        "color_palette.txt", "atmosphere.txt", "technical_details.txt",
+        "additional_elements.txt", "styles.txt"
+    ]
+    
+    for filename in files:
+        file_path = os.path.join(data_dir, filename)
+        try:
+            with open(file_path, 'r', encoding='utf-8') as f:
+                items = [line.strip() for line in f.readlines() 
+                        if line.strip() and not line.startswith('#')]
+                categories[filename.replace('.txt', '')] = items or ["placeholder"]
+        except FileNotFoundError:
+            print(f"Warning: File {filename} not found at {file_path}")
+            categories[filename.replace('.txt', '')] = ["placeholder"]
+        except Exception as e:
+            print(f"Error reading {filename}: {str(e)}")
+            categories[filename.replace('.txt', '')] = ["placeholder"]
+    
+    return categories
+
+# Cache categories at module level
+CATEGORIES = _load_category_files()
+
 class Dp_Random_Crazy_Prompt_Generator:
     def __init__(self):
-        self.categories = {
-            "subject": self.load_items("subject.txt"),
-            "composition": self.load_items("composition.txt"),
-            "lighting": self.load_items("lighting.txt"),
-            "color_palette": self.load_items("color_palette.txt"),
-            "atmosphere": self.load_items("atmosphere.txt"),
-            "technical_details": self.load_items("technical_details.txt"),
-            "additional_elements": self.load_items("additional_elements.txt"),
-            "styles": self.load_items("styles.txt")
-        }
+        self.categories = CATEGORIES  # Use cached categories
 
     @classmethod
     def INPUT_TYPES(s):
@@ -33,45 +55,15 @@ class Dp_Random_Crazy_Prompt_Generator:
     FUNCTION = "generate"
     CATEGORY = "DP/prompt"
 
-    def load_items(self, filename):
-        # Get the path to the package root directory
-        current_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-        # Construct path to the data file
-        file_path = os.path.join(current_dir, "data", "crazyPrompt", filename)
-        
-        try:
-            with open(file_path, 'r', encoding='utf-8') as f:
-                items = [line.strip() for line in f.readlines() 
-                        if line.strip() and not line.startswith('#')]
-                if not items:
-                    print(f"Warning: No items found in {filename}")
-                    return ["placeholder"]
-                return items
-        except FileNotFoundError:
-            print(f"Warning: File {filename} not found at {file_path}")
-            return ["placeholder"]
-        except Exception as e:
-            print(f"Error reading {filename}: {str(e)}")
-            return ["placeholder"]
-
     def get_random_styles(self, num_styles):
-        # Get unique random styles
         available_styles = self.categories["styles"].copy()
         if num_styles > len(available_styles):
             num_styles = len(available_styles)
         
-        selected_styles = []
-        for _ in range(num_styles):
-            if not available_styles:
-                break
-            style = random.choice(available_styles)
-            selected_styles.append(style)
-            available_styles.remove(style)
-        
-        return selected_styles
+        return random.sample(available_styles, num_styles)  # More efficient than choice + remove
 
     def generate(self, style_craziness):
-        # Map style_craziness to number of styles
+        # Use dict for mapping instead of get()
         style_counts = {
             1: 3,
             2: 5,
@@ -79,27 +71,21 @@ class Dp_Random_Crazy_Prompt_Generator:
             4: 9,
             5: 15
         }
-        num_styles = style_counts.get(style_craziness, 3)
+        num_styles = style_counts[style_craziness]
 
-        # Generate random selections for each category
+        # Single random selection for each category
         prompt_parts = {
-            "subject": random.choice(self.categories["subject"]),
-            "composition": random.choice(self.categories["composition"]),
-            "lighting": random.choice(self.categories["lighting"]),
-            "color_palette": random.choice(self.categories["color_palette"]),
-            "atmosphere": random.choice(self.categories["atmosphere"]),
-            "technical_details": random.choice(self.categories["technical_details"]),
-            "additional_elements": random.choice(self.categories["additional_elements"])
+            category: random.choice(items)
+            for category, items in self.categories.items()
+            if category != "styles"
         }
 
-        # Get multiple unique styles
+        # Get styles
         selected_styles = self.get_random_styles(num_styles)
-        
-        # Get an additional random style for the medium type at the start
         available_styles = [s for s in self.categories["styles"] if s not in selected_styles]
         medium_style = random.choice(available_styles) if available_styles else random.choice(self.categories["styles"])
         
-        # Construct the prompt with medium style at the start
+        # Use f-string for better performance
         prompt = (
             f"{medium_style}, "
             f"{prompt_parts['subject']}, "
@@ -116,7 +102,6 @@ class Dp_Random_Crazy_Prompt_Generator:
 
     @classmethod
     def IS_CHANGED(cls, **kwargs):
-        # Ensure we generate a new random prompt each time
         return float("NaN")
 
 NODE_CLASS_MAPPINGS = {

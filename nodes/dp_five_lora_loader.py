@@ -5,24 +5,28 @@ class DP_Five_Lora:
     """
     ComfyUI node for loading up to five LoRA models simultaneously.
     """
+    def __init__(self):
+        self.lora_loader = LoraLoader()  # Reuse single instance
+    
     @classmethod
     def INPUT_TYPES(cls):
+        lora_files = ['None'] + folder_paths.get_filename_list("loras")  # Cache list
         return {
             "required": {
                 "model": ("MODEL",),
                 "clip": ("CLIP",),
                 "loader_state": (["ON", "OFF"],),
-                "Lora_01": (['None'] + folder_paths.get_filename_list("loras"),),
+                "Lora_01": (lora_files,),
                 "Lora_01_Strength": ("FLOAT", {"default": 0.0, "min": 0.0, "max": 3.0, "step": 0.01, "display": "slider"}),
             },
             "optional": {
-                "Lora_02": (['None'] + folder_paths.get_filename_list("loras"),),
+                "Lora_02": (lora_files,),
                 "Lora_02_Strength": ("FLOAT", {"default": 1.0, "min": 0.0, "max": 3.0, "step": 0.01, "display": "slider"}),
-                "Lora_03": (['None'] + folder_paths.get_filename_list("loras"),),
+                "Lora_03": (lora_files,),
                 "Lora_03_Strength": ("FLOAT", {"default": 1.0, "min": 0.0, "max": 3.0, "step": 0.01, "display": "slider"}),
-                "Lora_04": (['None'] + folder_paths.get_filename_list("loras"),),
+                "Lora_04": (lora_files,),
                 "Lora_04_Strength": ("FLOAT", {"default": 1.0, "min": 0.0, "max": 3.0, "step": 0.01, "display": "slider"}),
-                "Lora_05": (['None'] + folder_paths.get_filename_list("loras"),),
+                "Lora_05": (lora_files,),
                 "Lora_05_Strength": ("FLOAT", {"default": 1.0, "min": 0.0, "max": 3.0, "step": 0.01, "display": "slider"}),
             }
         }
@@ -38,30 +42,24 @@ class DP_Five_Lora:
                   Lora_04="None", Lora_04_Strength=0.0,
                   Lora_05="None", Lora_05_Strength=0.0):
         
-        weights_info = ["LoRA Models Info:"]
-        
         if loader_state == "OFF":
-            weights_info.append("Bypassed - No LoRAs applied")
-            return (model, clip, "\n".join(weights_info))
+            return (model, clip, "LoRA Models Info:\nBypassed - No LoRAs applied")
 
-        if Lora_01 != "None" and Lora_01_Strength != 0:
-            model, clip = LoraLoader().load_lora(model, clip, Lora_01, Lora_01_Strength, Lora_01_Strength)
-            weights_info.append(f"{Lora_01}: {Lora_01_Strength}")
-            
-        if Lora_02 != "None" and Lora_02_Strength != 0:
-            model, clip = LoraLoader().load_lora(model, clip, Lora_02, Lora_02_Strength, Lora_02_Strength)
-            weights_info.append(f"{Lora_02}: {Lora_02_Strength}")
-            
-        if Lora_03 != "None" and Lora_03_Strength != 0:
-            model, clip = LoraLoader().load_lora(model, clip, Lora_03, Lora_03_Strength, Lora_03_Strength)
-            weights_info.append(f"{Lora_03}: {Lora_03_Strength}")
-            
-        if Lora_04 != "None" and Lora_04_Strength != 0:
-            model, clip = LoraLoader().load_lora(model, clip, Lora_04, Lora_04_Strength, Lora_04_Strength)
-            weights_info.append(f"{Lora_04}: {Lora_04_Strength}")
-            
-        if Lora_05 != "None" and Lora_05_Strength != 0:
-            model, clip = LoraLoader().load_lora(model, clip, Lora_05, Lora_05_Strength, Lora_05_Strength)
-            weights_info.append(f"{Lora_05}: {Lora_05_Strength}")
+        weights_info = ["LoRA Models Info:"]
+        loras = [
+            (Lora_01, Lora_01_Strength),
+            (Lora_02, Lora_02_Strength),
+            (Lora_03, Lora_03_Strength),
+            (Lora_04, Lora_04_Strength),
+            (Lora_05, Lora_05_Strength)
+        ]
+        
+        # Process all LoRAs in a single loop
+        for lora_name, strength in loras:
+            if lora_name != "None" and strength != 0:
+                model, clip = self.lora_loader.load_lora(
+                    model, clip, lora_name, strength, strength
+                )
+                weights_info.append(f"{lora_name}: {strength}")
         
         return (model, clip, "\n".join(weights_info))

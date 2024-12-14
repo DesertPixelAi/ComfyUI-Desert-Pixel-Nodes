@@ -26,116 +26,119 @@ class DP_smart_saver:
                 "extra_text": ("STRING", {"default": ""}),
                 "add_size_to_name": ("BOOLEAN", {"default": False}),
                 "save_caption": ("BOOLEAN", {"default": False}),
-                "caption_text": ("STRING", {"default": ""})
+                "prompt_text": ("STRING", {"default": ""})
             },
             "hidden": {"prompt": "PROMPT", "extra_pnginfo": "EXTRA_PNGINFO"}
         }
 
-    RETURN_TYPES = ("STRING",)
-    RETURN_NAMES = ("file_info",)
+    RETURN_TYPES = ()
     FUNCTION = "save_image"
     OUTPUT_NODE = True
     CATEGORY = "DP/image"
 
     def sanitize_filename(self, name):
-        # Remove spaces and special characters
         name = re.sub(r'[^\w\-_]', '_', name)
         return name
 
-    def get_unique_file_path(self, base_path, name, ext):
-        """Generate unique filename with auto-increment"""
-        counter = 1
-        file_path = os.path.join(base_path, f"{name}.{ext}")
-        while os.path.exists(file_path):
-            file_path = os.path.join(base_path, f"{name}_{counter:04d}.{ext}")
-            counter += 1
-        return file_path
-
-    def save_image(self, mode, image, folder_name, file_name, extra_text, add_size_to_name, save_caption, caption_text, prompt=None, extra_pnginfo=None):
+    def save_image(self, mode, image, folder_name, file_name, extra_text, add_size_to_name, 
+                   save_caption, prompt_text, prompt=None, extra_pnginfo=None):
         # Sanitize inputs
         folder_name = self.sanitize_filename(folder_name)
         file_name = self.sanitize_filename(file_name)
         extra_text = self.sanitize_filename(extra_text)
 
-        # Create full output folder path
-        full_output_folder = self.output_dir
-        if folder_name:
-            full_output_folder = os.path.join(self.output_dir, folder_name)
-            if mode == "SAVE_IMAGE":
+        # Handle both single images and batches
+        if len(image.shape) == 3:
+            images = [image]
+        else:
+            images = [image[i] for i in range(image.shape[0])]
+
+        results = []
+        
+        if mode == "PREVIEW_ONLY":
+            # For preview mode, use temp directory
+            preview_dir = folder_paths.get_temp_directory()
+            
+            for idx, img in enumerate(images):
+                # Convert to PIL Image
+                i = 255. * img.cpu().numpy()
+                img_pil = Image.fromarray(np.clip(i, 0, 255).astype(np.uint8))
+                
+                # Generate a preview filename
+                file = f"preview_{idx:05d}.png"
+                
+                # Save to temp directory
+                image_path = os.path.join(preview_dir, file)
+                img_pil.save(image_path, compress_level=1)
+                
+                results.append({
+                    "filename": file,
+                    "subfolder": "",
+                    "type": "temp"
+                })
+        else:
+            # Create full output folder path
+            full_output_folder = self.output_dir
+            if folder_name:
+                full_output_folder = os.path.join(self.output_dir, folder_name)
                 os.makedirs(full_output_folder, exist_ok=True)
 
-        # Prepare filename components
-        name_parts = [file_name]
-        if extra_text:
-            name_parts.append(extra_text)
-        if add_size_to_name:
-            height, width = image.shape[1:3]
-            name_parts.append(f"{width}x{height}")
+            for idx, img in enumerate(images):
+                # Prepare filename components
+                name_parts = [file_name]
+                if extra_text:
+                    name_parts.append(extra_text)
+                if add_size_to_name:
+                    height, width = img.shape[1:3]
+                    name_parts.append(f"{width}x{height}")
+                if len(images) > 1:
+                    name_parts.append(f"{idx:04d}")
 
-        # Join name parts with underscores
-        base_name = "_".join(name_parts)
+                # Join name parts with underscores
+                base_name = "_".join(name_parts)
 
-        # Get unique file paths
-        image_path = self.get_unique_file_path(full_output_folder, base_name, "png")
-        base_name = os.path.splitext(os.path.basename(image_path))[0]
+                # Convert to PIL Image
+                i = 255. * img.cpu().numpy()
+                img_pil = Image.fromarray(np.clip(i, 0, 255).astype(np.uint8))
 
-        # Save the image with metadata
-        i = 255. * image.cpu().numpy()
-        i = i.squeeze(0) if len(i.shape) == 4 else i
-        img = Image.fromarray(np.clip(i, 0, 255).astype(np.uint8))
+                # Create metadata
+                metadata = PngImagePlugin.PngInfo()
+                
+                # Save prompt text if provided
+                if prompt_text.strip():
+                    metadata.add_text("dp_prompt", prompt_text.strip())
+                
+                # Add extra pnginfo if available
+                if extra_pnginfo is not None:
+                    for x in extra_pnginfo:
+                        metadata.add_text(x, json.dumps(extra_pnginfo[x]))
 
-        # Get workflow and create metadata
-        metadata = PngImagePlugin.PngInfo()
-        
-        if prompt is not None:
-            metadata.add_text("prompt", json.dumps(prompt))
-        if extra_pnginfo is not None:
-            for x in extra_pnginfo:
-                metadata.add_text(x, json.dumps(extra_pnginfo[x]))
-        
-        # Save image with metadata
-        img.save(image_path, 
-                pnginfo=metadata,
-                compress_level=self.compress_level)
+                # Save the image
+                file = f"{base_name}.png"
+                image_path = os.path.join(full_output_folder, file)
+                counter = 1
+                while os.path.exists(image_path):
+                    file = f"{base_name}_{counter:04d}.png"
+                    image_path = os.path.join(full_output_folder, file)
+                    counter += 1
 
-        # Save caption if enabled
-        if save_caption and caption_text:
-            caption_path = os.path.join(full_output_folder, f"{base_name}.txt")
-            with open(caption_path, 'w', encoding='utf-8') as f:
-                f.write(caption_text)
+                img_pil.save(image_path, 
+                           pnginfo=metadata,
+                           compress_level=self.compress_level)
 
-        # Prepare preview data
-        results = []
-        subfolder = folder_name if folder_name else ""
-        file = os.path.basename(image_path)
-            
-        results.append({
-            "filename": file,
-            "subfolder": subfolder,
-            "type": self.type
-        })
+                # Save caption if enabled
+                if save_caption and prompt_text.strip():
+                    caption_path = os.path.splitext(image_path)[0] + ".txt"
+                    with open(caption_path, 'w', encoding='utf-8') as f:
+                        f.write(prompt_text.strip())
 
-        # Get dimensions for output
-        height, width = image.shape[1:3]
-        
-        if mode == "SAVE_IMAGE":
-            # Get file size in bytes and convert to appropriate unit
-            file_size_bytes = os.path.getsize(image_path)
-            if file_size_bytes >= 1024 * 1024:
-                file_size = round(file_size_bytes / (1024 * 1024), 1)
-                size_str = f"{file_size} mb"
-            else:
-                file_size = round(file_size_bytes / 1024)
-                size_str = f"{file_size} kb"
-            
-            output_text = f"{full_output_folder}\nfile name: {file}\ndimensions WxH: {width}x{height}\nsize: {size_str}"
-        else:
-            # Preview mode - only show dimensions
-            output_text = f"PREVIEW MODE\ndimensions WxH: {width}x{height}"
-            file = "preview_only.png"  # Dummy filename for preview
+                results.append({
+                    "filename": file,
+                    "subfolder": folder_name,
+                    "type": self.type
+                })
 
-        # Return both the folder path and UI data for preview
-        return {"ui": {"images": results}, "result": (output_text,)}
+        return {"ui": {"images": results}}
 
 # For ComfyUI registration
 NODE_CLASS_MAPPINGS = {

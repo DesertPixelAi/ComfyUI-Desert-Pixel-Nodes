@@ -59,6 +59,12 @@ class DP_Image_Loader_Medium:
             else:
                 img_pil = image_source
                 
+            # First try to get our custom dp_prompt
+            dp_prompt = img_pil.text.get('dp_prompt', '')
+            if dp_prompt:
+                return dp_prompt
+            
+            # Fall back to original prompt handling
             prompt = img_pil.text.get('prompt', '')
             if prompt:
                 try:
@@ -78,26 +84,39 @@ class DP_Image_Loader_Medium:
             return f"Error reading metadata: {str(e)}"
 
     def load_image_and_process(self, image, output_01_fx, output_02_fx, output_03_fx, output_04_fx, pipe_input=None):
-        
+        # Initialize prompt_text
+        prompt_text = ""
+        formatted_name = ""
+
         if pipe_input is not None:
             output_image = pipe_input
-            formatted_name = "piped_image"
-            prompt_text = self.extract_prompt_from_metadata(pipe_input)
-            if prompt_text == "No prompt found in metadata" or prompt_text.startswith("Error reading metadata"):
-                prompt_text = "Metadata lost in pipeline - try connecting directly to image loader"
         else:
             image_path = folder_paths.get_annotated_filepath(image)
-            formatted_name = os.path.basename(image_path)
-            # Always strip extension now
-            formatted_name = os.path.splitext(formatted_name)[0]
+            formatted_name = os.path.splitext(os.path.basename(image_path))[0]
+            
+            # Try to load associated caption/prompt file
+            caption_path = os.path.splitext(image_path)[0] + ".txt"
+            if os.path.exists(caption_path):
+                try:
+                    with open(caption_path, 'r', encoding='utf-8') as f:
+                        prompt_text = f.read().strip()
+                except Exception as e:
+                    print(f"Warning: Could not read caption file: {e}")
             
             try:
                 with Image.open(image_path) as img:
-                    prompt_text = self.extract_prompt_from_metadata(img)
+                    img = ImageOps.exif_transpose(img)
+                    if img.mode == 'I':
+                        img = img.point(lambda i: i * (1 / 255))
                     if img.mode != 'RGB':
                         img = img.convert('RGB')
                     image = np.array(img).astype(np.float32) / 255.0
                     output_image = torch.from_numpy(image).unsqueeze(0)
+                    
+                    # Try to get prompt from image metadata
+                    if not prompt_text and hasattr(img, 'info'):
+                        prompt_text = img.info.get('dp_prompt', '')
+                    
             except Exception as e:
                 print(f"Error processing image: {e}")
                 raise e
@@ -175,6 +194,12 @@ class DP_Image_Loader_Big:
             else:
                 img_pil = image_source
                 
+            # First try to get our custom dp_prompt
+            dp_prompt = img_pil.text.get('dp_prompt', '')
+            if dp_prompt:
+                return dp_prompt
+            
+            # Fall back to original prompt handling
             prompt = img_pil.text.get('prompt', '')
             if prompt:
                 try:
@@ -261,7 +286,9 @@ class DP_Image_Loader_Big:
             
             try:
                 with Image.open(image_path) as img:
-                    prompt_text = self.extract_prompt_from_metadata(img)
+                    img = ImageOps.exif_transpose(img)
+                    if img.mode == 'I':
+                        img = img.point(lambda i: i * (1 / 255))
                     if img.mode != 'RGB':
                         img = img.convert('RGB')
                     image = np.array(img).astype(np.float32) / 255.0
@@ -359,12 +386,9 @@ class DP_Image_Loader_Small(DP_Image_Loader_Medium):
     @classmethod
     def IS_CHANGED(s, image, output_01_fx, output_02_fx, pipe_input=None):
         if pipe_input is not None:
-            return True
+            return pipe_input
         image_path = folder_paths.get_annotated_filepath(image)
-        m = hashlib.sha256()
-        with open(image_path, 'rb') as f:
-            m.update(f.read())
-        return m.digest().hex()
+        return image_path
 
     @classmethod
     def VALIDATE_INPUTS(s, image, output_01_fx, output_02_fx, pipe_input=None):
@@ -381,6 +405,9 @@ class DP_Image_Loader_Small(DP_Image_Loader_Medium):
             image_path = folder_paths.get_annotated_filepath(image)
             try:
                 with Image.open(image_path) as img:
+                    img = ImageOps.exif_transpose(img)
+                    if img.mode == 'I':
+                        img = img.point(lambda i: i * (1 / 255))
                     if img.mode != 'RGB':
                         img = img.convert('RGB')
                     image = np.array(img).astype(np.float32) / 255.0
