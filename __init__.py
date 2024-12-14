@@ -1,3 +1,43 @@
+"""
+Optimized nodes for ComfyUI
+"""
+
+import os
+import sys
+import folder_paths
+import torch
+
+def cleanup():
+    try:
+        # Clear CUDA cache
+        torch.cuda.empty_cache()
+        
+        # Clear model caches
+        DP_UNET_Loader_Optimized.cleanup_cache()
+        DP_VAE_Loader_Optimized.cleanup_cache()
+        DP_Dual_CLIP_Loader_Optimized.cleanup_cache()
+    except:
+        pass
+
+if hasattr(sys, 'cleanup_handlers'):
+    sys.cleanup_handlers.append(cleanup)
+
+class PreloadManager:
+    @staticmethod
+    async def preload_models(unet_name=None, vae_name=None, clip_names=None):
+        if unet_name:
+            DP_UNET_Loader_Optimized.preload_weights(unet_name)
+        if vae_name:
+            DP_VAE_Loader_Optimized.preload_weights(vae_name)
+        if clip_names:
+            DP_Dual_CLIP_Loader_Optimized.preload_weights(*clip_names)
+
+# Apply global PyTorch optimizations
+if torch.cuda.is_available():
+    torch.backends.cuda.matmul.allow_tf32 = True
+    torch.backends.cudnn.allow_tf32 = True
+    torch.backends.cudnn.benchmark = True
+
 from .nodes.dp_big_letter import DP_Big_Letters
 from .nodes.dp_broken_token import DPBrokenToken
 from .nodes.dp_clean_prompt import DP_clean_prompt
@@ -22,6 +62,12 @@ from .nodes.dp_crazy_random_prompt_generator import Dp_Random_Crazy_Prompt_Gener
 from .nodes.dp_image_slide_show import DP_Image_Slide_Show
 from .nodes.dp_five_lora_loader import DP_Five_Lora
 from .nodes.dp_five_lora_loader_random import DP_Five_Lora_Random
+from .nodes.dp_prompt_random_switch import DP_Prompt_Random_Switch
+from .nodes.dp_optimized_vae_decode import DP_VAE_Decode_Optimized
+from .nodes.dp_optimized_vae_encode import DP_VAE_Encode_Optimized
+from .nodes.dp_optimized_unet_loader import DP_UNET_Loader_Optimized
+from .nodes.dp_optimized_vae_loader import DP_VAE_Loader_Optimized
+from .nodes.dp_optimized_dual_clip_loader import DP_Dual_CLIP_Loader_Optimized
 
 NODE_CLASS_MAPPINGS = {
     # DP/image category
@@ -56,6 +102,7 @@ NODE_CLASS_MAPPINGS = {
     "DP_Quick_Link": DP_symlink,
     "DP_Aspect_Ratio": DPAspectRatioPicker,
     "DP_Random_MinMax": DP_random_min_max,
+    "DP_Prompt_Random_Switch": DP_Prompt_Random_Switch,
 
     # DP/prompt category (new category for prompt-related nodes)
     "DP_Crazy_Prompt": DPCrazyPromptGenerator,
@@ -64,6 +111,13 @@ NODE_CLASS_MAPPINGS = {
     # DP/loaders category
     "DP_Five_Lora": DP_Five_Lora,
     "DP_Five_Lora_Random": DP_Five_Lora_Random,
+
+    # DP/optimized category
+    "DP_VAE_Decode_Optimized": DP_VAE_Decode_Optimized,
+    "DP_VAE_Encode_Optimized": DP_VAE_Encode_Optimized,
+    "DP_UNET_Loader_Optimized": DP_UNET_Loader_Optimized,
+    "DP_VAE_Loader_Optimized": DP_VAE_Loader_Optimized,
+    "DP_Dual_CLIP_Loader_Optimized": DP_Dual_CLIP_Loader_Optimized,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
@@ -99,6 +153,7 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "DP_Quick_Link": "DP Quick Model Link",
     "DP_Aspect_Ratio": "DP Aspect Ratio Picker",
     "DP_Random_MinMax": "DP Random Min/Max",
+    "DP_Prompt_Random_Switch": "DP Prompt Random Switch",
 
     # DP/prompt category
     "DP_Crazy_Prompt": "DP Crazy Prompt Generator",
@@ -107,6 +162,13 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     # DP/loaders category
     "DP_Five_Lora": "DP Five LoRA Loader",
     "DP_Five_Lora_Random": "DP Five LoRA Loader (Random)",
+
+    # DP/optimized category
+    "DP_VAE_Decode_Optimized": "DP VAE Decode (Optimized)",
+    "DP_VAE_Encode_Optimized": "DP VAE Encode (Optimized)",
+    "DP_UNET_Loader_Optimized": "DP Load UNET (Optimized)",
+    "DP_VAE_Loader_Optimized": "DP Load VAE (Optimized)",
+    "DP_Dual_CLIP_Loader_Optimized": "DP Load Dual CLIP (Optimized)",
 }
 
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']
