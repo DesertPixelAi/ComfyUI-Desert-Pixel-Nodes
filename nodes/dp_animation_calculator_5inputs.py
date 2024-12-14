@@ -194,21 +194,25 @@ class DP_Animation_Calculator_5Inputs:
             
             # Generate text outputs with proper formatting
             timing_entries = []
-            for frame in valid_keyframes:
+            for i, frame in enumerate(valid_keyframes):
                 if frame == total_frames:  # Skip adding frame if it equals total_frames
                     continue
                 i = frame_dict[frame] + 1  # Get original index (+1 for 1-based indexing)
                 text = kwargs.get(f'Prompt_Image_{i:02d}', f'prompt {i:02d}')
                 text = text.replace('"', '\\"')
-                timing_entries.append(f'"{frame}":"{text}"')
-            
+                timing_entries.append(f'"{frame}":"{text}",')  # Always add comma
+
             # Ensure the last keyframe is total_frames - 1
             if valid_keyframes[-1] != total_frames - 1:
                 last_index = frame_dict[valid_keyframes[-1]] + 1
                 text = kwargs.get(f'Prompt_Image_{last_index:02d}', f'prompt {last_index:02d}')
                 text = text.replace('"', '\\"')
-                timing_entries.append(f'"{total_frames - 1}":"{text}"')
-            
+                timing_entries.append(f'"{total_frames - 1}":"{text}"')  # No comma for the last entry
+            else:
+                # If we already have entries, remove the comma from the last one
+                if timing_entries:
+                    timing_entries[-1] = timing_entries[-1].rstrip(',')
+
             Text_output_01_Prompt = "\n".join(timing_entries)
 
             def generate_timing_string(min_value, max_value, invert=False):
