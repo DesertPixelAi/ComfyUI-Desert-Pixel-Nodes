@@ -1,0 +1,51 @@
+BlackAndWhite filter
+Contrast filter
+Cool filter
+HDR filter
+Monochrome filter
+Saturated filter
+Sepia filter
+Vignette filter
+Vintage filter
+Warm filter
+Analog film filter
+Cinematic filter
+Cyberpunk neon filter
+Dreamlike filter
+Film grain filter
+Glitch art filter
+Lomography filter
+Matte filter
+Moody filter
+Noir filter
+Pastel filter
+Polaroid filter
+Retro gaming filter
+Synthwave filter
+Tilt-shift filter
+Watercolor filter
+Anime style filter
+Cel shading filter
+Comic book style filter
+Cross-process filter
+Double exposure filter
+Duotone filter
+Ethereal glow filter
+Grunge texture filter
+Impressionist filter
+Instagram-like filter
+Oil painting filter
+Pencil sketch filter
+Pixelated filter
+Pop art filter
+Street photography filter
+Bleach bypass filter
+Bokeh effect filter
+Chromatic aberration filter
+Color grading filter
+Cyanotype filter
+Exposure adjustment filter
+Gaussian blur filter
+Lens flare filter
+Light leak filter
+Split toning filter
