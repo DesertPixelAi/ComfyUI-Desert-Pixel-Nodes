@@ -4,3 +4,4 @@ Pillow
 scikit-learn
 scikit-image
 opencv-python
+nltk>=3.8.1; python_version >= "3.8"  # Optional for enhanced prompt inversion
