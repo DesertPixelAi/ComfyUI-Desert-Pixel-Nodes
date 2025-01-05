@@ -92,7 +92,8 @@ try:
         DP_String_With_Switch, 
         DP_2_String_Switch, 
         DP_String_Text,
-        DP_5_String_Switch
+        DP_5_String_Switch,
+        DP_10_String_Switch
     )
     from .nodes.dp_switch_controller import DP_Switch_Controller
     
@@ -139,6 +140,25 @@ try:
     # Add this import near the other imports:
     from .nodes.dp_image_color_analyzer_small import DP_Image_Color_Analyzer_Small
 
+    # Add this import near the other imports:
+    from .nodes.dp_image_switch import (
+        DP_Image_Switch_3_Inputs,
+        DP_Image_Switch_5_Inputs,
+        DP_Image_Switch_10_Inputs
+    )
+
+    # Add import near the other imports (around line 115):
+    from .nodes.dp_art_style_generator import DP_Art_Style_Generator
+
+    # Add this import near the other imports:
+    from .nodes.dp_add_weight_to_string_sdxl import DP_Add_Weight_To_String_Sdxl
+
+    # Add this import near the other imports:
+    from .nodes.dp_advanced_weight_string_sdxl import DP_Advanced_Weight_String_Sdxl
+
+    # Add this import near the other generator nodes (around line 116):
+    from .nodes.dp_random_vehicle_generator import DP_Random_Vehicle_Generator
+
     # Add all nodes to the mappings
     NODE_CLASS_MAPPINGS = {
         "DP Big Letters": DP_Big_Letters,
@@ -180,6 +200,7 @@ try:
         "DP 2 String Switch": DP_2_String_Switch,
         "DP String Text": DP_String_Text,
         "DP 5 String Switch": DP_5_String_Switch,
+        "DP 10 String Switch": DP_10_String_Switch,
         "DP Switch Controller": DP_Switch_Controller,
         "DP Text Preview": DP_Text_Preview,
         "DP Video Effect Sender": DP_Video_Effect_Sender,
@@ -207,6 +228,13 @@ try:
         "DP Custom Aspect Ratio": DP_Custom_Aspect_Ratio,
         "DP Condition Mixer": DP_Condition_Mixer,
         "DP Image Color Analyzer Small": DP_Image_Color_Analyzer_Small,
+        "DP Image Switch 3": DP_Image_Switch_3_Inputs,
+        "DP Image Switch 5": DP_Image_Switch_5_Inputs,
+        "DP Image Switch 10": DP_Image_Switch_10_Inputs,
+        "DP Art Style Generator": DP_Art_Style_Generator,
+        "DP Add Weight To String Sdxl": DP_Add_Weight_To_String_Sdxl,
+        "DP Advanced Weight String Sdxl": DP_Advanced_Weight_String_Sdxl,
+        "DP Random Vehicle Generator": DP_Random_Vehicle_Generator,
     }
 
     # Create display names
@@ -221,14 +249,22 @@ try:
     NODE_DISPLAY_NAME_MAPPINGS["DP Prompt Inverter"] = "DP Prompt Inverter"
     NODE_DISPLAY_NAME_MAPPINGS["DP Strings Connector"] = "DP Strings Connector"
     NODE_DISPLAY_NAME_MAPPINGS["DP 5 String Switch"] = "DP 5 String Switch"
+    NODE_DISPLAY_NAME_MAPPINGS["DP 10 String Switch"] = "DP 10 String Switch"
     NODE_DISPLAY_NAME_MAPPINGS["DP Random Mode Switch"] = "DP Random Mode Switch"
     NODE_DISPLAY_NAME_MAPPINGS["DP Random Mode Controller"] = "DP Random Mode Controller"
     NODE_DISPLAY_NAME_MAPPINGS["DP Custom Aspect Ratio"] = "DP Custom Aspect Ratio"
     NODE_DISPLAY_NAME_MAPPINGS["DP Condition Mixer"] = "DP Condition Mixer"
     NODE_DISPLAY_NAME_MAPPINGS["DP Image Color Analyzer Small"] = "DP Image Color Analyzer Small"
+    NODE_DISPLAY_NAME_MAPPINGS["DP Image Switch 3"] = "DP Image Switch 3"
+    NODE_DISPLAY_NAME_MAPPINGS["DP Image Switch 5"] = "DP Image Switch 5"
+    NODE_DISPLAY_NAME_MAPPINGS["DP Image Switch 10"] = "DP Image Switch 10"
+    NODE_DISPLAY_NAME_MAPPINGS["DP Art Style Generator"] = "DP Art Style Generator"
+    NODE_DISPLAY_NAME_MAPPINGS["DP Add Weight To String Sdxl"] = "DP Add Weight To String SDXL"
+    NODE_DISPLAY_NAME_MAPPINGS["DP Advanced Weight String Sdxl"] = "DP Advanced Weight String SDXL"
+    NODE_DISPLAY_NAME_MAPPINGS["DP Random Vehicle Generator"] = "DP Random Vehicle Generator"
 
     # Set web directory
-    WEB_DIRECTORY = "./js"
+    WEB_DIRECTORY = "js"
     logger.info(f"Web directory set to: {WEB_DIRECTORY}")
     
     # Log successful initialization
