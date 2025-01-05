@@ -22,6 +22,9 @@ class DP_clean_prompt:
         # Process the text in steps
         text = input_text
         
+        # Replace escaped parentheses with temporary markers
+        text = text.replace(r'\(', '###LEFTPAR###').replace(r'\)', '###RIGHTPAR###')
+        
         # Replace multiple newlines with spaces
         text = re.sub(r'\n+', ' ', text)
         
@@ -56,8 +59,12 @@ class DP_clean_prompt:
         # Clean up any trailing commas before weight notations
         text = re.sub(r',\s*(\(\d+\.?\d*,?\))', r' \1', text)
         
-        # Trim whitespace from start and end
-        text = text.strip()
+        # Restore escaped parentheses
+        text = text.replace('###LEFTPAR###', '(').replace('###RIGHTPAR###', ')')
+        
+        # Remove leading/trailing commas, spaces, and dots
+        text = re.sub(r'^[,\s\.]+', '', text)
+        text = re.sub(r'[,\s\.]+$', '', text)
         
         return (text,)
 

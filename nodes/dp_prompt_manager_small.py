@@ -60,17 +60,13 @@ class DP_Prompt_Manager_Small:
     def cycle(self, prompt_mode, subject, find_replace_subject, scene_description, subject_index_control, index, 
               unique_id, find_replace_general, replace_general_with, random_prompt=None, 
               loaded_image_metadata=None, other_prompt=None):
-        # Store the current state before any randomization
+        # Store the current state
         current_color = getattr(self, 'color', "#121317")
         current_bgcolor = getattr(self, 'bgcolor', "#006994")
-        
-        # Store the current random state
         random_state = random.getstate()
         
         try:
-            print(f"[Python] Starting cycle - Current Index: {self.current_index}, Control: {subject_index_control}")
-
-            # Handle different prompt modes
+            # Handle different prompt modes first
             if prompt_mode == "Random_Prompt" and random_prompt is not None:
                 full_prompt = random_prompt
                 filename = self.get_first_five_words(full_prompt)
@@ -91,54 +87,38 @@ class DP_Prompt_Manager_Small:
             # Handle empty subject case
             if not lines:
                 if processed_scene:
-                    # If subject is empty but scene exists, return only scene
                     filename = self.get_first_five_words(processed_scene)
                     return (processed_scene, filename, "", processed_scene)
                 else:
-                    # If both are empty, return empty strings
                     return ("", "", "", "")
 
             num_lines = len(lines)
             next_index = self.current_index
 
-            print(f"[Python] Index calculation:")
-            print(f"  - Current index: {self.current_index}")
-            print(f"  - Control mode: {subject_index_control}")
-            print(f"  - Number of lines: {num_lines}")
-            print(f"  - Starting with next_index: {next_index}")
-            
-            # Calculate next index
-            if subject_index_control == 'randomize':
-                next_index = random.randint(0, num_lines - 1)
-                print(f"  - Randomize: random(0, {num_lines-1}) = {next_index}")
-            elif subject_index_control == 'increment':
-                # If index is 0 and current_index is not 0, start from the first line
-                if index == 0 and self.current_index != 0:
-                    next_index = 0
-                else:
-                    # Use the provided index as the base if it's different from current_index
-                    base_index = index if index != self.current_index else self.current_index
-                    next_index = (base_index + 1) % num_lines
-                print(f"  - Increment: result = {next_index}")
-            elif subject_index_control == 'decrement':
-                # If index is 0 and current_index is not 0, start from the first line
-                if index == 0 and self.current_index != 0:
-                    next_index = 0
-                else:
-                    # Use the provided index as the base if it's different from current_index
-                    base_index = index if index != self.current_index else self.current_index
-                    next_index = (base_index - 1) % num_lines
-                print(f"  - Decrement: result = {next_index}")
-            elif subject_index_control == 'fixed':
-                next_index = index % num_lines if num_lines > 0 else 0
-                print(f"  - Fixed: using input index {index} % {num_lines} = {next_index}")
-            
-            self.current_index = next_index
-            print(f"  - Final current_index: {self.current_index}")
-            
+            # Detect changes
+            index_changed = index != self.current_index
+
+            # Handle fixed mode and user input changes
+            if subject_index_control == "fixed":
+                if index_changed:
+                    next_index = max(0, min(index, num_lines - 1))
+                    self.current_index = next_index
+            # Handle mode-specific behavior
+            elif subject_index_control == "randomize":
+                while True:
+                    next_index = random.randint(0, num_lines - 1)
+                    if next_index != self.current_index:
+                        break
+                self.current_index = next_index
+            elif subject_index_control == "increment":
+                next_index = (self.current_index + 1) % num_lines
+                self.current_index = next_index
+            elif subject_index_control == "decrement":
+                next_index = (self.current_index - 1) % num_lines
+                self.current_index = next_index
+
             # Select subject based on index
             selected_subject = lines[self.current_index]
-            print(f"  - Selected subject: {selected_subject}")
 
             # Apply general find & replace to scene_description first
             if find_replace_general and find_replace_general in scene_description:
@@ -150,6 +130,7 @@ class DP_Prompt_Manager_Small:
             if find_replace_subject in processed_scene:
                 processed_scene = processed_scene.replace(find_replace_subject, selected_subject)
             
+            # Build full prompt
             full_prompt_parts = []
             token_exists = find_replace_subject in scene_description
             
@@ -162,43 +143,30 @@ class DP_Prompt_Manager_Small:
                     full_prompt_parts.append(processed_scene)
                 
             full_prompt = ", ".join(full_prompt_parts)
-            
-            # Always use the final full_prompt for filename
             filename = self.get_first_five_words(full_prompt)
-            
-            # Debug WebSocket message
-            message = {
-                "node": self.id,
-                "new_subject": selected_subject,
-                "index": self.current_index,
-                "widget_name": "index",
-                "force_widget_update": True
-            }
-            print(f"[Python] Sending WebSocket message:")
-            print(f"  - Message type: subject.update")
-            print(f"  - Message data: {message}")
-            
+
+            # Update UI
             try:
-                PromptServer.instance.send_sync("subject.update", message)
-                print(f"[Python] WebSocket message sent successfully")
+                PromptServer.instance.send_sync("subject.update", {
+                    "node": self.id,
+                    "new_subject": selected_subject,
+                    "index": self.current_index,
+                    "widget_name": "index",
+                    "force_widget_update": True
+                })
+                
+                PromptServer.instance.send_sync("update_node", {
+                    "node_id": unique_id,
+                    "index_value": self.current_index,
+                    "color": current_color,
+                    "bgcolor": current_bgcolor
+                })
             except Exception as e:
                 print(f"[Python] Error sending WebSocket message: {str(e)}")
-                print(f"[Python] Error type: {type(e)}")
-                import traceback
-                print(f"[Python] Stack trace: {traceback.format_exc()}")
-            
-            # Update the UI with the new index and preserve colors
-            PromptServer.instance.send_sync("update_node", {
-                "node_id": unique_id,
-                "index_value": self.current_index,
-                "color": current_color,
-                "bgcolor": current_bgcolor
-            })
 
             return (full_prompt, filename, selected_subject, processed_scene)
             
         finally:
-            # Restore the random state after execution
             random.setstate(random_state)
 
 class DP_Prompt_Mode_Controller:

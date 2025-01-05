@@ -193,3 +193,74 @@ class DP_5_String_Switch:
         except Exception as e:
             print(f"Error in DP_5_String_Switch: {str(e)}")
             return ("",)
+
+class DP_10_String_Switch:
+    def __init__(self):
+        pass
+    
+    @classmethod
+    def INPUT_TYPES(s):
+        return {
+            "required": {
+                "Source": (["String_1", "String_2", "String_3", "String_4", "String_5", 
+                          "String_6", "String_7", "String_8", "String_9", "String_10", 
+                          "all_connected"], {"default": "String_1"}),
+            },
+            "optional": {
+                "String_1": ("STRING", {"multiline": True, "forceInput": True}),
+                "String_2": ("STRING", {"multiline": True, "forceInput": True}),
+                "String_3": ("STRING", {"multiline": True, "forceInput": True}),
+                "String_4": ("STRING", {"multiline": True, "forceInput": True}),
+                "String_5": ("STRING", {"multiline": True, "forceInput": True}),
+                "String_6": ("STRING", {"multiline": True, "forceInput": True}),
+                "String_7": ("STRING", {"multiline": True, "forceInput": True}),
+                "String_8": ("STRING", {"multiline": True, "forceInput": True}),
+                "String_9": ("STRING", {"multiline": True, "forceInput": True}),
+                "String_10": ("STRING", {"multiline": True, "forceInput": True}),
+            }
+        }
+    
+    RETURN_TYPES = ("STRING",)
+    RETURN_NAMES = ("TEXT",)
+    FUNCTION = "process"
+    CATEGORY = "DP/text"
+
+    def process(self, Source: str, **kwargs) -> tuple[str]:
+        try:
+            def clean_string(s):
+                if isinstance(s, list):
+                    return " ".join(str(x).strip() for x in s if str(x).strip())
+                return str(s).strip()
+
+            if Source == "all_connected":
+                # Collect all non-None and non-empty strings
+                strings = []
+                for i in range(1, 11):
+                    s = kwargs.get(f"String_{i}")
+                    if s is not None:
+                        cleaned = clean_string(s)
+                        if cleaned:
+                            # Check if previous string ended with comma
+                            if strings and not strings[-1].endswith(','):
+                                strings.append(f", {cleaned}")
+                            else:
+                                strings.append(cleaned)
+                
+                # Join all strings
+                if strings:
+                    result = "".join(strings)
+                    # Remove leading comma if present
+                    return (result.lstrip(", "),)
+                return ("",)
+            
+            # Single string mode
+            selected = kwargs.get(Source)
+            if selected is not None:
+                return (clean_string(selected),)
+            else:
+                print(f"Warning: Selected input '{Source}' is not connected")
+                return ("",)
+            
+        except Exception as e:
+            print(f"Error in DP_10_String_Switch: {str(e)}")
+            return ("",)
