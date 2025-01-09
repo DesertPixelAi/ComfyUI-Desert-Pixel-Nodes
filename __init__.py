@@ -64,6 +64,7 @@ try:
     from .nodes.dp_load_image import DP_Load_Image_Effects
     from .nodes.dp_load_image_small import DP_Load_Image_Effects_Small
     from .nodes.dp_save_preview_image import DP_Save_Preview_Image
+    from .nodes.dp_load_image_minimal import DP_Load_Image_Minimal
     
     # Text and prompt nodes
     from .nodes.dp_prompt_inverter import DP_Prompt_Inverter
@@ -92,6 +93,7 @@ try:
         DP_String_With_Switch, 
         DP_2_String_Switch, 
         DP_String_Text,
+        DP_String_Text_With_Weight,
         DP_5_String_Switch,
         DP_10_String_Switch
     )
@@ -159,6 +161,9 @@ try:
     # Add this import near the other generator nodes (around line 116):
     from .nodes.dp_random_vehicle_generator import DP_Random_Vehicle_Generator
 
+    # Add this import near the other imports:
+    from .nodes.dp_clean_prompt_travel import DP_Clean_Prompt_Travel
+
     # Add all nodes to the mappings
     NODE_CLASS_MAPPINGS = {
         "DP Big Letters": DP_Big_Letters,
@@ -167,6 +172,7 @@ try:
         "DP Diff Int 8step Selector": DP_Diff_Int_8step_selector,
         "DP Broken Token": DP_Broken_Token,
         "DP Clean Prompt": DP_clean_prompt,
+        "DP Clean Prompt Travel": DP_Clean_Prompt_Travel,
         "DP Combo Controller": DP_Combo_Controller,
         "DP Create Json File": DP_create_json_file,
         "DP Random Crazy Prompt Generator": DP_Random_Crazy_Prompt_Generator,
@@ -199,6 +205,7 @@ try:
         "DP String With Switch": DP_String_With_Switch,
         "DP 2 String Switch": DP_2_String_Switch,
         "DP String Text": DP_String_Text,
+        "DP String Text With Weight": DP_String_Text_With_Weight,
         "DP 5 String Switch": DP_5_String_Switch,
         "DP 10 String Switch": DP_10_String_Switch,
         "DP Switch Controller": DP_Switch_Controller,
@@ -235,6 +242,7 @@ try:
         "DP Add Weight To String Sdxl": DP_Add_Weight_To_String_Sdxl,
         "DP Advanced Weight String Sdxl": DP_Advanced_Weight_String_Sdxl,
         "DP Random Vehicle Generator": DP_Random_Vehicle_Generator,
+        "DP Load Image Minimal": DP_Load_Image_Minimal,
     }
 
     # Create display names
@@ -262,6 +270,8 @@ try:
     NODE_DISPLAY_NAME_MAPPINGS["DP Add Weight To String Sdxl"] = "DP Add Weight To String SDXL"
     NODE_DISPLAY_NAME_MAPPINGS["DP Advanced Weight String Sdxl"] = "DP Advanced Weight String SDXL"
     NODE_DISPLAY_NAME_MAPPINGS["DP Random Vehicle Generator"] = "DP Random Vehicle Generator"
+    NODE_DISPLAY_NAME_MAPPINGS["DP String Text With Weight"] = "DP String Text With Weight"
+    NODE_DISPLAY_NAME_MAPPINGS["DP Load Image Minimal"] = "DP Load Image Minimal"
 
     # Set web directory
     WEB_DIRECTORY = "js"
