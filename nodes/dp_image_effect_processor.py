@@ -10,9 +10,10 @@ class DP_Image_Effect_Processor:
         
         # Effects with no parameters (simple on/off)
         self.BASIC_EFFECTS = {
-            "original", "grayscale", "enhance", "flip_h",
+            "original", "grayscale", "flip_h",
             "flip_v", "rotate_90_ccw", "rotate_180", "rotate_270_ccw",
-            "edge_detect", "edge_gradient", "lineart_anime"
+            "edge_detect", "edge_gradient", "lineart_anime",
+            "desaturate"
         }
 
         # Effects that need strength parameter
@@ -29,7 +30,8 @@ class DP_Image_Effect_Processor:
             "glow_edges": lambda strength: strength,                          # 0.0 to 1.0
             "threshold": lambda strength: strength,                           # 0.0 to 1.0
             "contrast": lambda strength: 0.5 + (strength * 1.5),             # 0.5 (weak) to 2.0 (strong)
-            "equalize": lambda strength: strength                            # Added equalize
+            "equalize": lambda strength: strength,                           # Added equalize
+            "enhance": lambda strength: strength * 2.0                       # Added enhance with strength
         }
 
     @classmethod
@@ -62,11 +64,21 @@ class DP_Image_Effect_Processor:
         }}
 
     def apply_effect(self, effect_name, image, strength):
-        if effect_name in self.BASIC_EFFECTS:
-            return getattr(self.effects, effect_name)(image)
+        # Ensure image is in the correct format (B,H,W,C)
+        if len(image.shape) == 3:
+            image = image.unsqueeze(0)
+        
+        if effect_name == "original":
+            return image
+        elif effect_name in self.BASIC_EFFECTS:
+            method = getattr(self.effects, effect_name)
+            if effect_name in ["rotate_90_ccw", "rotate_180", "rotate_270_ccw"]:
+                return method(image)
+            return method(image)
         elif effect_name in self.STRENGTH_EFFECTS:
             mapped_strength = self.STRENGTH_EFFECTS[effect_name](strength)
-            return getattr(self.effects, effect_name)(image, mapped_strength)
+            method = getattr(self.effects, effect_name)
+            return method(image, mapped_strength)
         return image
 
     def process_images(self, effect_strength, image_01_effect, image_02_effect,

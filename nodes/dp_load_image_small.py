@@ -138,7 +138,9 @@ class DP_Load_Image_Effects_Small:
         return (*results, formatted_name, prompt_text, negative_text)
 
     @classmethod
-    def IS_CHANGED(s, image, *args, **kwargs):
+    def IS_CHANGED(s, image, effect_strength=1.0, uploaded_image_effect="original", 
+                  input_image_effect="grayscale", resize_image=True, 
+                  width=1024, height=1024, Image_Input=None):
         image_path = folder_paths.get_annotated_filepath(image)
         return image_path
 

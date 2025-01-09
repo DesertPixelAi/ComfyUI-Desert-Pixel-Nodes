@@ -120,6 +120,51 @@ class DP_String_Text:
             print(f"Error in DP_String_Text: {str(e)}")
             return ("",)
 
+class DP_String_Text_With_Weight:
+    def __init__(self):
+        self.type = "DP_String_Text_With_Weight"
+        self.output_node = True
+        self.description = "String text node with weight control for SDXL prompting"
+    
+    @classmethod
+    def INPUT_TYPES(s):
+        return {
+            "required": {
+                "Widget_Input": ("STRING", {"multiline": True, "default": ""}),
+                "weight": ("FLOAT", {"default": 1.0, "min": 0.0, "max": 10.0, "step": 0.1}),
+            },
+            "optional": {
+                "Text_Input": ("STRING", {"forceInput": True}),
+            }
+        }
+    
+    RETURN_TYPES = ("STRING",)
+    RETURN_NAMES = ("TEXT",)
+    FUNCTION = "process"
+    CATEGORY = "DP/text"
+
+    def process(self, Widget_Input: str, weight: float, Text_Input: str = None) -> tuple[str]:
+        try:
+            # Convert list inputs to strings
+            if isinstance(Widget_Input, list):
+                Widget_Input = " ".join(str(x) for x in Widget_Input)
+            if isinstance(Text_Input, list):
+                Text_Input = " ".join(str(x) for x in Text_Input)
+            
+            # Determine which text to use
+            text = Text_Input if Text_Input is not None else Widget_Input
+            if not text:
+                return ("",)
+            
+            # Apply weight if not 1.0
+            if weight == 1.0:
+                return (text,)
+            return (f"({text}:{weight:.2f})",)
+            
+        except Exception as e:
+            print(f"Error in DP_String_Text_With_Weight: {str(e)}")
+            return ("",)
+
 class DP_5_String_Switch:
     def __init__(self):
         pass

@@ -83,21 +83,18 @@ class DP_Save_Preview_Image:
                 name_parts = [file_name]
                 if extra_text:
                     name_parts.append(extra_text)
+                
+                # Convert to PIL Image
+                i = 255. * img.cpu().numpy()
+                img_pil = Image.fromarray(np.clip(i, 0, 255).astype(np.uint8))
+                
                 if add_size_to_name:
-                    # Fixed: Get dimensions from PIL Image after conversion
-                    i = 255. * img.cpu().numpy()
-                    img_pil = Image.fromarray(np.clip(i, 0, 255).astype(np.uint8))
                     width, height = img_pil.size
                     name_parts.append(f"{width}x{height}")
                 if len(images) > 1:
                     name_parts.append(f"{idx:04d}")
 
                 base_name = "_".join(name_parts)
-
-                # Convert to PIL Image only if we haven't already
-                if 'img_pil' not in locals():
-                    i = 255. * img.cpu().numpy()
-                    img_pil = Image.fromarray(np.clip(i, 0, 255).astype(np.uint8))
 
                 metadata = PngImagePlugin.PngInfo()
                 

@@ -25,8 +25,11 @@ class DP_clean_prompt:
         # Replace escaped parentheses with temporary markers
         text = text.replace(r'\(', '###LEFTPAR###').replace(r'\)', '###RIGHTPAR###')
         
-        # Replace multiple newlines with spaces
-        text = re.sub(r'\n+', ' ', text)
+        # Replace multiple newlines with single newline (instead of space)
+        text = re.sub(r'\n{2,}', '\n', text)
+        
+        # Replace underscores with spaces
+        text = text.replace('_', ' ')
         
         # Handle weight notation patterns like (2,) or (1.5)
         # Temporarily replace valid weight notations to protect them

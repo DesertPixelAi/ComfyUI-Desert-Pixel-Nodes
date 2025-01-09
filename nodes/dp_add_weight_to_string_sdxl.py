@@ -11,7 +11,7 @@ class DP_Add_Weight_To_String_Sdxl:
                 "weight": ("FLOAT", {"default": 1.0, "min": 0.0, "max": 10.0, "step": 0.1}),
             },
             "optional": {
-                "text": ("STRING", {"multiline": False}),
+                "text": ("STRING", {"multiline": True, "forceInput": True}),
             }
         }
     
@@ -26,4 +26,4 @@ class DP_Add_Weight_To_String_Sdxl:
         if weight == 1.0:
             return (text,)
             
-        return (f"({text}:{weight})",) 
+        return (f"({text}:{weight:.2f})",) 

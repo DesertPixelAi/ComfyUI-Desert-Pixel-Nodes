@@ -23,7 +23,7 @@ class DP_Advanced_Weight_String_Sdxl:
                 }),
             },
             "optional": {
-                "text": ("STRING", {"multiline": False}),
+                "text": ("STRING", {"multiline": True, "forceInput": True}),
             }
         }
     
@@ -39,7 +39,7 @@ class DP_Advanced_Weight_String_Sdxl:
             return (text,)
             
         if mode == "NUMERIC":
-            return (f"({text}:{weight})",)
+            return (f"({text}:{weight:.2f})",)
             
         else:
             symbols = "+" * symbol_count if weight > 1 else "-" * symbol_count

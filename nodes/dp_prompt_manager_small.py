@@ -67,18 +67,26 @@ class DP_Prompt_Manager_Small:
         
         try:
             # Handle different prompt modes first
-            if prompt_mode == "Random_Prompt" and random_prompt is not None:
-                full_prompt = random_prompt
-                filename = self.get_first_five_words(full_prompt)
-                return (full_prompt, filename, "", "")
-            elif prompt_mode == "Loaded_Image_Prompt" and loaded_image_metadata is not None:
-                full_prompt = loaded_image_metadata
-                filename = self.get_first_five_words(full_prompt)
-                return (full_prompt, filename, "", "")
-            elif prompt_mode == "Other_Prompt" and other_prompt is not None:
-                full_prompt = other_prompt
-                filename = self.get_first_five_words(full_prompt)
-                return (full_prompt, filename, "", "")
+            if prompt_mode == "Random_Prompt":
+                if random_prompt:  # Only use if not None or empty
+                    full_prompt = random_prompt
+                    filename = self.get_first_five_words(full_prompt)
+                    return (full_prompt, filename, "", "")
+                return ("", "", "", "")  # Return empty if input not connected/empty
+                
+            elif prompt_mode == "Loaded_Image_Prompt":
+                if loaded_image_metadata:  # Only use if not None or empty
+                    full_prompt = loaded_image_metadata
+                    filename = self.get_first_five_words(full_prompt)
+                    return (full_prompt, filename, "", "")
+                return ("", "", "", "")  # Return empty if input not connected/empty
+                
+            elif prompt_mode == "Other_Prompt":
+                if other_prompt:  # Only use if not None or empty
+                    full_prompt = other_prompt
+                    filename = self.get_first_five_words(full_prompt)
+                    return (full_prompt, filename, "", "")
+                return ("", "", "", "")  # Return empty if input not connected/empty
 
             # Clean and validate subject list
             lines = [line.strip() for line in subject.split('\n') if line.strip() and not line.strip().startswith('[Python]')]

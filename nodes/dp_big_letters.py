@@ -283,6 +283,12 @@ class DP_Big_Letters:
 
         draw.text((x, y), letter, font=font, fill=font_color)
 
+        # Convert the image to RGB before converting to a tensor
+        img = img.convert("RGB")
+
+        # Debug print to check the shape
+        print(f"Image shape (create_letter_image): {np.array(img).shape}")
+
         return torch.from_numpy(np.array(img).astype(np.float32) / 255.0).unsqueeze(0) 
 
     def create_letter_images(self, text, image_width, image_height,
@@ -293,7 +299,7 @@ class DP_Big_Letters:
         
         if not letters:
             # Return empty batch if no letters
-            return (torch.zeros((1, image_height, image_width, 4)), "No letters found")
+            return (torch.zeros((1, image_height, image_width, 3)), "No letters found")
 
         # Get font path
         font_path = None
@@ -332,6 +338,12 @@ class DP_Big_Letters:
 
             # Draw the letter
             draw.text((x, y), letter, font=font, fill=font_color)
+
+            # Convert the image to RGB before converting to a tensor
+            img = img.convert("RGB")
+
+            # Debug print to check the shape
+            print(f"Image shape (create_letter_images): {np.array(img).shape}")
 
             # Convert to tensor
             letter_tensors.append(torch.from_numpy(np.array(img).astype(np.float32) / 255.0).unsqueeze(0))
