@@ -164,6 +164,13 @@ try:
     # Add this import near the other imports:
     from .nodes.dp_clean_prompt_travel import DP_Clean_Prompt_Travel
 
+    # Add this import near the other imports:
+    from .nodes.dp_image_effect_processor_small import DP_Image_Effect_Processor_Small
+
+    # Add these imports near the other imports:
+    from .nodes.dp_line_cycler import DP_Line_Cycler
+    from .nodes.dp_5_find_and_replace import DP_5_Find_And_Replace
+
     # Add all nodes to the mappings
     NODE_CLASS_MAPPINGS = {
         "DP Big Letters": DP_Big_Letters,
@@ -243,6 +250,9 @@ try:
         "DP Advanced Weight String Sdxl": DP_Advanced_Weight_String_Sdxl,
         "DP Random Vehicle Generator": DP_Random_Vehicle_Generator,
         "DP Load Image Minimal": DP_Load_Image_Minimal,
+        "DP Image Effect Processor Small": DP_Image_Effect_Processor_Small,
+        "DP Line Cycler": DP_Line_Cycler,
+        "DP 5 Find And Replace": DP_5_Find_And_Replace,
     }
 
     # Create display names
@@ -272,6 +282,9 @@ try:
     NODE_DISPLAY_NAME_MAPPINGS["DP Random Vehicle Generator"] = "DP Random Vehicle Generator"
     NODE_DISPLAY_NAME_MAPPINGS["DP String Text With Weight"] = "DP String Text With Weight"
     NODE_DISPLAY_NAME_MAPPINGS["DP Load Image Minimal"] = "DP Load Image Minimal"
+    NODE_DISPLAY_NAME_MAPPINGS["DP Image Effect Processor Small"] = "DP Image Effect Processor Small"
+    NODE_DISPLAY_NAME_MAPPINGS["DP Line Cycler"] = "DP Line Cycler"
+    NODE_DISPLAY_NAME_MAPPINGS["DP 5 Find And Replace"] = "DP 5 Find And Replace"
 
     # Set web directory
     WEB_DIRECTORY = "js"
