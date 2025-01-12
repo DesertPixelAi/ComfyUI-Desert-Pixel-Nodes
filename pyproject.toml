@@ -1,0 +1,15 @@
+[project]
+name = "comfyui-desert-pixel-nodes"
+description = "A collection of custom nodes for ComfyUI focused on animation, image processing, and workflow optimization."
+version = "1.0.0"
+license = {file = "LICENSE"}
+dependencies = ["torch", "numpy", "Pillow", "scikit-learn", "scikit-image", "opencv-python"]
+
+[project.urls]
+Repository = "https://github.com/DesertPixelAi/ComfyUI-Desert-Pixel-Nodes"
+#  Used by Comfy Registry https://comfyregistry.org
+
+[tool.comfy]
+PublisherId = ""
+DisplayName = "ComfyUI-Desert-Pixel-Nodes"
+Icon = ""
