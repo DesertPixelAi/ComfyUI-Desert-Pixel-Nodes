@@ -21,8 +21,7 @@ class DP_Prompt_Manager_Small:
                 "index": ("INT", {"default": 0, "min": 0, "max": 0xffffffffffffffff}),
                 "find_replace_subject": ("STRING", {"default": "#sub"}),
                 "scene_description": ("STRING", {"multiline": True, "default": '', "dynamicPrompts": True}),
-                "find_replace_general": ("STRING", {"default": "#place_holder"}),
-                "replace_general_with": ("STRING", {"default": "new_word"}),
+                "weight": ("FLOAT", {"default": 1.0, "min": 0.0, "max": 10.0, "step": 0.1}),
             },
             "optional": {
                 "random_prompt": ("STRING", {"forceInput": True}),
@@ -58,8 +57,7 @@ class DP_Prompt_Manager_Small:
         return ' '.join(words[:5])
 
     def cycle(self, prompt_mode, subject, find_replace_subject, scene_description, subject_index_control, index, 
-              unique_id, find_replace_general, replace_general_with, random_prompt=None, 
-              loaded_image_metadata=None, other_prompt=None):
+              weight, unique_id, random_prompt=None, loaded_image_metadata=None, other_prompt=None):
         # Store the current state
         current_color = getattr(self, 'color', "#121317")
         current_bgcolor = getattr(self, 'bgcolor', "#006994")
@@ -71,21 +69,21 @@ class DP_Prompt_Manager_Small:
                 if random_prompt:  # Only use if not None or empty
                     full_prompt = random_prompt
                     filename = self.get_first_five_words(full_prompt)
-                    return (full_prompt, filename, "", "")
+                    return (self.apply_weight(full_prompt, weight), filename, "", "")
                 return ("", "", "", "")  # Return empty if input not connected/empty
                 
             elif prompt_mode == "Loaded_Image_Prompt":
                 if loaded_image_metadata:  # Only use if not None or empty
                     full_prompt = loaded_image_metadata
                     filename = self.get_first_five_words(full_prompt)
-                    return (full_prompt, filename, "", "")
+                    return (self.apply_weight(full_prompt, weight), filename, "", "")
                 return ("", "", "", "")  # Return empty if input not connected/empty
                 
             elif prompt_mode == "Other_Prompt":
                 if other_prompt:  # Only use if not None or empty
                     full_prompt = other_prompt
                     filename = self.get_first_five_words(full_prompt)
-                    return (full_prompt, filename, "", "")
+                    return (self.apply_weight(full_prompt, weight), filename, "", "")
                 return ("", "", "", "")  # Return empty if input not connected/empty
 
             # Clean and validate subject list
@@ -96,7 +94,7 @@ class DP_Prompt_Manager_Small:
             if not lines:
                 if processed_scene:
                     filename = self.get_first_five_words(processed_scene)
-                    return (processed_scene, filename, "", processed_scene)
+                    return (self.apply_weight(processed_scene, weight), filename, "", processed_scene)
                 else:
                     return ("", "", "", "")
 
@@ -128,13 +126,7 @@ class DP_Prompt_Manager_Small:
             # Select subject based on index
             selected_subject = lines[self.current_index]
 
-            # Apply general find & replace to scene_description first
-            if find_replace_general and find_replace_general in scene_description:
-                processed_scene = scene_description.replace(find_replace_general, replace_general_with)
-            else:
-                processed_scene = scene_description.strip()
-
-            # Then handle subject replacement
+            # Handle subject replacement
             if find_replace_subject in processed_scene:
                 processed_scene = processed_scene.replace(find_replace_subject, selected_subject)
             
@@ -172,10 +164,16 @@ class DP_Prompt_Manager_Small:
             except Exception as e:
                 print(f"[Python] Error sending WebSocket message: {str(e)}")
 
-            return (full_prompt, filename, selected_subject, processed_scene)
+            return (self.apply_weight(full_prompt, weight), filename, selected_subject, processed_scene)
             
         finally:
             random.setstate(random_state)
+
+    def apply_weight(self, text: str, weight: float) -> str:
+        """Apply weight to the text if weight is not 1.0"""
+        if not text or weight == 1.0:
+            return text
+        return f"({text}:{weight:.2f})"
 
 class DP_Prompt_Mode_Controller:
     @classmethod

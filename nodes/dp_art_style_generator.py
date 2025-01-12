@@ -5,16 +5,10 @@ from server import PromptServer
 
 class DP_Art_Style_Generator:
     def __init__(self):
-        self.current_index = 0
         self.styles = self.load_styles()
+        self.current_index = 1  # Start at 1 since 0 is "None"
         self.id = str(random.randint(0, 2**64))
-        self.color = "#121317"
-        self.bgcolor = "#006994"
-        self.last_style = None
-        self.last_mode = None
-        self.last_index = None
-        self.input_processed = False
-        
+
     def load_styles(self):
         try:
             node_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -38,8 +32,7 @@ class DP_Art_Style_Generator:
                     "default": 0,
                     "min": 0,
                     "max": 9999,
-                    "step": 1,
-                    "display": "number"
+                    "step": 1
                 }),
                 "positive_weight": ("FLOAT", {
                     "default": 1.0,
@@ -54,7 +47,7 @@ class DP_Art_Style_Generator:
         }
 
     RETURN_TYPES = ("STRING", "STRING", "STRING",)
-    RETURN_NAMES = ("medium_type", "positive_prompt", "negative_prompt",)
+    RETURN_NAMES = ("style_name", "positive_prompt", "negative_prompt",)
     FUNCTION = "generate"
     CATEGORY = "DP/text"
 
@@ -65,92 +58,56 @@ class DP_Art_Style_Generator:
         if style_name == "None" and style_index_control == "fixed":
             return ("", "", "")
 
-        current_color = getattr(self, 'color', "#121317")
-        current_bgcolor = getattr(self, 'bgcolor', "#006994")
-        random_state = random.getstate()
+        num_styles = len(self.styles)
+        next_index = self.current_index
 
-        try:
-            num_styles = len(self.styles)
-            next_index = self.current_index  # Start from current position
-
-            # Detect changes
-            mode_changed = style_index_control != self.last_mode
-            index_changed = index != self.last_index
-            style_changed = style_name != self.last_style
-
-            # Handle user input changes first
-            if (index_changed or style_changed) and style_index_control == "fixed":
-                if index_changed:
-                    # User changed index directly
-                    next_index = max(0, min(index, num_styles - 1))
-                    if next_index == 0:  # Skip "None"
-                        next_index = 1
-                elif style_changed and style_name != "None":
-                    # User selected a style
-                    for i, style in enumerate(self.styles):
-                        if style["name"] == style_name:
-                            next_index = i
-                            break
-                self.current_index = next_index
-            
+        # Handle fixed mode and manual style selection
+        if style_index_control == "fixed":
+            if style_name != "None":
+                # Find index of selected style
+                selected_index = next(
+                    (i for i, s in enumerate(self.styles) if s["name"] == style_name),
+                    self.current_index
+                )
+                next_index = selected_index
+        else:
             # Handle mode-specific behavior
-            elif style_index_control == "randomize":
+            if style_index_control == "randomize":
                 while True:
-                    next_index = random.randint(0, num_styles - 1)
-                    if next_index != self.current_index and next_index != 0:
+                    next_index = random.randint(1, num_styles - 1)
+                    if next_index != self.current_index or num_styles <= 2:
                         break
-                self.current_index = next_index
             elif style_index_control == "increment":
                 next_index = (self.current_index + 1) % num_styles
                 if next_index == 0:  # Skip "None"
                     next_index = 1
-                self.current_index = next_index
             elif style_index_control == "decrement":
-                next_index = (self.current_index - 1) % num_styles
-                if next_index == 0:  # Skip "None"
+                next_index = (self.current_index - 1)
+                if next_index <= 0:
                     next_index = num_styles - 1
-                self.current_index = next_index
 
-            # Update tracking
-            self.last_mode = style_index_control
-            self.last_index = next_index
-            self.last_style = style_name
+        # Update current index
+        self.current_index = next_index
+        selected_style = self.styles[next_index]
 
-            selected_style = self.styles[next_index]
+        # Process positive prompt with weight
+        positive_prompt = selected_style.get("positive", "")
+        if positive_prompt and positive_weight != 1.0:
+            formatted_weight = "{:.1f}".format(positive_weight)
+            positive_prompt = f"({positive_prompt}:{formatted_weight})"
 
-            # Update UI
-            try:
-                PromptServer.instance.send_sync("update_art_style", {
-                    "node_id": unique_id,
-                    "style_name": selected_style["name"],
-                    "index": next_index,
-                    "color": current_color,
-                    "bgcolor": current_bgcolor
-                })
-            except Exception as e:
-                print(f"Error sending WebSocket message: {str(e)}")
+        # Update UI
+        try:
+            PromptServer.instance.send_sync("dp_style_update", {
+                "node_id": unique_id,
+                "index": next_index,
+                "style_name": selected_style["name"]
+            })
+        except Exception as e:
+            print(f"Error sending WebSocket message: {str(e)}")
 
-            # Process positive prompt with weight
-            positive_prompt = selected_style.get("positive", "")
-            if positive_prompt:
-                if positive_weight != 1.0:
-                    # Format weight to always show one decimal place
-                    formatted_weight = "{:.1f}".format(positive_weight)
-                    positive_prompt = f"({positive_prompt}:{formatted_weight})"
-
-            return (
-                selected_style.get("name", "none"),
-                positive_prompt,
-                selected_style.get("negative", "")
-            )
-
-        finally:
-            random.setstate(random_state)
-
-    @classmethod
-    def IS_CHANGED(cls, **kwargs):
-        if kwargs.get("style_index_control") in ["randomize", "increment", "decrement"] or \
-           "index" in kwargs or \
-           "style_name" in kwargs:
-            return float("NaN")
-        return False 
+        return (
+            selected_style.get("name", "none"),
+            positive_prompt,
+            selected_style.get("negative", "")
+        ) 
