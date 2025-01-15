@@ -173,7 +173,9 @@ class DP_5_String_Switch:
     def INPUT_TYPES(s):
         return {
             "required": {
-                "Source": (["String_1", "String_2", "String_3", "String_4", "String_5", "all_connected"], {"default": "String_1"}),
+                "Source": (["String_1", "String_2", "String_3", "String_4", "String_5", 
+                           "all_connected", "connected_with_comma", "All_Connected_With_Line_Break", "All_Connected_With_Line_Break+"], 
+                           {"default": "String_1"}),
             },
             "optional": {
                 "String_1": ("STRING", {"multiline": True, "forceInput": True}),
@@ -191,31 +193,29 @@ class DP_5_String_Switch:
 
     def process(self, Source: str, String_1=None, String_2=None, String_3=None, String_4=None, String_5=None) -> tuple[str]:
         try:
-            if Source == "all_connected":
+            if Source in ["all_connected", "connected_with_comma", "All_Connected_With_Line_Break", "All_Connected_With_Line_Break+"]:
                 # Collect all non-None and non-empty strings
                 strings = []
                 for s in [String_1, String_2, String_3, String_4, String_5]:
-                    if s is not None and str(s).strip():  # Check if string is not None and not empty after stripping
-                        # Handle list inputs
+                    if s is not None and str(s).strip():
                         if isinstance(s, list):
                             s = " ".join(str(x) for x in s if str(x).strip())
-                        # Clean the string
                         cleaned = str(s).strip()
-                        if cleaned:  # Only add non-empty strings
+                        if cleaned:
                             strings.append(cleaned)
                 
-                if not strings:  # If no valid strings found
+                if not strings:
                     return ("",)
                 
-                # Join strings with comma and space
-                result = ", ".join(strings)
-                
-                # Clean up the final string
-                result = result.replace('\n', ' ')  # Replace newlines with spaces
-                result = re.sub(r'\s*,\s*,\s*', ', ', result)  # Remove double commas
-                result = re.sub(r'\s+', ' ', result)  # Remove multiple spaces
-                result = re.sub(r'\s*,\s*', ', ', result)  # Ensure proper comma spacing
-                result = result.strip()  # Remove leading/trailing whitespace
+                # Join strings based on Source type
+                if Source == "all_connected":
+                    result = " ".join(strings)
+                elif Source == "connected_with_comma":
+                    result = ", ".join(strings)
+                elif Source == "All_Connected_With_Line_Break":
+                    result = "\n".join(strings)
+                else:  # All_Connected_With_Line_Break+
+                    result = "\n\n".join(strings)
                 
                 return (result,)
             else:
@@ -249,7 +249,8 @@ class DP_10_String_Switch:
             "required": {
                 "Source": (["String_1", "String_2", "String_3", "String_4", "String_5", 
                           "String_6", "String_7", "String_8", "String_9", "String_10", 
-                          "all_connected"], {"default": "String_1"}),
+                          "all_connected", "connected_with_comma", "All_Connected_With_Line_Break", "All_Connected_With_Line_Break+"], 
+                          {"default": "String_1"}),
             },
             "optional": {
                 "String_1": ("STRING", {"multiline": True, "forceInput": True}),
@@ -277,25 +278,25 @@ class DP_10_String_Switch:
                     return " ".join(str(x).strip() for x in s if str(x).strip())
                 return str(s).strip()
 
-            if Source == "all_connected":
-                # Collect all non-None and non-empty strings
+            if Source in ["all_connected", "connected_with_comma", "All_Connected_With_Line_Break", "All_Connected_With_Line_Break+"]:
                 strings = []
                 for i in range(1, 11):
                     s = kwargs.get(f"String_{i}")
                     if s is not None:
                         cleaned = clean_string(s)
                         if cleaned:
-                            # Check if previous string ended with comma
-                            if strings and not strings[-1].endswith(','):
-                                strings.append(f", {cleaned}")
-                            else:
-                                strings.append(cleaned)
+                            strings.append(cleaned)
                 
-                # Join all strings
                 if strings:
-                    result = "".join(strings)
-                    # Remove leading comma if present
-                    return (result.lstrip(", "),)
+                    if Source == "all_connected":
+                        result = " ".join(strings)
+                    elif Source == "connected_with_comma":
+                        result = ", ".join(strings)
+                    elif Source == "All_Connected_With_Line_Break":
+                        result = "\n".join(strings)
+                    else:  # All_Connected_With_Line_Break+
+                        result = "\n\n".join(strings)
+                    return (result,)
                 return ("",)
             
             # Single string mode

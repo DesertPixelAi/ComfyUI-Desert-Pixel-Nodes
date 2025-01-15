@@ -117,6 +117,8 @@ class DP_Five_Lora_Random:
                 ) else ""
                 weights_info.append(f"{lora_name}: {strength:.3f}{is_random}")
                 torch.cuda.empty_cache()
+        else:
+            weights_info.append("No LoRAs used")  # New line for when no LoRAs are loaded
 
         return (model, clip, "\n".join(weights_info))
 
