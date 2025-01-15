@@ -146,7 +146,8 @@ try:
     from .nodes.dp_image_switch import (
         DP_Image_Switch_3_Inputs,
         DP_Image_Switch_5_Inputs,
-        DP_Image_Switch_10_Inputs
+        DP_Image_Switch_10_Inputs,
+        DP_Image_And_String_Pairs_Switch
     )
 
     # Add import near the other imports (around line 115):
@@ -170,6 +171,36 @@ try:
     # Add these imports near the other imports:
     from .nodes.dp_line_cycler import DP_Line_Cycler
     from .nodes.dp_5_find_and_replace import DP_5_Find_And_Replace
+
+    # Add this import near the other imports:
+    from .nodes.dp_mask_settings import DP_Mask_Settings
+
+    # Add this import near the other imports:
+    from .nodes.dp_sampler import DP_Sampler
+
+    # Add this import near the other imports:
+    from .nodes.dp_controlnet import DP_ControlNetApplyAdvanced, DP_Load_Controlnet_Model_With_Name
+
+    # Add this import near the other imports:
+    from .nodes.dp_checkpoint_loader import DP_Load_Checkpoint_With_Info
+
+    # Add this import near the other imports:
+    from .nodes.dp_model_loaders import DP_Load_UNET_With_Info, DP_Load_Dual_CLIP_With_Info
+
+    # Add this to the NODE_CLASS_MAPPINGS dictionary:
+    NODE_CLASS_MAPPINGS.update({
+        "DP ControlNet Apply Advanced": DP_ControlNetApplyAdvanced,
+        "DP Load Controlnet Model With Name": DP_Load_Controlnet_Model_With_Name,
+        "DP Load Checkpoint With Info": DP_Load_Checkpoint_With_Info,
+        "DP Load UNET With Info": DP_Load_UNET_With_Info,
+        "DP Load Dual CLIP With Info": DP_Load_Dual_CLIP_With_Info,
+    })
+
+    # Add this to NODE_DISPLAY_NAME_MAPPINGS:
+    NODE_DISPLAY_NAME_MAPPINGS["DP Load Controlnet Model With Name"] = "DP Load ControlNet Model With Name"
+    NODE_DISPLAY_NAME_MAPPINGS["DP Load Checkpoint With Info"] = "DP Load Checkpoint With Info"
+    NODE_DISPLAY_NAME_MAPPINGS["DP Load UNET With Info"] = "DP Load UNET With Info"
+    NODE_DISPLAY_NAME_MAPPINGS["DP Load Dual CLIP With Info"] = "DP Load Dual CLIP With Info"
 
     # Add all nodes to the mappings
     NODE_CLASS_MAPPINGS = {
@@ -253,6 +284,14 @@ try:
         "DP Image Effect Processor Small": DP_Image_Effect_Processor_Small,
         "DP Line Cycler": DP_Line_Cycler,
         "DP 5 Find And Replace": DP_5_Find_And_Replace,
+        "DP Mask Settings": DP_Mask_Settings,
+        "DP Image And String Pairs Switch": DP_Image_And_String_Pairs_Switch,
+        "DP Sampler": DP_Sampler,
+        "DP ControlNet Apply Advanced": DP_ControlNetApplyAdvanced,
+        "DP Load Controlnet Model With Name": DP_Load_Controlnet_Model_With_Name,
+        "DP Load Checkpoint With Info": DP_Load_Checkpoint_With_Info,
+        "DP Load UNET With Info": DP_Load_UNET_With_Info,
+        "DP Load Dual CLIP With Info": DP_Load_Dual_CLIP_With_Info,
     }
 
     # Create display names
@@ -285,6 +324,9 @@ try:
     NODE_DISPLAY_NAME_MAPPINGS["DP Image Effect Processor Small"] = "DP Image Effect Processor Small"
     NODE_DISPLAY_NAME_MAPPINGS["DP Line Cycler"] = "DP Line Cycler"
     NODE_DISPLAY_NAME_MAPPINGS["DP 5 Find And Replace"] = "DP 5 Find And Replace"
+    NODE_DISPLAY_NAME_MAPPINGS["DP Mask Settings"] = "DP Mask Settings"
+    NODE_DISPLAY_NAME_MAPPINGS["DP Image And String Pairs Switch"] = "DP Image And String Pairs Switch"
+    NODE_DISPLAY_NAME_MAPPINGS["DP Sampler"] = "DP Sampler"
 
     # Set web directory
     WEB_DIRECTORY = "js"
