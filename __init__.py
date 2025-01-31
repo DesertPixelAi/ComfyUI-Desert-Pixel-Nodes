@@ -71,13 +71,11 @@ try:
     from .nodes.dp_broken_token import DP_Broken_Token
     from .nodes.dp_clean_prompt import DP_clean_prompt
     from .nodes.dp_prompt_styler import DP_Prompt_Styler
-    from .nodes.dp_prompt_manager import DP_Prompt_Manager, DP_Prompt_Mode_Controller
+    from .nodes.dp_prompt_manager_small import DP_Prompt_Manager_Small, DP_Prompt_Mode_Controller
     from .nodes.dp_prompt_token_compressor import DP_SmartPromptCompressor
     from .nodes.dp_text_preview import DP_Text_Preview
-    from .nodes.dp_strings_connector import DP_Strings_Connector
     
     # Control and utility nodes
-    from .nodes.dp_combo_controller import DP_Combo_Controller
     from .nodes.dp_create_simple_json import DP_create_json_file
     from .nodes.dp_draggable_floats import (
         DP_Draggable_Floats_1, 
@@ -90,12 +88,9 @@ try:
     from .nodes.dp_random_min_max import DP_random_min_max
     from .nodes.dp_simple_width_height import DP_Aspect_Ratio_Picker
     from .nodes.dp_string_with_switch import (
-        DP_String_With_Switch, 
         DP_2_String_Switch, 
         DP_String_Text,
-        DP_String_Text_With_Weight,
-        DP_5_String_Switch,
-        DP_10_String_Switch
+        DP_String_Text_With_Sdxl_Weight
     )
     from .nodes.dp_switch_controller import DP_Switch_Controller
     
@@ -108,7 +103,6 @@ try:
     
     # Logo and animation nodes
     from .nodes.dp_logo_animator import DP_Logo_Animator
-    from .nodes.dp_logo_animator_advanced import DP_Logo_Animator_Advanced
     
     # Generator nodes
     from .nodes.dp_crazy_random_prompt_generator import DP_Random_Crazy_Prompt_Generator
@@ -126,10 +120,6 @@ try:
     # Import the crazy prompt mixer
     from .nodes.dp_crazy_prompt_mixer import DP_Crazy_Prompt_Mixer
 
-    # In the imports section, add:
-    from .nodes.dp_prompt_manager_small import DP_Prompt_Manager_Small
-    from .nodes.dp_lora_strength_stepper import DP_Lora_Strength_Stepper
-
     # Add this import near the other imports:
     from .nodes.dp_random_mode_controller import DP_Random_Mode_Switch, DP_Random_Mode_Controller
 
@@ -137,17 +127,14 @@ try:
     from .nodes.dp_custom_aspect_ratio import DP_Custom_Aspect_Ratio
 
     # Add this import near the other imports:
-    from .nodes.dp_condition_mixer import DP_Condition_Mixer
-
-    # Add this import near the other imports:
     from .nodes.dp_image_color_analyzer_small import DP_Image_Color_Analyzer_Small
 
     # Add this import near the other imports:
     from .nodes.dp_image_switch import (
-        DP_Image_Switch_3_Inputs,
-        DP_Image_Switch_5_Inputs,
-        DP_Image_Switch_10_Inputs,
-        DP_Image_And_String_Pairs_Switch
+        DP_Image_And_String_Pairs_Switch,
+        DP_3_Images_Switch_Or_Batch,
+        DP_5_Images_Switch_Or_Batch,
+        DP_10_Images_Switch_Or_Batch
     )
 
     # Add import near the other imports (around line 115):
@@ -187,6 +174,28 @@ try:
     # Add this import near the other imports:
     from .nodes.dp_model_loaders import DP_Load_UNET_With_Info, DP_Load_Dual_CLIP_With_Info
 
+    # Add this import near the other imports:
+    from .nodes.dp_add_background_to_png import DP_Add_Background_To_Png
+
+    # Add this import near the other imports:
+    from .nodes.dp_string_switches import (
+        DP_10_String_Switch_Or_Connect,
+        DP_3_String_Switch_Or_Connect,
+        DP_5_String_Switch_Or_Connect
+    )
+
+    # Add this import near the other imports:
+    from .nodes.dp_latent_split import DP_Latent_Split
+
+    # Add this import near the other imports:
+    from .nodes.dp_condition_mixer import DP_Condition_Switch
+
+    # Add this import near the other imports:
+    from .nodes.dp_advanced_sampler import DP_Advanced_Sampler
+
+    # Add this import
+    from .nodes.dp_float_stepper import DP_Float_Stepper
+
     # Add this to the NODE_CLASS_MAPPINGS dictionary:
     NODE_CLASS_MAPPINGS.update({
         "DP ControlNet Apply Advanced": DP_ControlNetApplyAdvanced,
@@ -194,6 +203,27 @@ try:
         "DP Load Checkpoint With Info": DP_Load_Checkpoint_With_Info,
         "DP Load UNET With Info": DP_Load_UNET_With_Info,
         "DP Load Dual CLIP With Info": DP_Load_Dual_CLIP_With_Info,
+        "DP Add Background To Png": DP_Add_Background_To_Png,
+        "DP 10 String Switch Or Connect": DP_10_String_Switch_Or_Connect,
+        "DP 3 Images Switch Or Batch": DP_3_Images_Switch_Or_Batch,
+        "DP 5 Images Switch Or Batch": DP_5_Images_Switch_Or_Batch,
+        "DP Latent Split": DP_Latent_Split,
+        "DP Condition Switch": DP_Condition_Switch,
+        "DP Text Preview": DP_Text_Preview,
+        "DP Switch Controller": DP_Switch_Controller,
+        "DP Video Looper": DP_Video_Looper,
+        "DP Image Strip": DP_Image_Strip,
+        "DP Int 0-1000": DP_Int_0_1000,
+        "DP Int 0-1000 4 Step": DP_Int_0_1000_4_Step,
+        "DP Int 0-1000 8 Step": DP_Int_0_1000_8_Step,
+        "DP Strip Edge Masks": DP_Strip_Edge_Masks,
+        "DP Animation Calculator 10 Inputs": DP_Animation_Calculator_10_Inputs,
+        "DP Video Effect Receiver": DP_Video_Effect_Receiver,
+        "DP Video Flicker": DP_Video_Flicker,
+        "DP Video Transition": DP_Video_Transition,
+        "DP Video Effect Sender": DP_Video_Effect_Sender,
+        "DP Advanced Sampler": DP_Advanced_Sampler,
+        "DP Float Stepper": DP_Float_Stepper,
     })
 
     # Add this to NODE_DISPLAY_NAME_MAPPINGS:
@@ -201,17 +231,41 @@ try:
     NODE_DISPLAY_NAME_MAPPINGS["DP Load Checkpoint With Info"] = "DP Load Checkpoint With Info"
     NODE_DISPLAY_NAME_MAPPINGS["DP Load UNET With Info"] = "DP Load UNET With Info"
     NODE_DISPLAY_NAME_MAPPINGS["DP Load Dual CLIP With Info"] = "DP Load Dual CLIP With Info"
+    NODE_DISPLAY_NAME_MAPPINGS["DP Add Background To Png"] = "DP Add Background To PNG"
+    NODE_DISPLAY_NAME_MAPPINGS["DP 10 String Switch Or Connect"] = "DP 10 String Switch Or Connect"
+    NODE_DISPLAY_NAME_MAPPINGS["DP 3 Images Switch Or Batch"] = "DP 3 Images Switch Or Batch"
+    NODE_DISPLAY_NAME_MAPPINGS["DP 5 Images Switch Or Batch"] = "DP 5 Images Switch Or Batch"
+    NODE_DISPLAY_NAME_MAPPINGS["DP Latent Split"] = "DP Latent Split"
+    NODE_DISPLAY_NAME_MAPPINGS["DP Condition Switch"] = "DP Condition Switch"
+    NODE_DISPLAY_NAME_MAPPINGS["DP Text Preview"] = "DP Text Preview"
+    NODE_DISPLAY_NAME_MAPPINGS["DP Switch Controller"] = "DP Switch Controller"
+    NODE_DISPLAY_NAME_MAPPINGS["DP Video Looper"] = "DP Video Looper"
+    NODE_DISPLAY_NAME_MAPPINGS["DP Image Strip"] = "DP Image Strip"
+    NODE_DISPLAY_NAME_MAPPINGS["DP Int 0-1000"] = "DP Int 0-1000"
+    NODE_DISPLAY_NAME_MAPPINGS["DP Int 0-1000 4 Step"] = "DP Int 0-1000 4 Step"
+    NODE_DISPLAY_NAME_MAPPINGS["DP Int 0-1000 8 Step"] = "DP Int 0-1000 8 Step"
+    NODE_DISPLAY_NAME_MAPPINGS["DP Strip Edge Masks"] = "DP Strip Edge Masks"
+    NODE_DISPLAY_NAME_MAPPINGS["DP Animation Calculator 10 Inputs"] = "DP Animation Calculator 10 Inputs"
+    NODE_DISPLAY_NAME_MAPPINGS["DP Video Effect Receiver"] = "DP Video Effect Receiver"
+    NODE_DISPLAY_NAME_MAPPINGS["DP Video Flicker"] = "DP Video Flicker"
+    NODE_DISPLAY_NAME_MAPPINGS["DP Video Transition"] = "DP Video Transition"
+    NODE_DISPLAY_NAME_MAPPINGS["DP Video Effect Sender"] = "DP Video Effect Sender"
+    NODE_DISPLAY_NAME_MAPPINGS["DP Advanced Sampler"] = "DP Advanced Sampler"
+    NODE_DISPLAY_NAME_MAPPINGS["DP Float Stepper"] = "DP Float Stepper"
 
     # Add all nodes to the mappings
     NODE_CLASS_MAPPINGS = {
         "DP Big Letters": DP_Big_Letters,
         "DP Animation Calculator 5 Inputs": DP_Animation_Calculator_5_Inputs,
+        "DP Animation Calculator 10 Inputs": DP_Animation_Calculator_10_Inputs,
         "DP Transition Frames Selector": DP_Transition_Frames_Selector,
         "DP Diff Int 8step Selector": DP_Diff_Int_8step_selector,
+        "DP Int 0-1000": DP_Int_0_1000,
+        "DP Int 0-1000 4 Step": DP_Int_0_1000_4_Step,
+        "DP Int 0-1000 8 Step": DP_Int_0_1000_8_Step,
         "DP Broken Token": DP_Broken_Token,
         "DP Clean Prompt": DP_clean_prompt,
         "DP Clean Prompt Travel": DP_Clean_Prompt_Travel,
-        "DP Combo Controller": DP_Combo_Controller,
         "DP Create Json File": DP_create_json_file,
         "DP Random Crazy Prompt Generator": DP_Random_Crazy_Prompt_Generator,
         "DP Draggable Floats 1": DP_Draggable_Floats_1,
@@ -226,56 +280,35 @@ try:
         "DP Image Empty Latent Switch Flux": DP_Image_Empty_Latent_Switch_Flux,
         "DP Image Empty Latent Switch SDXL": DP_Image_Empty_Latent_Switch_SDXL,
         "DP Image Slide Show": DP_Image_Slide_Show,
+        "DP Image Strip": DP_Image_Strip,
+        "DP Strip Edge Masks": DP_Strip_Edge_Masks,
         "DP Load Image Effects": DP_Load_Image_Effects,
         "DP Load Image Effects Small": DP_Load_Image_Effects_Small,
         "DP Logo Animator": DP_Logo_Animator,
-        "DP Logo Animator Advanced": DP_Logo_Animator_Advanced,
         "DP Lora Strength Controller": DP_Lora_Strength_Controller,
         "DP Lora Random Strength Controller": DP_Lora_Random_Strength_Controller,
         "DP Prompt Styler": DP_Prompt_Styler,
-        "DP Prompt Manager": DP_Prompt_Manager,
         "DP Prompt Mode Controller": DP_Prompt_Mode_Controller,
         "DP Set New Model Folder Link": DP_symlink,
         "DP Random Character": DP_Random_Character,
         "DP Random Min Max": DP_random_min_max,
         "DP Save Preview Image": DP_Save_Preview_Image,
         "DP Aspect Ratio Picker": DP_Aspect_Ratio_Picker,
-        "DP String With Switch": DP_String_With_Switch,
         "DP 2 String Switch": DP_2_String_Switch,
         "DP String Text": DP_String_Text,
-        "DP String Text With Weight": DP_String_Text_With_Weight,
-        "DP 5 String Switch": DP_5_String_Switch,
-        "DP 10 String Switch": DP_10_String_Switch,
-        "DP Switch Controller": DP_Switch_Controller,
-        "DP Text Preview": DP_Text_Preview,
-        "DP Video Effect Sender": DP_Video_Effect_Sender,
-        "DP Video Effect Receiver": DP_Video_Effect_Receiver,
-        "DP Video Flicker": DP_Video_Flicker,
-        "DP Video Looper": DP_Video_Looper,
-        "DP Video Transition": DP_Video_Transition,
-        "DP Animation Calculator 10 Inputs": DP_Animation_Calculator_10_Inputs,
-        "DP Int 0-1000": DP_Int_0_1000,
-        "DP Int 0-1000 4 Step": DP_Int_0_1000_4_Step,
-        "DP Int 0-1000 8 Step": DP_Int_0_1000_8_Step,
-        "DP Image Strip": DP_Image_Strip,
-        "DP Strip Edge Masks": DP_Strip_Edge_Masks,
+        "DP String Text With Sdxl Weight": DP_String_Text_With_Sdxl_Weight,
         "DP Prompt Token Compressor": DP_SmartPromptCompressor,
         "DP Random Logo Style Generator": DP_Random_Logo_Style_Generator,
         "DP Random Superhero Prompt Generator": DP_Random_Superhero_Prompt_Generator,
         "DP Random Psychedelic Punk Generator": DP_Random_Psychedelic_Punk_Generator,
         "DP Crazy Prompt Mixer": DP_Crazy_Prompt_Mixer,
         "DP Prompt Inverter": DP_Prompt_Inverter,
-        "DP Strings Connector": DP_Strings_Connector,
         "DP Prompt Manager Small": DP_Prompt_Manager_Small,
-        "DP Lora Strength Stepper": DP_Lora_Strength_Stepper,
         "DP Random Mode Switch": DP_Random_Mode_Switch,
         "DP Random Mode Controller": DP_Random_Mode_Controller,
         "DP Custom Aspect Ratio": DP_Custom_Aspect_Ratio,
-        "DP Condition Mixer": DP_Condition_Mixer,
         "DP Image Color Analyzer Small": DP_Image_Color_Analyzer_Small,
-        "DP Image Switch 3": DP_Image_Switch_3_Inputs,
-        "DP Image Switch 5": DP_Image_Switch_5_Inputs,
-        "DP Image Switch 10": DP_Image_Switch_10_Inputs,
+        "DP Image And String Pairs Switch": DP_Image_And_String_Pairs_Switch,
         "DP Art Style Generator": DP_Art_Style_Generator,
         "DP Add Weight To String Sdxl": DP_Add_Weight_To_String_Sdxl,
         "DP Advanced Weight String Sdxl": DP_Advanced_Weight_String_Sdxl,
@@ -285,48 +318,50 @@ try:
         "DP Line Cycler": DP_Line_Cycler,
         "DP 5 Find And Replace": DP_5_Find_And_Replace,
         "DP Mask Settings": DP_Mask_Settings,
-        "DP Image And String Pairs Switch": DP_Image_And_String_Pairs_Switch,
         "DP Sampler": DP_Sampler,
         "DP ControlNet Apply Advanced": DP_ControlNetApplyAdvanced,
         "DP Load Controlnet Model With Name": DP_Load_Controlnet_Model_With_Name,
         "DP Load Checkpoint With Info": DP_Load_Checkpoint_With_Info,
         "DP Load UNET With Info": DP_Load_UNET_With_Info,
         "DP Load Dual CLIP With Info": DP_Load_Dual_CLIP_With_Info,
+        "DP Add Background To Png": DP_Add_Background_To_Png,
+        "DP 10 Images Switch Or Batch": DP_10_Images_Switch_Or_Batch,
+        "DP 3 Images Switch Or Batch": DP_3_Images_Switch_Or_Batch,
+        "DP 5 Images Switch Or Batch": DP_5_Images_Switch_Or_Batch,
+        "DP Latent Split": DP_Latent_Split,
+        "DP Condition Switch": DP_Condition_Switch,
+        "DP Text Preview": DP_Text_Preview,
+        "DP Switch Controller": DP_Switch_Controller,
+        "DP Video Looper": DP_Video_Looper,
+        "DP Video Effect Receiver": DP_Video_Effect_Receiver,
+        "DP Video Flicker": DP_Video_Flicker,
+        "DP Video Transition": DP_Video_Transition,
+        "DP Video Effect Sender": DP_Video_Effect_Sender,
+        "DP 10 String Switch Or Connect": DP_10_String_Switch_Or_Connect,
+        "DP 3 String Switch Or Connect": DP_3_String_Switch_Or_Connect,
+        "DP 5 String Switch Or Connect": DP_5_String_Switch_Or_Connect,
+        "DP Advanced Sampler": DP_Advanced_Sampler,
+        "DP Float Stepper": DP_Float_Stepper,
     }
 
     # Create display names
     for key in NODE_CLASS_MAPPINGS:
-        display_name = key.replace("Dp ", "DP ")
-        NODE_DISPLAY_NAME_MAPPINGS[key] = display_name
+        NODE_DISPLAY_NAME_MAPPINGS[key] = key.replace("Dp ", "DP ")
 
     # Update display names
     NODE_DISPLAY_NAME_MAPPINGS["DP Prompt Token Compressor"] = "DP Prompt Token Compressor"
     NODE_DISPLAY_NAME_MAPPINGS["DP Random Psychedelic Punk Generator"] = "DP Random Psychedelic Punk Generator"
     NODE_DISPLAY_NAME_MAPPINGS["DP Crazy Prompt Mixer"] = "DP Crazy Prompt Mixer"
     NODE_DISPLAY_NAME_MAPPINGS["DP Prompt Inverter"] = "DP Prompt Inverter"
-    NODE_DISPLAY_NAME_MAPPINGS["DP Strings Connector"] = "DP Strings Connector"
-    NODE_DISPLAY_NAME_MAPPINGS["DP 5 String Switch"] = "DP 5 String Switch"
-    NODE_DISPLAY_NAME_MAPPINGS["DP 10 String Switch"] = "DP 10 String Switch"
     NODE_DISPLAY_NAME_MAPPINGS["DP Random Mode Switch"] = "DP Random Mode Switch"
     NODE_DISPLAY_NAME_MAPPINGS["DP Random Mode Controller"] = "DP Random Mode Controller"
     NODE_DISPLAY_NAME_MAPPINGS["DP Custom Aspect Ratio"] = "DP Custom Aspect Ratio"
-    NODE_DISPLAY_NAME_MAPPINGS["DP Condition Mixer"] = "DP Condition Mixer"
     NODE_DISPLAY_NAME_MAPPINGS["DP Image Color Analyzer Small"] = "DP Image Color Analyzer Small"
-    NODE_DISPLAY_NAME_MAPPINGS["DP Image Switch 3"] = "DP Image Switch 3"
-    NODE_DISPLAY_NAME_MAPPINGS["DP Image Switch 5"] = "DP Image Switch 5"
-    NODE_DISPLAY_NAME_MAPPINGS["DP Image Switch 10"] = "DP Image Switch 10"
-    NODE_DISPLAY_NAME_MAPPINGS["DP Art Style Generator"] = "DP Art Style Generator"
-    NODE_DISPLAY_NAME_MAPPINGS["DP Add Weight To String Sdxl"] = "DP Add Weight To String SDXL"
-    NODE_DISPLAY_NAME_MAPPINGS["DP Advanced Weight String Sdxl"] = "DP Advanced Weight String SDXL"
-    NODE_DISPLAY_NAME_MAPPINGS["DP Random Vehicle Generator"] = "DP Random Vehicle Generator"
-    NODE_DISPLAY_NAME_MAPPINGS["DP String Text With Weight"] = "DP String Text With Weight"
-    NODE_DISPLAY_NAME_MAPPINGS["DP Load Image Minimal"] = "DP Load Image Minimal"
-    NODE_DISPLAY_NAME_MAPPINGS["DP Image Effect Processor Small"] = "DP Image Effect Processor Small"
-    NODE_DISPLAY_NAME_MAPPINGS["DP Line Cycler"] = "DP Line Cycler"
-    NODE_DISPLAY_NAME_MAPPINGS["DP 5 Find And Replace"] = "DP 5 Find And Replace"
-    NODE_DISPLAY_NAME_MAPPINGS["DP Mask Settings"] = "DP Mask Settings"
     NODE_DISPLAY_NAME_MAPPINGS["DP Image And String Pairs Switch"] = "DP Image And String Pairs Switch"
-    NODE_DISPLAY_NAME_MAPPINGS["DP Sampler"] = "DP Sampler"
+    NODE_DISPLAY_NAME_MAPPINGS["DP 10 Images Switch Or Batch"] = "DP 10 Images Switch Or Batch"
+    NODE_DISPLAY_NAME_MAPPINGS["DP 3 Images Switch Or Batch"] = "DP 3 Images Switch Or Batch"
+    NODE_DISPLAY_NAME_MAPPINGS["DP 5 Images Switch Or Batch"] = "DP 5 Images Switch Or Batch"
+    NODE_DISPLAY_NAME_MAPPINGS["DP String Text With Sdxl Weight"] = "DP String Text With SDXL Weight"
 
     # Set web directory
     WEB_DIRECTORY = "js"
