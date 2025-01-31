@@ -1,0 +1,65 @@
+Ambient lighting
+Artificial lighting
+Backlit lighting
+Diffused lighting
+Flash lighting
+Harsh lighting
+Natural lighting
+SideLit lighting
+Soft lighting
+Spotlight lighting
+Golden hour lighting
+Blue hour lighting
+Moonlight lighting
+Twilight lighting
+Sunrise lighting
+Sunset lighting
+Overcast lighting
+Dappled sunlight
+Morning light
+Evening light
+Rembrandt lighting
+Butterfly lighting
+Loop lighting
+Split lighting
+Broad lighting
+Short lighting
+Clamshell lighting
+Beauty dish lighting
+Ring light
+Three-point lighting
+Key light
+Fill light
+Rim lighting
+Hair light
+Chiaroscuro lighting 
+Low-key lighting
+High-key lighting
+Silhouette lighting
+Cinematic lighting
+Moody lighting
+Noir lighting
+Dramatic shadows
+Volumetric lighting
+God rays
+Neon lighting
+Blacklight lighting
+LED lighting
+Strobe lighting
+Glowing lighting
+Fire lighting
+Candlelight
+Light painting
+Crystal lighting
+Prism lighting
+Rainbow lighting
+Indoor lighting
+Outdoor lighting
+Studio lighting
+Street lighting
+Stage lighting
+Concert lighting
+Museum lighting
+Gallery lighting
+Underwater lighting
+Forest canopy lighting
