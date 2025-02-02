@@ -1,0 +1,5 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+
+# Users custom resolutions
+aspect_ratio/custom_aspect_ratios.txt
