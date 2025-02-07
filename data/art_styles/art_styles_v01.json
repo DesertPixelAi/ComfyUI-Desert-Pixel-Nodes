@@ -1,0 +1,1848 @@
+{
+    "version": "1.0",
+    "styles": [
+        {
+            "name": "Clean Vector Silhouette Style",
+            "positive": "pure black silhouette, solid vector shape, perfect crisp edges, absolute black on pure white background, minimalist design, clear outline, sharp contrast, perfect clean edges, vector precision, graphic design quality, perfect shape definition, professional composition, clear figure-ground relationship, exact contours, high contrast monochrome, clear cut edges, surgical precision, perfect shape isolation, flawless outline, professional vector quality",
+            "negative": "gradients, grayscale, shadows, details, textures, patterns, noise, grain, blur, soft edges, anti-aliasing, transparency, opacity variations, background details, inner details, shading, halftones, dithering, photographic elements, color, rough edges, messy outline, amateur quality, busy background, depth, dimension, highlights"
+        },
+        {
+            "name": "Classic Oil Painting",
+            "positive": "masterful oil painting technique, rich impasto texture, classical composition, fine art quality, traditional medium, glazing technique, painterly brushstrokes, canvas texture, traditional atelier style, rich color depth, old masters technique",
+            "negative": "digital art, 3d render, photography, sharp edges, computer generated, anime, cartoon, modern style"
+        },
+        {
+            "name": "Contemporary Abstract Expressionism",
+            "positive": "bold gestural brushstrokes, emotional color use, dynamic composition, spontaneous expression, abstract forms, intense energy, artistic freedom, textured paint, contemporary art style, non-representational, action painting technique",
+            "negative": "realistic, controlled, precise, photographic, representative art, clean lines, traditional style, digital art"
+        },
+        {
+            "name": "Professional Studio Photography",
+            "positive": "professional studio lighting, perfect exposure, high-end camera qualities, commercial photography, professional retouching, studio backdrop, perfect focus, commercial quality, fashion magazine style, professional color grading",
+            "negative": "amateur, snapshot, casual photo, blurry, grainy, artistic interpretation, low quality, instagram filters"
+        },
+        {
+            "name": "Traditional Japanese Woodblock",
+            "positive": "ukiyo-e style, traditional woodblock print technique, flat color areas, strong outlines, Japanese art composition, floating world aesthetic, careful detail, traditional subjects, decorative patterns, edo period style",
+            "negative": "western art style, photorealistic, modern style, digital art, 3d rendering, gradient colors, camera photo"
+        },
+        {
+            "name": "Professional 3D Rendering",
+            "positive": "octane render, highly detailed volumetric rendering, dramatic lighting, ray tracing, global illumination, perfect reflections, subsurface scattering, high-end 3D graphics, professional texturing, depth of field, ambient occlusion",
+            "negative": "2d, flat, painted, sketchy, noisy, low poly, blurry, watercolor, traditional media, hand-drawn, artistic"
+        },
+        {
+            "name": "Ethereal Watercolor Art",
+            "positive": "delicate watercolor technique, flowing pigments, translucent layers, soft color bleeding, artistic brushstrokes, organic texture, traditional media, handcrafted feel, watercolor paper grain, gentle color gradients, wet-on-wet technique",
+            "negative": "digital art, harsh lines, photorealistic, sharp edges, heavy contrast, solid colors, artificial looking, anime, 3d render"
+        },
+        {
+            "name": "Gothic Dark Fantasy",
+            "positive": "dark atmospheric scene, medieval gothic architecture, dramatic shadows, ornate details, mysterious mood, grotesque elements, elaborate decoration, pointed arches, dramatic lighting, ancient stone texture, gothic aesthetics",
+            "negative": "cheerful, modern, minimalist, bright colors, simple design, casual style, cute, cartoon, anime"
+        },
+        {
+            "name": "Art Nouveau Design",
+            "positive": "elegant curved lines, organic flowing forms, decorative elements, natural motifs, sophisticated patterns, whiplash curves, ornamental design, feminine beauty, detailed botanicals, gold accents, symmetrical composition",
+            "negative": "geometric, minimalist, modern, digital, sharp angles, simplistic, cartoon, photorealistic"
+        },
+        {
+            "name": "Synthwave Retro Futurism",
+            "positive": "1980s retro aesthetic, neon colors, grid patterns, sunset gradients, chrome text, digital horizon, retrowave style, vibrant contrast, futuristic retro, outrun aesthetic, synthwave atmosphere",
+            "negative": "realistic, modern, natural colors, traditional art, baroque, classical, minimalist, vintage photo"
+        },
+        {
+            "name": "Scientific Technical Illustration",
+            "positive": "detailed technical drawing, precise linework, scientific accuracy, labeled diagrams, botanical illustration style, anatomical detail, educational quality, measured perspective, professional documentation, technical precision",
+            "negative": "artistic interpretation, loose style, abstract, expressive, emotional, messy, imprecise, painterly, sketchy"
+        },
+        {
+            "name": "Urban Street Art Mural",
+            "positive": "large scale street art, spray paint texture, urban art style, bold colors, graffiti elements, wall texture, contemporary urban art, street culture influence, weathered surface, urban decay aesthetic",
+            "negative": "traditional art, fine art, classical style, digital perfection, clean edges, studio work, corporate art"
+        },
+        {
+            "name": "Minimalist Modern Design",
+            "positive": "clean geometric shapes, minimal color palette, modern typography, negative space, essential elements only, balanced composition, precise alignment, professional design, sophisticated restraint, modernist principles",
+            "negative": "busy, detailed, ornate, complicated, cluttered, baroque, maximalist, noisy, messy, traditional"
+        },
+        {
+            "name": "Surreal Dreamscape Art",
+            "positive": "metaphysical scenery, impossible combinations, psychological symbolism, dream-like imagery, subconscious expression, floating elements, distorted reality, symbolic objects, mysterious atmosphere, surrealist composition",
+            "negative": "realistic, ordinary, conventional, documentary, literal, straightforward, commercial, photographic"
+        },
+        {
+            "name": "Vintage Analog Photography",
+            "positive": "analog film grain, light leaks, vintage color grading, film emulsion quality, chemical process artifacts, authentic vintage atmosphere, traditional photography, aged photo effect, classic film stock, kodak portra style",
+            "negative": "digital, clean, sharp, perfect exposure, modern, crisp, CGI, vector art, illustration, contemporary"
+        },
+        {
+            "name": "Pop Art Graphic Style",
+            "positive": "bold pop art style, halftone dots, comic book aesthetic, high contrast colors, graphic design elements, pop culture influence, screen printing effect, commercial art style, andy warhol inspired, roy lichtenstein style",
+            "negative": "realistic, photographic, traditional art, muted colors, painterly, classical style, minimalist"
+        },
+        {
+            "name": "Cyberpunk Digital Universe",
+            "positive": "neon-lit cityscape, high tech low life, cyberpunk aesthetic, holographic elements, technological dystopia, chrome and neon, digital rain effect, cyber networks, future noir, advanced technology integration",
+            "negative": "natural, rural, historical, traditional art, painterly, watercolor, pencil sketch, vintage"
+        },
+        {
+            "name": "Renaissance Master Painting",
+            "positive": "classical renaissance style, perfect human anatomy, dramatic composition, sfumato technique, rich color palette, historical accuracy, masterful perspective, religious or mythological themes, old master techniques",
+            "negative": "modern, abstract, simplified, cartoon, anime, digital art, contemporary, photographic"
+        },
+        {
+            "name": "Art Deco Elegance",
+            "positive": "geometric art deco patterns, luxurious decoration, symmetrical design, golden age glamour, decorative elegance, bold geometric shapes, metallic elements, geometric symmetry, 1920s style, streamline moderne",
+            "negative": "rustic, minimal, contemporary, organic shapes, abstract expressionism, grunge, casual"
+        },
+        {
+            "name": "Impressionist Light Study",
+            "positive": "impressionist brush technique, natural light effects, color vibrance, loose brushwork, atmospheric perspective, plein air painting style, broken color technique, light and shadow interplay, momentary impression",
+            "negative": "sharp details, photorealistic, digital art, clean lines, anime, cartoon, graphic design"
+        },
+        {
+            "name": "Atmospheric Horror",
+            "positive": "dark gothic atmosphere, psychological horror elements, mysterious shadows, eerie lighting, haunting mood, supernatural elements, cinematic horror, unsettling composition, lurking darkness, horror genre aesthetics",
+            "negative": "bright, cheerful, cute, cartoon style, clean, minimalist, commercial, friendly"
+        },
+        {
+            "name": "Botanical Scientific Study",
+            "positive": "detailed botanical illustration, scientific accuracy, natural specimen documentation, carefully observed details, taxonomic precision, natural history style, educational diagram quality, authentic plant study",
+            "negative": "abstract, impressionist, loose style, artistic interpretation, cartoon, stylized, simplified"
+        },
+        {
+            "name": "Cinematic Dramatic Scene",
+            "positive": "cinematic composition, professional movie still, dramatic lighting setup, film industry quality, perfect framing, color grading, anamorphic lens effect, motion picture aesthetic, high production value",
+            "negative": "amateur photography, snapshot aesthetic, casual, phone camera look, unprofessional, webcam quality"
+        },
+        {
+            "name": "Abstract Geometric Art",
+            "positive": "pure geometric abstraction, mathematical precision, clean geometric shapes, sophisticated color theory, modernist abstraction, precise angles, geometric harmony, structured composition, architectural influence",
+            "negative": "representative art, figurative, organic shapes, traditional style, photographic, messy, chaotic"
+        },
+        {
+            "name": "Japanese Ink Wash",
+            "positive": "sumi-e painting style, zen brushwork, minimalist ink technique, traditional Japanese aesthetics, bamboo brush strokes, expressive black ink, calligraphic elements, balanced composition, spiritual atmosphere, meditative quality",
+            "negative": "western art style, digital, photorealistic, busy composition, sharp details, hard edges, cartoon"
+        },
+        {
+            "name": "Steampunk Industrial",
+            "positive": "victorian futurism, brass and copper tones, mechanical elements, steam-powered machinery, vintage industrial, ornate metalwork, clockwork mechanisms, retro-futuristic technology, industrial revolution aesthetic",
+            "negative": "modern technology, plastic, minimalist, digital, clean design, contemporary style, sleek"
+        },
+        {
+            "name": "Ancient Mosaic Art",
+            "positive": "classical mosaic technique, tessellated patterns, ancient roman style, small colored tiles, historical artistry, traditional mosaic patterns, architectural decoration, Byzantine influence, classical themes",
+            "negative": "modern art, smooth surfaces, digital design, photographic, continuous tones, painted"
+        },
+        {
+            "name": "Retro Pixel Graphics",
+            "positive": "8-bit pixel art style, limited color palette, retro gaming aesthetic, pixel-perfect graphics, classic video game art, chunky pixels, clear pixel edges, nostalgic gaming style, dithering patterns",
+            "negative": "smooth gradients, realistic, high resolution, photographic, 3d rendered, modern gaming"
+        },
+        {
+            "name": "Modern Collage Art",
+            "positive": "mixed media composition, layered elements, contemporary collage, artistic juxtaposition, textural variety, paper cut aesthetics, found object art, avant-garde composition, experimental layout",
+            "negative": "single medium, uniform texture, traditional painting, photorealistic, clean edges, digital art"
+        },
+        {
+            "name": "Psychedelic Vision Art",
+            "positive": "vibrant psychedelic colors, fractal patterns, kaleidoscopic designs, flowing organic forms, spiritual visionary art, cosmic imagery, transcendent patterns, intricate detail, mystical atmosphere",
+            "negative": "muted colors, realistic style, simple composition, minimalist, corporate look, traditional"
+        },
+        {
+            "name": "Medieval Illuminated Manuscript",
+            "positive": "gilded decoration, medieval manuscript style, ornate borders, religious iconography, hand-lettered text, intricate miniatures, gold leaf accents, vellum texture, monastic art tradition",
+            "negative": "modern typography, minimalist design, photography, digital art, clean style, simplistic"
+        },
+        {
+            "name": "Bauhaus Design Movement",
+            "positive": "geometric modernism, primary colors, functional design, clean typography, constructivist influence, minimal decoration, industrial aesthetics, balanced composition, architectural elements",
+            "negative": "ornate decoration, complex patterns, traditional art, baroque style, realistic rendering"
+        },
+        {
+            "name": "Studio Fashion Editorial",
+            "positive": "high fashion photography, editorial styling, professional studio lighting, magazine quality, fashion forward, perfect composition, commercial fashion, professional retouching, contemporary fashion",
+            "negative": "casual photography, snapshot style, amateur lighting, basic poses, ordinary clothing"
+        },
+        {
+            "name": "Classical Sculpture Study",
+            "positive": "marble sculpture aesthetic, classical greco-roman style, sculptural form, dramatic lighting on stone, fine art sculpture, three-dimensional rendering, ancient sculpture techniques, museum quality",
+            "negative": "modern art, abstract forms, rough texture, primitive style, cartoon, stylized, flat"
+        },
+        {
+            "name": "Stained Glass Artistry",
+            "positive": "medieval stained glass style, leaded glass design, religious iconography, jewel tone colors, backlit glass effect, gothic cathedral style, decorative panels, translucent colors, sacred art",
+            "negative": "photography, realistic style, modern design, opacity, flat design, digital art"
+        },
+        {
+            "name": "Film Noir Photography",
+            "positive": "high contrast black and white, dramatic shadows, 1940s cinematography, moody lighting, venetian blind shadows, crime film aesthetic, mysterious atmosphere, silver screen style",
+            "negative": "color photography, bright lighting, modern style, casual mood, cheerful atmosphere"
+        },
+        {
+            "name": "Traditional Chinese Painting",
+            "positive": "ink and wash landscape, mountain and water painting, traditional brushwork, rice paper texture, scholarly painting style, poetic atmosphere, minimal color palette, balanced composition",
+            "negative": "western art style, photorealistic, digital art, bold colors, sharp detail, modern style"
+        },
+        {
+            "name": "Op Art Illusion",
+            "positive": "optical illusion patterns, geometric abstraction, visual movement, black and white contrast, precise pattern work, kinetic art style, mathematical precision, perceptual effects",
+            "negative": "organic shapes, realistic imagery, painterly style, traditional art, photographic"
+        },
+        {
+            "name": "Industrial Design Sketch",
+            "positive": "product design drawing, technical sketching, industrial prototype, engineering visualization, professional design presentation, technical illustration, concept development, manufacturing design",
+            "negative": "artistic interpretation, abstract style, loose sketching, fine art, painterly, messy"
+        },
+        {
+            "name": "Modern Tattoo Design",
+            "positive": "tattoo art isolated on white background, flat 2d tattoo design, flat minimal artistic tattoo art on white background, underground tattoo design, inspired by punk art, geometric outline, tribal style, bold line work, white background, neo-traditional style, ink art design, decorative patterns, cultural symbols, ink art aesthetic, modern interpretation, clean line work",
+            "negative": "traditional painting, photo, 3d render, shadows, fine art style, photorealistic, classical art, watercolor soft"
+        },
+        
+        {
+                "name": "Traditional Japanese (Irezumi) Tattoo Art",
+                "positive": "traditional Japanese tattoo art isolated on white background, irezumi style, bold thick outlines, vibrant colors, mythological creatures, dragons, koi fish, chrysanthemums, cherry blossoms, waves, clouds, Buddhist imagery, flowing water patterns, wind bars, detailed background elements, harmonious composition, traditional Japanese art elements, woodblock print style",
+                "negative": "skin, body parts, western style, thin lines, minimalist, modern interpretation, realistic shading, photorealistic, celtic patterns, tribal designs, graffiti elements"
+        },
+        {
+                "name": "American Traditional Tattoo Art",
+                "positive": "old school American tattoo art isolated on white background, bold thick black outlines, limited solid color palette, red yellow green blue, nautical themes, pinup girls, eagles, anchors, roses, daggers, skulls, hearts, swallows, panthers, strong contrast, flat shading, minimal gradients, Sailor Jerry style, vintage americana",
+                "negative": "skin, body parts, fine lines, watercolor effects, photorealism, gradients, modern style, abstract designs, intricate details, celtic knots, tribal patterns"
+        },
+        {
+                "name": "Neo Traditional Tattoo Art",
+                "positive": "neo traditional tattoo art isolated on white background, ornate decorative elements, art nouveau influences, bold lines, expanded color palette, sophisticated shading, illustrative quality, detailed ornamental frames, jewels, decorative patterns, enhanced depth, whimsical elements, nature themes, animals with human characteristics, dramatic composition",
+                "negative": "skin, body parts, minimalist design, traditional old school style, tribal patterns, fine lines only, geometric shapes, abstract art, watercolor effects, grunge style"
+        },
+        {
+                "name": "Blackwork Tattoo Art",
+                "positive": "blackwork tattoo art isolated on white background, solid black ink design, high contrast, heavy black fills, precise dot work, geometric patterns, sacred geometry, mandala designs, Celtic knots, tribal elements, strong silhouettes, negative space design, bold graphic style, contemporary blackwork, abstract patterns",
+                "negative": "skin, body parts, color elements, grayscale, fine lines only, realistic shading, watercolor effects, traditional american style, japanese style"
+        },
+        {
+                "name": "Polynesian Tattoo Art",
+                "positive": "polynesian tattoo art isolated on white background, Maori style elements, bold black tribal designs, cultural symbols, spiritual meanings, geometric patterns, spearheads, turtle shells, ocean waves, tikis, sharp angular designs, flowing curved lines, repeating patterns, symmetrical composition, traditional Polynesian motifs",
+                "negative": "skin, body parts, color elements, realistic designs, western style, japanese style, fine lines, watercolor effects, modern interpretation, graffiti elements"
+        },
+        {
+                "name": "Watercolor Tattoo Art",
+                "positive": "watercolor tattoo art isolated on white background, flowing color splashes, paint drip effects, vibrant color blending, soft color transitions, abstract paint strokes, artistic splatters, ethereal quality, loose brushwork appearance, organic shapes, fluid design elements, contemporary art style, painterly aesthetic",
+                "negative": "skin, body parts, bold black outlines, tribal designs, geometric patterns, traditional style, solid fills, heavy black work, strict lines, old school style"
+        },
+        {
+                "name": "Minimalist Tattoo Art",
+                "positive": "minimalist tattoo art isolated on white background, simple clean lines, basic geometric shapes, negative space, continuous single line art, small scale design, delicate thin lines, subtle details, essential elements only, contemporary minimal style, clean composition, precise line work, understated aesthetic",
+                "negative": "skin, body parts, complex patterns, heavy shading, traditional style, detailed illustrations, ornate designs, bold thick lines, realistic elements, watercolor effects"
+        },
+        {
+                "name": "Geometric Tattoo Art",
+                "positive": "geometric tattoo art isolated on white background, precise geometric shapes, sacred geometry patterns, mathematical precision, symmetrical designs, dotwork details, mandala elements, clean lines, abstract geometric patterns, polygon shapes, architectural elements, contemporary geometric style, mathematical symbols",
+                "negative": "skin, body parts, organic shapes, traditional style, realistic elements, watercolor effects, grunge style, loose lines, curved flowing designs"
+        },
+        {
+                "name": "Realism Tattoo Art",
+                "positive": "realistic tattoo art isolated on white background, photorealistic details, precise shading, depth and dimension, natural textures, realistic lighting effects, portrait quality, fine detailed work, smooth gradients, life-like representation, high contrast, technical precision",
+                "negative": "skin, body parts, cartoon style, traditional designs, flat shading, bold outlines, tribal patterns, geometric shapes, abstract elements, watercolor effects"
+        },
+        {
+                "name": "Trash Polka Tattoo Art",
+                "positive": "trash polka tattoo art isolated on white background, bold black and red design, chaotic composition, photorealistic elements mixed with abstract, typography, smeared ink effects, geometric shapes, brush stroke elements, collage style, contrast of realistic and abstract, dynamic composition, street art influence",
+                "negative": "skin, body parts, traditional style, clean minimal design, other colors, watercolor effects, tribal patterns, symmetrical composition, fine lines only"
+        },
+        {
+                "name": "Biomechanical Tattoo Art",
+                "positive": "biomechanical tattoo art isolated on white background, H.R. Giger style, mechanical organic fusion, cyberpunk elements, alien technology, industrial elements, organic machinery, technological hybrid, detailed mechanical parts, bio-organic shapes, futuristic design, complex interconnected elements",
+                "negative": "skin, body parts, traditional style, tribal designs, geometric patterns, watercolor effects, minimalist design, cute elements, natural elements only"
+        },
+        {
+                "name": "Dotwork Tattoo Art",
+                "positive": "dotwork tattoo art isolated on white background, stipple effect technique, pointillism technique, detailed dot patterns, gradient effects through dot density, precise dot placement, mandala elements, geometric patterns, organic shapes created with dots, meticulous dotwork shading, contemporary dotwork style, spiritual symbols",
+                "negative": "skin, body parts, solid lines, traditional style, watercolor effects, bold outlines, solid fills, realistic shading, cartoon style"
+        },
+        {
+                "name": "New School Tattoo Art",
+                "positive": "new school tattoo art isolated on white background, exaggerated cartoon elements, bold colors, graffiti influence, dynamic action, distorted proportions, thick varied outlines, comic book style, bright color palette, pop art influence, expressive characters, modern street art aesthetic, playful design",
+                "negative": "skin, body parts, realistic style, traditional designs, minimal design, black and grey only, fine lines, geometric patterns, tribal designs"
+        },
+        {
+                "name": "Chinese Traditional Tattoo Art",
+                "positive": "chinese traditional tattoo art isolated on white background, brush stroke style, dragons, phoenix, tiger, koi fish, Chinese clouds, waves, mountain landscapes, calligraphy elements, traditional Chinese painting style, flowing lines, balanced composition, mythological creatures, symbolic elements",
+                "negative": "skin, body parts, western style, modern interpretation, geometric patterns, tribal designs, watercolor effects, graffiti elements, realistic shading"
+        },
+        {
+                "name": "Fine Line Tattoo Art",
+                "positive": "fine line tattoo art isolated on white background, delicate line technique, intricate detailed work, subtle shading, minimal design elements, precise thin lines, elegant composition, dainty artwork, botanical illustrations, continuous line art, refined aesthetic, contemporary minimal style",
+                "negative": "skin, body parts, bold lines, traditional style, heavy black work, geometric patterns, tribal designs, watercolor effects, thick outlines"
+        },
+        {
+                "name": "Celtic Tattoo Art",
+                "positive": "celtic tattoo art isolated on white background, Celtic knotwork design, interlaced patterns, endless knots, spiral motifs, Celtic crosses, shield knots, triquetra symbols, Celtic animals, intricate braided designs, traditional Celtic art elements, historical Celtic patterns, symmetrical composition, medieval Irish art style",
+                "negative": "skin, body parts, modern style, tribal designs, realistic elements, watercolor effects, Japanese style, minimalist design, graffiti elements"
+        },
+        {
+                "name": "Chicano Tattoo Art",
+                "positive": "chicano tattoo art isolated on white background, black and grey realism, fine line work, cultural Mexican American elements, religious imagery, lowrider art, Virgin Mary, roses, prayer hands, urban street art influence, LA style tattoo art, dramatic shading, smooth gradients",
+                "negative": "skin, body parts, bold colors, traditional American style, tribal designs, watercolor effects, geometric patterns, Japanese style, abstract designs"
+        },
+        {
+                "name": "UV Blacklight Tattoo Art",
+                "positive": "UV blacklight tattoo art isolated on white background, fluorescent ink effect, glow in the dark design, neon colors under blacklight, vibrant supernatural effect, hidden tattoo elements, bright geometric patterns, cosmic space themes, bioluminescent effect, ethereal glowing design, futuristic aesthetic",
+                "negative": "skin, body parts, traditional style, natural colors, realistic elements, heavy black work, tribal designs, vintage style, muted tones"
+        },
+        {
+                "name": "Etching Tattoo Art",
+                "positive": "etching tattoo art isolated on white background, woodcut style design, engraving art technique, cross-hatching shading, fine detailed line work, vintage illustration style, medieval woodblock print aesthetic, detailed hatching patterns, precise line technique, vintage scientific illustration style, classical art influence",
+                "negative": "skin, body parts, bold colors, watercolor effects, tribal designs, modern style, minimalist design, geometric patterns, realistic shading"
+        },
+        {
+                "name": "Stick and Poke Tattoo Art",
+                "positive": "stick and poke tattoo art isolated on white background, hand-poked style, DIY aesthetic, simple dot-based designs, primitive art style, rough handmade quality, folk art influence, imperfect organic lines, minimalist design, raw artistic style, intentionally crude execution, authentic handcrafted appearance",
+                "negative": "skin, body parts, machine-made precision, perfect lines, complex shading, realistic elements, watercolor effects, geometric precision, photorealistic details"
+        },
+        {
+                "name": "Abstract Tattoo Art",
+                "positive": "abstract tattoo art isolated on white background, non-representational design, modern art influence, dynamic shapes, contemporary abstract style, experimental composition, artistic expression, unconventional design elements, fluid forms, creative interpretation, emotional visual impact, bold artistic statement",
+                "negative": "skin, body parts, realistic elements, traditional style, symmetrical design, representational art, tribal patterns, conventional imagery, precise geometric shapes"
+        },
+        {
+                "name": "Illustrative Tattoo Art",
+                "positive": "illustrative tattoo art isolated on white background, storybook illustration quality, detailed artistic scenes, narrative elements, whimsical drawing style, imaginative composition, painterly technique, artistic interpretation, book illustration influence, decorative elements, creative storytelling approach",
+                "negative": "skin, body parts, traditional tattoo style, minimalist design, geometric patterns, tribal designs, photorealism, abstract style, graffiti elements"
+        },
+            
+        {
+                "name": "DP Cybernetic Ukiyo-e Tattoo Art",
+                "positive": "cybernetic ukiyo-e tattoo art isolated on white background, fusion of traditional Japanese woodblock prints with cyberpunk elements, digital glitch effects mixed with flowing waves, circuit board patterns integrated into cherry blossoms, holographic color overlays on traditional scenes, pixel art details in cloud patterns, neon-lit pagodas, robotic geishas, binary code rain effects, LED-infused traditional patterns, synthwave color palette with traditional Japanese pigments, quantum computing motifs in traditional landscapes",
+                "negative": "skin, body parts, pure traditional style, realistic photos, western art style, plain geometric patterns, simple designs, flat colors, basic gradients, conventional art elements"
+        },
+        {
+                "name": "DP Biomechanical Art Nouveau Tattoo Art",
+                "positive": "biomechanical art nouveau tattoo art isolated on white background, organic machinery blended with flowing art nouveau curves, H.R. Giger biomechanical elements with elegant art nouveau flourishes, metallic tendrils morphing into floral patterns, steampunk gears integrated with whiplash curves, cybernetic stained glass patterns, mechanical plant forms, iridescent metal surfaces with organic patterns, hydraulic systems disguised as ornamental designs, bio-organic architectural elements",
+                "negative": "skin, body parts, pure mechanical style, plain organic shapes, simple geometric patterns, traditional tattoo elements, cartoon style, standard art nouveau, basic biomechanical"
+        },
+        {
+                "name": "DP Quantum Tribal Tattoo Art",
+                "positive": "quantum tribal tattoo art isolated on white background, traditional tribal patterns morphing into quantum probability waves, Polynesian designs infused with particle physics visualizations, sacred geometry merged with quantum entanglement patterns, atomic structures within Maori spirals, wave-particle duality expressed in traditional motifs, Heisenberg uncertainty patterns in tribal forms, quantum field diagrams blended with indigenous art, subatomic particle traces in tribal layouts",
+                "negative": "skin, body parts, simple tribal patterns, basic physics diagrams, flat designs, traditional tattoo style, realistic elements, plain geometric shapes, conventional tribal art"
+        },
+        {
+                "name": "DP Cosmic Horror Mandala Tattoo Art",
+                "positive": "cosmic horror mandala tattoo art isolated on white background, Lovecraftian entities woven into sacred geometry, eldritch horror elements arranged in symmetrical mandalas, cosmic horror symbolism in geometric patterns, tentacles forming intricate kaleidoscopic designs, ancient cosmic symbols merged with mathematical precision, interdimensional patterns, non-euclidean geometry in traditional mandala forms, otherworldly symmetry, void-touched ornamental designs",
+                "negative": "skin, body parts, basic mandala patterns, simple horror elements, traditional tattoo style, cute designs, standard geometric patterns, conventional sacred geometry"
+        },
+        {
+                "name": "DP Neural Network Etching Tattoo Art",
+                "positive": "neural network etching tattoo art isolated on white background, AI-generated patterns rendered in classical etching style, neural pathway visualizations in cross-hatching technique, deep learning architecture diagrams as vintage scientific illustrations, synapse patterns in woodcut style, computer vision heatmaps interpreted through traditional engraving, machine learning decision trees in Victorian scientific art style, artificial neural networks as anatomical drawings",
+                "negative": "skin, body parts, modern digital style, plain technical diagrams, simple line art, basic etching patterns, conventional neural network visualizations, standard scientific illustrations"
+        },
+        {
+                "name": "DP Fractal Watercolor Tattoo Art",
+                "positive": "fractal watercolor tattoo art isolated on white background, Mandelbrot set patterns dissolving into watercolor splashes, mathematical fractals with fluid color transitions, iterative patterns blending with organic paint flows, Julia set interpretations in flowing pigments, recursive geometric patterns with watercolor bleeds, infinite mathematical detail with spontaneous color diffusion, chaotic systems expressed in soft color gradients",
+                "negative": "skin, body parts, rigid fractal patterns, basic watercolor effects, sharp geometric shapes, traditional tattoo style, flat colors, simple mathematical patterns"
+        },
+        {
+                "name": "DP Nanotech Trash Polka Tattoo Art",
+                "positive": "nanotech trash polka tattoo art isolated on white background, microscopic machinery visualization in chaotic red and black style, molecular assemblers in dynamic trash polka composition, nanoscale structures with bold abstract elements, quantum dot patterns with geometric chaos, carbon nanotube imagery in explosive designs, molecular motors rendered in aggressive artistic style, nanotechnology schematics with street art influence",
+                "negative": "skin, body parts, traditional trash polka, simple technical diagrams, basic scientific illustrations, conventional tattoo style, clean geometric patterns, standard nanotech visualizations"
+        },
+        {
+                "name": "DP Crystal Graffiti Tattoo Art",
+                "positive": "crystal graffiti tattoo art isolated on white background, crystalline structures in wild style letters, mineral formation patterns in street art style, geometric crystal growth in urban art aesthetic, prismatic effects in spray paint style, gemstone facets in bubble letters, crystal lattices merged with drip effects, mineralogical structures in contemporary graffiti, geological patterns with chrome effects",
+                "negative": "skin, body parts, basic crystal patterns, simple graffiti style, flat mineral illustrations, traditional tattoo elements, standard geological diagrams, conventional street art"
+        },
+        {
+                "name": "DP Quantum Suprematism Tattoo Art",
+                "positive": "quantum suprematism tattoo art isolated on white background, quantum mechanics visualizations in suprematist geometric style, particle physics phenomena in bold abstract shapes, wave function collapse represented in constructivist forms, quantum entanglement in minimalist geometric composition, Schrodinger equation interpretations in avant-garde style, quantum field theory in revolutionary art aesthetic, particle-wave duality in suprematist patterns",
+                "negative": "skin, body parts, basic geometric shapes, simple quantum diagrams, traditional suprematism, conventional physics illustrations, standard abstract patterns, plain constructivist style"
+        },
+        {
+                "name": "DP Biopunk Art Deco Tattoo Art",
+                "positive": "biopunk art deco tattoo art isolated on white background, organic genetic modifications in geometric art deco style, DNA helixes in streamlined deco patterns, biological engineering motifs with luxurious 1920s aesthetic, genetically modified organisms in elegant geometric designs, synthetic biology elements in golden age decoration, CRISPR patterns in jazz age style, transgenic art meets architectural geometry",
+                "negative": "skin, body parts, standard art deco, simple biological diagrams, basic geometric patterns, traditional tattoo style, plain scientific illustrations, conventional decorative elements"
+        },
+        {
+                "name": "DP Quantum Origami",
+                "positive": "quantum origami art isolated on white background, folded paper sculpture blended with quantum visualization, string theory mathematics expressed through paper folds, multidimensional shapes in crisp folded patterns, wave function patterns in paper art, probability clouds in origami structures, particle physics diagrams emerging from geometric folds, iridescent paper effects, mathematical precision in paper engineering",
+                "negative": "digital effects, flat 2D designs, simple paper crafts, basic origami, photorealistic style, traditional art, standard geometric patterns, basic paper folding"
+        },
+        {
+                "name": "DP Holographic Impressionism",
+                "positive": "holographic impressionist art isolated on white background, classic impressionist brushstrokes with rainbow holographic effects, light-refracting color patterns, prismatic color shifts in nature scenes, spectral color splitting in painterly style, interference patterns in brush technique, diffraction grating effects in landscape painting, opalescent color variations, crystalline light effects",
+                "negative": "flat colors, traditional impressionism, basic rainbow effects, standard painting techniques, simple color gradients, conventional landscapes, basic holographic patterns"
+        },
+        {
+                "name": "DP Mycological Architecture",
+                "positive": "mycological architecture art isolated on white background, fungal growth patterns forming architectural structures, organic mushroom forms as building elements, mycelium network-inspired urban planning, spore patterns in structural design, fungal textures in architectural details, bio-architectural forms, natural growth algorithms in building design, organic technological integration",
+                "negative": "traditional architecture, simple mushroom drawings, basic building designs, conventional architectural plans, standard organic shapes, plain fungal illustrations"
+        },
+        {
+                "name": "DP Crystalline Soundwave",
+                "positive": "crystalline soundwave art isolated on white background, sound wave visualizations in crystalline structures, audio frequencies expressed through mineral formations, music patterns in geometric crystal growth, harmonic resonance in gemstone formats, acoustic patterns forming crystal lattices, vibrational energy in mineralogical structures, sonic crystallography, frequency-based crystal matrices",
+                "negative": "basic sound waves, simple crystal patterns, standard audio visualization, plain geometric shapes, conventional crystal structures, basic sound graphs"
+        },
+        {
+                "name": "DP Neural Baroque",
+                "positive": "neural baroque art isolated on white background, artificial neural networks rendered in ornate baroque style, deep learning architectures with golden ornamental flourishes, AI patterns with dramatic baroque lighting, machine learning diagrams in elaborate classical decoration, neural pathway mapping with rich baroque textures, synthetic consciousness in renaissance aesthetic",
+                "negative": "simple baroque patterns, basic neural networks, plain ornamental designs, standard AI diagrams, conventional baroque style, basic technical illustrations"
+        },
+        {
+                "name": "DP Quantum Calligraphy",
+                "positive": "quantum calligraphy art isolated on white background, particle physics equations in flowing brushstrokes, quantum mechanics formulas as artistic typography, wave function collapse in ink brush techniques, mathematical physics expressed through elegant letterforms, quantum field theory in expressive brush painting, scientific notation as artistic expression",
+                "negative": "basic calligraphy, simple equations, standard typography, plain scientific notation, conventional brush strokes, traditional letter forms"
+        },
+        {
+                "name": "DP Bioluminescent Constructivism",
+                "positive": "bioluminescent constructivist art isolated on white background, geometric constructivist patterns with glowing organic elements, deep sea creature lighting effects in avant-garde design, biological light emission in modernist composition, angular shapes with natural phosphorescence, revolutionary art with organic light patterns, geometric forms with living light",
+                "negative": "basic constructivism, simple glow effects, standard geometric patterns, plain bioluminescence, conventional modernist design, basic light effects"
+        },
+        {
+                "name": "DP Chrono-Cubism",
+                "positive": "chrono-cubist art isolated on white background, temporal mechanics expressed through cubist fragmentation, time dilation effects in geometric decomposition, multiple time states in fractured perspective, quantum time theory in modernist abstraction, spacetime curvature in cubic forms, temporal paradox in geometric deconstruction",
+                "negative": "basic cubism, simple geometric shapes, standard time visualization, plain abstract patterns, conventional cubist style, traditional perspective"
+        },
+        {
+                "name": "DP Astro-Folklore",
+                "positive": "astro-folklore art isolated on white background, traditional folk art patterns with astronomical elements, cosmic phenomena in cultural motifs, celestial mechanics in folk art style, star formation in traditional patterns, galactic structures with ethnic art elements, space science with indigenous art influence, astronomical diagrams in folk art aesthetic",
+                "negative": "simple folk patterns, basic astronomy diagrams, standard cultural motifs, plain space illustration, conventional folk art, basic celestial drawings"
+        },
+        {
+                "name": "DP Fractal Expressionism",
+                "positive": "fractal expressionist art isolated on white background, emotional turbulence in mathematical patterns, abstract expressionist brushwork with recursive elements, chaos theory in explosive color, iterative patterns with gestural painting, Mandelbrot set in emotional art style, fractal mathematics with expressive freedom, infinite detail in abstract emotion",
+                "negative": "basic fractals, simple expressionism, standard mathematical patterns, plain abstract art, conventional brush strokes, basic emotional art"
+        },
+        {
+            "name": "DP Psychedelic dreamworld",
+            "positive": "soft pastel colors, flat 2d minimal sketchy comics cartoon art, ultra detailed 3d render, psychedelic high detail digital arr, hipster underground atmosphere,crazy mix of art styles,digital painting,hyper realistic digital painting, digital painting, optical illusion, vivid colors, high detail digital illustration, black outline, realistic shadings,cinematic ultra detailed photo,2d comics dot art, inspired by l.s.d. and punk art and hippie art and psychedelic beautiful dream world, comics cartoon art, hyper realistic photo, vector art, chalk art, psychedelic dreamworld concept art",
+            "negative": "boring, old, grainy, low quality, out of focus, burnt, realistic style, photorealistic, classical art, photo"
+        },
+        {
+            "name": "DP Urban Graffiti",
+            "positive": "spray paint art, urban wall texture, bold letters, wild style graffiti, dripping paint effects, street art aesthetic, vibrant color palette, brick wall background, dynamic composition, hip-hop culture influence, 3D letter design, chrome effects, urban decay atmosphere, tag elements, street culture",
+            "negative": "clean surfaces, traditional canvas, formal typography, realistic rendering, subtle colors, classical art elements, digital effects, pristine backgrounds, flat design"
+        }, 
+        {
+            "name": "Ornamental Tattoo Art",
+            "positive": "ornamental tattoo art isolated on white background, decorative patterns, filigree details, baroque elements, intricate scrollwork, flourishes, symmetrical ornaments, jewelry-inspired designs, detailed embellishments, architectural ornamentation, mehndi influence, elaborate decorative style",
+            "negative": "skin, body parts, minimalist design, traditional style, tribal patterns, realistic elements, watercolor effects, graffiti style, simple lines"
+        },
+        
+        {
+            "name": "Futuristic Tech Concept",
+            "positive": "advanced technology visualization, holographic interface, sci-fi design elements, future tech aesthetic, innovative device concept, technological minimalism, sleek product design",
+            "negative": "vintage style, traditional art, organic forms, classical design, steampunk, retro"
+        },
+        {
+            "name": "Abstract Fluid Art",
+            "positive": "liquid art technique, flowing color patterns, marbled effect, acrylic pour aesthetic, organic patterns, color interaction, abstract composition, dynamic movement, natural flow patterns",
+            "negative": "representational art, hard edges, precise lines, photorealistic, digital art, pixel art"
+        },
+        {
+            "name": "Architectural Blueprint",
+            "positive": "technical architectural drawing, precise blueprint style, construction documentation, professional drafting, measured drawings, architectural notation, building plans, technical accuracy",
+            "negative": "artistic interpretation, loose style, painterly, abstract, expressive, emotional"
+        },
+        {
+            "name": "Mixed Media Assemblage",
+            "positive": "combined media artwork, textural variety, found object integration, artistic layering, experimental materials, contemporary assemblage, tactile qualities, material contrast",
+            "negative": "single medium, digital art, clean style, traditional painting, photographic, uniform"
+        },
+        {
+            "name": "Studio Product Photography",
+            "positive": "commercial product photo, professional lighting setup, perfect exposure, advertising quality, clean background, precise focus, professional retouching, commercial presentation",
+            "negative": "artistic interpretation, casual photography, snapshot style, abstract, painterly"
+        },
+        {
+            "name": "Baroque Masterpiece",
+            "positive": "dramatic baroque style, chiaroscuro lighting, emotional intensity, ornate composition, classical themes, rich color palette, dynamic movement, theatrical atmosphere, grand scale",
+            "negative": "minimalist, modern style, flat design, geometric abstraction, contemporary art"
+        },
+        {
+            "name": "Contemporary Portrait Study",
+            "positive": "modern portrait technique, psychological depth, expressive character, contemporary art style, emotional resonance, artistic interpretation, personal identity, human condition",
+            "negative": "classical portraiture, photorealistic, passport photo style, casual snapshot, anime"
+        },
+        {
+            "name": "Chromatic Abstract Composition",
+            "positive": "pure color relationships, abstract color field, geometric color study, modernist abstraction, color theory exploration, non-objective art, minimal composition, color harmony",
+            "negative": "representational art, detailed imagery, realistic style, figurative art, line drawing"
+        },
+        {
+            "name": "Letterpress Typography",
+            "positive": "vintage printing technique, pressed type impression, traditional typography, handcrafted print quality, ink on paper texture, letterpress details, traditional printing methods, typographic design, printed ephemera",
+            "negative": "digital typography, modern printing, clean edges, perfect alignment, computer generated"
+        },
+        {
+            "name": "Concept Art Environment",
+            "positive": "professional concept art, environmental design, cinematic composition, world building, detailed landscape, mood lighting, atmospheric perspective, creative environment design, professional illustration",
+            "negative": "amateur sketch, unfinished style, technical drawing, architectural plans, abstract"
+        },
+        {
+            "name": "Character Design Concept",
+            "positive": "professional character design, detailed costume, character sheet, anatomical accuracy, personality expression, design functionality, unique character features, concept art quality",
+            "negative": "amateur drawing, basic sketch, stick figures, unfinished artwork, technical diagram"
+        },
+        {
+            "name": "Vector Graphic Design",
+            "positive": "clean vector illustration, scalable graphics, sharp edges, flat color design, modern illustration style, professional graphic design, geometric precision, corporate design quality",
+            "negative": "painterly, sketchy, hand-drawn, watercolor, photographic, textured, organic, messy"
+        },
+        {
+            "name": "Digital Pointillism",
+            "positive": "pointillist technique, dot-based composition, precise color placement, neo-impressionist style, stipple effect, controlled dots, optical color mixing, systematic technique",
+            "negative": "smooth gradients, continuous tones, loose brushwork, watercolor effect, line art"
+        },
+        {
+            "name": "Architectural Visualization",
+            "positive": "professional architectural rendering, realistic building materials, perfect perspective, architectural lighting, environmental context, professional presentation, technical accuracy",
+            "negative": "abstract architecture, sketchy style, artistic interpretation, loose drawing, painterly"
+        },
+        {
+            "name": "Fashion Sketch Design",
+            "positive": "fashion illustration style, clothing design, gestural drawing, fabric indication, fashion proportions, style presentation, couture sketching, design details, fashion documentation",
+            "negative": "technical drawing, realistic proportion, photographic, casual sketch, basic drawing"
+        },
+        {
+            "name": "Propaganda Poster Art",
+            "positive": "bold propaganda style, strong graphic design, political poster aesthetic, powerful typography, symbolic imagery, patriotic colors, dramatic composition, message-focused design",
+            "negative": "subtle design, neutral stance, photographic, realistic style, abstract art, minimal"
+        },
+        {
+            "name": "Sequential Comic Art",
+            "positive": "comic book style, dynamic panel layout, narrative illustration, action composition, comic book inking, professional comic art, sequential storytelling, dramatic angles",
+            "negative": "fine art painting, photorealistic, abstract style, single image, technical drawing"
+        },
+        {
+            "name": "Medical Illustration",
+            "positive": "anatomical accuracy, medical diagram clarity, professional medical art, educational illustration, scientific precision, clinical presentation, detailed anatomy, healthcare visualization",
+            "negative": "artistic interpretation, abstract style, loose sketching, impressionist, atmospheric"
+        },
+        {
+            "name": "Nature Journal Sketch",
+            "positive": "naturalist illustration, field sketch quality, scientific observation, detailed nature study, botanical accuracy, wildlife illustration, environmental documentation, specimen drawing",
+            "negative": "abstract nature, stylized drawing, digital art, photographic, modern design style"
+        },
+        {
+            "name": "Album Cover Design",
+            "positive": "music album artwork, contemporary cover design, typography integration, artistic composition, genre-appropriate style, commercial music art, professional layout, iconic design",
+            "negative": "amateur design, basic layout, stock photo style, technical diagram, fine art painting"
+        },
+        {
+            "name": "Retro Travel Poster",
+            "positive": "vintage travel advertisement, retro poster design, tourism illustration, nostalgic style, art deco influence, destination artwork, classical travel art, promotional poster",
+            "negative": "modern photography, contemporary design, abstract art, technical drawing, casual shot"
+        },
+        {
+            "name": "Architectural Detail Drawing",
+            "positive": "detailed architectural elements, ornamental drawing, building components, architectural decoration, structural details, classical architecture, measured drawing, architectural study",
+            "negative": "modern architecture, minimalist design, abstract forms, loose sketch, primitive"
+        },
+        {
+            "name": "Anime Character Style",
+            "positive": "professional anime art, distinctive anime style, clean line art, cel shading technique, dynamic poses, expressive character design, manga influence, contemporary anime",
+            "negative": "realistic style, western animation, photographic, oil painting style, sketchy lines"
+        },
+        {
+            "name": "Stone Sculpture Art",
+            "positive": "carved stone texture, sculptural form, three-dimensional artwork, stone material quality, classical sculpture style, fine art sculpture, dimensional shadows, marble finish",
+            "negative": "flat design, graphic art, painting style, digital art, cartoon, modern abstract"
+        },
+        {
+            "name": "Digital Concept Painting",
+            "positive": "professional digital painting, concept art quality, detailed illustration, environmental design, atmospheric rendering, professional coloring, lighting effects, texture work",
+            "negative": "traditional media, sketchy style, line art, technical drawing, abstract design"
+        },
+        {
+            "name": "Bronze Sculpture Form",
+            "positive": "bronze casting aesthetic, metallic patina, sculptural modeling, classical bronze work, dimensional form, fine art sculpture, traditional statuary, museum quality",
+            "negative": "flat art, painting style, modern abstract, primitive art, digital rendering, sketch"
+        },
+        {
+            "name": "Chalk Pastel Art",
+            "positive": "soft pastel technique, chalk texture, blended colors, atmospheric effects, traditional pastel artwork, color layering, painterly quality, textured paper, artistic smudging",
+            "negative": "sharp lines, digital art, clean edges, vector graphics, photographic, precise lines"
+        },
+        {
+            "name": "Children Book Illustration",
+            "positive": "whimsical illustration style, children's book art, storytelling imagery, playful characters, bright color palette, kid-friendly design, narrative illustration, imaginative scenes",
+            "negative": "adult themes, dark style, technical drawing, abstract art, photorealistic, complex"
+        },
+        {
+            "name": "Automotive Design Sketch",
+            "positive": "car design drawing, vehicle concept sketch, automotive styling, industrial design, transportation sketch, dynamic vehicle pose, professional car rendering, design presentation",
+            "negative": "technical diagram, photographic, childish drawing, abstract vehicle, primitive sketch"
+        },
+        {
+            "name": "Islamic Geometric Pattern",
+            "positive": "traditional islamic design, geometric tessellation, arabesque patterns, mathematical precision, decorative islamic art, architectural decoration, symmetric composition, cultural patterns",
+            "negative": "figurative art, pictorial design, western style, modern abstract, organic shapes"
+        },
+        {
+            "name": "Hand Drawn Animation",
+            "positive": "traditional animation style, frame by frame art, cartoon movement, character animation, clean line work, animation cel style, dynamic poses, sequential art",
+            "negative": "3d animation, photorealistic, static pose, technical drawing, fine art painting"
+        },
+        {
+            "name": "Celtic Knotwork Design",
+            "positive": "traditional celtic patterns, interlaced knotwork, medieval celtic art, continuous line design, ornamental celtic style, historical accuracy, decorative borders, cultural artwork",
+            "negative": "modern design, simple patterns, geometric minimal, abstract art, photographic"
+        },
+        {
+            "name": "Egyptian Hieroglyph Art",
+            "positive": "ancient egyptian style, hieroglyphic elements, traditional egyptian art, profile figures, symbolic representation, temple art style, historical accuracy, dynastic egyptian, ceremonial art, ancient painting technique",
+            "negative": "modern interpretation, realistic style, perspective drawing, photographic, contemporary art"
+        },
+        {
+            "name": "Colored Pencil Illustration",
+            "positive": "professional colored pencil technique, layered color application, fine detail work, traditional illustration, smooth color blending, artistic shading, textured paper quality, precise color control",
+            "negative": "digital art, harsh contrast, photographic, sharp edges, vector art, painterly style"
+        },
+        {
+            "name": "Scientific Diagram",
+            "positive": "technical scientific illustration, detailed labeling, educational diagram style, precise technical drawing, scientific accuracy, professional documentation, clear presentation, analytical visualization",
+            "negative": "artistic interpretation, abstract style, loose sketching, painterly, atmospheric, emotional"
+        },
+        {
+            "name": "Modern Ceramics Art",
+            "positive": "contemporary ceramic design, pottery aesthetics, glazed surface quality, sculptural ceramics, artistic pottery, modern clay work, studio pottery style, ceramic texture, handcrafted quality",
+            "negative": "traditional pottery, primitive ceramics, digital art, graphic design, flat illustration"
+        },
+        {
+            "name": "Art Brut Outsider",
+            "positive": "raw artistic expression, outsider art style, intuitive composition, primitive technique, authentic creativity, emotional intensity, unschooled aesthetic, personal symbolism, visionary art",
+            "negative": "professional finish, academic style, traditional technique, commercial art, refined look"
+        },
+        {
+            "name": "Luxury Brand Design",
+            "positive": "high-end brand aesthetic, premium design quality, elegant composition, sophisticated style, luxury marketing, upscale presentation, refined typography, exclusive design elements",
+            "negative": "casual design, budget style, amateur layout, basic presentation, informal aesthetic"
+        },
+        {
+            "name": "Traditional Fresco",
+            "positive": "classical fresco technique, wall painting style, ancient art method, mural aesthetics, traditional pigments, historical art style, architectural integration, aged paint texture",
+            "negative": "modern painting, digital art, sharp detail, contemporary style, photographic quality"
+        },
+        {
+            "name": "Contemporary Glass Art",
+            "positive": "modern glass sculpture, transparent material quality, light interaction, glass blowing aesthetic, artistic glasswork, studio glass design, contemporary craft, sculptural form",
+            "negative": "traditional sculpture, opaque materials, flat design, graphic art, digital rendering"
+        },
+        {
+            "name": "Technical Manual Illustration",
+            "positive": "detailed technical drawing, instruction manual style, clear line work, assembly diagram quality, technical accuracy, professional documentation, step-by-step visualization",
+            "negative": "artistic style, abstract design, loose sketching, painterly, atmospheric rendering"
+        },
+        {
+            "name": "Food Photography Style",
+            "positive": "professional food styling, commercial food photography, perfect lighting, appetizing presentation, studio food shot, editorial quality, professional retouching, gourmet presentation",
+            "negative": "amateur photo, casual snapshot, harsh lighting, unprofessional setup, candid shot"
+        },
+        {
+            "name": "Viking Art Style",
+            "positive": "norse artistic tradition, viking age design, interlaced animal patterns, nordic art style, historical accuracy, traditional ornaments, celtic influence, cultural decoration",
+            "negative": "modern design, minimalist style, photographic, contemporary art, abstract geometric"
+        },
+        {
+            "name": "Contemporary Dance Photography",
+            "positive": "dynamic dance capture, movement photography, performance documentation, artistic motion, professional dance photography, stage lighting, emotional expression, perfect timing",
+            "negative": "static pose, casual snapshot, amateur photography, basic documentation, stiff pose"
+        },
+        {
+            "name": "Metalpoint Drawing",
+            "positive": "silverpoint technique, traditional drawing method, fine line work, delicate marks, medieval drawing style, precise detail, metallic shine, archival quality, renaissance technique",
+            "negative": "modern drawing, rough sketching, digital art, bold lines, contemporary style"
+        },
+        {
+            "name": "Urban Sketch Style",
+            "positive": "location drawing, architectural sketching, urban documentation, spontaneous drawing style, environmental study, quick sketch technique, perspective drawing, city sketching",
+            "negative": "studio art, finished illustration, digital design, photographic, technical drawing"
+        },
+        {
+            "name": "Mechanical Engineering Drawing",
+            "positive": "technical mechanical drawing, engineering documentation, precision drafting, mechanical details, professional documentation, technical accuracy, machinery illustration",
+            "negative": "artistic interpretation, loose sketching, painterly style, abstract design, casual drawing"
+        },
+        {
+            "name": "Relief Print Art",
+            "positive": "woodcut print style, relief printing technique, traditional printmaking, block print aesthetic, carved texture, print making artistry, artistic impression, hand-printed quality",
+            "negative": "digital art, photographic, smooth gradient, vector art, modern design style"
+        },
+        {
+            "name": "Persian Miniature Style",
+            "positive": "traditional persian art, detailed miniature painting, islamic art influence, decorative borders, historical persian style, fine detail work, cultural accuracy, artistic refinement",
+            "negative": "western art style, modern design, minimalist, photographic, contemporary art"
+        },
+        {
+            "name": "Digital Fantasy Concept",
+            "positive": "fantasy concept art, magical atmosphere, professional illustration, imaginative design, digital painting technique, otherworldly elements, professional concept art, creative world building",
+            "negative": "realistic photography, technical drawing, mundane setting, architectural plans"
+        },
+        {
+            "name": "Vintage Game Art",
+            "positive": "retro gaming style, classic video game art, pixel art aesthetic, 16-bit era graphics, nostalgic game design, sprite artwork, vintage console style, early digital art",
+            "negative": "modern 3d graphics, photorealistic, high resolution, contemporary gaming art"
+        },
+        {
+            "name": "Textile Pattern Design",
+            "positive": "fabric pattern artwork, textile design elements, repeating pattern style, surface design, fashion textile, commercial pattern, professional repeat, material design",
+            "negative": "fine art painting, singular image, photographic, technical drawing, loose sketch"
+        },
+        {
+            "name": "Monotype Print Art",
+            "positive": "monotype printing technique, unique print quality, artistic impression, printmaking style, painterly print effect, plate transfer marks, experimental printing, artistic variety",
+            "negative": "digital art, clean edges, vector design, photographic, precise lines, perfect repeat"
+        },
+        {
+            "name": "Decorative Arts Design",
+            "positive": "ornamental design style, decorative elements, artistic craft, traditional decoration, refined ornaments, artistic embellishment, detailed ornamentation, classical decoration",
+            "negative": "minimalist design, modern style, simple geometry, technical drawing, plain design"
+        },
+        {
+            "name": "Environmental Photography",
+            "positive": "nature documentary style, environmental photojournalism, landscape documentation, natural light photography, wildlife habitat, conservation photography, authentic capture",
+            "negative": "studio photography, artificial setup, commercial style, fashion photo, product shot"
+        },
+        {
+            "name": "Macrophotography Art",
+            "positive": "extreme close-up detail, macro lens effect, microscopic detail, shallow depth of field, textural detail, magnified subject, professional macro technique, fine detail capture, focus stacking",
+            "negative": "wide angle, landscape view, full body shot, aerial photography, distant subject, deep focus"
+        },
+        {
+            "name": "Contemporary Tapestry",
+            "positive": "modern textile art, woven artwork, fiber art technique, contemporary weaving, textile texture, artistic tapestry, mixed fiber work, sculptural textile, material artistry",
+            "negative": "traditional tapestry, medieval style, photographic, digital art, graphic design"
+        },
+        {
+            "name": "Mythological Illustration",
+            "positive": "fantasy mythology art, legendary creatures, epic scene composition, mythical atmosphere, classical mythology, heroic style, dramatic narrative, folkloric elements, legendary beings",
+            "negative": "modern setting, realistic photography, contemporary scene, urban environment"
+        },
+        {
+            "name": "Grafitti Street Style",
+            "positive": "urban art aesthetic, spray paint technique, street culture, bold grafitti style, urban decay texture, contemporary street art, underground art scene, artistic vandalism, raw expression",
+            "negative": "fine art painting, gallery style, digital art, clean design, corporate aesthetic"
+        },
+        {
+            "name": "Traditional Russian Icon",
+            "positive": "orthodox icon style, religious art technique, golden background, byzantine influence, egg tempera effect, sacred art tradition, iconic portraiture, spiritual symbolism, medieval russian",
+            "negative": "modern art, photographic, contemporary style, secular themes, realistic rendering"
+        },
+        {
+            "name": "Paper Marbling Art",
+            "positive": "marbled paper pattern, ebru art technique, fluid paint design, traditional marbling, swirling patterns, water surface tension, organic patterns, traditional craft, color float",
+            "negative": "digital design, vector art, geometric patterns, sharp edges, photographic"
+        },
+        {
+            "name": "Botanical Watercolor",
+            "positive": "detailed plant study, scientific botanical art, natural specimen painting, precise watercolor technique, traditional botanical illustration, accurate plant anatomy, labeled specimen",
+            "negative": "abstract botanicals, loose painting, impressionist style, digital art, stylized plants"
+        },
+        {
+            "name": "Etching Print Style",
+            "positive": "traditional etching technique, fine line work, plate mark effect, intaglio printing, old master print style, acid etched detail, printmaking texture, crosshatching technique",
+            "negative": "digital art, clean vectors, sharp photography, modern design, smooth gradients"
+        },
+        {
+            "name": "Modern Brutalism",
+            "positive": "brutalist architecture style, raw concrete texture, geometric mass, architectural minimalism, stark modern design, structural honesty, modernist aesthetic, minimal decoration",
+            "negative": "decorative design, classical architecture, ornate style, traditional building"
+        },
+        {
+            "name": "Vintage Aviation Art",
+            "positive": "classic aircraft illustration, historical aviation, technical accuracy, nostalgic air travel, vintage aerospace, professional aviation art, detailed aircraft study, aeronautical design",
+            "negative": "modern aircraft, abstract planes, cartoon style, technical diagram, simplistic"
+        },
+        {
+            "name": "Traditional Lithography",
+            "positive": "lithographic print quality, stone lithography effect, traditional printing, artistic lithograph, printmaking technique, tonal gradation, hand-printed look, vintage print style",
+            "negative": "digital print, sharp photography, vector art, modern printing, clean edges"
+        },
+        {
+            "name": "Theatrical Stage Design",
+            "positive": "stage set concept, theatrical lighting, dramatic perspective, performance space design, scenic design, stage architecture, dramatic presentation, theatrical atmosphere",
+            "negative": "realistic setting, documentary photo, casual space, technical drawing"
+        },
+        {
+            "name": "Zen Garden Design",
+            "positive": "japanese garden aesthetic, minimal landscape design, rock garden elements, spiritual harmony, contemplative space, balanced composition, natural elements, meditative atmosphere",
+            "negative": "busy design, western garden, colorful flowers, modern landscape, urban park"
+        },
+        {
+            "name": "Wabi-Sabi Art",
+            "positive": "imperfect beauty aesthetic, natural aging, subtle detail, rustic elegance, zen influence, organic texture, weathered surface, traditional japanese aesthetic, contemplative art",
+            "negative": "perfect finish, modern sleek, digital art, clean design, western aesthetic"
+        },
+        {
+            "name": "Entomological Illustration",
+            "positive": "detailed insect study, scientific accuracy, specimen documentation, taxonomic illustration, natural history art, precise anatomy, specimen plate style, educational diagram",
+            "negative": "abstract bugs, cartoon insects, stylized drawing, loose sketch, artistic interpretation"
+        },
+        {
+            "name": "Traditional Linocut",
+            "positive": "linocut print style, block print technique, carved line quality, relief printing, traditional printmaking, bold contrast, handmade print quality, artistic impression",
+            "negative": "digital art, photographic, smooth gradient, vector art, modern design"
+        },
+        {
+            "name": "Industrial Documentary",
+            "positive": "industrial photography, factory documentation, mechanical environment, urban industrial, manufacturing process, technical atmosphere, working environment, industrial architecture",
+            "negative": "natural setting, artistic photo, staged scene, studio shot, artificial setup"
+        },
+        {
+            "name": "Medieval Manuscript",
+            "positive": "illuminated manuscript style, medieval book art, decorative capitals, manuscript illustration, historical accuracy, vellum page effect, hand-lettered text, period decoration",
+            "negative": "modern typography, digital design, contemporary layout, minimalist style"
+        },
+        {
+            "name": "Rococo Ornamental",
+            "positive": "elaborate rococo style, ornate decoration, french baroque influence, gilded ornament, curved forms, romantic excess, decorative luxury, asymmetrical design, pastoral elements",
+            "negative": "minimalist design, modern style, geometric pattern, clean lines, simple form"
+        },
+        {
+            "name": "Digital Glitch Art",
+            "positive": "digital corruption effect, data moshing, electronic distortion, pixel sorting, compression artifacts, digital noise, systematic glitch, technological error, circuit bend aesthetic",
+            "negative": "clean design, traditional art, smooth transition, perfect rendering, analog style"
+        },
+        {
+            "name": "Mathematics Visualization",
+            "positive": "mathematical concept art, geometric visualization, abstract mathematics, sacred geometry, mathematical patterns, geometric precision, algorithmic art, mathematical beauty",
+            "negative": "organic shapes, loose art, hand drawn, traditional painting, natural forms"
+        },
+        {
+            "name": "Botanical Medicine",
+            "positive": "medicinal plant illustration, herbal documentation, pharmaceutical accuracy, traditional medicine, plant identification, scientific herbalism, detailed specimen, healing plants",
+            "negative": "abstract botanicals, artistic interpretation, modern design, digital art, stylized"
+        },
+        {
+            "name": "Infrared Photography",
+            "positive": "infrared photo effect, false color aesthetic, thermal imaging style, alternative spectrum, surreal landscape, invisible light capture, ethereal atmosphere, scientific imaging",
+            "negative": "natural color, realistic photo, true color spectrum, standard photography"
+        },
+        {
+            "name": "Tibetan Thangka",
+            "positive": "traditional buddhist art, religious iconography, detailed mandala design, sacred geometry, spiritual symbolism, devotional painting, traditional materials, meditation focus, ceremonial art",
+            "negative": "modern art, western style, abstract design, casual drawing, secular themes"
+        },
+        {
+            "name": "Architectural Fantasy",
+            "positive": "impossible architecture, surreal building design, fantastical structures, imaginative construction, dream architecture, geometric impossibility, architectural creativity, structural fantasy",
+            "negative": "realistic architecture, practical design, standard building, conventional structure"
+        },
+        {
+            "name": "Experimental Photography",
+            "positive": "alternative process photography, experimental technique, artistic photo manipulation, creative exposure, unconventional process, photographic abstraction, innovative capture",
+            "negative": "standard photography, conventional technique, traditional photo, normal exposure"
+        },
+        {
+            "name": "Native American Ledger",
+            "positive": "plains indian ledger art, traditional narrative style, historical documentation, cultural storytelling, native american aesthetic, warrior art style, traditional symbols",
+            "negative": "western art style, modern design, photographic, contemporary art, digital"
+        },
+        {
+            "name": "Scientific Photography",
+            "positive": "laboratory documentation, scientific process capture, experimental photography, research documentation, technical accuracy, clinical environment, professional scientific, analytical view",
+            "negative": "artistic photography, creative expression, emotional capture, artistic filter"
+        },
+        {
+            "name": "Miniature Diorama",
+            "positive": "scale model scene, miniature world creation, detailed small scale, model making craft, tiny detailed environment, miniature photography, scaled reality, handcrafted mini scene",
+            "negative": "life size scene, full scale photography, regular perspective, normal scale"
+        },
+        {
+            "name": "Digital Fractal",
+            "positive": "mathematical fractal design, recursive patterns, infinite detail, mandelbrot style, digital mathematics, fractal geometry, algorithmic art, complex number visualization",
+            "negative": "hand drawn, traditional art, organic shapes, natural forms, painterly style"
+        },
+        {
+            "name": "Traditional Intaglio",
+            "positive": "intaglio printing technique, etched plate marks, fine line engraving, traditional printmaking, plate tone effect, printmaking texture, old master print style, artistic impression",
+            "negative": "digital print, clean edges, modern design, sharp photography, vector art"
+        },
+        {
+            "name": "Polaroid Transfer",
+            "positive": "polaroid emulsion effect, alternative photo process, artistic photo transfer, experimental photography, vintage instant photo, chemical process artifact, artistic degradation",
+            "negative": "sharp photography, perfect exposure, digital clarity, clean image, precise detail"
+        },
+        {
+            "name": "Automotive Rendering",
+            "positive": "professional car illustration, automotive design rendering, vehicle concept art, transportation design, industrial design sketch, professional presentation, technical accuracy",
+            "negative": "amateur drawing, basic sketch, technical diagram, cartoon style, childish art"
+        },
+        {
+            "name": "Ornithological Study",
+            "positive": "detailed bird illustration, scientific bird study, accurate feather detail, naturalist drawing style, species documentation, avian anatomy, biological accuracy, wildlife study",
+            "negative": "cartoon birds, abstract style, loose sketch, artistic interpretation, stylized"
+        },
+        {
+            "name": "Origami Design",
+            "positive": "paper folding art, geometric paper design, traditional origami style, folded paper texture, mathematical precision, clean creases, japanese paper art, modular origami",
+            "negative": "digital art, painted look, loose style, organic shapes, random folds"
+        },
+        {
+            "name": "Haute Couture Sketch",
+            "positive": "fashion design illustration, couture style drawing, high fashion sketch, designer fashion art, runway illustration, elegant fashion rendering, stylish presentation",
+            "negative": "casual fashion, basic clothing, technical drawing, flat design, simple sketch"
+        },
+        {
+            "name": "Traditional Carving",
+            "positive": "wood carving texture, traditional craft, carved detail work, sculptural relief, artisan craftsmanship, traditional tools, organic material, handcrafted quality",
+            "negative": "digital design, modern style, machine made, clean edges, perfect symmetry"
+        },
+        {
+            "name": "Underwater Photography",
+            "positive": "submerged camera work, aquatic lighting, marine photography, underwater atmosphere, diving photography, subsurface imaging, ocean documentary, aquatic environment",
+            "negative": "above water, studio photography, normal lighting, dry environment, aerial view"
+        },
+        {
+            "name": "Bronze Age Art",
+            "positive": "ancient bronze age style, prehistoric art technique, archaic design, historical accuracy, primitive tools, archaeological artifacts, ancient craftsmanship, cultural authenticity",
+            "negative": "modern art, contemporary style, digital design, refined technique, precise lines"
+        },
+        {
+            "name": "Weather Photography",
+            "positive": "meteorological phenomena, storm photography, atmospheric conditions, weather events, cloud formations, natural light effects, environmental documentation, dramatic sky",
+            "negative": "studio photography, artificial lighting, controlled environment, staged scenes"
+        },
+        {
+            "name": "Architectural Model",
+            "positive": "scale architectural model, professional presentation model, architectural visualization, detailed construction, miniature building, precise scale model, architectural prototype",
+            "negative": "full size building, rough sketch, technical drawing, abstract design, concept art"
+        },
+        {
+            "name": "Shamanic Art",
+            "positive": "tribal shamanic style, spiritual symbolism, indigenous art influence, ritual artwork, mystical elements, traditional patterns, sacred imagery, ceremonial design",
+            "negative": "modern art, commercial design, corporate style, western aesthetic, minimalist"
+        },
+        {
+            "name": "Circuit Board Design",
+            "positive": "electronic circuit aesthetic, pcb layout design, technological pattern, electronic pathways, computer hardware, technical accuracy, digital infrastructure, electronic blueprint",
+            "negative": "organic pattern, natural design, hand drawn, artistic interpretation, loose style"
+        },
+        {
+            "name": "Radio Wave Imaging",
+            "positive": "electromagnetic visualization, radio frequency pattern, wave form imagery, spectrum analysis, scientific visualization, frequency mapping, transmission visualization",
+            "negative": "visible light photo, standard photography, natural color, realistic capture"
+        },
+        {
+            "name": "Contemporary Mosaic",
+            "positive": "modern mosaic technique, tile art design, contemporary tessellation, artistic tile work, modern material mosaic, geometric pattern work, architectural decoration",
+            "negative": "traditional mosaic, ancient style, painted art, smooth surface, digital design"
+        },
+        {
+            "name": "Ancient Rock Art",
+            "positive": "prehistoric cave painting, petroglyphs style, ancient rock carving, primitive art technique, archaeological artifact, historical authenticity, cave wall texture, ancient pigments",
+            "negative": "modern art, refined technique, digital design, contemporary style, clean lines"
+        },
+        {
+            "name": "Space Art Concept",
+            "positive": "astronomical art, cosmic scene, space exploration theme, celestial objects, planetary visualization, galactic environment, astronomical accuracy, space science illustration, stellar phenomena",
+            "negative": "earth bound scene, terrestrial setting, ground level view, everyday life, mundane subject"
+        },
+        {
+            "name": "Particle Physics Visualization",
+            "positive": "quantum physics illustration, particle collision art, subatomic visualization, scientific accuracy, physics diagram, quantum mechanics, energy visualization, microscopic scale",
+            "negative": "macroscopic view, everyday objects, visible spectrum, regular photography, natural scene"
+        },
+        {
+            "name": "Crystallography Model",
+            "positive": "crystal structure diagram, molecular arrangement, geometric mineral form, scientific accuracy, atomic lattice, crystalline formation, mineral study, geometric precision",
+            "negative": "organic shapes, loose drawing, artistic interpretation, abstract design, fuzzy edges"
+        },
+        {
+            "name": "Anatomical Cross Section",
+            "positive": "medical cross section, detailed anatomy, surgical illustration, biological accuracy, medical diagram, internal structure, dissection study, professional medical art",
+            "negative": "whole body view, surface anatomy, artistic interpretation, abstract medical, simplified"
+        },
+        {
+            "name": "Medieval Bestiary",
+            "positive": "medieval monster art, illuminated manuscript style, mythical creature design, historical art technique, decorative borders, ancient beast illustration, traditional bestiary",
+            "negative": "modern monster, realistic creature, photographic style, scientific accuracy, digital art"
+        },
+        {
+            "name": "Industrial Blueprint",
+            "positive": "technical industrial drawing, mechanical blueprint style, engineering documentation, industrial design, technical accuracy, mechanical detail, professional drafting, factory planning",
+            "negative": "artistic sketch, loose drawing, conceptual design, abstract mechanical, basic diagram"
+        },
+        {
+            "name": "DNA Visualization",
+            "positive": "molecular biology art, genetic structure, dna helix illustration, scientific accuracy, biochemistry visualization, molecular modeling, biological structure, genetic diagram",
+            "negative": "abstract science, artistic dna, loose interpretation, simplified genetics, basic sketch"
+        },
+        {
+            "name": "Traditional Puppetry",
+            "positive": "puppet design art, marionette construction, traditional puppet making, theatrical puppet, character puppet design, puppet mechanism, artistic puppet craft, stage puppet",
+            "negative": "realistic figure, human portrait, digital character, cartoon style, simple doll"
+        },
+        {
+            "name": "Renaissance Costume",
+            "positive": "historical renaissance dress, period accurate clothing, traditional costume design, medieval fashion, historical garment study, authentic detail, costume documentation",
+            "negative": "modern fashion, contemporary style, casual clothing, abstract design, simple sketch"
+        },
+        {
+            "name": "Sacred Geometry",
+            "positive": "geometric spiritual art, mathematical mysticism, sacred proportion, divine geometry, spiritual symbols, geometric harmony, ancient knowledge, mystical patterns",
+            "negative": "random geometry, casual pattern, modern design, simple shapes, basic structure"
+        },
+        {
+            "name": "Nanotechnology Visualization",
+            "positive": "nanoscale technology, molecular machinery, microscopic tech, scientific accuracy, nanobot design, molecular engineering, atomic scale, technical precision",
+            "negative": "macro technology, visible machines, regular scale, everyday objects, basic mechanical"
+        },
+        {
+            "name": "Ancient Artifact",
+            "positive": "archaeological treasure, historical artifact, ancient craftsmanship, cultural heritage, weathered antiquity, museum quality, historical accuracy, aged material",
+            "negative": "modern object, contemporary design, new product, clean condition, fresh creation"
+        },
+        {
+            "name": "Deep Sea Creature",
+            "positive": "abyssal life form, marine biology accuracy, deep ocean species, bioluminescent detail, extreme depth adaptation, scientific study, underwater life, marine documentation",
+            "negative": "surface marine life, common fish, shallow water species, casual sea life, basic fish"
+        },
+        {
+            "name": "Traditional Mask Making",
+            "positive": "ceremonial mask design, cultural face mask, ritual mask craft, traditional mask art, tribal mask making, symbolic mask work, ancient mask style, spiritual mask",
+            "negative": "modern mask, simple disguise, carnival mask, basic face covering, casual mask"
+        },
+        {
+            "name": "Holographic Design",
+            "positive": "holographic effect art, light interference pattern, prismatic color, dimensional hologram, optical holography, rainbow diffraction, spectral reflection, light play",
+            "negative": "flat design, single color, basic print, standard photo, regular graphics"
+        },
+        {
+            "name": "Wind Tunnel Testing",
+            "positive": "aerodynamic visualization, flow pattern study, engineering test visual, airflow analysis, technical accuracy, scientific testing, professional documentation, fluid dynamics",
+            "negative": "artistic wind, abstract flow, casual breeze, simple movement, basic pattern"
+        },
+        {
+            "name": "Antique Navigation",
+            "positive": "ancient maritime map, historical navigation, old sea chart, traditional cartography, nautical documentation, vintage maritime art, sailing navigation, historical map",
+            "negative": "modern map, digital navigation, simple diagram, basic direction, casual map"
+        },
+        {
+            "name": "Microbiology Study",
+            "positive": "microscopic life illustration, cellular detail, microorganism study, scientific accuracy, bacterial form, microscope visualization, biological precision, laboratory study",
+            "negative": "macro biology, visible life form, everyday organism, basic life, simple creature"
+        },
+        {
+            "name": "Ancient Astronomy",
+            "positive": "historical star chart, traditional constellation, celestial mapping, ancient observatory, astronomical calculation, star positioning, zodiac illustration, celestial study",
+            "negative": "modern astronomy, digital star map, satellite image, space photo, basic star chart"
+        },
+        {
+            "name": "Volcanic Activity",
+            "positive": "geological event capture, eruption documentation, volcanic process, scientific accuracy, magma visualization, geological study, natural phenomenon, earth science",
+            "negative": "casual landscape, basic mountain, simple geology, amateur nature, regular rocks"
+        },
+        {
+            "name": "Chemical Crystallization",
+            "positive": "crystal growth pattern, chemical process art, molecular formation, scientific beauty, microscopic crystal, chemical reaction, laboratory process, scientific documentation",
+            "negative": "random pattern, basic crystal, simple shape, casual formation, abstract crystal"
+        },
+        {
+            "name": "Topographical Mapping",
+            "positive": "elevation visualization, terrain mapping, geographical accuracy, land formation study, contour illustration, geological survey, professional cartography, earth surface detail",
+            "negative": "basic map, simple terrain, casual landscape, abstract geography, artistic map"
+        },
+        {
+            "name": "Bioluminescent Organism",
+            "positive": "natural light emission, biological illumination, living light source, scientific accuracy, natural phenomenon, organic light, species documentation, nature study",
+            "negative": "artificial light, basic glow, simple lighting, casual brightness, regular organism"
+        },
+        {
+            "name": "Quantum Dream Visualization",
+            "positive": "quantum wave function, probability cloud aesthetics, superposition art, quantum mechanics visualization, wave particle duality, scientific mysticism, quantum state art, schrodinger equation patterns",
+            "negative": "classical physics, determinate state, singular reality, conventional science, basic particle"
+        },
+        {
+            "name": "Bioelectrical Aura",
+            "positive": "cellular electrical activity, biological energy field, kirlian photography style, bioelectric visualization, energy emission patterns, life force capture, biological voltage mapping, electromagnetic life",
+            "negative": "regular photography, standard portrait, basic lighting, normal exposure, mundane capture"
+        },
+        {
+            "name": "Metamaterial Structure",
+            "positive": "impossible material properties, engineered atomic structure, quantum engineered surface, nano-scale patterns, photonic crystal structure, material science visualization, advanced material design",
+            "negative": "natural materials, basic structure, simple pattern, regular crystal, standard material"
+        },
+        {
+            "name": "Time Crystallization",
+            "positive": "temporal crystal pattern, time symmetry visualization, periodic temporal structure, quantum time crystal, space-time lattice, temporal symmetry breaking, crystallized moment, fourth-dimensional crystal",
+            "negative": "static crystal, regular pattern, basic structure, simple repetition, normal time flow"
+        },
+        {
+            "name": "Neural Architecture",
+            "positive": "brain network visualization, neural pathway mapping, consciousness architecture, synaptic forest, neurological structure, mind landscape, cognitive mapping, neural circuit beauty",
+            "negative": "simple diagram, basic brain, anatomical drawing, medical illustration, regular network"
+        },
+        {
+            "name": "Entropy Visualization",
+            "positive": "thermodynamic art, chaos visualization, order to disorder transition, statistical mechanics, energy dispersion patterns, entropy increase, thermal chaos, disorder beauty",
+            "negative": "ordered pattern, simple chaos, basic disorder, regular randomness, standard pattern"
+        },
+        {
+            "name": "Hyperdimensional Projection",
+            "positive": "fourth dimensional shadow, tesseract projection, higher dimensional geometry, mathematical beauty, dimensional intersection, hyperspace visualization, geometric transcendence",
+            "negative": "3d geometry, basic shape, simple projection, regular geometry, standard dimension"
+        },
+        {
+            "name": "Memory Crystal Archive",
+            "positive": "crystalline data storage, information crystal, holographic memory structure, data crystallization, quantum memory pattern, stored information visualization, memory lattice",
+            "negative": "regular crystal, simple data, basic storage, standard pattern, normal archive"
+        },
+        {
+            "name": "Cymatic Resonance",
+            "positive": "sound vibration pattern, frequency visualization, standing wave formation, vibrational geometry, sonic pattern, acoustic visualization, resonant frequency art, harmonic structure",
+            "negative": "random pattern, basic waves, simple sound, regular vibration, standard frequency"
+        },
+        {
+            "name": "Biomorphic Machinery",
+            "positive": "organic mechanical fusion, living machine aesthetic, biological mechanism, evolved technology, organic tech integration, living device, biomechanical harmony, natural machine",
+            "negative": "pure machine, basic mechanism, simple device, regular tech, standard mechanical"
+        },
+        {
+            "name": "Quantum Garden Design",
+            "positive": "probability landscape, quantum botanical, superposition flora, wave function vegetation, quantum biological art, probabilistic nature, schrodinger garden, quantum life pattern",
+            "negative": "regular garden, basic plants, simple nature, standard landscape, normal botany"
+        },
+        {
+            "name": "Dark Matter Cartography",
+            "positive": "invisible mass mapping, cosmic void visualization, gravitational lens effect, dark universe structure, unseen cosmic web, galactic dark matter, void constellation, hidden universe",
+            "negative": "visible space, basic cosmos, simple stars, regular galaxy, standard astronomy"
+        },
+        {
+            "name": "Plasma Containment Art",
+            "positive": "fusion reactor visualization, magnetic bottle aesthetic, contained plasma pattern, tokamak beauty, fusion energy art, magnetic field sculpture, plasma confinement, energy containment",
+            "negative": "regular energy, basic plasma, simple containment, standard reactor, normal field"
+        },
+        {
+            "name": "Ancestral Algorithm",
+            "positive": "ancient computing aesthetic, primitive code pattern, archaeological programming, historical algorithm, computational archaeology, digital heritage, ancient digital, primitive processing",
+            "negative": "modern code, basic algorithm, simple program, regular computing, standard digital"
+        },
+        {
+            "name": "Quantum Archaeology",
+            "positive": "temporal excavation, probability reconstruction, historical superposition, quantum time recovery, archaeological uncertainty, past state reconstruction, temporal archaeology",
+            "negative": "classical archaeology, basic excavation, simple history, regular past, standard dig"
+        },
+        {
+            "name": "Biosynthetic Crystal",
+            "positive": "living crystal structure, organic mineral growth, biological crystallization, engineered life crystal, grown architecture, living mineral, evolved crystal, organic lattice",
+            "negative": "regular crystal, basic mineral, simple growth, standard formation, normal structure"
+        },
+        {
+            "name": "Chronophotography Motion",
+            "positive": "time slice visualization, motion breakdown, sequential movement capture, temporal photography, movement study, time lapse beauty, motion dissection, movement analysis",
+            "negative": "single moment, basic photo, simple movement, regular capture, standard motion"
+        },
+        {
+            "name": "Dimensional Archaeology",
+            "positive": "multiverse artifact, parallel world relic, dimensional crossing traces, alternative history object, quantum archaeology, parallel timeline artifact, dimensional remnant",
+            "negative": "regular artifact, basic relic, simple object, standard archaeology, normal find"
+        },
+        {
+            "name": "Synaesthetic Visualization",
+            "positive": "sensory crossing art, sound-color synthesis, taste visualization, sensory translation, cross-modal perception, neural sensation art, sense mixing, perceptual fusion",
+            "negative": "single sense, basic perception, simple sensation, regular vision, standard sound"
+        },
+        {
+            "name": "Quantum Calligraphy",
+            "positive": "probability brush stroke, superposition writing, quantum flow script, uncertainty principle typography, wave function writing, quantum state lettering, probabilistic script",
+            "negative": "regular writing, basic calligraphy, simple text, standard typography, normal script"
+        },
+        {
+            "name": "Googie Architecture",
+            "positive": "retro-futuristic architecture style, atomic age design, space age aesthetic, upswept roofs, geometric shapes, bold use of glass and steel, 1950s futurism, boomerang shapes, starburst motifs, bold angles",
+            "negative": "traditional architecture, classical design, minimalist style, contemporary modern, subtle forms"
+        },
+        {
+            "name": "Harlem Renaissance",
+            "positive": "1920s african american cultural movement, jazz age influence, art deco elements, bold portraiture, cultural pride, social commentary, elegant composition, historical significance, vibrant urban life",
+            "negative": "contemporary style, minimalist design, abstract forms, rural scenes, photorealistic"
+        },
+        {
+            "name": "Fayum Portrait",
+            "positive": "ancient egyptian-roman portrait style, encaustic painting technique, realistic facial features, warm earth tones, serene expression, historical accuracy, funeral portrait, wooden panel, naturalistic style",
+            "negative": "modern portrait, abstract style, bright colors, exaggerated features, contemporary approach"
+        },
+        {
+            "name": "Kalighat Painting",
+            "positive": "bengali folk art style, bold outlines, vibrant colors, simplified forms, cultural narrative, social commentary, religious themes, flat color application, expressive characters, traditional indian art",
+            "negative": "photorealistic, western style, complex shading, modern aesthetic, 3d rendering"
+        },
+        {
+            "name": "Pictorialism",
+            "positive": "soft focus photography style, atmospheric effects, painterly quality, romantic mood, diffused light, artistic interpretation, tonal gradation, dreamy aesthetic, emotional resonance",
+            "negative": "sharp focus, high contrast, documentary style, realistic capture, modern photography"
+        },
+        {
+            "name": "Suprematism",
+            "positive": "geometric abstract art, pure artistic feeling, non-objective, limited color palette, floating shapes, mathematical precision, spiritual quality, revolutionary art movement, geometric purity",
+            "negative": "representational art, complex patterns, realistic depiction, ornate design, traditional style"
+        },
+        {
+            "name": "Adnate Style",
+            "positive": "large-scale portraiture, street art influence, photorealistic technique, cultural focus, indigenous themes, urban contemporary, emotional depth, mural scale, social narrative",
+            "negative": "small scale art, abstract style, decorative pattern, commercial aesthetic, cartoon style"
+        },
+        {
+            "name": "Ron English Style",
+            "positive": "pop surrealism, cultural jamming, advertising parody, mash-up imagery, bright colors, satirical elements, iconic manipulation, subversive themes, pop culture commentary",
+            "negative": "traditional art, realistic style, subtle approach, minimalist design, abstract forms"
+        },
+        {
+            "name": "Glitchcore",
+            "positive": "digital distortion aesthetic, corrupted data visuals, glitch artifacts, electronic noise, pixelation effects, color channel splitting, databending, technological error, digital decay",
+            "negative": "clean design, traditional art, smooth transition, perfect rendering, analog style"
+        },
+        {
+            "name": "Madhubani",
+            "positive": "traditional indian folk art, geometric patterns, natural dye colors, ritual imagery, mythological themes, double line drawing, intricate details, cultural symbolism, nature motifs",
+            "negative": "modern style, photorealistic, minimalist design, western aesthetic, abstract art"
+        },
+        {
+            "name": "Art Nouveau Illustration",
+            "positive": "flowing organic lines, decorative elements, natural forms, elegant curves, feminine figures, floral patterns, whiplash curves, stylized nature, muted color palette, symmetrical composition",
+            "negative": "geometric shapes, harsh lines, modern minimalism, digital effects, photorealistic style"
+        },
+        {
+            "name": "Risograph Print",
+            "positive": "two-tone printing style, limited color palette, slight misalignment, textured overlays, grainy texture, bold shapes, vintage printing aesthetic, spot colors, imperfect registration",
+            "negative": "perfect alignment, photorealistic, full color spectrum, digital smoothness, high resolution"
+        },
+        {
+            "name": "Gouache Painting",
+            "positive": "opaque watercolor technique, matte finish, flat color areas, layered application, rich pigments, smooth transitions, poster-like quality, vintage illustration style",
+            "negative": "transparent watercolor, glossy finish, digital effects, photorealistic rendering"
+        },
+        {
+            "name": "Silverpoint Drawing",
+            "positive": "delicate line work, subtle tones, metallic sheen, precise detail, renaissance technique, fine hatching, soft gray lines, meticulous rendering, traditional craftsmanship",
+            "negative": "bold strokes, high contrast, modern techniques, digital effects, loose style"
+        },
+        {
+            "name": "Pochoir Technique",
+            "positive": "stenciled artwork, art deco style, precise color areas, hand-colored effect, fashion illustration, decorative patterns, clean edges, layered colors, vintage french style",
+            "negative": "watercolor effects, digital gradients, photorealistic details, loose brushwork"
+        },
+        {
+            "name": "Sumi-e Painting",
+            "positive": "japanese ink painting, minimalist strokes, balanced composition, zen aesthetic, spontaneous execution, black ink gradation, spiritual quality, natural subjects",
+            "negative": "detailed rendering, western style, bright colors, digital effects, photorealism"
+        },
+        {
+            "name": "Scratchboard Art",
+            "positive": "high contrast, intricate detail, scratched lines, black and white, textural effects, dramatic lighting, precise technique, engraving-like quality",
+            "negative": "color gradients, soft edges, painterly effects, digital smoothness"
+        },
+        {
+            "name": "Tempera Painting",
+            "positive": "egg tempera technique, fine detail, luminous colors, medieval style, precise brushwork, layered technique, religious iconography, traditional craftsmanship",
+            "negative": "oil painting effects, modern style, loose brushwork, digital art"
+        },
+        {
+            "name": "Woodcut Style",
+            "positive": "bold black lines, high contrast, carved texture, printmaking aesthetic, graphic quality, traditional block print, strong composition, handcrafted look",
+            "negative": "photorealistic detail, subtle gradients, digital smoothness, painterly effects"
+        },
+        {
+            "name": "Color Field Painting",
+            "positive": "large areas of flat color, minimal composition, emotional impact, abstract expression, pure color relationships, meditative quality, vast scale",
+            "negative": "detailed imagery, representational elements, busy composition, textural effects"
+        },
+        {
+            "name": "Tachisme Style",
+            "positive": "spontaneous abstraction, gestural brushwork, emotional expression, intense colors, abstract informalism, european expressionism, dynamic composition",
+            "negative": "controlled brushwork, representational elements, geometric patterns, digital effects"
+        },
+        {
+            "name": "Neo-Expressionism",
+            "positive": "intense emotionality, crude brushwork, vivid colors, distorted figures, primitive style, raw energy, urban influence, contemporary art",
+            "negative": "refined technique, photorealism, subtle colors, classical composition"
+        },
+        {
+            "name": "Lyrical Abstraction",
+            "positive": "fluid gesture, atmospheric quality, subtle color harmony, intuitive composition, painterly abstraction, poetic expression, musical rhythm",
+            "negative": "geometric abstraction, hard edges, digital effects, photorealistic elements"
+        },
+        {
+            "name": "Precisionism",
+            "positive": "geometric simplification, industrial subjects, clean lines, architectural forms, machine age aesthetic, smooth rendering, american modernism",
+            "negative": "organic shapes, loose brushwork, impressionistic style, romantic subjects"
+        },
+        {
+            "name": "Tonalism",
+            "positive": "muted color palette, atmospheric effects, soft edges, moody landscape, limited value range, emotional resonance, subtle gradations",
+            "negative": "bright colors, sharp contrast, detailed rendering, photorealistic style"
+        },
+        {
+            "name": "Synthetism",
+            "positive": "simplified forms, flat color areas, symbolic meaning, bold outlines, decorative style, emotional expression, post-impressionist approach",
+            "negative": "naturalistic rendering, photorealism, detailed modeling, academic style"
+        },
+        {
+            "name": "Cloisonnism",
+            "positive": "bold outlines, flat color areas, stained glass effect, medieval influence, decorative style, post-impressionist technique, symbolic approach",
+            "negative": "subtle gradients, naturalistic modeling, photorealistic detail"
+        },
+        {
+            "name": "Luminism",
+            "positive": "ethereal light effects, smooth surface, precise detail, tranquil atmosphere, hidden brushwork, american landscape, spiritual quality",
+            "negative": "visible brushstrokes, impressionistic style, abstract elements, rough texture"
+        },
+        {
+            "name": "Magic Realism",
+            "positive": "realistic technique, surreal elements, mysterious atmosphere, detailed rendering, psychological depth, dreamlike quality, narrative content",
+            "negative": "pure abstraction, loose brushwork, impressionistic style, photorealism"
+        },
+        {
+            "name": "Metaphysical Painting",
+            "positive": "enigmatic imagery, classical elements, mysterious spaces, mannequin figures, architectural settings, dreamlike atmosphere, philosophical meaning",
+            "negative": "naturalistic scenes, impressionistic style, abstract composition, photorealism"
+        },
+        {
+            "name": "Neue Sachlichkeit",
+            "positive": "harsh realism, social criticism, precise technique, objective style, german expressionism, political commentary, unflinching observation",
+            "negative": "romantic style, soft focus, impressionistic effects, abstract elements"
+        },
+        {
+            "name": "Orphism",
+            "positive": "pure color harmony, rhythmic forms, abstract composition, musical quality, light effects, dynamic movement, spiritual expression",
+            "negative": "representational elements, muted colors, static composition, photorealism"
+        },
+        {
+            "name": "Purism",
+            "positive": "geometric simplicity, machine aesthetic, mathematical harmony, clean lines, modern spirit, architectural influence, rational beauty",
+            "negative": "organic forms, emotional expression, decorative elements, romantic style"
+        },
+        {
+            "name": "Rayonism",
+            "positive": "light ray representation, dynamic lines, abstract forms, russian avant-garde, spiritual quality, cosmic energy, geometric pattern",
+            "negative": "naturalistic rendering, traditional perspective, photorealistic detail"
+        },
+        {
+            "name": "Social Realism",
+            "positive": "working class subjects, political message, strong narrative, emotional impact, documentary style, human condition, social commentary",
+            "negative": "abstract elements, decorative style, romantic approach, fantasy themes"
+        },
+        {
+            "name": "Stijl Movement",
+            "positive": "geometric abstraction, primary colors, black and white, straight lines, mathematical composition, modern design, utopian vision",
+            "negative": "organic shapes, natural colors, curved lines, decorative elements"
+        },
+        {
+            "name": "Synchronism",
+            "positive": "color rhythm, abstract forms, musical analogy, modern american art, dynamic composition, pure color, emotional impact",
+            "negative": "representational elements, muted colors, static composition, photorealism"
+        },
+        {
+            "name": "Vorticism",
+            "positive": "angular forms, dynamic energy, machine aesthetic, abstract composition, modern life, geometric style, industrial influence",
+            "negative": "organic shapes, natural subjects, romantic style, traditional perspective"
+        },
+        {
+            "name": "Regionalism",
+            "positive": "american scene painting, rural subjects, narrative content, realistic technique, local color, cultural identity, traditional values",
+            "negative": "abstract elements, international style, urban scenes, modernist approach"
+        },
+        {
+            "name": "Pattern and Decoration",
+            "positive": "ornamental design, cultural patterns, decorative elements, feminine aesthetic, craft influence, rich texture, complex composition",
+            "negative": "minimalist style, geometric abstraction, masculine aesthetic, modernist grid"
+        },
+        {
+            "name": "Neo-Romanticism",
+            "positive": "emotional landscape, mystical quality, poetic vision, natural beauty, spiritual content, dramatic atmosphere, symbolic meaning",
+            "negative": "urban scenes, industrial subjects, geometric abstraction, objective style"
+        },
+        {
+            "name": "Kinetic Art",
+            "positive": "optical effects, movement suggestion, geometric patterns, visual rhythm, scientific influence, modern technology, dynamic composition",
+            "negative": "static imagery, traditional perspective, naturalistic rendering, romantic style"
+        },
+        {
+            "name": "Hard-edge Painting",
+            "positive": "sharp edges, flat color areas, geometric abstraction, precise technique, clean composition, minimal design, optical effects",
+            "negative": "loose brushwork, organic shapes, gestural marks, expressionist style"
+        },
+        {
+            "name": "Fantastic Realism",
+            "positive": "imaginative subjects, technical precision, surreal elements, symbolic content, visionary art, psychological depth, dream imagery",
+            "negative": "abstract composition, loose technique, objective realism, documentary style"
+        },
+        {
+            "name": "Neo-Dada",
+            "positive": "found objects, mixed media, cultural critique, absurdist elements, experimental approach, anti-art stance, contemporary influence",
+            "negative": "traditional technique, conventional subjects, academic style, formal composition"
+        },
+        {
+            "name": "Cobra Movement",
+            "positive": "spontaneous expression, primitive style, bright colors, childlike quality, nordic mythology, emotional impact, experimental approach",
+            "negative": "refined technique, academic style, controlled composition, photorealism"
+        },
+        {
+            "name": "Transavanguardia",
+            "positive": "expressive painting, mythological elements, cultural references, emotional content, figurative style, italian neo-expressionism",
+            "negative": "minimalist approach, geometric abstraction, conceptual art, photorealism"
+        },
+        {
+            "name": "Neo-Pop",
+            "positive": "contemporary pop culture, bright colors, commercial imagery, digital influence, urban aesthetic, mass media reference, ironic approach",
+            "negative": "traditional subjects, muted colors, romantic style, classical technique"
+        },
+        {
+            "name": "Maximalism",
+            "positive": "complex patterns, excessive decoration, multiple styles, rich colors, cultural mixing, horror vacui, ornamental excess",
+            "negative": "minimalist design, simple composition, modernist grid, clean lines"
+        },
+        {
+            "name": "Neo-Minimalism",
+            "positive": "reduced forms, subtle variation, monochromatic palette, geometric abstraction, contemplative quality, spatial awareness",
+            "negative": "complex patterns, bright colors, figurative elements, emotional expression"
+        },
+        {
+            "name": "Bio Art",
+            "positive": "biological processes, scientific imagery, natural patterns, organic forms, laboratory aesthetic, microscopic view, living systems",
+            "negative": "geometric abstraction, urban scenes, artificial constructs, traditional subjects"
+        },
+        {
+            "name": "Digital Baroque",
+            "positive": "ornate complexity, technological excess, digital manipulation, cultural hybridity, contemporary baroque, virtual space",
+            "negative": "minimalist design, traditional technique, simple composition, natural forms"
+        },
+        {
+            "name": "Eco Art",
+            "positive": "environmental themes, natural materials, sustainable practice, organic forms, ecological awareness, site-specific work",
+            "negative": "industrial subjects, artificial materials, urban aesthetic, digital effects"
+        },
+        {
+            "name": "Metamodernism",
+            "positive": "oscillating perspectives, sincere irony, informed naivety, pragmatic romanticism, multiple styles, contemporary culture",
+            "negative": "single perspective, pure irony, cynical approach, modernist purity"
+        },
+        {
+            "name": "New European Painting",
+            "positive": "contemporary figurative, psychological depth, cultural commentary, technical skill, narrative content, european tradition",
+            "negative": "abstract minimalism, conceptual approach, american style, photorealism"
+        },
+        {
+            "name": "Process Art",
+            "positive": "material emphasis, creative procedure, temporal quality, natural forces, artistic chance, experimental approach",
+            "negative": "finished product focus, controlled technique, traditional methods, precise execution"
+        },
+        {
+            "name": "Relational Art",
+            "positive": "social interaction, participatory elements, community engagement, temporal events, human relations, contemporary culture",
+            "negative": "isolated objects, traditional display, individual viewing, permanent works"
+        },
+        {
+            "name": "Sound Art",
+            "positive": "audio-visual synthesis, sonic elements, temporal experience, spatial awareness, experimental approach, technological integration",
+            "negative": "visual only, traditional media, silent artwork, conventional display"
+        },
+        {
+            "name": "Stuckism",
+            "positive": "figurative painting, emotional content, anti-conceptual, traditional media, contemporary subjects, direct expression",
+            "negative": "conceptual art, installation work, digital media, abstract minimalism"
+        },
+        {
+            "name": "Superflat",
+            "positive": "flat composition, anime influence, pop culture, bright colors, otaku aesthetic, japanese contemporary, cultural critique",
+            "negative": "western perspective, traditional depth, realistic rendering, classical technique"
+        },
+        {
+            "name": "Systems Art",
+            "positive": "logical structure, mathematical basis, systematic process, geometric order, conceptual framework, technological influence",
+            "negative": "emotional expression, random process, organic forms, intuitive approach"
+        },
+        {
+            "name": "Urban Rustic",
+            "positive": "industrial materials, natural elements, raw texture, urban decay, contemporary craft, sustainable design, recycled components",
+            "negative": "polished finish, traditional materials, classical design, pristine condition"
+        },
+        {
+            "name": "Virtual Art",
+            "positive": "digital space, interactive elements, technological aesthetic, virtual reality, immersive experience, computer-generated",
+            "negative": "physical objects, traditional media, static display, conventional viewing"
+        },
+        {
+            "name": "Zero Movement",
+            "positive": "monochromatic palette, kinetic elements, light effects, minimal aesthetic, technological art, experimental approach",
+            "negative": "traditional painting, representational art, emotional expression, complex composition"
+        },
+        {
+            "name": "Avant-Garde Fashion Style",
+            "positive": "experimental fashion design, artistic fashion photography, unconventional composition, bold geometric shapes, conceptual styling, architectural elements, dramatic lighting, high fashion aesthetic, editorial quality, innovative design elements, premium studio setup, perfect exposure, haute couture details",
+            "negative": "conventional style, casual wear, basic photography, natural lighting, traditional poses, simple backgrounds, street style, commercial photography, basic composition, amateur styling"
+        },
+        {
+            "name": "Minimalist Scandinavian Fashion Style",
+            "positive": "clean lines, monochromatic palette, sophisticated simplicity, premium materials, perfect composition, professional studio lighting, refined details, modern aesthetic, architectural influence, understated luxury, perfect exposure, crystal clear focus",
+            "negative": "busy patterns, ornate details, bright colors, cluttered composition, complex designs, heavy textures, dramatic shadows, vintage effects, overstyled, decorative elements"
+        },
+        {
+            "name": "Y2K Revival Fashion Style",
+            "positive": "millennium aesthetic, metallic elements, futuristic details, cyber style, holographic effects, bold color schemes, retro-futuristic elements, premium digital quality, perfect exposure, crystal clear focus, professional lighting, modern reinterpretation",
+            "negative": "vintage filters, muted colors, traditional styling, classic designs, natural textures, antique effects, grainy texture, soft focus, amateur photography"
+        },
+        {
+            "name": "Dark Academia Fashion Style",
+            "positive": "scholarly aesthetic, vintage academic elements, rich textures, preppy sophistication, tweed and leather details, antique brass accents, moody lighting, professional photography, premium quality, perfect exposure, controlled shadows, intellectual atmosphere",
+            "negative": "bright colors, modern minimal, casual style, neon elements, street wear, harsh lighting, oversaturated colors, amateur composition, basic styling"
+        },
+        {
+            "name": "Modern Cyberpunk Fashion Style",
+            "positive": "futuristic aesthetic, neon accents, high-tech materials, urban edge, metallic textures, LED lighting effects, professional studio quality, perfect exposure, sharp details, premium digital rendering, controlled reflections, innovative design",
+            "negative": "vintage style, natural materials, rustic elements, soft lighting, traditional design, pastoral scenes, muted colors, amateur effects, basic composition"
+        },
+        {
+            "name": "Parisian Chic Fashion Style",
+            "positive": "elegant simplicity, refined taste, classic French style, sophisticated neutral palette, premium quality materials, perfect tailoring details, professional studio lighting, crisp focus, timeless aesthetic, controlled highlights, luxurious atmosphere",
+            "negative": "overstyled looks, flashy elements, street wear, neon colors, busy patterns, casual styling, harsh shadows, amateur photography, basic composition"
+        },
+        {
+            "name": "Eco-Luxe Organic Fashion Style",
+            "positive": "sustainable luxury, natural materials, organic textures, refined eco-aesthetic, premium environmental styling, perfect lighting, professional photography, sophisticated earth tones, controlled shadows, crystal clear focus, premium quality",
+            "negative": "synthetic materials, artificial textures, harsh industrial, neon colors, plastic elements, amateur styling, basic photography, oversaturated colors"
+        },
+        {
+            "name": "Tokyo Street Style Fashion Style",
+            "positive": "contemporary Japanese fashion, urban aesthetic, innovative styling, perfect exposure, premium photography quality, sophisticated composition, bold design elements, professional lighting, crystal clear focus, controlled shadows, modern atmosphere",
+            "negative": "traditional clothing, basic street wear, amateur photography, natural lighting, simple styling, conventional design, basic composition, harsh shadows"
+        },
+        {
+            "name": "Neo-Victorian Fashion Style",
+            "positive": "modern gothic elements, Victorian influence, romantic details, premium quality materials, perfect lighting, professional studio setup, sophisticated dark tones, controlled highlights, crystal clear focus, dramatic atmosphere, elegant composition",
+            "negative": "casual style, basic design, bright colors, amateur photography, harsh lighting, simple backgrounds, basic composition, street wear"
+        },
+        {
+            "name": "Modern Minimalism Fashion Style",
+            "positive": "clean aesthetic, perfect simplicity, premium materials, sophisticated composition, professional studio lighting, refined details, controlled shadows, crystal clear focus, architectural influence, perfect exposure, luxury atmosphere",
+            "negative": "busy patterns, complex designs, ornate details, vintage effects, amateur styling, basic photography, harsh shadows, oversaturated colors"
+        },
+        {
+            "name": "Retro Futurism Fashion Style",
+            "positive": "vintage space age aesthetic, atomic era influence, retrofuturistic elements, premium studio quality, perfect exposure, sophisticated composition, controlled lighting, crystal clear focus, innovative design, professional photography",
+            "negative": "traditional style, basic vintage, amateur effects, natural lighting, simple composition, conventional design, harsh shadows, basic photography"
+        },
+        {
+            "name": "Luxury Streetwear Fashion Style",
+            "positive": "premium urban style, high-end casual, sophisticated street elements, perfect exposure, professional studio lighting, crystal clear focus, controlled shadows, premium materials, innovative design, perfect composition",
+            "negative": "basic street wear, amateur styling, harsh lighting, simple backgrounds, conventional design, basic photography, oversaturated colors"
+        },
+        {
+            "name": "Art Deco Revival Fashion Style",
+            "positive": "geometric luxury, premium art deco elements, sophisticated composition, perfect lighting, professional studio quality, crystal clear focus, controlled shadows, innovative design, perfect exposure, elegant atmosphere",
+            "negative": "basic vintage, amateur styling, natural lighting, simple backgrounds, conventional design, harsh shadows, basic photography"
+        },
+        {
+            "name": "Nordic Minimalism Fashion Style",
+            "positive": "Scandinavian design influence, clean lines, premium materials, perfect composition, professional studio lighting, refined details, controlled shadows, crystal clear focus, sophisticated simplicity, perfect exposure",
+            "negative": "busy patterns, complex designs, ornate details, vintage effects, amateur styling, basic photography, harsh shadows, oversaturated colors"
+        },
+        {
+            "name": "Modern Baroque Fashion Style",
+            "positive": "contemporary ornate style, luxury maximalism, sophisticated details, premium studio quality, perfect exposure, professional lighting, crystal clear focus, controlled shadows, innovative design, perfect composition",
+            "negative": "minimal design, basic style, amateur photography, natural lighting, simple backgrounds, conventional design, harsh shadows, basic composition"
+        },
+        {
+            "name": "Tech Wear Fashion Style",
+            "positive": "functional futurism, technical materials, innovative design, premium studio quality, perfect exposure, professional lighting, crystal clear focus, controlled shadows, sophisticated composition, modern atmosphere",
+            "negative": "traditional style, basic design, amateur photography, natural lighting, simple backgrounds, conventional design, harsh shadows, basic composition"
+        },
+        {
+            "name": "Bohemian Luxury Fashion Style",
+            "positive": "sophisticated boho elements, premium materials, artisanal details, perfect lighting, professional studio quality, crystal clear focus, controlled shadows, innovative design, perfect composition, refined atmosphere",
+            "negative": "basic boho, amateur styling, harsh lighting, simple backgrounds, conventional design, basic photography, oversaturated colors"
+        },
+        {
+            "name": "Contemporary Glamour Fashion Style",
+            "positive": "modern luxury, sophisticated styling, premium materials, perfect lighting, professional studio quality, crystal clear focus, controlled shadows, innovative design, perfect composition, elegant atmosphere",
+            "negative": "basic glamour, amateur styling, harsh lighting, simple backgrounds, conventional design, basic photography, oversaturated colors"
+        },
+        {
+            "name": "Industrial Chic Fashion Style",
+            "positive": "refined urban aesthetic, architectural elements, premium materials, perfect lighting, professional studio quality, crystal clear focus, controlled shadows, innovative design, perfect composition, sophisticated atmosphere",
+            "negative": "basic industrial, amateur styling, harsh lighting, simple backgrounds, conventional design, basic photography, oversaturated colors"
+        },
+        {
+            "name": "Modern Renaissance Fashion Style",
+            "positive": "contemporary classical elements, artistic luxury, sophisticated styling, perfect lighting, professional studio quality, crystal clear focus, controlled shadows, innovative design, perfect composition, refined atmosphere",
+            "negative": "basic classical, amateur styling, harsh lighting, simple backgrounds, conventional design, basic photography, oversaturated colors"
+        },
+        {
+            "name": "Eco Futurism Fashion Style",
+            "positive": "sustainable tech aesthetic, innovative eco materials, sophisticated design, perfect lighting, professional studio quality, crystal clear focus, controlled shadows, modern composition, refined atmosphere",
+            "negative": "basic eco style, amateur styling, harsh lighting, simple backgrounds, conventional design, basic photography, oversaturated colors"
+        },
+        {
+            "name": "Digital Maximalism Fashion Style",
+            "positive": "bold tech aesthetic, innovative patterns, sophisticated complexity, perfect lighting, professional studio quality, crystal clear focus, controlled shadows, modern composition, premium atmosphere",
+            "negative": "basic digital style, amateur styling, harsh lighting, simple backgrounds, conventional design, basic photography, oversaturated colors"
+        },
+        {
+            "name": "Neo Rococo Fashion Style",
+            "positive": "modern ornate luxury, sophisticated decoration, premium materials, perfect lighting, professional studio quality, crystal clear focus, controlled shadows, innovative design, perfect composition",
+            "negative": "basic ornate style, amateur styling, harsh lighting, simple backgrounds, conventional design, basic photography, oversaturated colors"
+        },
+        {
+            "name": "Architectural Fashion Style",
+            "positive": "structural design elements, geometric precision, premium materials, perfect lighting, professional studio quality, crystal clear focus, controlled shadows, innovative composition, sophisticated atmosphere",
+            "negative": "basic structure, amateur styling, harsh lighting, simple backgrounds, conventional design, basic photography, oversaturated colors"
+        },
+        {
+            "name": "Quantum Luxury Fashion Style",
+            "positive": "scientific aesthetic, innovative tech elements, sophisticated futurism, perfect lighting, professional studio quality, crystal clear focus, controlled shadows, modern composition, premium atmosphere",
+            "negative": "basic tech style, amateur styling, harsh lighting, simple backgrounds, conventional design, basic photography, oversaturated colors"
+        },
+        {
+            "name": "Neo Romantic Fashion Style",
+            "positive": "modern poetic aesthetic, sophisticated softness, premium materials, perfect lighting, professional studio quality, crystal clear focus, controlled shadows, innovative design, refined atmosphere",
+            "negative": "basic romantic, amateur styling, harsh lighting, simple backgrounds, conventional design, basic photography, oversaturated colors"
+        },
+        {
+            "name": "Biomechanical Chic Fashion Style",
+            "positive": "organic tech fusion, innovative materials, sophisticated complexity, perfect lighting, professional studio quality, crystal clear focus, controlled shadows, modern composition, premium atmosphere",
+            "negative": "basic tech style, amateur styling, harsh lighting, simple backgrounds, conventional design, basic photography, oversaturated colors"
+        },
+        {
+            "name": "Crystal Modernism Fashion Style",
+            "positive": "geometric clarity, premium materials, sophisticated minimalism, perfect lighting, professional studio quality, crystal clear focus, controlled shadows, innovative design, refined atmosphere",
+            "negative": "basic minimal, amateur styling, harsh lighting, simple backgrounds, conventional design, basic photography, oversaturated colors"
+        },
+        {
+            "name": "Haute Technology Fashion Style",
+            "positive": "luxury tech aesthetic, innovative materials, sophisticated futurism, perfect lighting, professional studio quality, crystal clear focus, controlled shadows, modern composition, premium atmosphere",
+            "negative": "basic tech style, amateur styling, harsh lighting, simple backgrounds, conventional design, basic photography, oversaturated colors"
+        },
+        {
+            "name": "Digital Baroque Fashion Style",
+            "positive": "tech ornamentation, innovative complexity, sophisticated decoration, perfect lighting, professional studio quality, crystal clear focus, controlled shadows, modern composition, premium atmosphere",
+            "negative": "basic baroque, amateur styling, harsh lighting, simple backgrounds, conventional design, basic photography, oversaturated colors"
+        },
+        {
+            "name": "Luxury Editorial Fashion Style",
+            "positive": "ultra high-end fashion photography, professional studio lighting, perfect product focus, premium magazine quality, crisp details, elegant composition, sophisticated atmosphere, perfect fabric texture rendering, commercial grade, professional color grading, fashion editorial style, high contrast, perfect exposure, crystal clear focus, designer aesthetic",
+            "negative": "amateur photography, harsh shadows, blurry details, oversaturated colors, lifestyle photography, casual setting, grainy texture, low resolution, distorted proportions, cluttered background"
+        },
+        {
+            "name": "Minimalist Product Fashion Style",
+            "positive": "clean white background, perfect product isolation, professional studio lighting, sharp focus on product details, commercial photography standards, professional color accuracy, perfect symmetry, ultra-high resolution, premium product presentation, floating display style, subtle shadows, crystal clear reflections",
+            "negative": "busy background, lifestyle setting, dramatic lighting, artistic interpretation, decorative elements, texture overlay, colored backgrounds, natural lighting, environmental context, motion blur"
+        },
+        {
+            "name": "Luxury Jewelry Fashion Style",
+            "positive": "macro photography, perfect gemstone clarity, premium metal rendering, professional jewelry lighting, ultra-detailed surface capture, perfect reflection control, crystal clear focus stacking, commercial grade presentation, perfect symmetry, controlled highlights, precise edge definition, luxury display setting",
+            "negative": "soft focus, lifestyle photography, hand modeling, environmental reflections, colored backgrounds, artistic blur, multiple products, shadowy areas, busy backgrounds, amateur lighting"
+        },
+        {
+            "name": "Quantum Biomorphic Fashion Style",
+            "positive": "organic quantum patterns, bioluminescent materials, morphing silhouettes, cellular structures, DNA-inspired designs, microscopic textures, scientific aesthetic, premium photography, perfect exposure, crystal clear focus, innovative lighting, sophisticated atmosphere",
+            "negative": "traditional patterns, static designs, basic shapes, amateur styling, conventional materials, harsh lighting, simple backgrounds, basic photography"
+        },
+        {
+            "name": "Digital Baroque Fashion Style",
+            "positive": "tech ornamentation, innovative complexity, sophisticated decoration, perfect lighting, professional studio quality, crystal clear focus, controlled shadows, modern composition, premium atmosphere",
+            "negative": "basic baroque, amateur styling, harsh lighting, simple backgrounds, conventional design, basic photography, oversaturated colors"
+        },
+        {
+            "name": "Holographic Couture Fashion Style",
+            "positive": "iridescent materials, light-reactive fabrics, prismatic effects, dimensional reflections, premium studio lighting, perfect exposure, crystal clear focus, sophisticated holographic patterns, high-end fashion details, professional color grading",
+            "negative": "flat lighting, basic reflections, amateur effects, dull surfaces, low quality materials, harsh shadows, basic photography, oversaturated colors"
+        },
+        {
+            "name": "Biopunk Luxury Fashion Style",
+            "positive": "organic technology fusion, bio-luminescent details, living material textures, engineered natural elements, premium studio quality, perfect exposure, sophisticated biological patterns, innovative organic structures, professional lighting",
+            "negative": "basic organic patterns, simple textures, amateur styling, conventional materials, harsh lighting, basic photography, artificial looking elements"
+        },
+        {
+            "name": "Quantum Fabric Fashion Style",
+            "positive": "reality-bending textiles, probability wave patterns, quantum interference textures, physics-inspired designs, premium studio quality, perfect exposure, sophisticated lighting, innovative material effects, professional photography",
+            "negative": "conventional fabrics, basic patterns, amateur effects, simple textures, harsh lighting, basic photography, flat materials"
+        },
+        {
+            "name": "Metamaterial Fashion Style",
+            "positive": "engineered optical effects, light-manipulating surfaces, impossible material properties, innovative textile physics, premium studio quality, perfect exposure, sophisticated lighting, crystal clear focus, professional photography",
+            "negative": "conventional materials, basic effects, amateur lighting, simple textures, harsh shadows, basic photography, standard reflections"
+        },
+        {
+            "name": "Nanotech Couture Fashion Style",
+            "positive": "microscopic precision details, self-assembling elements, molecular pattern structures, tech-organic fusion, premium studio quality, perfect exposure, sophisticated micro-textures, innovative material details",
+            "negative": "basic textures, simple patterns, amateur styling, conventional materials, harsh lighting, basic photography, crude details"
+        },
+        {
+            "name": "Plasma State Fashion Style",
+            "positive": "energy field aesthetics, ionized material effects, electromagnetic styling, glowing plasma elements, premium studio quality, perfect exposure, sophisticated lighting, innovative energy patterns",
+            "negative": "static designs, basic lighting, amateur effects, simple patterns, harsh shadows, basic photography, flat textures"
+        },
+        {
+            "name": "Quantum Computing Fashion Style",
+            "positive": "qubit pattern matrices, quantum circuit aesthetics, superposition textures, entangled design elements, premium studio quality, perfect exposure, sophisticated tech patterns, innovative digital structures",
+            "negative": "basic digital patterns, simple tech elements, amateur styling, conventional designs, harsh lighting, basic photography"
+        },
+        {
+            "name": "Biomimetic Luxury Fashion Style",
+            "positive": "nature-engineered structures, organic technology synthesis, biological optimization patterns, premium natural computing, perfect exposure, sophisticated organic forms, innovative natural algorithms",
+            "negative": "basic natural patterns, simple organic forms, amateur styling, conventional designs, harsh lighting, basic photography"
+        },
+        {
+            "name": "Luxury Fashion Editorial",
+            "positive": "ultra high-end fashion photography, professional studio lighting, perfect product focus, premium magazine quality, crisp details, elegant composition, sophisticated atmosphere, perfect fabric texture rendering, commercial grade, professional color grading, fashion editorial style, high contrast, perfect exposure, crystal clear focus, designer aesthetic",
+            "negative": "amateur photography, harsh shadows, blurry details, oversaturated colors, lifestyle photography, casual setting, grainy texture, low resolution, distorted proportions, cluttered background"
+        },
+        {
+            "name": "Minimalist Product Showcase",
+            "positive": "clean white background, perfect product isolation, professional studio lighting, sharp focus on product details, commercial photography standards, professional color accuracy, perfect symmetry, ultra-high resolution, premium product presentation, floating display style, subtle shadows, crystal clear reflections",
+            "negative": "busy background, lifestyle setting, dramatic lighting, artistic interpretation, decorative elements, texture overlay, colored backgrounds, natural lighting, environmental context, motion blur"
+        },
+        {
+            "name": "Luxury Jewelry Close-up",
+            "positive": "macro photography, perfect gemstone clarity, premium metal rendering, professional jewelry lighting, ultra-detailed surface capture, perfect reflection control, crystal clear focus stacking, commercial grade presentation, perfect symmetry, controlled highlights, precise edge definition, luxury display setting",
+            "negative": "soft focus, lifestyle photography, hand modeling, environmental reflections, colored backgrounds, artistic blur, multiple products, shadowy areas, busy backgrounds, amateur lighting"
+        },
+        {
+            "name": "Premium Footwear Display",
+            "positive": "professional shoe photography, perfect angle presentation, ultra-detailed material texture, premium leather rendering, subtle environmental reflection, perfect product positioning, commercial grade lighting, sharp focus on design elements, studio quality backdrop, precise shadow control",
+            "negative": "worn appearance, lifestyle setting, outdoor environment, multiple pairs, walking motion, action shots, natural lighting, dirty soles, scuffed leather, casual presentation"
+        },
+        {
+            "name": "High-End Cosmetics Still Life",
+            "positive": "luxury beauty product photography, perfect glass bottle rendering, metallic detail capture, premium packaging focus, sophisticated composition, controlled reflection, professional beauty lighting, ultra-clean presentation, commercial grade quality, perfect product alignment",
+            "negative": "used products, swatches, skin texture, application demonstration, lifestyle setting, bathroom environment, natural lighting, multiple products scattered, messy presentation, casual arrangement"
+        },
+        {
+            "name": "Professional Guitar Showcase",
+            "positive": "premium musical instrument photography, perfect wood grain detail, professional studio lighting, ultra-detailed fretboard capture, high-end finish reflection, perfect instrument positioning, commercial grade presentation, precise string definition, perfect curve rendering, controlled highlights",
+            "negative": "performance setting, player handling, stage lighting, multiple instruments, casual placement, natural lighting, environmental context, motion blur, artistic interpretation, lifestyle shots"
+        },
+        {
+            "name": "Luxury Watch Close-up",
+            "positive": "premium timepiece photography, perfect dial detail, ultra-macro mechanical focus, professional watch lighting, controlled reflections, perfect metal rendering, commercial grade presentation, precise hand positioning, perfect bracelet texture, sophisticated atmosphere",
+            "negative": "wrist shots, lifestyle photography, outdoor setting, multiple watches, motion blur, casual presentation, natural lighting, scratched surfaces, worn appearance, amateur composition"
+        },
+        {
+            "name": "Premium Skincare Packaging",
+            "positive": "luxury cosmetic photography, perfect container rendering, premium label detail, sophisticated product arrangement, professional beauty lighting, ultra-clean presentation, commercial grade quality, perfect reflection control, precise texture capture, controlled highlights",
+            "negative": "used products, application demonstration, bathroom setting, multiple products scattered, casual arrangement, natural lighting, lifestyle context, messy presentation, amateur photography"
+        },
+        {
+            "name": "Designer Handbag Display",
+            "positive": "luxury leather goods photography, perfect material texture, professional studio lighting, ultra-detailed hardware capture, premium brand presentation, sophisticated composition, commercial grade quality, perfect shadow control, precise stitching detail, controlled highlights",
+            "negative": "worn appearance, lifestyle setting, outdoor environment, multiple bags, carrying motion, action shots, natural lighting, scratched hardware, casual presentation"
+        },
+        {
+            "name": "High Fashion Apparel",
+            "positive": "premium fashion photography, perfect fabric draping, professional studio lighting, ultra-detailed textile capture, sophisticated composition, commercial grade quality, perfect fit presentation, precise design element focus, controlled shadows, luxury atmosphere",
+            "negative": "worn clothing, lifestyle modeling, outdoor setting, multiple outfits, motion shots, casual presentation, natural lighting, wrinkled fabric, amateur photography"
+        },
+        {
+            "name": "Artisanal Jewelry Flatlay",
+            "positive": "professional jewelry arrangement, perfect composition balance, ultra-detailed metalwork capture, premium stone clarity, sophisticated styling, commercial grade lighting, perfect reflection control, precise shadow definition, controlled highlights, luxury presentation",
+            "negative": "worn jewelry, lifestyle shots, outdoor setting, cluttered arrangement, casual styling, natural lighting, multiple pieces scattered, amateur photography, motion blur"
+        },
+        {
+            "name": "Premium Sunglasses Display",
+            "positive": "luxury eyewear photography, perfect lens clarity, ultra-detailed frame capture, professional studio lighting, sophisticated composition, commercial grade quality, perfect reflection control, precise detail rendering, controlled highlights, premium presentation",
+            "negative": "worn sunglasses, lifestyle modeling, outdoor setting, multiple pairs, casual arrangement, natural lighting, scratched lenses, amateur photography, motion blur"
+        },
+        {
+            "name": "High-End Piano Showcase",
+            "positive": "premium musical instrument photography, perfect lacquer finish, professional studio lighting, ultra-detailed key capture, sophisticated composition, commercial grade quality, perfect reflection control, precise detail rendering, controlled highlights, luxury presentation",
+            "negative": "performance setting, player presence, stage lighting, multiple instruments, casual placement, natural lighting, environmental context, motion blur, amateur photography"
+        },
+        {
+            "name": "Luxury Perfume Still Life",
+            "positive": "premium fragrance photography, perfect glass bottle clarity, ultra-detailed cap rendering, professional studio lighting, sophisticated composition, commercial grade quality, perfect reflection control, precise label detail, controlled highlights, luxury atmosphere",
+            "negative": "used bottles, lifestyle setting, bathroom environment, multiple products, casual arrangement, natural lighting, spray motion, amateur photography, motion blur"
+        },
+        {
+            "name": "Designer Footwear Collection",
+            "positive": "luxury shoe photography, perfect material texture, professional studio lighting, ultra-detailed craftsmanship capture, sophisticated composition, commercial grade quality, perfect shadow control, precise design element focus, controlled highlights, premium presentation",
+            "negative": "worn shoes, lifestyle setting, outdoor environment, multiple pairs scattered, casual arrangement, natural lighting, dirty soles, amateur photography, motion blur"
+        },
+        {
+            "name": "Premium Athletic Wear",
+            "positive": "professional sports apparel photography, perfect fabric texture, studio lighting, ultra-detailed performance material capture, sophisticated composition, commercial grade quality, perfect fit presentation, precise technical detail focus, controlled shadows",
+            "negative": "worn clothing, action shots, outdoor setting, multiple outfits, motion blur, casual presentation, natural lighting, wrinkled fabric, amateur photography"
+        },
+        {
+            "name": "Luxury Home Fragrance",
+            "positive": "premium candle photography, perfect wax texture, professional studio lighting, ultra-detailed packaging capture, sophisticated composition, commercial grade quality, perfect flame capture, precise label detail, controlled highlights, luxury atmosphere",
+            "negative": "used products, lifestyle setting, outdoor environment, multiple items, casual arrangement, natural lighting, burning display, amateur photography, motion blur"
+        },
+        {
+            "name": "High-End Hair Care",
+            "positive": "premium beauty product photography, perfect bottle rendering, professional studio lighting, ultra-detailed packaging capture, sophisticated composition, commercial grade quality, perfect reflection control, precise label detail, controlled highlights",
+            "negative": "used products, application demonstration, bathroom setting, multiple items scattered, casual arrangement, natural lighting, spray motion, amateur photography"
+        },
+        {
+            "name": "Designer Accessories Flatlay",
+            "positive": "luxury fashion photography, perfect arrangement composition, professional studio lighting, ultra-detailed product capture, sophisticated styling, commercial grade quality, perfect shadow control, precise detail rendering, controlled highlights",
+            "negative": "worn items, lifestyle setting, outdoor environment, cluttered arrangement, casual styling, natural lighting, multiple pieces scattered, amateur photography"
+        },
+        {
+            "name": "Premium Writing Instruments",
+            "positive": "luxury pen photography, perfect metal finish, professional studio lighting, ultra-detailed nib capture, sophisticated composition, commercial grade quality, perfect reflection control, precise engraving detail, controlled highlights",
+            "negative": "used pens, writing demonstration, office setting, multiple items scattered, casual arrangement, natural lighting, ink spots, amateur photography"
+        },
+        {
+            "name": "High-End Camera Equipment",
+            "positive": "premium photography gear, perfect black finish, professional studio lighting, ultra-detailed control capture, sophisticated composition, commercial grade quality, perfect reflection control, precise lens detail, controlled highlights",
+            "negative": "used equipment, shooting demonstration, outdoor setting, multiple items scattered, casual arrangement, natural lighting, handling marks, amateur photography"
+        },
+        {
+            "name": "Luxury Leather Goods",
+            "positive": "premium leather photography, perfect material texture, professional studio lighting, ultra-detailed craftsmanship capture, sophisticated composition, commercial grade quality, perfect shadow control, precise stitching detail, controlled highlights",
+            "negative": "worn items, lifestyle setting, outdoor environment, multiple pieces scattered, casual arrangement, natural lighting, scratched surfaces, amateur photography"
+        },
+        {
+            "name": "Designer Eyewear Editorial",
+            "positive": "luxury optical photography, perfect frame detail, professional studio lighting, ultra-detailed lens capture, sophisticated composition, commercial grade quality, perfect reflection control, precise design element focus, controlled highlights",
+            "negative": "worn glasses, lifestyle modeling, outdoor setting, multiple pairs, casual arrangement, natural lighting, scratched lenses, amateur photography"
+        },
+        {
+            "name": "Premium Wine Display",
+            "positive": "luxury beverage photography, perfect bottle clarity, professional studio lighting, ultra-detailed label capture, sophisticated composition, commercial grade quality, perfect reflection control, precise cork detail, controlled highlights",
+            "negative": "opened bottles, drinking setting, outdoor environment, multiple bottles scattered, casual arrangement, natural lighting, pour motion, amateur photography"
+        },
+        {
+            "name": "High-End Watch Collection",
+            "positive": "premium timepiece photography, perfect metal finish, professional studio lighting, ultra-detailed movement capture, sophisticated composition, commercial grade quality, perfect reflection control, precise complication detail, controlled highlights",
+            "negative": "worn watches, lifestyle setting, outdoor environment, multiple pieces scattered, casual arrangement, natural lighting, scratched surfaces, amateur photography"
+        },
+        {
+            "name": "Luxury Tech Accessories",
+            "positive": "premium gadget photography, perfect surface finish, professional studio lighting, ultra-detailed product capture, sophisticated composition, commercial grade quality, perfect reflection control, precise design element focus, controlled highlights",
+            "negative": "used devices, lifestyle setting, office environment, multiple items scattered, casual arrangement, natural lighting, screen glare, amateur photography"
+        },
+        {
+            "name": "Designer Furniture Showcase",
+            "positive": "premium furniture photography, perfect material texture, professional studio lighting, ultra-detailed craftsmanship capture, sophisticated composition, commercial grade quality, perfect shadow control, precise design element focus, controlled highlights",
+            "negative": "used furniture, lifestyle setting, outdoor environment, multiple pieces scattered, casual arrangement, natural lighting, worn surfaces, amateur photography"
+        },
+        {
+            "name": "High-End Audio Equipment",
+            "positive": "premium audio photography, perfect surface finish, professional studio lighting, ultra-detailed control capture, sophisticated composition, commercial grade quality, perfect reflection control, precise speaker detail, controlled highlights",
+            "negative": "used equipment, listening setting, home environment, multiple items scattered, casual arrangement, natural lighting, cable clutter, amateur photography"
+        },
+        {
+            "name": "Luxury Tableware Collection",
+            "positive": "premium dinnerware photography, perfect surface finish, professional studio lighting, ultra-detailed pattern capture, sophisticated composition, commercial grade quality, perfect reflection control, precise rim detail, controlled highlights",
+            "negative": "used items, dining setting, kitchen environment, multiple pieces scattered, casual arrangement, natural lighting, food residue, amateur photography"
+        },
+        {
+            "name": "Premium Art Supplies",
+            "positive": "luxury art material photography, perfect product texture, professional studio lighting, ultra-detailed packaging capture, sophisticated composition, commercial grade quality, perfect color rendering, precise brush detail, controlled highlights",
+            "negative": "used supplies, creative setting, studio environment, multiple items scattered, casual arrangement, natural lighting, paint marks, amateur photography"
+        },
+        {
+            "name": "Designer Kitchen Appliances",
+            "positive": "premium appliance photography, perfect surface finish, professional studio lighting, ultra-detailed control capture, sophisticated composition, commercial grade quality, perfect reflection control, precise design element focus, controlled highlights",
+            "negative": "used appliances, cooking setting, kitchen environment, multiple items scattered, casual arrangement, natural lighting, food residue, amateur photography"
+        },
+        {
+            "name": "Hyperrealistic Digital Art",
+            "positive": "ultra high resolution details, photographic quality, extreme realism pushed to maximum detail, fine texture detailing, incredibly lifelike rendering, professional lighting, 8k quality, intricate surface details, masterful technique, perfect anatomy, subsurface scattering, physically accurate materials",
+            "negative": "simplified, abstract, unrealistic, impressionistic, low resolution, artistic interpretation, sketchy, painterly, deformed anatomy, cartoon, anime, illustration"
+        }
+    ]
+}
