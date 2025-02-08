@@ -28,6 +28,9 @@ class DP_Load_Image_Minimal:
     def load_image_and_process(self, image, resize_image, width, height):
         # Process uploaded image
         image_path = folder_paths.get_annotated_filepath(image)
+        formatted_name = os.path.splitext(os.path.basename(image_path))[0]
+        prompt_text = ""
+        negative_text = ""
         
         try:
             with Image.open(image_path) as img:
@@ -38,6 +41,8 @@ class DP_Load_Image_Minimal:
                     img = img.convert('RGB')
                 image = np.array(img).astype(np.float32) / 255.0
                 uploaded_image = torch.from_numpy(image).unsqueeze(0)
+                prompt_text = img.info.get('dp_prompt', '')
+                negative_text = img.info.get('dp_negative_or_other', '')
         except Exception as e:
             print(f"Error processing image: {e}")
             raise e
@@ -59,7 +64,7 @@ class DP_Load_Image_Minimal:
             resized = comfy.utils.common_upscale(samples, width, height, "lanczos", "center")
             uploaded_image = resized.movedim(1,-1)
 
-        return (uploaded_image,)
+        return (uploaded_image, formatted_name, prompt_text, negative_text)
 
     @classmethod
     def IS_CHANGED(s, image, resize_image=True, width=1024, height=1024):
@@ -72,7 +77,7 @@ class DP_Load_Image_Minimal:
             return "Invalid image file: {}".format(image)
         return True
 
-    RETURN_TYPES = ("IMAGE",)
-    RETURN_NAMES = ("image",)
+    RETURN_TYPES = ("IMAGE", "STRING", "STRING", "STRING")
+    RETURN_NAMES = ("image", "filename", "dp_prompt", "dp_negative_or_other")
     FUNCTION = "load_image_and_process"
     CATEGORY = "DP/image" 

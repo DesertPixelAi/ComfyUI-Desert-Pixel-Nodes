@@ -9,9 +9,9 @@ app.registerExtension({
                 const result = onNodeCreated ? onNodeCreated.apply(this, arguments) : undefined;
                 
                 // Handle WebSocket messages
-                api.addEventListener("update_line_cycler", ({ detail }) => {
+                api.addEventListener("update_node", ({ detail }) => {
                     if (detail.node_id === this.id) {
-                        const widget = this.widgets.find(w => w.name === "Line_Index");
+                        const widget = this.widgets.find(w => w.name === "index");
                         if (widget) {
                             widget.value = detail.index_value;
                             widget.callback(widget.value);
@@ -23,4 +23,4 @@ app.registerExtension({
             };
         }
     }
-}); 
+});

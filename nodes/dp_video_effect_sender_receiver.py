@@ -9,57 +9,25 @@ class DP_Video_Effect_Sender:
         return {
             "required": {
                 "Load_video_frames": ("IMAGE",),
-                "Effect_1_key_frame": ("INT", {
+                "Effect_key_frame": ("INT", {
                     "default": 24,
                     "min": 1,
                     "max": 10000,
                     "step": 1
                 }),
-                "Effect_1_size": ("INT", {
+                "Effect_steps": ("INT", {
                     "default": 3,
                     "min": 3,
                     "max": 10,
                     "step": 1
                 }),
-                "Effect_1_speed": ("INT", {
-                    "default": 1,
-                    "min": 1,
-                    "max": 3,
-                    "step": 1
-                })
-            },
-            "optional": {
-                "Effect_2_key_frame": ("INT", {
-                    "default": 0,
-                    "min": 0,
-                    "max": 10000,
-                    "step": 1
-                }),
-                "Effect_2_size": ("INT", {
-                    "default": 3,
-                    "min": 3,
-                    "max": 10,
-                    "step": 1
-                }),
-                "Effect_2_speed": ("INT", {
+                "Effect_Distance": ("INT", {
                     "default": 1,
                     "min": 1,
                     "max": 3,
                     "step": 1
                 }),
-                "Effect_3_key_frame": ("INT", {
-                    "default": 0,
-                    "min": 0,
-                    "max": 10000,
-                    "step": 1
-                }),
-                "Effect_3_size": ("INT", {
-                    "default": 3,
-                    "min": 3,
-                    "max": 10,
-                    "step": 1
-                }),
-                "Effect_3_speed": ("INT", {
+                "Effect_Length": ("INT", {
                     "default": 1,
                     "min": 1,
                     "max": 3,
@@ -73,75 +41,38 @@ class DP_Video_Effect_Sender:
     FUNCTION = "execute"
     CATEGORY = "DP/animation"
 
-    def execute(self, Load_video_frames, 
-                Effect_1_key_frame, Effect_1_size, Effect_1_speed,
-                Effect_2_key_frame=0, Effect_2_size=3, Effect_2_speed=1,
-                Effect_3_key_frame=0, Effect_3_size=3, Effect_3_speed=1):
-        
+    def execute(self, Load_video_frames, Effect_key_frame, Effect_steps, Effect_Distance, Effect_Length):
+        # Validate input
+        if Load_video_frames is None or Load_video_frames.shape[0] == 0:
+            return (Load_video_frames, Load_video_frames[0:0], "", "Error: No input frames provided")
+            
         total_frames = Load_video_frames.shape[0]
-        frames_to_export = total_frames
-
-        if frames_to_export <= 0 or frames_to_export > total_frames:
-            frames_to_export = total_frames
-
-        process_info = "All effects processed successfully"
-        effect_settings = []
         
-        # Add error handling for key frames
-        if Effect_1_key_frame < 1:
-            process_info = "Error: Effect 1 key frame must be greater than 0"
+        # Validate key frame is within video length
+        if Effect_key_frame >= total_frames:
+            return (Load_video_frames, Load_video_frames[0:0], "", f"Error: Effect key frame {Effect_key_frame} exceeds video length {total_frames}")
+        
+        frames_to_export = total_frames
+        process_info = "Effect processed successfully"
+        
+        # Add error handling for key frame
+        if Effect_key_frame < 1:
+            process_info = "Error: Effect key frame must be greater than 0"
             return (Load_video_frames, Load_video_frames[0:0], "", process_info)
         
-        # Calculate cycle lengths and validate effects
-        if Effect_1_key_frame > 0:
-            effect1_end = Effect_1_key_frame + (Effect_1_size * (Effect_1_speed + 1))
-            effect_settings.append({
-                'keyframe': Effect_1_key_frame,
-                'size': Effect_1_size,
-                'speed': Effect_1_speed,
-                'end_frame': effect1_end
-            })
-        
-        if Effect_2_key_frame > 0:
-            effect2_end = Effect_2_key_frame + (Effect_2_size * (Effect_2_speed + 1))
-            if Effect_1_key_frame > 0 and Effect_2_key_frame < effect1_end:
-                process_info = "Effect 2 cancelled - overlaps with Effect 1"
-            else:
-                effect_settings.append({
-                    'keyframe': Effect_2_key_frame,
-                    'size': Effect_2_size,
-                    'speed': Effect_2_speed,
-                    'end_frame': effect2_end
-                })
-        
-        if Effect_3_key_frame > 0:
-            effect3_end = Effect_3_key_frame + (Effect_3_size * (Effect_3_speed + 1))
-            should_add = True
-            
-            for setting in effect_settings:
-                if Effect_3_key_frame < setting['end_frame']:
-                    process_info = "Effect 3 cancelled - overlaps with previous effect"
-                    should_add = False
-                    break
-                    
-            if should_add:
-                effect_settings.append({
-                    'keyframe': Effect_3_key_frame,
-                    'size': Effect_3_size,
-                    'speed': Effect_3_speed,
-                    'end_frame': effect3_end
-                })
-
-        # Create list of frames that need effects
+        # Calculate effect frames
         effect_frame_indices = []
-        for settings in effect_settings:
-            sequence_length = settings['size'] * (settings['speed'] + 1)
-            current_frame = settings['keyframe']
+        current_frame = Effect_key_frame
+        
+        # For each step
+        for _ in range(Effect_steps):
+            # Add consecutive frames based on Effect_Length
+            for offset in range(Effect_Length):
+                if current_frame + offset < frames_to_export:
+                    effect_frame_indices.append(current_frame + offset)
             
-            for _ in range(settings['size']):
-                if current_frame < frames_to_export:
-                    effect_frame_indices.append(current_frame)
-                current_frame += settings['speed'] + 1
+            # Move to next position based on Distance and Length
+            current_frame += Effect_Length + Effect_Distance
 
         # Sort frame indices
         effect_frame_indices.sort()
@@ -154,6 +85,10 @@ class DP_Video_Effect_Sender:
         
         # Extract all frames up to frames_to_export
         all_frames = Load_video_frames[:frames_to_export]
+        
+        # Add debug info to process_info
+        process_info = f"Effect frames: {frames_index}\n"
+        process_info += f"Steps: {Effect_steps}, Distance: {Effect_Distance}, Length: {Effect_Length}"
         
         return (all_frames, effect_frames, frames_index, process_info)
 
@@ -181,30 +116,54 @@ class DP_Video_Effect_Receiver:
 
     def execute(self, all_frames, processed_frames, frames_index):
         try:
-            # Parse the frame indices
-            frame_indices = [int(x.strip()) for x in frames_index.split(",") if x.strip()]
+            # Validate inputs
+            if not frames_index.strip():
+                return (all_frames, "No frames to process", all_frames)
+                
+            if processed_frames is None or processed_frames.shape[0] == 0:
+                return (all_frames, "No processed frames provided", all_frames)
             
-            # Add debug info
-            process_info = f"Frames to replace: {frame_indices}\n"
-            process_info += f"Number of processed frames: {processed_frames.shape[0]}\n"
-            process_info += f"Total frames in sequence: {all_frames.shape[0]}"
+            # Check resolution matching
+            original_height, original_width = all_frames.shape[1:3]
+            processed_height, processed_width = processed_frames.shape[1:3]
+            
+            if original_height != processed_height or original_width != processed_width:
+                return (all_frames, 
+                       f"Error: Resolution mismatch. Original frames: {original_width}x{original_height}, " +
+                       f"Processed frames: {processed_width}x{processed_height}", 
+                       all_frames)
+                
+            # Parse the frame indices and ensure they are integers
+            try:
+                frame_indices = [int(x.strip()) for x in frames_index.split(",") if x.strip()]
+            except ValueError:
+                return (all_frames, f"Error: Invalid frame indices in '{frames_index}'", all_frames)
+            
+            # Rest of the validation
+            if not frame_indices:
+                return (all_frames, "Error: No valid frame indices found", all_frames)
+            
+            if max(frame_indices) >= all_frames.shape[0]:
+                return (all_frames, f"Error: Frame index {max(frame_indices)} exceeds video length {all_frames.shape[0]}", all_frames)
             
             if len(frame_indices) != processed_frames.shape[0]:
                 return (all_frames, f"Error: Number of processed frames ({processed_frames.shape[0]}) doesn't match number of frame indices ({len(frame_indices)})", all_frames)
             
-            # Create output frames
+            # Create a new tensor for output to avoid modifying the input
             output_frames = all_frames.clone()
             
             # Replace frames with processed ones
             for idx, frame_num in enumerate(frame_indices):
-                if frame_num < output_frames.shape[0]:
-                    output_frames[frame_num] = processed_frames[idx]
-                    process_info += f"\nReplaced frame {frame_num} with processed frame {idx}"
+                output_frames[frame_num] = processed_frames[idx].clone()
+            
+            # Add debug info
+            process_info = f"Successfully replaced frames at indices: {frame_indices}\n"
+            process_info += f"Resolution: {original_width}x{original_height}\n"
+            process_info += f"Number of processed frames: {processed_frames.shape[0]}\n"
+            process_info += f"Total frames in sequence: {all_frames.shape[0]}"
             
             return (output_frames, process_info, all_frames)
             
-        except ValueError as e:
-            return (all_frames, f"Error parsing frame indices: {str(e)}", all_frames)
         except Exception as e:
             return (all_frames, f"Error processing frames: {str(e)}", all_frames)
 

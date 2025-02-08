@@ -12,7 +12,7 @@ class DP_Line_Cycler:
             "required": {
                 "Text": ("STRING", {"multiline": True, "default": ""}),
                 "Cycler_Mode": (["increment", "decrement", "randomize", "fixed"],),
-                "Line_Index": ("INT", {"default": 0, "min": 0, "max": 0xffffffffffffffff}),
+                "index": ("INT", {"default": 0, "min": 0, "max": 0xffffffffffffffff}),
             },
             "hidden": {
                 "unique_id": "UNIQUE_ID"
@@ -28,7 +28,7 @@ class DP_Line_Cycler:
     def IS_CHANGED(cls, **kwargs):
         return float("NaN")
 
-    def cycle(self, Text, Cycler_Mode, Line_Index, unique_id):
+    def cycle(self, Text, Cycler_Mode, index, unique_id):
         try:
             # Clean and validate text lines
             lines = [line.strip() for line in Text.split('\n') if line.strip()]
@@ -41,12 +41,12 @@ class DP_Line_Cycler:
             next_index = self.current_index
 
             # Detect changes
-            index_changed = Line_Index != self.current_index
+            index_changed = index != self.current_index
 
             # Handle fixed mode and user input changes
             if Cycler_Mode == "fixed":
                 if index_changed:
-                    next_index = max(0, min(Line_Index, num_lines - 1))
+                    next_index = max(0, min(index, num_lines - 1))
                     self.current_index = next_index
             # Handle mode-specific behavior
             elif Cycler_Mode == "randomize":
@@ -67,9 +67,11 @@ class DP_Line_Cycler:
 
             # Update UI
             try:
-                PromptServer.instance.send_sync("update_line_cycler", {
+                PromptServer.instance.send_sync("update_node", {
                     "node_id": unique_id,
-                    "index_value": self.current_index
+                    "index_value": self.current_index,
+                    "widget_name": "index",
+                    "force_widget_update": True
                 })
             except Exception as e:
                 print(f"Error sending WebSocket message: {str(e)}")

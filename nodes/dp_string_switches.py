@@ -15,7 +15,8 @@ class DP_10_String_Switch_Or_Connect:
                     "Connected",
                     "Connected with comma",
                     "Connected with line break",
-                    "Connected with line break+"
+                    "Connected with line break+",
+                    "Switch Remove neg"
                 ], {"default": "Switch"}),
                 "index": ("INT", {"default": 1, "min": 1, "max": 10, "step": 1}),
             },
@@ -55,15 +56,21 @@ class DP_10_String_Switch_Or_Connect:
             if not connected_strings:
                 return ("", 1)
 
-            if mode == "Switch":
-                # Original switch functionality
-                selected_key = f"String_{index:02d}"
+            if mode == "Switch" or mode == "Switch Remove neg":
+                # Format the index with leading zero
+                selected_key = f"String_{index:02d}"  # This ensures "10" becomes "String_10"
                 selected = kwargs.get(selected_key)
                 
                 if selected is not None:
                     if isinstance(selected, list):
                         selected = " ".join(str(x) for x in selected)
                     selected = str(selected).strip()
+                    
+                    # Handle "Switch Remove neg" mode
+                    if mode == "Switch Remove neg" and selected:
+                        neg_index = selected.find("--neg")
+                        if neg_index != -1:
+                            selected = selected[:neg_index].strip()
                 else:
                     selected = ""
                     

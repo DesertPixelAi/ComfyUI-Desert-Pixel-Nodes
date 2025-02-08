@@ -29,7 +29,7 @@ def dp_common_ksampler(model, seed, steps, cfg, sampler_name, scheduler, positiv
     out["samples"] = samples
     return (out, )
 
-class DP_Sampler:
+class DP_Sampler_With_Info:
     @classmethod
     def INPUT_TYPES(s):
         return {"required":

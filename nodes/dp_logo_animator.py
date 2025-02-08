@@ -66,9 +66,14 @@ class DP_Logo_Animator:
         elif pattern in ["Big>Small>Big", "Small>Big>Small"]:
             # Full cycle patterns
             half_frames = frames_per_direction // 2
-            down = torch.linspace(start_scale, end_scale, half_frames)
-            up = torch.linspace(end_scale, start_scale, frames_per_direction - half_frames)
-            sequence = torch.cat([down, up])
+            if pattern == "Big>Small>Big":
+                down = torch.linspace(start_scale, end_scale, half_frames)
+                up = torch.linspace(end_scale, start_scale, frames_per_direction - half_frames)
+                sequence = torch.cat([down, up])
+            else:  # Small>Big>Small
+                up = torch.linspace(end_scale, start_scale, half_frames)
+                down = torch.linspace(start_scale, end_scale, frames_per_direction - half_frames)
+                sequence = torch.cat([up, down])
         else:
             # Single direction patterns
             sequence = torch.linspace(start_scale, end_scale, frames_per_direction)

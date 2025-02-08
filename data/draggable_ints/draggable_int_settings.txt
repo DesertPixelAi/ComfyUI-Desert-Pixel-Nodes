@@ -1,0 +1,11 @@
+#DP Draggable Int 1step
+min=0
+max=2000
+
+#DP Draggable Int 4step
+min=0
+max=1000
+
+#DP Draggable Int 8step
+min=0
+max=1000

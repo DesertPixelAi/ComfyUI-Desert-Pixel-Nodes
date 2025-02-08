@@ -17,7 +17,7 @@ class DP_Crazy_Prompt_Mixer:
                     "display": "number"
                 }),
                 "generation_mode": (["fixed", "randomize"], {"default": "randomize"}),
-                "mixing_mode": (["chunks", "full_random", "split_by_commas"], {"default": "chunks"}),
+                "mixing_mode": (["chunks", "full_random", "split_by_commas"], {"default": "split_by_commas"}),
             },
             "optional": {
                 "input_prompt": ("STRING", {"multiline": True, "forceInput": True}),
@@ -150,6 +150,14 @@ class DP_Crazy_Prompt_Mixer:
                     mixed_prompt = mixed_prompt.rstrip() + word + " "
                 else:
                     mixed_prompt += word + " "
+            
+            # Clean up the mixed prompt
+            mixed_prompt = mixed_prompt.strip()
+            # Remove leading punctuation/spaces
+            while mixed_prompt and mixed_prompt[0] in ",.!?; ":
+                mixed_prompt = mixed_prompt[1:].strip()
+            # Remove multiple consecutive punctuation marks
+            mixed_prompt = re.sub(r'([,.!?;])\s*([,.!?;])+', r'\1', mixed_prompt)
             
             return (mixed_prompt.strip(),)
             

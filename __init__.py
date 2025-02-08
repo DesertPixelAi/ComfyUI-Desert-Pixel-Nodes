@@ -47,9 +47,9 @@ try:
     from .nodes.dp_animation_int_selectors import (
         DP_Transition_Frames_Selector, 
         DP_Diff_Int_8step_selector,
-        DP_Int_0_1000,
-        DP_Int_0_1000_4_Step,
-        DP_Int_0_1000_8_Step
+        DP_Draggable_Int_1step,
+        DP_Draggable_Int_4step,
+        DP_Draggable_Int_8step
     )
     
     # Image processing nodes
@@ -163,7 +163,7 @@ try:
     from .nodes.dp_mask_settings import DP_Mask_Settings
 
     # Add this import near the other imports:
-    from .nodes.dp_sampler import DP_Sampler
+    from .nodes.dp_sampler_with_info import DP_Sampler_With_Info
 
     # Add this import near the other imports:
     from .nodes.dp_controlnet import DP_ControlNetApplyAdvanced, DP_Load_Controlnet_Model_With_Name
@@ -196,6 +196,9 @@ try:
     # Add this import
     from .nodes.dp_float_stepper import DP_Float_Stepper
 
+    # Add this import near the other imports:
+    from .nodes.dp_prompt_travel_prompt import DP_Prompt_Travel_Prompt
+
     # Add this to the NODE_CLASS_MAPPINGS dictionary:
     NODE_CLASS_MAPPINGS.update({
         "DP ControlNet Apply Advanced": DP_ControlNetApplyAdvanced,
@@ -213,10 +216,9 @@ try:
         "DP Switch Controller": DP_Switch_Controller,
         "DP Video Looper": DP_Video_Looper,
         "DP Image Strip": DP_Image_Strip,
-        "DP Int 0-1000": DP_Int_0_1000,
-        "DP Int 0-1000 4 Step": DP_Int_0_1000_4_Step,
-        "DP Int 0-1000 8 Step": DP_Int_0_1000_8_Step,
-        "DP Strip Edge Masks": DP_Strip_Edge_Masks,
+        "DP Draggable Int 1step": DP_Draggable_Int_1step,
+        "DP Draggable Int 4step": DP_Draggable_Int_4step,
+        "DP Draggable Int 8step": DP_Draggable_Int_8step,
         "DP Animation Calculator 10 Inputs": DP_Animation_Calculator_10_Inputs,
         "DP Video Effect Receiver": DP_Video_Effect_Receiver,
         "DP Video Flicker": DP_Video_Flicker,
@@ -224,6 +226,8 @@ try:
         "DP Video Effect Sender": DP_Video_Effect_Sender,
         "DP Advanced Sampler": DP_Advanced_Sampler,
         "DP Float Stepper": DP_Float_Stepper,
+        "DP Prompt Travel Prompt": DP_Prompt_Travel_Prompt,
+        "DP Sampler With Info": DP_Sampler_With_Info,
     })
 
     # Add this to NODE_DISPLAY_NAME_MAPPINGS:
@@ -241,10 +245,9 @@ try:
     NODE_DISPLAY_NAME_MAPPINGS["DP Switch Controller"] = "DP Switch Controller"
     NODE_DISPLAY_NAME_MAPPINGS["DP Video Looper"] = "DP Video Looper"
     NODE_DISPLAY_NAME_MAPPINGS["DP Image Strip"] = "DP Image Strip"
-    NODE_DISPLAY_NAME_MAPPINGS["DP Int 0-1000"] = "DP Int 0-1000"
-    NODE_DISPLAY_NAME_MAPPINGS["DP Int 0-1000 4 Step"] = "DP Int 0-1000 4 Step"
-    NODE_DISPLAY_NAME_MAPPINGS["DP Int 0-1000 8 Step"] = "DP Int 0-1000 8 Step"
-    NODE_DISPLAY_NAME_MAPPINGS["DP Strip Edge Masks"] = "DP Strip Edge Masks"
+    NODE_DISPLAY_NAME_MAPPINGS["DP Draggable Int 1step"] = "DP Draggable Int 1step"
+    NODE_DISPLAY_NAME_MAPPINGS["DP Draggable Int 4step"] = "DP Draggable Int 4step"
+    NODE_DISPLAY_NAME_MAPPINGS["DP Draggable Int 8step"] = "DP Draggable Int 8step"
     NODE_DISPLAY_NAME_MAPPINGS["DP Animation Calculator 10 Inputs"] = "DP Animation Calculator 10 Inputs"
     NODE_DISPLAY_NAME_MAPPINGS["DP Video Effect Receiver"] = "DP Video Effect Receiver"
     NODE_DISPLAY_NAME_MAPPINGS["DP Video Flicker"] = "DP Video Flicker"
@@ -252,6 +255,8 @@ try:
     NODE_DISPLAY_NAME_MAPPINGS["DP Video Effect Sender"] = "DP Video Effect Sender"
     NODE_DISPLAY_NAME_MAPPINGS["DP Advanced Sampler"] = "DP Advanced Sampler"
     NODE_DISPLAY_NAME_MAPPINGS["DP Float Stepper"] = "DP Float Stepper"
+    NODE_DISPLAY_NAME_MAPPINGS["DP Prompt Travel Prompt"] = "DP Prompt Travel Prompt"
+    NODE_DISPLAY_NAME_MAPPINGS["DP Sampler With Info"] = "DP Sampler With Info"
 
     # Add all nodes to the mappings
     NODE_CLASS_MAPPINGS = {
@@ -260,9 +265,9 @@ try:
         "DP Animation Calculator 10 Inputs": DP_Animation_Calculator_10_Inputs,
         "DP Transition Frames Selector": DP_Transition_Frames_Selector,
         "DP Diff Int 8step Selector": DP_Diff_Int_8step_selector,
-        "DP Int 0-1000": DP_Int_0_1000,
-        "DP Int 0-1000 4 Step": DP_Int_0_1000_4_Step,
-        "DP Int 0-1000 8 Step": DP_Int_0_1000_8_Step,
+        "DP Draggable Int 1step": DP_Draggable_Int_1step,
+        "DP Draggable Int 4step": DP_Draggable_Int_4step,
+        "DP Draggable Int 8step": DP_Draggable_Int_8step,
         "DP Broken Token": DP_Broken_Token,
         "DP Clean Prompt": DP_clean_prompt,
         "DP Clean Prompt Travel": DP_Clean_Prompt_Travel,
@@ -318,7 +323,7 @@ try:
         "DP Line Cycler": DP_Line_Cycler,
         "DP 5 Find And Replace": DP_5_Find_And_Replace,
         "DP Mask Settings": DP_Mask_Settings,
-        "DP Sampler": DP_Sampler,
+        "DP Sampler With Info": DP_Sampler_With_Info,
         "DP ControlNet Apply Advanced": DP_ControlNetApplyAdvanced,
         "DP Load Controlnet Model With Name": DP_Load_Controlnet_Model_With_Name,
         "DP Load Checkpoint With Info": DP_Load_Checkpoint_With_Info,
@@ -342,6 +347,7 @@ try:
         "DP 5 String Switch Or Connect": DP_5_String_Switch_Or_Connect,
         "DP Advanced Sampler": DP_Advanced_Sampler,
         "DP Float Stepper": DP_Float_Stepper,
+        "DP Prompt Travel Prompt": DP_Prompt_Travel_Prompt,
     }
 
     # Create display names
