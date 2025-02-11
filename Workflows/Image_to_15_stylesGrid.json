@@ -873,9 +873,9 @@
         }
       },
       "widgets_values": [
-        "Madhubani",
+        "Theatrical Stage Design",
         "randomize",
-        238,
+        151,
         1
       ],
       "color": "#121317",
@@ -7017,9 +7017,9 @@
         }
       },
       "widgets_values": [
-        "Ron English Style",
+        "Textile Pattern Design",
         "randomize",
-        236,
+        136,
         1
       ],
       "color": "#121317",
@@ -7910,7 +7910,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 156,
+      "order": 153,
       "mode": 0,
       "inputs": [
         {
@@ -13370,7 +13370,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 152,
+      "order": 156,
       "mode": 0,
       "inputs": [
         {
@@ -13394,64 +13394,6 @@
       ]
     },
     {
-      "id": 253,
-      "type": "DP String Text",
-      "pos": [
-        4091.359375,
-        -766.5020141601562
-      ],
-      "size": [
-        334.9380187988281,
-        165.87539672851562
-      ],
-      "flags": {},
-      "order": 95,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "String_01",
-          "type": "STRING",
-          "link": null,
-          "widget": {
-            "name": "String_01"
-          },
-          "shape": 7
-        }
-      ],
-      "outputs": [
-        {
-          "name": "TEXT",
-          "type": "STRING",
-          "links": [
-            335
-          ],
-          "slot_index": 0
-        }
-      ],
-      "title": "🍉 Optional Image description",
-      "properties": {
-        "Node name for S&R": "DP String Text",
-        "_dpColors": {
-          "title": "#121317",
-          "body": "#006994"
-        }
-      },
-      "widgets_values": [
-        "forest, hyper realistic photo, ultra sharp focus, realistic details, ultra detailed digital illustration",
-        "",
-        [
-          false,
-          true
-        ],
-        [
-          false,
-          true
-        ]
-      ],
-      "color": "#121317",
-      "bgcolor": "#006994"
-    },
-    {
       "id": 2,
       "type": "DP Load Image Effects Small",
       "pos": [
@@ -13463,7 +13405,7 @@
         780.4381103515625
       ],
       "flags": {},
-      "order": 96,
+      "order": 95,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -13533,7 +13475,7 @@
         206
       ],
       "flags": {},
-      "order": 153,
+      "order": 152,
       "mode": 0,
       "inputs": [
         {
@@ -13631,84 +13573,6 @@
       ]
     },
     {
-      "id": 390,
-      "type": "JWFloat",
-      "pos": [
-        5561.73291015625,
-        -171.49241638183594
-      ],
-      "size": [
-        315,
-        58
-      ],
-      "flags": {},
-      "order": 97,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "FLOAT",
-          "type": "FLOAT",
-          "links": [
-            493
-          ],
-          "slot_index": 0
-        }
-      ],
-      "title": "Cfg",
-      "properties": {
-        "Node name for S&R": "JWFloat",
-        "_dpColors": {
-          "title": "#121317",
-          "body": "#006994"
-        }
-      },
-      "widgets_values": [
-        5
-      ],
-      "color": "#121317",
-      "bgcolor": "#006994"
-    },
-    {
-      "id": 391,
-      "type": "DP Draggable Int 1step",
-      "pos": [
-        5559.13427734375,
-        -44.25890350341797
-      ],
-      "size": [
-        315,
-        58
-      ],
-      "flags": {},
-      "order": 98,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "INT",
-          "type": "INT",
-          "links": [
-            494
-          ],
-          "slot_index": 0
-        }
-      ],
-      "title": "💀 steps",
-      "properties": {
-        "Node name for S&R": "DP Draggable Int 1step",
-        "_dpColors": {
-          "title": "#121317",
-          "body": "#006994"
-        }
-      },
-      "widgets_values": [
-        10
-      ],
-      "color": "#121317",
-      "bgcolor": "#006994"
-    },
-    {
       "id": 257,
       "type": "DP Draggable Floats 1",
       "pos": [
@@ -13720,7 +13584,7 @@
         58
       ],
       "flags": {},
-      "order": 99,
+      "order": 96,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -13793,6 +13657,142 @@
         0,
         2,
         "black"
+      ],
+      "color": "#121317",
+      "bgcolor": "#006994"
+    },
+    {
+      "id": 390,
+      "type": "JWFloat",
+      "pos": [
+        5561.73291015625,
+        -171.49241638183594
+      ],
+      "size": [
+        315,
+        58
+      ],
+      "flags": {},
+      "order": 97,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "FLOAT",
+          "type": "FLOAT",
+          "links": [
+            493
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "Cfg",
+      "properties": {
+        "Node name for S&R": "JWFloat",
+        "_dpColors": {
+          "title": "#121317",
+          "body": "#006994"
+        }
+      },
+      "widgets_values": [
+        7
+      ],
+      "color": "#121317",
+      "bgcolor": "#006994"
+    },
+    {
+      "id": 391,
+      "type": "DP Draggable Int 1step",
+      "pos": [
+        5559.13427734375,
+        -44.25890350341797
+      ],
+      "size": [
+        315,
+        58
+      ],
+      "flags": {},
+      "order": 98,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            494
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "💀 steps",
+      "properties": {
+        "Node name for S&R": "DP Draggable Int 1step",
+        "_dpColors": {
+          "title": "#121317",
+          "body": "#006994"
+        }
+      },
+      "widgets_values": [
+        20
+      ],
+      "color": "#121317",
+      "bgcolor": "#006994"
+    },
+    {
+      "id": 253,
+      "type": "DP String Text",
+      "pos": [
+        4091.359375,
+        -766.5020141601562
+      ],
+      "size": [
+        334.9380187988281,
+        165.87539672851562
+      ],
+      "flags": {},
+      "order": 99,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "String_01",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "String_01"
+          },
+          "shape": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "TEXT",
+          "type": "STRING",
+          "links": [
+            335
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "🍉 Pre prompt for all",
+      "properties": {
+        "Node name for S&R": "DP String Text",
+        "_dpColors": {
+          "title": "#121317",
+          "body": "#006994"
+        }
+      },
+      "widgets_values": [
+        "hyper realistic photo, ultra sharp focus, realistic details, ultra detailed digital illustration",
+        "",
+        [
+          false,
+          true
+        ],
+        [
+          false,
+          true
+        ]
       ],
       "color": "#121317",
       "bgcolor": "#006994"
@@ -18013,10 +18013,10 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.19487171000000378,
+      "scale": 2.5547669861877136,
       "offset": [
-        -146.30684327158926,
-        2287.857942638799
+        -3860.98620763239,
+        861.2872623081887
       ]
     },
     "node_versions": {

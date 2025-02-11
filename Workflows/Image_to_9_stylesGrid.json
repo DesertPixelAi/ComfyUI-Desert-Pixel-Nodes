@@ -7128,7 +7128,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 99,
+      "order": 98,
       "mode": 0,
       "inputs": [
         {
@@ -7239,7 +7239,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 97,
+      "order": 100,
       "mode": 0,
       "inputs": [
         {
@@ -7882,7 +7882,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 98,
+      "order": 97,
       "mode": 0,
       "inputs": [
         {
@@ -8191,64 +8191,6 @@
       ]
     },
     {
-      "id": 253,
-      "type": "DP String Text",
-      "pos": [
-        3736.82861328125,
-        -646.729736328125
-      ],
-      "size": [
-        334.9380187988281,
-        165.87539672851562
-      ],
-      "flags": {},
-      "order": 57,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "String_01",
-          "type": "STRING",
-          "link": null,
-          "widget": {
-            "name": "String_01"
-          },
-          "shape": 7
-        }
-      ],
-      "outputs": [
-        {
-          "name": "TEXT",
-          "type": "STRING",
-          "links": [
-            335
-          ],
-          "slot_index": 0
-        }
-      ],
-      "title": "🍉 Optional Image description",
-      "properties": {
-        "Node name for S&R": "DP String Text",
-        "_dpColors": {
-          "title": "#121317",
-          "body": "#006994"
-        }
-      },
-      "widgets_values": [
-        "hyper realistic photo, ultra sharp focus, realistic details, ultra detailed digital illustration",
-        "",
-        [
-          false,
-          true
-        ],
-        [
-          false,
-          true
-        ]
-      ],
-      "color": "#121317",
-      "bgcolor": "#006994"
-    },
-    {
       "id": 257,
       "type": "DP Draggable Floats 1",
       "pos": [
@@ -8260,7 +8202,7 @@
         58
       ],
       "flags": {},
-      "order": 58,
+      "order": 57,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -8299,7 +8241,7 @@
         83.32661437988281
       ],
       "flags": {},
-      "order": 59,
+      "order": 58,
       "mode": 0,
       "inputs": [
         {
@@ -8432,7 +8374,7 @@
         58
       ],
       "flags": {},
-      "order": 60,
+      "order": 59,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -8521,7 +8463,7 @@
         780.4381103515625
       ],
       "flags": {},
-      "order": 61,
+      "order": 60,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -8591,7 +8533,7 @@
         206
       ],
       "flags": {},
-      "order": 100,
+      "order": 99,
       "mode": 0,
       "inputs": [
         {
@@ -8652,6 +8594,64 @@
       "bgcolor": "#006994"
     },
     {
+      "id": 253,
+      "type": "DP String Text",
+      "pos": [
+        3736.82861328125,
+        -646.729736328125
+      ],
+      "size": [
+        334.9380187988281,
+        165.87539672851562
+      ],
+      "flags": {},
+      "order": 61,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "String_01",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "String_01"
+          },
+          "shape": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "TEXT",
+          "type": "STRING",
+          "links": [
+            335
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "🍉 Pre prompt for all",
+      "properties": {
+        "Node name for S&R": "DP String Text",
+        "_dpColors": {
+          "title": "#121317",
+          "body": "#006994"
+        }
+      },
+      "widgets_values": [
+        "hyper realistic photo, ultra sharp focus, realistic details, ultra detailed digital illustration",
+        "",
+        [
+          false,
+          true
+        ],
+        [
+          false,
+          true
+        ]
+      ],
+      "color": "#121317",
+      "bgcolor": "#006994"
+    },
+    {
       "id": 390,
       "type": "JWFloat",
       "pos": [
@@ -8685,7 +8685,7 @@
         }
       },
       "widgets_values": [
-        5
+        7
       ],
       "color": "#121317",
       "bgcolor": "#006994"
@@ -8724,7 +8724,7 @@
         }
       },
       "widgets_values": [
-        10
+        20
       ],
       "color": "#121317",
       "bgcolor": "#006994"
@@ -11323,10 +11323,10 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.4177248169415773,
+      "scale": 1.0834705943388714,
       "offset": [
-        -2942.402995003974,
-        -1383.9590559397461
+        -4470.658511298872,
+        529.0217680509664
       ]
     },
     "node_versions": {

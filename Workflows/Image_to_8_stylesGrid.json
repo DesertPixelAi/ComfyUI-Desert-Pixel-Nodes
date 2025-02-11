@@ -1,6 +1,6 @@
 {
-  "last_node_id": 395,
-  "last_link_id": 612,
+  "last_node_id": 398,
+  "last_link_id": 616,
   "nodes": [
     {
       "id": 15,
@@ -751,7 +751,7 @@
         "Node name for S&R": "KSampler"
       },
       "widgets_values": [
-        804899883214832,
+        296922405928236,
         "randomize",
         8,
         5,
@@ -873,9 +873,9 @@
         }
       },
       "widgets_values": [
-        "Stijl Movement",
+        "Viking Art Style",
         "randomize",
-        264,
+        127,
         1
       ],
       "color": "#121317",
@@ -1474,7 +1474,7 @@
         "Node name for S&R": "KSampler"
       },
       "widgets_values": [
-        687741687061892,
+        905793315264842,
         "randomize",
         8,
         5,
@@ -1557,9 +1557,9 @@
         }
       },
       "widgets_values": [
-        "Designer Eyewear Editorial",
+        "Maximalism",
         "randomize",
-        358,
+        277,
         1
       ],
       "color": "#121317",
@@ -2158,7 +2158,7 @@
         "Node name for S&R": "KSampler"
       },
       "widgets_values": [
-        188146814605318,
+        687935256060749,
         "randomize",
         8,
         5,
@@ -2241,9 +2241,9 @@
         }
       },
       "widgets_values": [
-        "Mythological Illustration",
+        "High-End Camera Equipment",
         "randomize",
-        142,
+        356,
         1
       ],
       "color": "#121317",
@@ -2842,7 +2842,7 @@
         "Node name for S&R": "KSampler"
       },
       "widgets_values": [
-        657832510248933,
+        233576614602465,
         "randomize",
         8,
         5,
@@ -2925,9 +2925,9 @@
         }
       },
       "widgets_values": [
-        "Chicano Tattoo Art",
+        "Glitchcore",
         "randomize",
-        56,
+        237,
         1
       ],
       "color": "#121317",
@@ -3526,7 +3526,7 @@
         "Node name for S&R": "KSampler"
       },
       "widgets_values": [
-        507403114142866,
+        460083440871150,
         "randomize",
         8,
         5,
@@ -3609,9 +3609,9 @@
         }
       },
       "widgets_values": [
-        "Quantum Luxury Fashion Style",
+        "Mixed Media Assemblage",
         "randomize",
-        317,
+        88,
         1
       ],
       "color": "#121317",
@@ -4210,7 +4210,7 @@
         "Node name for S&R": "KSampler"
       },
       "widgets_values": [
-        717675650027649,
+        137607834399560,
         "randomize",
         8,
         5,
@@ -4293,9 +4293,9 @@
         }
       },
       "widgets_values": [
-        "Wabi-Sabi Art",
+        "Textile Pattern Design",
         "randomize",
-        153,
+        136,
         1
       ],
       "color": "#121317",
@@ -4894,7 +4894,7 @@
         "Node name for S&R": "KSampler"
       },
       "widgets_values": [
-        609054998157869,
+        310268060693412,
         "randomize",
         8,
         5,
@@ -4977,9 +4977,9 @@
         }
       },
       "widgets_values": [
-        "Digital Baroque Fashion Style",
+        "Contemporary Tapestry",
         "randomize",
-        327,
+        141,
         1
       ],
       "color": "#121317",
@@ -5578,7 +5578,7 @@
         "Node name for S&R": "KSampler"
       },
       "widgets_values": [
-        1003000196423273,
+        897152441252153,
         "randomize",
         8,
         5,
@@ -6249,9 +6249,9 @@
         }
       },
       "widgets_values": [
-        "Traditional Linocut",
+        "Monotype Print Art",
         "randomize",
-        155,
+        137,
         1
       ],
       "color": "#121317",
@@ -6319,7 +6319,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 90,
+      "order": 88,
       "mode": 0,
       "inputs": [
         {
@@ -6393,7 +6393,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 88,
+      "order": 87,
       "mode": 0,
       "inputs": [
         {
@@ -6430,7 +6430,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 87,
+      "order": 93,
       "mode": 0,
       "inputs": [
         {
@@ -7014,7 +7014,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 93,
+      "order": 89,
       "mode": 0,
       "inputs": [
         {
@@ -7323,64 +7323,6 @@
       ]
     },
     {
-      "id": 253,
-      "type": "DP String Text",
-      "pos": [
-        4092.198974609375,
-        -770.6974487304688
-      ],
-      "size": [
-        334.9380187988281,
-        165.87539672851562
-      ],
-      "flags": {},
-      "order": 51,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "String_01",
-          "type": "STRING",
-          "link": null,
-          "widget": {
-            "name": "String_01"
-          },
-          "shape": 7
-        }
-      ],
-      "outputs": [
-        {
-          "name": "TEXT",
-          "type": "STRING",
-          "links": [
-            335
-          ],
-          "slot_index": 0
-        }
-      ],
-      "title": "🍉 Optional Image description",
-      "properties": {
-        "Node name for S&R": "DP String Text",
-        "_dpColors": {
-          "title": "#121317",
-          "body": "#006994"
-        }
-      },
-      "widgets_values": [
-        "hyper realistic photo, ultra sharp focus, realistic details, ultra detailed digital illustration",
-        "",
-        [
-          false,
-          true
-        ],
-        [
-          false,
-          true
-        ]
-      ],
-      "color": "#121317",
-      "bgcolor": "#006994"
-    },
-    {
       "id": 243,
       "type": "DP Draggable Floats 1",
       "pos": [
@@ -7392,7 +7334,7 @@
         58
       ],
       "flags": {},
-      "order": 52,
+      "order": 51,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -7415,148 +7357,6 @@
       },
       "widgets_values": [
         0.8
-      ],
-      "color": "#121317",
-      "bgcolor": "#006994"
-    },
-    {
-      "id": 2,
-      "type": "DP Load Image Effects Small",
-      "pos": [
-        4459.509765625,
-        -849.8805541992188
-      ],
-      "size": [
-        490.335693359375,
-        780.4381103515625
-      ],
-      "flags": {},
-      "order": 53,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "image_A",
-          "type": "IMAGE",
-          "links": [
-            497
-          ],
-          "slot_index": 0
-        },
-        {
-          "name": "image_B",
-          "type": "IMAGE",
-          "links": [],
-          "slot_index": 1
-        },
-        {
-          "name": "filename",
-          "type": "STRING",
-          "links": [],
-          "slot_index": 2
-        },
-        {
-          "name": "dp_prompt",
-          "type": "STRING",
-          "links": [],
-          "slot_index": 3
-        },
-        {
-          "name": "dp_negative_or_other",
-          "type": "STRING",
-          "links": [],
-          "slot_index": 4
-        }
-      ],
-      "title": "⭐ DP Load Image Effects Small",
-      "properties": {
-        "Node name for S&R": "DP Load Image Effects Small",
-        "_dpColors": {
-          "title": "#121317",
-          "body": "#800020"
-        }
-      },
-      "widgets_values": [
-        "AI-assisted_hero_style_of_an.png",
-        1,
-        "original",
-        "grayscale",
-        false,
-        1024,
-        1024,
-        "image"
-      ],
-      "color": "#121317",
-      "bgcolor": "#800020"
-    },
-    {
-      "id": 394,
-      "type": "DP Image Slice To Grid",
-      "pos": [
-        4988.681640625,
-        -845.1600952148438
-      ],
-      "size": [
-        315,
-        206
-      ],
-      "flags": {},
-      "order": 89,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "link": 497
-        }
-      ],
-      "outputs": [
-        {
-          "name": "slices",
-          "type": "IMAGE",
-          "links": [
-            498
-          ],
-          "slot_index": 0
-        },
-        {
-          "name": "original_height",
-          "type": "INT",
-          "links": null
-        },
-        {
-          "name": "original_width",
-          "type": "INT",
-          "links": null
-        },
-        {
-          "name": "rows",
-          "type": "INT",
-          "links": null
-        },
-        {
-          "name": "columns",
-          "type": "INT",
-          "links": null
-        },
-        {
-          "name": "overlap",
-          "type": "INT",
-          "links": null
-        }
-      ],
-      "title": "🌞 DP Image Slice To Grid",
-      "properties": {
-        "Node name for S&R": "DP Image Slice To Grid",
-        "_dpColors": {
-          "title": "#121317",
-          "body": "#006994"
-        }
-      },
-      "widgets_values": [
-        4,
-        2,
-        0
       ],
       "color": "#121317",
       "bgcolor": "#006994"
@@ -7668,11 +7468,338 @@
       "bgcolor": "#006994"
     },
     {
+      "id": 240,
+      "type": "SaveImage",
+      "pos": [
+        3563.046630859375,
+        636.109619140625
+      ],
+      "size": [
+        3289.4677734375,
+        3349.029296875
+      ],
+      "flags": {},
+      "order": 149,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 500
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "SaveImage"
+      },
+      "widgets_values": [
+        "Grid_Images/image"
+      ]
+    },
+    {
+      "id": 251,
+      "type": "DP Draggable Floats 1",
+      "pos": [
+        5007.205078125,
+        -41.92591857910156
+      ],
+      "size": [
+        297.74066162109375,
+        58
+      ],
+      "flags": {},
+      "order": 52,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "float_value",
+          "type": "FLOAT",
+          "links": [
+            328
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "🐠 Cn end percent",
+      "properties": {
+        "Node name for S&R": "DP Draggable Floats 1",
+        "_dpColors": {
+          "title": "#121317",
+          "body": "#006994"
+        }
+      },
+      "widgets_values": [
+        0.85
+      ],
+      "color": "#121317",
+      "bgcolor": "#006994"
+    },
+    {
+      "id": 257,
+      "type": "DP Draggable Floats 1",
+      "pos": [
+        5564.310546875,
+        -295.6750793457031
+      ],
+      "size": [
+        297.74066162109375,
+        58
+      ],
+      "flags": {},
+      "order": 53,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "float_value",
+          "type": "FLOAT",
+          "links": [
+            492
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "🐠 Denoise",
+      "properties": {
+        "Node name for S&R": "DP Draggable Floats 1",
+        "_dpColors": {
+          "title": "#121317",
+          "body": "#006994"
+        }
+      },
+      "widgets_values": [
+        0.85
+      ],
+      "color": "#121317",
+      "bgcolor": "#006994"
+    },
+    {
+      "id": 394,
+      "type": "DP Image Slice To Grid",
+      "pos": [
+        4991.72705078125,
+        -844.1446533203125
+      ],
+      "size": [
+        315,
+        206
+      ],
+      "flags": {},
+      "order": 90,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 504
+        }
+      ],
+      "outputs": [
+        {
+          "name": "slices",
+          "type": "IMAGE",
+          "links": [
+            498
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "original_height",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "original_width",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "rows",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "columns",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "overlap",
+          "type": "INT",
+          "links": null
+        }
+      ],
+      "title": "🌞 DP Image Slice To Grid",
+      "properties": {
+        "Node name for S&R": "DP Image Slice To Grid",
+        "_dpColors": {
+          "title": "#121317",
+          "body": "#006994"
+        }
+      },
+      "widgets_values": [
+        4,
+        2,
+        0
+      ],
+      "color": "#121317",
+      "bgcolor": "#006994"
+    },
+    {
+      "id": 2,
+      "type": "DP Load Image Effects Small",
+      "pos": [
+        4459.509765625,
+        -849.8805541992188
+      ],
+      "size": [
+        490.335693359375,
+        780.4381103515625
+      ],
+      "flags": {},
+      "order": 54,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "image_A",
+          "type": "IMAGE",
+          "links": [
+            504
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "image_B",
+          "type": "IMAGE",
+          "links": [],
+          "slot_index": 1
+        },
+        {
+          "name": "filename",
+          "type": "STRING",
+          "links": [],
+          "slot_index": 2
+        },
+        {
+          "name": "dp_prompt",
+          "type": "STRING",
+          "links": [],
+          "slot_index": 3
+        },
+        {
+          "name": "dp_negative_or_other",
+          "type": "STRING",
+          "links": [],
+          "slot_index": 4
+        }
+      ],
+      "title": "⭐ DP Load Image Effects Small",
+      "properties": {
+        "Node name for S&R": "DP Load Image Effects Small",
+        "_dpColors": {
+          "title": "#121317",
+          "body": "#800020"
+        }
+      },
+      "widgets_values": [
+        "pasted/image (466).png",
+        1,
+        "original",
+        "grayscale",
+        false,
+        1024,
+        1024,
+        "image"
+      ],
+      "color": "#121317",
+      "bgcolor": "#800020"
+    },
+    {
+      "id": 390,
+      "type": "JWFloat",
+      "pos": [
+        5561.73291015625,
+        -171.49241638183594
+      ],
+      "size": [
+        315,
+        58
+      ],
+      "flags": {},
+      "order": 55,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "FLOAT",
+          "type": "FLOAT",
+          "links": [
+            493
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "cfg",
+      "properties": {
+        "Node name for S&R": "JWFloat",
+        "_dpColors": {
+          "title": "#121317",
+          "body": "#006994"
+        }
+      },
+      "widgets_values": [
+        7
+      ],
+      "color": "#121317",
+      "bgcolor": "#006994"
+    },
+    {
+      "id": 391,
+      "type": "DP Draggable Int 1step",
+      "pos": [
+        5559.13427734375,
+        -44.25890350341797
+      ],
+      "size": [
+        315,
+        58
+      ],
+      "flags": {},
+      "order": 56,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            494
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "💀 steps",
+      "properties": {
+        "Node name for S&R": "DP Draggable Int 1step",
+        "_dpColors": {
+          "title": "#121317",
+          "body": "#006994"
+        }
+      },
+      "widgets_values": [
+        20
+      ],
+      "color": "#121317",
+      "bgcolor": "#006994"
+    },
+    {
       "id": 395,
       "type": "DP Image Grid To Image",
       "pos": [
-        3087.193359375,
-        648.0005493164062
+        3054.890380859375,
+        659.9993286132812
       ],
       "size": [
         315,
@@ -7718,186 +7845,59 @@
       "bgcolor": "#006994"
     },
     {
-      "id": 240,
-      "type": "SaveImage",
+      "id": 253,
+      "type": "DP String Text",
       "pos": [
-        3563.046630859375,
-        636.109619140625
+        4092.198974609375,
+        -770.6974487304688
       ],
       "size": [
-        3289.4677734375,
-        3349.029296875
-      ],
-      "flags": {},
-      "order": 149,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 500
-        }
-      ],
-      "outputs": [],
-      "properties": {
-        "Node name for S&R": "SaveImage"
-      },
-      "widgets_values": [
-        "Grid_Images/image"
-      ]
-    },
-    {
-      "id": 251,
-      "type": "DP Draggable Floats 1",
-      "pos": [
-        5007.205078125,
-        -41.92591857910156
-      ],
-      "size": [
-        297.74066162109375,
-        58
-      ],
-      "flags": {},
-      "order": 54,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "float_value",
-          "type": "FLOAT",
-          "links": [
-            328
-          ],
-          "slot_index": 0
-        }
-      ],
-      "title": "🐠 Cn end percent",
-      "properties": {
-        "Node name for S&R": "DP Draggable Floats 1",
-        "_dpColors": {
-          "title": "#121317",
-          "body": "#006994"
-        }
-      },
-      "widgets_values": [
-        0.85
-      ],
-      "color": "#121317",
-      "bgcolor": "#006994"
-    },
-    {
-      "id": 390,
-      "type": "JWFloat",
-      "pos": [
-        5561.73291015625,
-        -171.49241638183594
-      ],
-      "size": [
-        315,
-        58
-      ],
-      "flags": {},
-      "order": 55,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "FLOAT",
-          "type": "FLOAT",
-          "links": [
-            493
-          ],
-          "slot_index": 0
-        }
-      ],
-      "title": "cfg",
-      "properties": {
-        "Node name for S&R": "JWFloat",
-        "_dpColors": {
-          "title": "#121317",
-          "body": "#006994"
-        }
-      },
-      "widgets_values": [
-        5
-      ],
-      "color": "#121317",
-      "bgcolor": "#006994"
-    },
-    {
-      "id": 391,
-      "type": "DP Draggable Int 1step",
-      "pos": [
-        5559.13427734375,
-        -44.25890350341797
-      ],
-      "size": [
-        315,
-        58
-      ],
-      "flags": {},
-      "order": 56,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "INT",
-          "type": "INT",
-          "links": [
-            494
-          ],
-          "slot_index": 0
-        }
-      ],
-      "title": "💀 steps",
-      "properties": {
-        "Node name for S&R": "DP Draggable Int 1step",
-        "_dpColors": {
-          "title": "#121317",
-          "body": "#006994"
-        }
-      },
-      "widgets_values": [
-        10
-      ],
-      "color": "#121317",
-      "bgcolor": "#006994"
-    },
-    {
-      "id": 257,
-      "type": "DP Draggable Floats 1",
-      "pos": [
-        5564.310546875,
-        -295.6750793457031
-      ],
-      "size": [
-        297.74066162109375,
-        58
+        334.9380187988281,
+        165.87539672851562
       ],
       "flags": {},
       "order": 57,
       "mode": 0,
-      "inputs": [],
+      "inputs": [
+        {
+          "name": "String_01",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "String_01"
+          },
+          "shape": 7
+        }
+      ],
       "outputs": [
         {
-          "name": "float_value",
-          "type": "FLOAT",
+          "name": "TEXT",
+          "type": "STRING",
           "links": [
-            492
+            335
           ],
           "slot_index": 0
         }
       ],
-      "title": "🐠 Denoise",
+      "title": "🍉 Pre prompt for all",
       "properties": {
-        "Node name for S&R": "DP Draggable Floats 1",
+        "Node name for S&R": "DP String Text",
         "_dpColors": {
           "title": "#121317",
           "body": "#006994"
         }
       },
       "widgets_values": [
-        0.85
+        "hyper realistic photo, ultra sharp focus, realistic details, ultra detailed digital illustration",
+        "",
+        [
+          false,
+          true
+        ],
+        [
+          false,
+          true
+        ]
       ],
       "color": "#121317",
       "bgcolor": "#006994"
@@ -9177,14 +9177,6 @@
       "INT"
     ],
     [
-      497,
-      2,
-      0,
-      394,
-      0,
-      "IMAGE"
-    ],
-    [
       498,
       394,
       0,
@@ -9209,7 +9201,15 @@
       "IMAGE"
     ],
     [
-      501,
+      504,
+      2,
+      0,
+      394,
+      0,
+      "IMAGE"
+    ],
+    [
+      505,
       14,
       1,
       9,
@@ -9217,7 +9217,7 @@
       "CLIP"
     ],
     [
-      502,
+      506,
       14,
       1,
       8,
@@ -9225,7 +9225,7 @@
       "CLIP"
     ],
     [
-      503,
+      507,
       14,
       2,
       13,
@@ -9233,7 +9233,7 @@
       "VAE"
     ],
     [
-      504,
+      508,
       14,
       2,
       32,
@@ -9241,7 +9241,7 @@
       "VAE"
     ],
     [
-      505,
+      509,
       14,
       0,
       26,
@@ -9249,7 +9249,7 @@
       "MODEL"
     ],
     [
-      506,
+      510,
       257,
       0,
       26,
@@ -9257,7 +9257,7 @@
       "FLOAT"
     ],
     [
-      507,
+      511,
       390,
       0,
       26,
@@ -9265,7 +9265,7 @@
       "FLOAT"
     ],
     [
-      508,
+      512,
       391,
       0,
       26,
@@ -9273,7 +9273,7 @@
       "INT"
     ],
     [
-      509,
+      513,
       14,
       1,
       266,
@@ -9281,7 +9281,7 @@
       "CLIP"
     ],
     [
-      510,
+      514,
       14,
       1,
       267,
@@ -9289,7 +9289,7 @@
       "CLIP"
     ],
     [
-      511,
+      515,
       20,
       0,
       268,
@@ -9297,7 +9297,7 @@
       "CONTROL_NET"
     ],
     [
-      512,
+      516,
       14,
       2,
       268,
@@ -9305,7 +9305,7 @@
       "VAE"
     ],
     [
-      513,
+      517,
       243,
       0,
       268,
@@ -9313,7 +9313,7 @@
       "FLOAT"
     ],
     [
-      514,
+      518,
       250,
       0,
       268,
@@ -9321,7 +9321,7 @@
       "FLOAT"
     ],
     [
-      515,
+      519,
       251,
       0,
       268,
@@ -9329,7 +9329,7 @@
       "FLOAT"
     ],
     [
-      516,
+      520,
       14,
       2,
       270,
@@ -9337,7 +9337,7 @@
       "VAE"
     ],
     [
-      517,
+      521,
       14,
       0,
       276,
@@ -9345,7 +9345,7 @@
       "MODEL"
     ],
     [
-      518,
+      522,
       257,
       0,
       276,
@@ -9353,7 +9353,7 @@
       "FLOAT"
     ],
     [
-      519,
+      523,
       391,
       0,
       276,
@@ -9361,7 +9361,7 @@
       "INT"
     ],
     [
-      520,
+      524,
       390,
       0,
       276,
@@ -9369,7 +9369,7 @@
       "FLOAT"
     ],
     [
-      521,
+      525,
       14,
       1,
       281,
@@ -9377,7 +9377,7 @@
       "CLIP"
     ],
     [
-      522,
+      526,
       14,
       1,
       282,
@@ -9385,7 +9385,7 @@
       "CLIP"
     ],
     [
-      523,
+      527,
       20,
       0,
       283,
@@ -9393,7 +9393,7 @@
       "CONTROL_NET"
     ],
     [
-      524,
+      528,
       14,
       2,
       283,
@@ -9401,7 +9401,7 @@
       "VAE"
     ],
     [
-      525,
+      529,
       243,
       0,
       283,
@@ -9409,7 +9409,7 @@
       "FLOAT"
     ],
     [
-      526,
+      530,
       250,
       0,
       283,
@@ -9417,7 +9417,7 @@
       "FLOAT"
     ],
     [
-      527,
+      531,
       251,
       0,
       283,
@@ -9425,7 +9425,7 @@
       "FLOAT"
     ],
     [
-      528,
+      532,
       14,
       2,
       285,
@@ -9433,7 +9433,7 @@
       "VAE"
     ],
     [
-      529,
+      533,
       14,
       0,
       291,
@@ -9441,7 +9441,7 @@
       "MODEL"
     ],
     [
-      530,
+      534,
       257,
       0,
       291,
@@ -9449,7 +9449,7 @@
       "FLOAT"
     ],
     [
-      531,
+      535,
       391,
       0,
       291,
@@ -9457,7 +9457,7 @@
       "INT"
     ],
     [
-      532,
+      536,
       390,
       0,
       291,
@@ -9465,7 +9465,7 @@
       "FLOAT"
     ],
     [
-      533,
+      537,
       14,
       1,
       296,
@@ -9473,7 +9473,7 @@
       "CLIP"
     ],
     [
-      534,
+      538,
       14,
       1,
       297,
@@ -9481,7 +9481,7 @@
       "CLIP"
     ],
     [
-      535,
+      539,
       20,
       0,
       298,
@@ -9489,7 +9489,7 @@
       "CONTROL_NET"
     ],
     [
-      536,
+      540,
       14,
       2,
       298,
@@ -9497,7 +9497,7 @@
       "VAE"
     ],
     [
-      537,
+      541,
       243,
       0,
       298,
@@ -9505,7 +9505,7 @@
       "FLOAT"
     ],
     [
-      538,
+      542,
       250,
       0,
       298,
@@ -9513,7 +9513,7 @@
       "FLOAT"
     ],
     [
-      539,
+      543,
       251,
       0,
       298,
@@ -9521,7 +9521,7 @@
       "FLOAT"
     ],
     [
-      540,
+      544,
       14,
       2,
       300,
@@ -9529,7 +9529,7 @@
       "VAE"
     ],
     [
-      541,
+      545,
       14,
       0,
       306,
@@ -9537,7 +9537,7 @@
       "MODEL"
     ],
     [
-      542,
+      546,
       257,
       0,
       306,
@@ -9545,7 +9545,7 @@
       "FLOAT"
     ],
     [
-      543,
+      547,
       391,
       0,
       306,
@@ -9553,7 +9553,7 @@
       "INT"
     ],
     [
-      544,
+      548,
       390,
       0,
       306,
@@ -9561,7 +9561,7 @@
       "FLOAT"
     ],
     [
-      545,
+      549,
       14,
       1,
       311,
@@ -9569,7 +9569,7 @@
       "CLIP"
     ],
     [
-      546,
+      550,
       14,
       1,
       312,
@@ -9577,7 +9577,7 @@
       "CLIP"
     ],
     [
-      547,
+      551,
       20,
       0,
       313,
@@ -9585,7 +9585,7 @@
       "CONTROL_NET"
     ],
     [
-      548,
+      552,
       14,
       2,
       313,
@@ -9593,7 +9593,7 @@
       "VAE"
     ],
     [
-      549,
+      553,
       243,
       0,
       313,
@@ -9601,7 +9601,7 @@
       "FLOAT"
     ],
     [
-      550,
+      554,
       250,
       0,
       313,
@@ -9609,7 +9609,7 @@
       "FLOAT"
     ],
     [
-      551,
+      555,
       251,
       0,
       313,
@@ -9617,7 +9617,7 @@
       "FLOAT"
     ],
     [
-      552,
+      556,
       14,
       2,
       315,
@@ -9625,7 +9625,7 @@
       "VAE"
     ],
     [
-      553,
+      557,
       14,
       0,
       321,
@@ -9633,7 +9633,7 @@
       "MODEL"
     ],
     [
-      554,
+      558,
       257,
       0,
       321,
@@ -9641,7 +9641,7 @@
       "FLOAT"
     ],
     [
-      555,
+      559,
       391,
       0,
       321,
@@ -9649,7 +9649,7 @@
       "INT"
     ],
     [
-      556,
+      560,
       390,
       0,
       321,
@@ -9657,7 +9657,7 @@
       "FLOAT"
     ],
     [
-      557,
+      561,
       14,
       1,
       326,
@@ -9665,7 +9665,7 @@
       "CLIP"
     ],
     [
-      558,
+      562,
       14,
       1,
       327,
@@ -9673,7 +9673,7 @@
       "CLIP"
     ],
     [
-      559,
+      563,
       20,
       0,
       328,
@@ -9681,7 +9681,7 @@
       "CONTROL_NET"
     ],
     [
-      560,
+      564,
       14,
       2,
       328,
@@ -9689,7 +9689,7 @@
       "VAE"
     ],
     [
-      561,
+      565,
       243,
       0,
       328,
@@ -9697,7 +9697,7 @@
       "FLOAT"
     ],
     [
-      562,
+      566,
       250,
       0,
       328,
@@ -9705,7 +9705,7 @@
       "FLOAT"
     ],
     [
-      563,
+      567,
       251,
       0,
       328,
@@ -9713,7 +9713,7 @@
       "FLOAT"
     ],
     [
-      564,
+      568,
       14,
       2,
       330,
@@ -9721,7 +9721,7 @@
       "VAE"
     ],
     [
-      565,
+      569,
       14,
       0,
       336,
@@ -9729,7 +9729,7 @@
       "MODEL"
     ],
     [
-      566,
+      570,
       257,
       0,
       336,
@@ -9737,7 +9737,7 @@
       "FLOAT"
     ],
     [
-      567,
+      571,
       391,
       0,
       336,
@@ -9745,7 +9745,7 @@
       "INT"
     ],
     [
-      568,
+      572,
       390,
       0,
       336,
@@ -9753,7 +9753,7 @@
       "FLOAT"
     ],
     [
-      569,
+      573,
       14,
       1,
       341,
@@ -9761,7 +9761,7 @@
       "CLIP"
     ],
     [
-      570,
+      574,
       14,
       1,
       342,
@@ -9769,7 +9769,7 @@
       "CLIP"
     ],
     [
-      571,
+      575,
       20,
       0,
       343,
@@ -9777,7 +9777,7 @@
       "CONTROL_NET"
     ],
     [
-      572,
+      576,
       14,
       2,
       343,
@@ -9785,7 +9785,7 @@
       "VAE"
     ],
     [
-      573,
+      577,
       243,
       0,
       343,
@@ -9793,7 +9793,7 @@
       "FLOAT"
     ],
     [
-      574,
+      578,
       250,
       0,
       343,
@@ -9801,7 +9801,7 @@
       "FLOAT"
     ],
     [
-      575,
+      579,
       251,
       0,
       343,
@@ -9809,7 +9809,7 @@
       "FLOAT"
     ],
     [
-      576,
+      580,
       14,
       2,
       345,
@@ -9817,7 +9817,7 @@
       "VAE"
     ],
     [
-      577,
+      581,
       14,
       0,
       351,
@@ -9825,7 +9825,7 @@
       "MODEL"
     ],
     [
-      578,
+      582,
       257,
       0,
       351,
@@ -9833,7 +9833,7 @@
       "FLOAT"
     ],
     [
-      579,
+      583,
       391,
       0,
       351,
@@ -9841,7 +9841,7 @@
       "INT"
     ],
     [
-      580,
+      584,
       390,
       0,
       351,
@@ -9849,7 +9849,7 @@
       "FLOAT"
     ],
     [
-      581,
+      585,
       14,
       1,
       356,
@@ -9857,7 +9857,7 @@
       "CLIP"
     ],
     [
-      582,
+      586,
       14,
       1,
       357,
@@ -9865,7 +9865,7 @@
       "CLIP"
     ],
     [
-      583,
+      587,
       20,
       0,
       358,
@@ -9873,7 +9873,7 @@
       "CONTROL_NET"
     ],
     [
-      584,
+      588,
       14,
       2,
       358,
@@ -9881,7 +9881,7 @@
       "VAE"
     ],
     [
-      585,
+      589,
       243,
       0,
       358,
@@ -9889,7 +9889,7 @@
       "FLOAT"
     ],
     [
-      586,
+      590,
       250,
       0,
       358,
@@ -9897,7 +9897,7 @@
       "FLOAT"
     ],
     [
-      587,
+      591,
       251,
       0,
       358,
@@ -9905,7 +9905,7 @@
       "FLOAT"
     ],
     [
-      588,
+      592,
       14,
       2,
       360,
@@ -9913,7 +9913,7 @@
       "VAE"
     ],
     [
-      589,
+      593,
       14,
       0,
       366,
@@ -9921,7 +9921,7 @@
       "MODEL"
     ],
     [
-      590,
+      594,
       257,
       0,
       366,
@@ -9929,7 +9929,7 @@
       "FLOAT"
     ],
     [
-      591,
+      595,
       391,
       0,
       366,
@@ -9937,7 +9937,7 @@
       "INT"
     ],
     [
-      592,
+      596,
       390,
       0,
       366,
@@ -9945,7 +9945,7 @@
       "FLOAT"
     ],
     [
-      593,
+      597,
       14,
       2,
       271,
@@ -9953,7 +9953,7 @@
       "VAE"
     ],
     [
-      594,
+      598,
       14,
       2,
       286,
@@ -9961,7 +9961,7 @@
       "VAE"
     ],
     [
-      595,
+      599,
       14,
       2,
       301,
@@ -9969,7 +9969,7 @@
       "VAE"
     ],
     [
-      596,
+      600,
       14,
       2,
       316,
@@ -9977,7 +9977,7 @@
       "VAE"
     ],
     [
-      597,
+      601,
       14,
       2,
       331,
@@ -9985,7 +9985,7 @@
       "VAE"
     ],
     [
-      598,
+      602,
       14,
       2,
       346,
@@ -9993,7 +9993,7 @@
       "VAE"
     ],
     [
-      599,
+      603,
       14,
       2,
       361,
@@ -10001,7 +10001,7 @@
       "VAE"
     ],
     [
-      600,
+      604,
       253,
       0,
       29,
@@ -10009,7 +10009,7 @@
       "STRING"
     ],
     [
-      601,
+      605,
       253,
       0,
       264,
@@ -10017,7 +10017,7 @@
       "STRING"
     ],
     [
-      602,
+      606,
       253,
       0,
       279,
@@ -10025,7 +10025,7 @@
       "STRING"
     ],
     [
-      603,
+      607,
       253,
       0,
       294,
@@ -10033,7 +10033,7 @@
       "STRING"
     ],
     [
-      604,
+      608,
       253,
       0,
       309,
@@ -10041,7 +10041,7 @@
       "STRING"
     ],
     [
-      605,
+      609,
       253,
       0,
       324,
@@ -10049,7 +10049,7 @@
       "STRING"
     ],
     [
-      606,
+      610,
       253,
       0,
       339,
@@ -10057,7 +10057,7 @@
       "STRING"
     ],
     [
-      607,
+      611,
       253,
       0,
       354,
@@ -10065,7 +10065,7 @@
       "STRING"
     ],
     [
-      608,
+      612,
       20,
       0,
       19,
@@ -10073,7 +10073,7 @@
       "CONTROL_NET"
     ],
     [
-      609,
+      613,
       14,
       2,
       19,
@@ -10081,7 +10081,7 @@
       "VAE"
     ],
     [
-      610,
+      614,
       243,
       0,
       19,
@@ -10089,7 +10089,7 @@
       "FLOAT"
     ],
     [
-      611,
+      615,
       250,
       0,
       19,
@@ -10097,7 +10097,7 @@
       "FLOAT"
     ],
     [
-      612,
+      616,
       251,
       0,
       19,
@@ -10227,10 +10227,10 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.21435888100000225,
+      "scale": 2.111377674535336,
       "offset": [
-        -1264.2294750056226,
-        -558.9330365706705
+        -3775.8053273676505,
+        916.5136500072707
       ]
     },
     "node_versions": {
