@@ -257,6 +257,7 @@ try:
     NODE_DISPLAY_NAME_MAPPINGS["DP Float Stepper"] = "DP Float Stepper"
     NODE_DISPLAY_NAME_MAPPINGS["DP Prompt Travel Prompt"] = "DP Prompt Travel Prompt"
     NODE_DISPLAY_NAME_MAPPINGS["DP Sampler With Info"] = "DP Sampler With Info"
+    NODE_DISPLAY_NAME_MAPPINGS["DP Line Cycler"] = "DP Line Cycler"
 
     # Add all nodes to the mappings
     NODE_CLASS_MAPPINGS = {
@@ -376,6 +377,20 @@ try:
     # Log successful initialization
     logger.info(f"Successfully loaded {len(NODE_CLASS_MAPPINGS)} nodes")
     logger.debug(f"Loaded nodes: {list(NODE_CLASS_MAPPINGS.keys())}")
+
+    # Add these imports near the other image processing nodes:
+    from .nodes.dp_Image_Slice_To_Grid import DP_Image_Slice_To_Grid
+    from .nodes.dp_Image_Grid_To_Image import DP_Image_Grid_To_Image
+
+    # Add to NODE_CLASS_MAPPINGS dictionary:
+    NODE_CLASS_MAPPINGS.update({
+        "DP Image Slice To Grid": DP_Image_Slice_To_Grid,
+        "DP Image Grid To Image": DP_Image_Grid_To_Image,
+    })
+
+    # Add to NODE_DISPLAY_NAME_MAPPINGS:
+    NODE_DISPLAY_NAME_MAPPINGS["DP Image Slice To Grid"] = "DP Image Slice To Grid"
+    NODE_DISPLAY_NAME_MAPPINGS["DP Image Grid To Image"] = "DP Image Grid To Image"
 
 except Exception as e:
     logger.critical(f"Critical error initializing DP_Nodes: {str(e)}", exc_info=True)

@@ -320,6 +320,8 @@ export const DPThemes = {
         "DP 5 String Switch Or Connect",
         "DP Advanced Sampler",
         "DP Float Stepper",
-        "DP Prompt Travel Prompt"
+        "DP Prompt Travel Prompt",
+        "DP Image Slice To Grid",
+        "DP Image Grid To Image"
     ]
 };
