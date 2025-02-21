@@ -199,7 +199,10 @@ try:
     # Add this import near the other imports:
     from .nodes.dp_prompt_travel_prompt import DP_Prompt_Travel_Prompt
 
-    # Add this to the NODE_CLASS_MAPPINGS dictionary:
+    # Add this import near the other imports:
+    from .nodes.dp_load_image_with_seed import DP_Load_Image_With_Seed
+
+    # Add to NODE_CLASS_MAPPINGS dictionary:
     NODE_CLASS_MAPPINGS.update({
         "DP ControlNet Apply Advanced": DP_ControlNetApplyAdvanced,
         "DP Load Controlnet Model With Name": DP_Load_Controlnet_Model_With_Name,
@@ -228,6 +231,7 @@ try:
         "DP Float Stepper": DP_Float_Stepper,
         "DP Prompt Travel Prompt": DP_Prompt_Travel_Prompt,
         "DP Sampler With Info": DP_Sampler_With_Info,
+        "DP Load Image With Seed": DP_Load_Image_With_Seed,
     })
 
     # Add this to NODE_DISPLAY_NAME_MAPPINGS:
@@ -257,6 +261,7 @@ try:
     NODE_DISPLAY_NAME_MAPPINGS["DP Float Stepper"] = "DP Float Stepper"
     NODE_DISPLAY_NAME_MAPPINGS["DP Prompt Travel Prompt"] = "DP Prompt Travel Prompt"
     NODE_DISPLAY_NAME_MAPPINGS["DP Sampler With Info"] = "DP Sampler With Info"
+    NODE_DISPLAY_NAME_MAPPINGS["DP Load Image With Seed"] = "DP Load Image With Seed"
     NODE_DISPLAY_NAME_MAPPINGS["DP Line Cycler"] = "DP Line Cycler"
 
     # Add all nodes to the mappings
@@ -349,6 +354,7 @@ try:
         "DP Advanced Sampler": DP_Advanced_Sampler,
         "DP Float Stepper": DP_Float_Stepper,
         "DP Prompt Travel Prompt": DP_Prompt_Travel_Prompt,
+        "DP Load Image With Seed": DP_Load_Image_With_Seed,
     }
 
     # Create display names
