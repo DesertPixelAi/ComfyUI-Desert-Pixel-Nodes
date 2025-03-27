@@ -1,7 +1,9 @@
 # File: smart_prompt_compressor.py
 import re
 from typing import List, Tuple
+
 from transformers import AutoTokenizer
+
 from .tokenizer_utils import FluxTokenizer
 
 

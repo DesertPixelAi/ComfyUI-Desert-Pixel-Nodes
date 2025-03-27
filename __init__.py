@@ -2,8 +2,8 @@
 Optimized nodes for ComfyUI (Refactored)
 """
 
-import os
 import logging
+import os
 from typing import Dict, Type
 
 # region ################### LOGGING SETUP ###################
@@ -41,20 +41,50 @@ try:
 
     # Organized node imports by category
     # Animation Nodes
+    # Specialized Components
+    from .nodes.dp_add_background_to_png import DP_Add_Background_To_Png
+    from .nodes.dp_advanced_sampler import DP_Advanced_Sampler
     from .nodes.dp_animation_calculator_5inputs import DP_Animation_Calculator_5_Inputs
     from .nodes.dp_animation_calculator_10inputs import (
         DP_Animation_Calculator_10_Inputs,
     )
     from .nodes.dp_animation_int_selectors import (
-        DP_Transition_Frames_Selector,
         DP_Diff_Int_8step_selector,
         DP_Draggable_Int_1step,
         DP_Draggable_Int_4step,
         DP_Draggable_Int_8step,
+        DP_Transition_Frames_Selector,
     )
 
     # Image Processing
     from .nodes.dp_big_letters import DP_Big_Letters
+    from .nodes.dp_broken_token import DP_Broken_Token
+    from .nodes.dp_checkpoint_loader import DP_Load_Checkpoint_With_Info
+    from .nodes.dp_clean_prompt import DP_clean_prompt
+    from .nodes.dp_clean_prompt_travel import DP_Clean_Prompt_Travel
+    from .nodes.dp_condition_mixer import DP_Condition_Switch
+
+    # Advanced Features
+    from .nodes.dp_controlnet import (
+        DP_ControlNetApplyAdvanced,
+        DP_Load_Controlnet_Model_With_Name,
+    )
+    from .nodes.dp_crazy_prompt_mixer import DP_Crazy_Prompt_Mixer
+
+    # Generators
+    from .nodes.dp_crazy_random_prompt_generator import DP_Random_Crazy_Prompt_Generator
+
+    # Control and Utilities
+    from .nodes.dp_create_simple_json import DP_create_json_file
+    from .nodes.dp_draggable_floats import (
+        DP_Draggable_Floats_1,
+        DP_Draggable_Floats_2,
+        DP_Draggable_Floats_3,
+    )
+
+    # Video Processing
+    from .nodes.dp_fast_slow_motion import DP_FastSlowMotion
+    from .nodes.dp_float_stepper import DP_Float_Stepper
     from .nodes.dp_image_color_analyzer import DP_Image_Color_Analyzer
     from .nodes.dp_image_color_effect import DP_Image_Color_Effect
     from .nodes.dp_image_effect_processor import DP_Image_Effect_Processor
@@ -64,98 +94,67 @@ try:
     from .nodes.dp_image_empty_latent_switch_sdxl import (
         DP_Image_Empty_Latent_Switch_SDXL,
     )
+    from .nodes.dp_Image_Grid_To_Image import DP_Image_Grid_To_Image
+    from .nodes.dp_Image_Slice_To_Grid import DP_Image_Slice_To_Grid
     from .nodes.dp_image_slide_show import DP_Image_Slide_Show
     from .nodes.dp_image_strip import DP_Image_Strip
     from .nodes.dp_image_strip_edege_mask import DP_Strip_Edge_Masks
+    from .nodes.dp_latent_split import DP_Latent_Split
     from .nodes.dp_load_image import DP_Load_Image_Effects
-    from .nodes.dp_load_image_small import DP_Load_Image_Effects_Small
     from .nodes.dp_load_image_minimal import DP_Load_Image_Minimal
-    from .nodes.dp_save_preview_image import DP_Save_Preview_Image
-    from .nodes.dp_Image_Slice_To_Grid import DP_Image_Slice_To_Grid
-    from .nodes.dp_Image_Grid_To_Image import DP_Image_Grid_To_Image
+    from .nodes.dp_load_image_small import DP_Load_Image_Effects_Small
+    from .nodes.dp_load_image_with_seed import DP_Load_Image_With_Seed
+    from .nodes.dp_lora_random_strength_controller import (
+        DP_Lora_Random_Strength_Controller,
+    )
+    from .nodes.dp_lora_strength_controller import DP_Lora_Strength_Controller
+    from .nodes.dp_model_loaders import (
+        DP_Load_Dual_CLIP_With_Info,
+        DP_Load_UNET_With_Info,
+    )
 
     # Text and Prompt Handling
     from .nodes.dp_prompt_inverter import DP_Prompt_Inverter
-    from .nodes.dp_broken_token import DP_Broken_Token
-    from .nodes.dp_clean_prompt import DP_clean_prompt
-    from .nodes.dp_clean_prompt_travel import DP_Clean_Prompt_Travel
-    from .nodes.dp_prompt_styler import DP_Prompt_Styler
     from .nodes.dp_prompt_manager_small import (
         DP_Prompt_Manager_Small,
         DP_Prompt_Mode_Controller,
     )
+    from .nodes.dp_prompt_styler import DP_Prompt_Styler
     from .nodes.dp_prompt_token_compressor import DP_SmartPromptCompressor
-    from .nodes.dp_text_preview import DP_Text_Preview
-
-    # Control and Utilities
-    from .nodes.dp_create_simple_json import DP_create_json_file
-    from .nodes.dp_draggable_floats import (
-        DP_Draggable_Floats_1,
-        DP_Draggable_Floats_2,
-        DP_Draggable_Floats_3,
-    )
-    from .nodes.dp_lora_strength_controller import DP_Lora_Strength_Controller
-    from .nodes.dp_lora_random_strength_controller import (
-        DP_Lora_Random_Strength_Controller,
-    )
+    from .nodes.dp_prompt_travel_prompt import DP_Prompt_Travel_Prompt
     from .nodes.dp_quick_model_link import DP_symlink
+    from .nodes.dp_random_character import DP_Random_Character
+    from .nodes.dp_random_logo_style_generator import DP_Random_Logo_Style_Generator
     from .nodes.dp_random_min_max import DP_random_min_max
+    from .nodes.dp_random_psychedelic_punk_generator import (
+        DP_Random_Psychedelic_Punk_Generator,
+    )
+    from .nodes.dp_random_vehicle_generator import DP_Random_Vehicle_Generator
+    from .nodes.dp_randon_superhero_prompt_generator import (
+        DP_Random_Superhero_Prompt_Generator,
+    )
+    from .nodes.dp_sampler_with_info import DP_Sampler_With_Info
+    from .nodes.dp_save_preview_image import DP_Save_Preview_Image
     from .nodes.dp_simple_width_height import DP_Aspect_Ratio_Picker
+    from .nodes.dp_string_switches import (
+        DP_3_String_Switch_Or_Connect,
+        DP_5_String_Switch_Or_Connect,
+        DP_10_String_Switch_Or_Connect,
+    )
     from .nodes.dp_string_with_switch import (
         DP_2_String_Switch,
         DP_String_Text,
         DP_String_Text_With_Sdxl_Weight,
     )
     from .nodes.dp_switch_controller import DP_Switch_Controller
-
-    # Video Processing
-    from .nodes.dp_fast_slow_motion import DP_FastSlowMotion
+    from .nodes.dp_text_preview import DP_Text_Preview
     from .nodes.dp_video_effect_sender_receiver import (
-        DP_Video_Effect_Sender,
         DP_Video_Effect_Receiver,
+        DP_Video_Effect_Sender,
     )
     from .nodes.dp_video_flicker import DP_Video_Flicker
     from .nodes.dp_video_looper import DP_Video_Looper
     from .nodes.dp_video_transition import DP_Video_Transition
-
-    # Generators
-    from .nodes.dp_crazy_random_prompt_generator import DP_Random_Crazy_Prompt_Generator
-    from .nodes.dp_random_character import DP_Random_Character
-    from .nodes.dp_random_logo_style_generator import DP_Random_Logo_Style_Generator
-    from .nodes.dp_randon_superhero_prompt_generator import (
-        DP_Random_Superhero_Prompt_Generator,
-    )
-    from .nodes.dp_random_psychedelic_punk_generator import (
-        DP_Random_Psychedelic_Punk_Generator,
-    )
-    from .nodes.dp_crazy_prompt_mixer import DP_Crazy_Prompt_Mixer
-    from .nodes.dp_random_vehicle_generator import DP_Random_Vehicle_Generator
-
-    # Advanced Features
-    from .nodes.dp_controlnet import (
-        DP_ControlNetApplyAdvanced,
-        DP_Load_Controlnet_Model_With_Name,
-    )
-    from .nodes.dp_checkpoint_loader import DP_Load_Checkpoint_With_Info
-    from .nodes.dp_model_loaders import (
-        DP_Load_UNET_With_Info,
-        DP_Load_Dual_CLIP_With_Info,
-    )
-    from .nodes.dp_advanced_sampler import DP_Advanced_Sampler
-    from .nodes.dp_sampler_with_info import DP_Sampler_With_Info
-
-    # Specialized Components
-    from .nodes.dp_add_background_to_png import DP_Add_Background_To_Png
-    from .nodes.dp_string_switches import (
-        DP_10_String_Switch_Or_Connect,
-        DP_3_String_Switch_Or_Connect,
-        DP_5_String_Switch_Or_Connect,
-    )
-    from .nodes.dp_latent_split import DP_Latent_Split
-    from .nodes.dp_condition_mixer import DP_Condition_Switch
-    from .nodes.dp_float_stepper import DP_Float_Stepper
-    from .nodes.dp_prompt_travel_prompt import DP_Prompt_Travel_Prompt
-    from .nodes.dp_load_image_with_seed import DP_Load_Image_With_Seed
 
     logger.info("All node imports completed successfully")
 

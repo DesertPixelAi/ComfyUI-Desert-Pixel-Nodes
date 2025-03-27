@@ -1,10 +1,11 @@
 # Enhanced Prompt string cleaner node for travel
 import re
 
+
 class DP_Clean_Prompt_Travel:
     def __init__(self):
         pass
-        
+
     @classmethod
     def INPUT_TYPES(cls):
         return {
@@ -21,8 +22,8 @@ class DP_Clean_Prompt_Travel:
     def clean(self, input_text):
         text = input_text
         # Remove special characters
-        text = re.sub(r'[\(\)/\\\|\^\*\{\}\[\]]', '', text)
+        text = re.sub(r"[\(\)/\\\|\^\*\{\}\[\]]", "", text)
         # Replace underscores with spaces
-        text = text.replace('_', ' ')
-        
+        text = text.replace("_", " ")
+
         return (text,)

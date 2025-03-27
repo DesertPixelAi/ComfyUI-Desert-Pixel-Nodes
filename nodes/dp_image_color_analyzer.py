@@ -1,44 +1,40 @@
 # Standard library # Standard library imports
-import os
-import json
 import colorsys
+import json
+import os
 
 # Third-party imports
 import numpy as np
 import torch
-from PIL import Image
-from sklearn.cluster import KMeans
+
+# Add new imports for specific exceptions
+from PIL import Image, UnidentifiedImageError
 from skimage import color
+from sklearn.cluster import KMeans
 
 # Local imports
 import folder_paths
-
-# Add new imports for specific exceptions
-from typing import Tuple, List, Dict, Optional
-from PIL import UnidentifiedImageError
 
 
 class DP_Image_Color_Analyzer:
     """
     ComfyUI node for analyzing image colors and generating SD-friendly descriptions
     """
-    
+
     def __init__(self):
         """Initialize the color analyzer"""
-        self.data_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data", "color")
+        self.data_dir = os.path.join(
+            os.path.dirname(os.path.dirname(__file__)), "data", "color"
+        )
         os.makedirs(self.data_dir, exist_ok=True)
-        
+
         self.color_data = {}
         self.theme_data = {}
-        
+
         # Color analysis parameters
         self.min_color_distance = 15.0  # Minimum Delta-E distance between colors
-        self.color_weights = {
-            'presence': 0.4,
-            'saturation': 0.3,
-            'position': 0.3
-        }
-        
+        self.color_weights = {"presence": 0.4, "saturation": 0.3, "position": 0.3}
+
         self.load_color_data()
         self.load_theme_data()
 
@@ -47,12 +43,12 @@ class DP_Image_Color_Analyzer:
         try:
             self.color_data = {}
             color_files = ["color_names.json", "html_colors.json"]
-            
+
             for filename in color_files:
                 file_path = os.path.join(self.data_dir, filename)
                 if os.path.exists(file_path):
                     try:
-                        with open(file_path, 'r', encoding='utf-8') as f:
+                        with open(file_path, "r", encoding="utf-8") as f:
                             data = json.load(f)
                             for category, colors in data.items():
                                 if category not in self.color_data:
@@ -64,11 +60,11 @@ class DP_Image_Color_Analyzer:
                         print(f"Encoding error in {filename}: {e}")
                     except IOError as e:
                         print(f"IO error reading {filename}: {e}")
-                        
+
             if not self.color_data:
                 print("Warning: No color data loaded, using basic colors")
                 self.color_data = self.get_basic_colors()
-                
+
         except Exception as e:
             print(f"Critical error in load_color_data: {str(e)}")
             self.color_data = self.get_basic_colors()
@@ -78,7 +74,7 @@ class DP_Image_Color_Analyzer:
         try:
             theme_file = os.path.join(self.data_dir, "color_themes.json")
             if os.path.exists(theme_file):
-                with open(theme_file, 'r', encoding='utf-8') as f:
+                with open(theme_file, "r", encoding="utf-8") as f:
                     self.theme_data = json.load(f)
             else:
                 print("Warning: No theme data found, using basic themes")
@@ -102,30 +98,27 @@ class DP_Image_Color_Analyzer:
         return {
             "required": {
                 "image": (sorted(files), {"image_upload": True}),
-                "num_colors": ("INT", {
-                    "default": 5,
-                    "min": 3,
-                    "max": 16,
-                    "step": 1
-                }),
-                "color_sample_width": ("INT", {
-                    "default": 512,
-                    "min": 8,
-                    "max": 4096
-                }),
-                "color_sample_height": ("INT", {
-                    "default": 512,
-                    "min": 8,
-                    "max": 4096
-                })
+                "num_colors": ("INT", {"default": 5, "min": 3, "max": 16, "step": 1}),
+                "color_sample_width": ("INT", {"default": 512, "min": 8, "max": 4096}),
+                "color_sample_height": ("INT", {"default": 512, "min": 8, "max": 4096}),
             },
-            "optional": {
-                "image_input": ("IMAGE",)
-            }
+            "optional": {"image_input": ("IMAGE",)},
         }
 
-    RETURN_TYPES = ("IMAGE", "STRING", "STRING", "STRING", "STRING",)
-    RETURN_NAMES = ("color_images", "color_names", "color_theme", "detailed_info", "hex_values",)
+    RETURN_TYPES = (
+        "IMAGE",
+        "STRING",
+        "STRING",
+        "STRING",
+        "STRING",
+    )
+    RETURN_NAMES = (
+        "color_images",
+        "color_names",
+        "color_theme",
+        "detailed_info",
+        "hex_values",
+    )
     FUNCTION = "analyze_image"
     CATEGORY = "DP/image"
 
@@ -133,12 +126,12 @@ class DP_Image_Color_Analyzer:
         """Create a color panel for a given hex color"""
         try:
             # Convert hex to RGB
-            hex_color = hex_color.lstrip('#')
-            rgb = tuple(int(hex_color[i:i+2], 16) for i in (0, 2, 4))
-            
+            hex_color = hex_color.lstrip("#")
+            rgb = tuple(int(hex_color[i : i + 2], 16) for i in (0, 2, 4))
+
             # Create new image with specified color
-            panel = Image.new('RGB', (width, height), rgb)
-            
+            panel = Image.new("RGB", (width, height), rgb)
+
             # Convert to tensor
             img_array = np.array(panel)
             img_tensor = torch.from_numpy(img_array).float() / 255.0
@@ -167,18 +160,18 @@ class DP_Image_Color_Analyzer:
         try:
             lab1 = self.rgb_to_lab(color1)
             lab2 = self.rgb_to_lab(color2)
-            
+
             # Calculate Euclidean distance in L*a*b* space
             delta_L = lab1[0] - lab2[0]
             delta_a = lab1[1] - lab2[1]
             delta_b = lab1[2] - lab2[2]
-            
+
             # Calculate Delta-E
             delta_E = np.sqrt(delta_L**2 + delta_a**2 + delta_b**2)
             return delta_E
         except Exception as e:
             print(f"Error calculating color distance: {e}")
-            return float('inf')
+            return float("inf")
 
     def tensor_to_pil(self, img_tensor):
         """Convert a PyTorch tensor to PIL Image"""
@@ -198,7 +191,7 @@ class DP_Image_Color_Analyzer:
     def rgb_to_hex(self, rgb):
         """Convert RGB tuple to HEX string"""
         try:
-            return '#{:02x}{:02x}{:02x}'.format(int(rgb[0]), int(rgb[1]), int(rgb[2]))
+            return "#{:02x}{:02x}{:02x}".format(int(rgb[0]), int(rgb[1]), int(rgb[2]))
         except Exception as e:
             print(f"Error converting RGB to HEX: {e}")
             return "#000000"
@@ -206,28 +199,28 @@ class DP_Image_Color_Analyzer:
     def get_color_name(self, rgb):
         """Find the closest matching color name using Delta-E"""
         try:
-            min_distance = float('inf')
+            min_distance = float("inf")
             color_name = None
             sd_name = None
-            
+
             # Iterate through all categories and colors
             for category, colors in self.color_data.items():
                 for name, data in colors.items():
-                    if 'rgb' not in data:
+                    if "rgb" not in data:
                         continue
-                        
-                    distance = self.calculate_color_distance(rgb, data['rgb'])
+
+                    distance = self.calculate_color_distance(rgb, data["rgb"])
                     if distance < min_distance:
                         min_distance = distance
                         color_name = name
-                        sd_name = data.get('sd_names', [name])[0]
-            
+                        sd_name = data.get("sd_names", [name])[0]
+
             # Always return the closest match, don't use a threshold
             if color_name is None:
                 return "undefined", "undefined"
-            
+
             return sd_name, color_name
-            
+
         except Exception as e:
             print(f"Error finding color name: {e}")
             return "undefined", "undefined"
@@ -245,10 +238,10 @@ class DP_Image_Color_Analyzer:
                 if color.lower() not in seen:
                     unique_colors.append(color)
                     seen.add(color.lower())
-            
+
             # Join colors with "and" and append "color palette"
             return " and ".join(unique_colors) + " color palette"
-            
+
         except Exception as e:
             print(f"Error detecting theme: {e}")
             return "undefined theme"
@@ -258,7 +251,7 @@ class DP_Image_Color_Analyzer:
         try:
             if not colors:
                 return "undefined theme"
-            
+
             primary_color = colors[0]
             if percentages[0] > 50:
                 return f"dominant {primary_color} color scheme"
@@ -275,7 +268,14 @@ class DP_Image_Color_Analyzer:
             print(f"Error generating theme description: {e}")
             return "undefined theme"
 
-    def analyze_image(self, image, num_colors=5, color_sample_width=512, color_sample_height=512, image_input=None):
+    def analyze_image(
+        self,
+        image,
+        num_colors=5,
+        color_sample_width=512,
+        color_sample_height=512,
+        image_input=None,
+    ):
         """Analyze image colors from either pipe input or file upload"""
         try:
             if image_input is not None:
@@ -285,7 +285,9 @@ class DP_Image_Color_Analyzer:
                 if isinstance(image_input, torch.Tensor):
                     # Convert tensor to PIL Image
                     if image_input.ndim == 4:
-                        image_input = image_input.squeeze(0)  # Remove batch dimension if present
+                        image_input = image_input.squeeze(
+                            0
+                        )  # Remove batch dimension if present
                     img_array = (image_input * 255).byte().cpu().numpy()
                     if img_array.shape[0] == 3:  # If channels first
                         img_array = np.transpose(img_array, (1, 2, 0))
@@ -312,51 +314,52 @@ class DP_Image_Color_Analyzer:
                 raise ValueError("color_sample_height must be between 8 and 4096")
 
             # Convert to RGB if needed
-            if img.mode != 'RGB':
-                img = img.convert('RGB')
+            if img.mode != "RGB":
+                img = img.convert("RGB")
 
             # Convert to numpy array for processing
             img_array = np.array(img)
 
             # Resize for processing
             img = img.resize((150, 150))
-            
+
             # Convert to numpy array for K-means
             img_array = np.array(img)
             pixels = img_array.reshape(-1, 3)
-            
+
             # Apply K-means clustering
             kmeans = KMeans(n_clusters=num_colors, random_state=42)
             kmeans.fit(pixels)
             colors = kmeans.cluster_centers_
-            
+
             # Calculate color percentages
             labels = kmeans.labels_
             total_pixels = len(labels)
-            percentages = [(np.sum(labels == i) / total_pixels) * 100 
-                          for i in range(num_colors)]
-            
+            percentages = [
+                (np.sum(labels == i) / total_pixels) * 100 for i in range(num_colors)
+            ]
+
             # Sort colors by percentage
-            color_info = sorted(zip(colors, percentages), 
-                              key=lambda x: x[1], 
-                              reverse=True)
-            
+            color_info = sorted(
+                zip(colors, percentages), key=lambda x: x[1], reverse=True
+            )
+
             # Process colors
             color_names = []
             detailed_info = []
             sd_colors = []
             hex_values = []
             color_panels = []
-            
+
             # Generate color information
             for i, (color, percentage) in enumerate(color_info[:num_colors]):
                 rgb = tuple(map(int, color))
                 hex_value = self.rgb_to_hex(rgb)
                 sd_name, internal_name = self.get_color_name(rgb)
-                
+
                 if sd_name == "undefined":
-                    sd_name = f"Color {i+1}"
-                
+                    sd_name = f"Color {i + 1}"
+
                 color_names.append(sd_name)
                 sd_colors.append(sd_name)
                 hex_values.append(hex_value)
@@ -364,21 +367,25 @@ class DP_Image_Color_Analyzer:
                     f"{sd_name}  |  {percentage:.1f}%  |  "
                     f"r={rgb[0]} g={rgb[1]} b={rgb[2]}  |  {hex_value}"
                 )
-                
+
                 # Create color panel
-                panel = self.create_color_panel(color_sample_width, color_sample_height, hex_value)
+                panel = self.create_color_panel(
+                    color_sample_width, color_sample_height, hex_value
+                )
                 if panel is not None:
                     color_panels.append(panel)
-            
+
             # Combine color panels
             if color_panels:
                 final_panels = torch.cat(color_panels, dim=0)
             else:
-                final_panels = torch.zeros(1, 3, color_sample_height, color_sample_width)
-            
+                final_panels = torch.zeros(
+                    1, 3, color_sample_height, color_sample_width
+                )
+
             # Generate theme
             theme = self.detect_color_theme(sd_colors, percentages)
-            
+
             # Remove duplicates while preserving order for color_names
             unique_color_names = []
             seen_names = set()
@@ -392,15 +399,17 @@ class DP_Image_Color_Analyzer:
                 "\n".join(unique_color_names),
                 theme,
                 "\n".join(detailed_info),
-                "\n".join(hex_values)
+                "\n".join(hex_values),
             )
-            
+
         except (ValueError, FileNotFoundError) as e:
             print(f"Input error: {e}")
             return self.error_output(color_sample_width, color_sample_height, str(e))
         except MemoryError as e:
             print(f"Memory error during image analysis: {e}")
-            return self.error_output(color_sample_width, color_sample_height, "Out of memory")
+            return self.error_output(
+                color_sample_width, color_sample_height, "Out of memory"
+            )
         except Exception as e:
             print(f"Unexpected error during image analysis: {e}")
             return self.error_output(color_sample_width, color_sample_height, str(e))
@@ -412,28 +421,20 @@ class DP_Image_Color_Analyzer:
             "Error analyzing colors",
             "Error detecting theme",
             f"Error analyzing image: {error_message}",
-            "Error"
+            "Error",
         )
 
     def get_basic_colors(self):
         """Fallback basic color definitions"""
         return {
             "basic": {
-                "red": {
-                    "rgb": [255, 0, 0],
-                    "sd_names": ["red"],
-                    "category": "basic"
-                },
+                "red": {"rgb": [255, 0, 0], "sd_names": ["red"], "category": "basic"},
                 "green": {
                     "rgb": [0, 255, 0],
                     "sd_names": ["green"],
-                    "category": "basic"
+                    "category": "basic",
                 },
-                "blue": {
-                    "rgb": [0, 0, 255],
-                    "sd_names": ["blue"],
-                    "category": "basic"
-                }
+                "blue": {"rgb": [0, 0, 255], "sd_names": ["blue"], "category": "basic"},
             }
         }
 
@@ -443,7 +444,7 @@ class DP_Image_Color_Analyzer:
             "basic": {
                 "default": {
                     "sd_prompt": "color scheme",
-                    "compatible_colors": ["red", "green", "blue"]
+                    "compatible_colors": ["red", "green", "blue"],
                 }
             }
         }
@@ -451,154 +452,161 @@ class DP_Image_Color_Analyzer:
     def get_color_category(self, rgb):
         """Determine the color category based on RGB values"""
         r, g, b = rgb
-        
+
         # Convert to HSV for better color analysis
-        h, s, v = colorsys.rgb_to_hsv(r/255, g/255, b/255)
+        h, s, v = colorsys.rgb_to_hsv(r / 255, g / 255, b / 255)
         h = h * 360  # Convert to degrees
-        
+
         # Handle grayscale
         if s < 0.1:
-            return 'neutrals'
-            
+            return "neutrals"
+
         # Define color ranges in HSV
         if h < 30 or h > 330:
-            return 'reds'
+            return "reds"
         elif 30 <= h < 90:
-            return 'yellows' if s > 0.5 else 'browns'
+            return "yellows" if s > 0.5 else "browns"
         elif 90 <= h < 150:
-            return 'greens'
+            return "greens"
         elif 150 <= h < 210:
-            return 'cyans'
+            return "cyans"
         elif 210 <= h < 270:
-            return 'blues'
+            return "blues"
         elif 270 <= h < 330:
-            return 'purples' if s > 0.3 else 'pinks'
-            
-        return 'undefined'
+            return "purples" if s > 0.3 else "pinks"
+
+        return "undefined"
 
     def calculate_color_importance(self, color, position, size, frequency):
         """Calculate the importance of a color based on multiple factors"""
         # Normalize position
         x, y = position
         w, h = size
-        norm_x, norm_y = x/w, y/h
-        
+        norm_x, norm_y = x / w, y / h
+
         # Calculate center weight with even less penalty for off-center colors
-        center_dist = np.sqrt((norm_x - 0.5)**2 + (norm_y - 0.5)**2)
+        center_dist = np.sqrt((norm_x - 0.5) ** 2 + (norm_y - 0.5) ** 2)
         position_weight = 1 / (1 + center_dist * 0.5)  # Even softer distance penalty
-        
+
         # Calculate saturation and vibrancy
-        r, g, b = color/255
+        r, g, b = color / 255
         max_val = max(r, g, b)
         min_val = min(r, g, b)
-        
+
         # Enhanced saturation calculation
         saturation = (max_val - min_val) / max_val if max_val != 0 else 0
-        
+
         # Calculate color distinctiveness
         color_std = np.std([r, g, b])
-        
+
         # Special handling for vibrant colors (like red mushrooms)
         is_vibrant = False
         if r > max(g, b) * 1.5:  # Red channel significantly higher
             is_vibrant = True
-        
+
         # Calculate relative channel dominance
         channel_dominance = max(r, g, b) / (np.mean([r, g, b]) + 0.001)
-        
+
         # Boost importance for small but vibrant/distinct colors
         if frequency < 0.1:  # For colors that occupy less than 10% of the image
             if is_vibrant or saturation > 0.5 or channel_dominance > 1.3:
                 frequency = frequency * 4  # Quadruple their effective presence
-        
+
         # Calculate distinctiveness with more weight to saturated colors
         distinctiveness = (color_std + saturation) / 2
-        
+
         # Combine factors with adjusted weights
         importance = (
-            frequency * 0.3 +                    # Reduced weight for frequency
-            saturation * 0.3 +                   # Increased weight for saturation
-            distinctiveness * 0.2 +              # Added distinctiveness factor
-            position_weight * 0.1 +              # Reduced position influence
-            (1.0 if is_vibrant else 0.0) * 0.1  # Bonus for vibrant colors
+            frequency * 0.3  # Reduced weight for frequency
+            + saturation * 0.3  # Increased weight for saturation
+            + distinctiveness * 0.2  # Added distinctiveness factor
+            + position_weight * 0.1  # Reduced position influence
+            + (1.0 if is_vibrant else 0.0) * 0.1  # Bonus for vibrant colors
         )
-        
+
         return importance
 
     def extract_balanced_palette(self, img, num_colors):
         """Extract a balanced color palette ensuring diversity and harmony"""
         h, w = img.shape[:2]
-        
+
         # Initial clustering with even more clusters
         pixels = img.reshape(-1, 3)
         initial_clusters = min(num_colors * 5, len(pixels))  # Increased clusters
         kmeans = KMeans(n_clusters=initial_clusters, random_state=42)
         labels = kmeans.fit_predict(pixels)
-        
+
         # Calculate cluster properties
         clusters = []
         for i in range(initial_clusters):
             mask = labels == i
             if not np.any(mask):
                 continue
-                
+
             cluster_pixels = pixels[mask]
-            
+
             # Use median instead of mean to better preserve distinct colors
             avg_color = np.median(cluster_pixels, axis=0)
-            
+
             # Find center of mass
             y_indices, x_indices = np.unravel_index(np.where(mask)[0], (h, w))
             center_y = np.mean(y_indices)
             center_x = np.mean(x_indices)
-            
+
             frequency = np.sum(mask) / len(pixels)
             importance = self.calculate_color_importance(
                 avg_color, (center_x, center_y), (w, h), frequency
             )
-            
+
             # Calculate color variance within cluster
             color_variance = np.mean(np.var(cluster_pixels, axis=0))
-            
+
             category = self.get_color_category(avg_color)
-            
-            clusters.append({
-                'color': avg_color,
-                'importance': importance,
-                'category': category,
-                'frequency': frequency,
-                'variance': color_variance
-            })
-        
+
+            clusters.append(
+                {
+                    "color": avg_color,
+                    "importance": importance,
+                    "category": category,
+                    "frequency": frequency,
+                    "variance": color_variance,
+                }
+            )
+
         # Sort clusters by importance
-        clusters.sort(key=lambda x: x['importance'], reverse=True)
-        
+        clusters.sort(key=lambda x: x["importance"], reverse=True)
+
         # Select diverse palette with enhanced accent color detection
         final_palette = []
         used_categories = set()
-        
+
         # First pass: select most important colors
         for cluster in clusters:
             if len(final_palette) >= num_colors:
                 break
-                
+
             is_distinct = True
             for selected in final_palette:
-                if self.calculate_color_distance(cluster['color'], 
-                                               selected['color']) < self.min_color_distance:
+                if (
+                    self.calculate_color_distance(cluster["color"], selected["color"])
+                    < self.min_color_distance
+                ):
                     is_distinct = False
                     break
-            
+
             # Check for vibrant colors
-            r, g, b = cluster['color']/255
-            is_vibrant = (r > max(g, b) * 1.5) or (g > max(r, b) * 1.5) or (b > max(r, g) * 1.5)
-            
+            r, g, b = cluster["color"] / 255
+            is_vibrant = (
+                (r > max(g, b) * 1.5) or (g > max(r, b) * 1.5) or (b > max(r, g) * 1.5)
+            )
+
             if is_distinct and (
-                cluster['category'] not in used_categories or
-                is_vibrant or
-                cluster['importance'] > 0.5  # Higher threshold for duplicating categories
+                cluster["category"] not in used_categories
+                or is_vibrant
+                or cluster["importance"]
+                > 0.5  # Higher threshold for duplicating categories
             ):
                 final_palette.append(cluster)
-                used_categories.add(cluster['category'])
-        
-        return [cluster['color'] for cluster in final_palette[:num_colors]]
+                used_categories.add(cluster["category"])
+
+        return [cluster["color"] for cluster in final_palette[:num_colors]]
