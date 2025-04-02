@@ -82,15 +82,15 @@ export const DPThemes = {
     nodeIcons: {
         default: "🌵 ",
     },
-    iconList: ["🐵 ", "🦧 ", "🐶 ", "🦖 ", "🐞 ", "🐢 ", "🦆 ", "🐸 ", "🐠 ", "💎 ", "✨ ", "🌞 ", "🐌 ", 
-               "🍬 ", "🍫 ", "🧁 ", "🍉 ", "🍄 ", "🧨 ", "⚡ ", "🌟 ", "⭐ ", "🌞 ", "🌝 ", "🛸 ", "🚀 ", 
-               "👽 ", "👾 ", "🤖 ", "💀 ", "👊 ", "🤘 ", "🤙 ", "👌 ", "🖖 ", "💋 ", "🙈 ", "🙉 ", "🙊 "],
+    iconList: ["🐵 ", "🦧 ", "🐶 ", "🦖 ", "🐞 ", "🐢 ", "🦆 ", "🐸 ", "🐠 ", "💎 ", "✨ ", "🌞 ", "🐌 ",
+        "🍬 ", "🍫 ", "🧁 ", "🍉 ", "🍄 ", "🧨 ", "⚡ ", "🌟 ", "⭐ ", "🌞 ", "🌝 ", "🛸 ", "🚀 ",
+        "👽 ", "👾 ", "🤖 ", "💀 ", "👊 ", "🤘 ", "🤙 ", "👌 ", "🖖 ", "💋 ", "🙈 ", "🙉 ", "🙊 "],
 
     getRandomIcon() {
         const randomIndex = Math.floor(Math.random() * this.iconList.length);
         return this.iconList[randomIndex];
     },
-    
+
     getNodeTitle(title) {
         const hasIcon = this.iconList.some(icon => title.startsWith(icon.trim()));
         if (hasIcon) {
@@ -134,7 +134,7 @@ export const DPThemes = {
         try {
             const saved = localStorage.getItem('dp_default_theme');
             if (!saved) return this.themes[this.defaultTheme];
-            
+
             const themeData = JSON.parse(saved);
             return themeData.colors || this.themes[this.defaultTheme];
         } catch (e) {
@@ -219,7 +219,7 @@ export const DPThemes = {
     getNodeSpecificTheme(nodeName) {
         const themeName = this.nodeSpecificThemes[nodeName];
         if (!themeName) return null;
-        
+
         // If the theme name exists in our themes, use it
         if (this.themes[themeName]) {
             return this.themes[themeName];

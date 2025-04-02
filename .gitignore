@@ -1,0 +1,8 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+
+# Users custom resolutions
+data/aspect_ratio/custom_aspect_ratios.txt
+
+# Debug log file
+dp_nodes_debug.log

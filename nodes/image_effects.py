@@ -1,7 +1,8 @@
-import torch
-import numpy as np
-from PIL import Image, ImageOps, ImageEnhance, ImageFilter
 import cv2
+import numpy as np
+import torch
+from PIL import Image, ImageEnhance, ImageFilter, ImageOps
+
 
 class ImageEffects:
     @staticmethod
@@ -11,10 +12,14 @@ class ImageEffects:
             print(f"Warning: {function_name} received None input")
             return False
         if not isinstance(img_tensor, torch.Tensor):
-            print(f"Warning: {function_name} expected torch.Tensor, got {type(img_tensor)}")
+            print(
+                f"Warning: {function_name} expected torch.Tensor, got {type(img_tensor)}"
+            )
             return False
         if img_tensor.dim() != 4 and img_tensor.dim() != 3:
-            print(f"Warning: {function_name} expected 3 or 4 dimensions, got {img_tensor.dim()}")
+            print(
+                f"Warning: {function_name} expected 3 or 4 dimensions, got {img_tensor.dim()}"
+            )
             return False
         return True
 
@@ -23,7 +28,9 @@ class ImageEffects:
         """Safely convert tensor to numpy array"""
         try:
             if not ImageEffects._validate_input(img_tensor, function_name):
-                print(f"Warning: {function_name} validation failed, returning original tensor")
+                print(
+                    f"Warning: {function_name} validation failed, returning original tensor"
+                )
                 return (img_tensor.squeeze(0).cpu().numpy() * 255).astype(np.uint8)
             # Ensure we're working with a 3D tensor (remove batch dimension if present)
             if img_tensor.dim() == 4:
@@ -31,7 +38,9 @@ class ImageEffects:
             img_np = (img_tensor.cpu().numpy() * 255).astype(np.uint8)
             return img_np
         except Exception as e:
-            print(f"Warning: {function_name} error converting tensor to numpy: {str(e)}")
+            print(
+                f"Warning: {function_name} error converting tensor to numpy: {str(e)}"
+            )
             return None
 
     @staticmethod
@@ -50,17 +59,17 @@ class ImageEffects:
         # Ensure we're working with batched input
         if len(img_tensor.shape) == 3:
             img_tensor = img_tensor.unsqueeze(0)
-        
+
         # Convert to numpy with proper scaling
         img_np = (img_tensor.cpu().numpy() * 255).astype(np.uint8)
-        
+
         # Process each image in batch
         results = []
         for i in range(img_np.shape[0]):
             # Process single image
             processed = process_func(img_np[i], *args)
             results.append(processed)
-        
+
         # Stack results and convert back to tensor
         results = np.stack(results)
         return torch.from_numpy(results.astype(np.float32) / 255.0)
@@ -87,6 +96,7 @@ class ImageEffects:
             img_pil = Image.fromarray(img)
             posterized = ImageOps.posterize(img_pil, bits=lvls)
             return np.array(posterized)
+
         return ImageEffects._process_batch(img_tensor, process_single, levels)
 
     @staticmethod
@@ -96,6 +106,7 @@ class ImageEffects:
             enhancer = ImageEnhance.Sharpness(img_pil)
             sharpened = enhancer.enhance(f)
             return np.array(sharpened)
+
         return ImageEffects._process_batch(img_tensor, process_single, factor)
 
     @staticmethod
@@ -105,6 +116,7 @@ class ImageEffects:
             enhancer = ImageEnhance.Contrast(img_pil)
             contrasted = enhancer.enhance(0.5 + (f * 1.5))
             return np.array(contrasted)
+
         return ImageEffects._process_batch(img_tensor, process_single, strength)
 
     @staticmethod
@@ -112,23 +124,24 @@ class ImageEffects:
         def process_single(img, f):
             if f <= 0:
                 return img
-            
+
             # Convert to LAB color space
             lab = cv2.cvtColor(img, cv2.COLOR_RGB2LAB)
             l, a, b = cv2.split(lab)
-            
+
             # Apply CLAHE to L channel
-            clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8,8))
+            clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8, 8))
             l_eq = clahe.apply(l)
-            
+
             # Merge channels back
             lab_eq = cv2.merge([l_eq, a, b])
-            
+
             # Convert back to RGB
             equalized = cv2.cvtColor(lab_eq, cv2.COLOR_LAB2RGB)
-            
+
             # Blend between original and equalized
             return cv2.addWeighted(img, 1 - f, equalized, f, 0)
+
         return ImageEffects._process_batch(img_tensor, process_single, strength)
 
     @staticmethod
@@ -136,12 +149,22 @@ class ImageEffects:
         def process_single(img, f):
             img_pil = Image.fromarray(img)
             sepia_filter = (
-                0.393 + 0.607 * (1 - f), 0.769 - 0.769 * (1 - f), 0.189 - 0.189 * (1 - f), 0,
-                0.349 - 0.349 * (1 - f), 0.686 + 0.314 * (1 - f), 0.168 - 0.168 * (1 - f), 0,
-                0.272 - 0.272 * (1 - f), 0.534 - 0.534 * (1 - f), 0.131 + 0.869 * (1 - f), 0
+                0.393 + 0.607 * (1 - f),
+                0.769 - 0.769 * (1 - f),
+                0.189 - 0.189 * (1 - f),
+                0,
+                0.349 - 0.349 * (1 - f),
+                0.686 + 0.314 * (1 - f),
+                0.168 - 0.168 * (1 - f),
+                0,
+                0.272 - 0.272 * (1 - f),
+                0.534 - 0.534 * (1 - f),
+                0.131 + 0.869 * (1 - f),
+                0,
             )
-            sepia_img = img_pil.convert('RGB', sepia_filter)
+            sepia_img = img_pil.convert("RGB", sepia_filter)
             return np.array(sepia_img)
+
         return ImageEffects._process_batch(img_tensor, process_single, strength)
 
     @staticmethod
@@ -150,8 +173,9 @@ class ImageEffects:
             img_pil = Image.fromarray(img)
             blurred = img_pil.filter(ImageFilter.GaussianBlur(radius=f))
             return np.array(blurred)
+
         return ImageEffects._process_batch(img_tensor, process_single, strength)
-    
+
     @staticmethod
     def emboss(img_tensor, strength):
         def process_single(img, f):
@@ -160,33 +184,36 @@ class ImageEffects:
             enhancer = ImageEnhance.Contrast(embossed)
             embossed = enhancer.enhance(f)
             return np.array(embossed)
+
         return ImageEffects._process_batch(img_tensor, process_single, strength)
 
     @staticmethod
     def palette(img_tensor, color_count):
         def process_single(img, colors):
             img_pil = Image.fromarray(img)
-            paletted = img_pil.convert('P', palette=Image.ADAPTIVE, colors=colors)
-            reduced = paletted.convert('RGB')
+            paletted = img_pil.convert("P", palette=Image.ADAPTIVE, colors=colors)
+            reduced = paletted.convert("RGB")
             return np.array(reduced)
+
         return ImageEffects._process_batch(img_tensor, process_single, color_count)
 
     @staticmethod
     def enhance(img_tensor, strength=0.5):
         def process_single(img, f):
             img_pil = Image.fromarray(img)
-            
+
             # Apply enhancements
             enhancer = ImageEnhance.Color(img_pil)
             img_pil = enhancer.enhance(1.0 + f * 0.5)
-            
+
             enhancer = ImageEnhance.Contrast(img_pil)
             img_pil = enhancer.enhance(1.0 + f * 0.5)
-            
+
             enhancer = ImageEnhance.Sharpness(img_pil)
             img_pil = enhancer.enhance(1.0 + f * 0.5)
-            
+
             return np.array(img_pil)
+
         return ImageEffects._process_batch(img_tensor, process_single, strength)
 
     @staticmethod
@@ -195,6 +222,7 @@ class ImageEffects:
             img_pil = Image.fromarray(img)
             solarized = ImageOps.solarize(img_pil, threshold=int(t * 255))
             return np.array(solarized)
+
         return ImageEffects._process_batch(img_tensor, process_single, threshold)
 
     @staticmethod
@@ -202,7 +230,7 @@ class ImageEffects:
         def process_single(img, f):
             # Ensure input is uint8
             img_uint8 = img.astype(np.uint8)
-            
+
             # Apply denoising with adjusted parameters
             denoised = cv2.fastNlMeansDenoisingColored(
                 img_uint8,
@@ -210,32 +238,34 @@ class ImageEffects:
                 h=10.0 * f,  # Luminance component
                 hColor=10.0 * f,  # Color component
                 templateWindowSize=7,
-                searchWindowSize=21
+                searchWindowSize=21,
             )
             return denoised
+
         return ImageEffects._process_batch(img_tensor, process_single, strength)
 
     @staticmethod
     def vignette(img_tensor, intensity=0.75):
         def process_single(img, f):
             height, width = img.shape[:2]
-            
+
             # Create radial gradient
             Y, X = np.ogrid[:height, :width]
-            center_x, center_y = width/2, height/2
-            dist_from_center = np.sqrt((X - center_x)**2 + (Y - center_y)**2)
+            center_x, center_y = width / 2, height / 2
+            dist_from_center = np.sqrt((X - center_x) ** 2 + (Y - center_y) ** 2)
             max_dist = np.sqrt(center_x**2 + center_y**2)
-            
+
             # Normalize and adjust intensity
             vignette_mask = 1 - (dist_from_center * f / max_dist)
             vignette_mask = np.clip(vignette_mask, 0, 1)
-            
+
             # Expand mask to match image channels
             vignette_mask = np.expand_dims(vignette_mask, axis=-1)
             vignette_mask = np.repeat(vignette_mask, 3, axis=-1)
-            
+
             # Apply vignette
             return (img * vignette_mask).astype(np.uint8)
+
         return ImageEffects._process_batch(img_tensor, process_single, intensity)
 
     @staticmethod
@@ -251,6 +281,7 @@ class ImageEffects:
             # Blend with original
             blended = Image.blend(img_pil, glowing, f)
             return np.array(blended)
+
         return ImageEffects._process_batch(img_tensor, process_single, strength)
 
     @staticmethod
@@ -265,6 +296,7 @@ class ImageEffects:
             edges = cv2.Canny(gray, 100, 200)
             edges_rgb = cv2.cvtColor(edges, cv2.COLOR_GRAY2RGB)
             return edges_rgb
+
         return ImageEffects._process_batch(img_tensor, process_single, None)
 
     @staticmethod
@@ -274,9 +306,12 @@ class ImageEffects:
             sobelx = cv2.Sobel(gray, cv2.CV_64F, 1, 0, ksize=3)
             sobely = cv2.Sobel(gray, cv2.CV_64F, 0, 1, ksize=3)
             magnitude = np.sqrt(sobelx**2 + sobely**2)
-            magnitude = cv2.normalize(magnitude, None, 0, 255, cv2.NORM_MINMAX).astype(np.uint8)
+            magnitude = cv2.normalize(magnitude, None, 0, 255, cv2.NORM_MINMAX).astype(
+                np.uint8
+            )
             magnitude_rgb = cv2.cvtColor(magnitude, cv2.COLOR_GRAY2RGB)
             return magnitude_rgb
+
         return ImageEffects._process_batch(img_tensor, process_single, None)
 
     @staticmethod
@@ -287,6 +322,7 @@ class ImageEffects:
             edge = cv2.dilate(edge, np.ones((2, 2), np.uint8), iterations=1)
             edge_rgb = cv2.cvtColor(edge, cv2.COLOR_GRAY2RGB)
             return edge_rgb
+
         return ImageEffects._process_batch(img_tensor, process_single, None)
 
     @staticmethod
@@ -297,6 +333,7 @@ class ImageEffects:
             _, binary = cv2.threshold(gray, thresh_value, 255, cv2.THRESH_BINARY)
             binary_rgb = cv2.cvtColor(binary, cv2.COLOR_GRAY2RGB)
             return binary_rgb
+
         return ImageEffects._process_batch(img_tensor, process_single, strength)
 
     @staticmethod
@@ -305,23 +342,25 @@ class ImageEffects:
         # Ensure we're working with RGB
         if len(img_np.shape) != 3:
             img_np = cv2.cvtColor(img_np, cv2.COLOR_GRAY2RGB)
-        
+
         # Convert to grayscale for processing
         gray = cv2.cvtColor(img_np, cv2.COLOR_RGB2GRAY)
-        
+
         # Create inverted blurred image
         inv = 255 - gray
         blur_size = max(3, min(25, int(strength * 25)))
         if blur_size % 2 == 0:
             blur_size += 1
         blur = cv2.GaussianBlur(inv, (blur_size, blur_size), 0)
-        
+
         # Divide gray by inverted blurred image
         sketch = cv2.divide(gray, 255 - blur, scale=256.0)
-        
+
         # Enhance contrast
-        sketch = cv2.normalize(sketch, None, alpha=0, beta=255, norm_type=cv2.NORM_MINMAX)
-        
+        sketch = cv2.normalize(
+            sketch, None, alpha=0, beta=255, norm_type=cv2.NORM_MINMAX
+        )
+
         # Convert back to RGB
         sketch_rgb = cv2.cvtColor(sketch, cv2.COLOR_GRAY2RGB)
         return torch.from_numpy(sketch_rgb.astype(np.float32) / 255.0).unsqueeze(0)
@@ -333,7 +372,7 @@ class ImageEffects:
             gray = cv2.cvtColor(img_np, cv2.COLOR_RGB2GRAY)
         else:
             gray = img_np
-        kernel = np.array([[0,0,0], [0,1,0], [0,0,-1]]) * strength
+        kernel = np.array([[0, 0, 0], [0, 1, 0], [0, 0, -1]]) * strength
         relief = cv2.filter2D(gray, -1, kernel) + 128
         return ImageEffects._convert_to_tensor(relief)
 
@@ -357,36 +396,36 @@ class ImageEffects:
     def desaturate(img_tensor):
         # Convert to HSV using tensor operations
         img = img_tensor.clone()
-        
+
         # Get RGB channels
         r, g, b = img[..., 0], img[..., 1], img[..., 2]
-        
+
         # Calculate Value (max of RGB)
         v = torch.max(torch.max(r, g), b)
-        
+
         # Calculate minimum of RGB
         min_rgb = torch.min(torch.min(r, g), b)
-        
+
         # Calculate Saturation
         s = torch.where(v != 0, (v - min_rgb) / v, torch.zeros_like(v))
-        
+
         # Reduce saturation (keeping 30% of original saturation)
         s = s * 0.3
-        
+
         # Calculate delta
         delta = v * s
-        
+
         # Calculate RGB values with reduced saturation
         if torch.numel(delta) > 0:
             min_rgb = v - delta
-            
+
             # Recalculate RGB with new saturation
             mask = v != 0
             r = torch.where(mask, min_rgb + (r - min_rgb) * 0.3, r)
             g = torch.where(mask, min_rgb + (g - min_rgb) * 0.3, g)
             b = torch.where(mask, min_rgb + (b - min_rgb) * 0.3, b)
-            
+
             # Stack channels back together
             return torch.stack([r, g, b], dim=-1)
-        
+
         return img_tensor

@@ -1,23 +1,26 @@
-from server import PromptServer
 import random
+
 
 class DP_10_String_Switch_Or_Connect:
     def __init__(self):
         self.selected_index = 1
         self.id = str(random.randint(0, 2**64))
-        
+
     @classmethod
     def INPUT_TYPES(s):
         return {
             "required": {
-                "mode": ([
-                    "Switch", 
-                    "Connected",
-                    "Connected with comma",
-                    "Connected with line break",
-                    "Connected with line break+",
-                    "Switch Remove neg"
-                ], {"default": "Switch"}),
+                "mode": (
+                    [
+                        "Switch",
+                        "Connected",
+                        "Connected with comma",
+                        "Connected with line break",
+                        "Connected with line break+",
+                        "Switch Remove neg",
+                    ],
+                    {"default": "Switch"},
+                ),
                 "index": ("INT", {"default": 1, "min": 1, "max": 10, "step": 1}),
             },
             "optional": {
@@ -31,11 +34,17 @@ class DP_10_String_Switch_Or_Connect:
                 "String_08": ("STRING", {"multiline": True, "forceInput": True}),
                 "String_09": ("STRING", {"multiline": True, "forceInput": True}),
                 "String_10": ("STRING", {"multiline": True, "forceInput": True}),
-            }
+            },
         }
-    
-    RETURN_TYPES = ("STRING", "INT",)
-    RETURN_NAMES = ("TEXT", "CURRENT_INDEX",)
+
+    RETURN_TYPES = (
+        "STRING",
+        "INT",
+    )
+    RETURN_NAMES = (
+        "TEXT",
+        "CURRENT_INDEX",
+    )
     FUNCTION = "process"
     CATEGORY = "DP/text"
 
@@ -58,14 +67,16 @@ class DP_10_String_Switch_Or_Connect:
 
             if mode == "Switch" or mode == "Switch Remove neg":
                 # Format the index with leading zero
-                selected_key = f"String_{index:02d}"  # This ensures "10" becomes "String_10"
+                selected_key = (
+                    f"String_{index:02d}"  # This ensures "10" becomes "String_10"
+                )
                 selected = kwargs.get(selected_key)
-                
+
                 if selected is not None:
                     if isinstance(selected, list):
                         selected = " ".join(str(x) for x in selected)
                     selected = str(selected).strip()
-                    
+
                     # Handle "Switch Remove neg" mode
                     if mode == "Switch Remove neg" and selected:
                         neg_index = selected.find("--neg")
@@ -73,11 +84,13 @@ class DP_10_String_Switch_Or_Connect:
                             selected = selected[:neg_index].strip()
                 else:
                     selected = ""
-                    
+
                 return (selected, index)
 
             # Get sorted strings
-            sorted_strings = [connected_strings[k] for k in sorted(connected_strings.keys())]
+            sorted_strings = [
+                connected_strings[k] for k in sorted(connected_strings.keys())
+            ]
 
             if mode == "Connected":
                 result = " ".join(sorted_strings)
@@ -91,38 +104,48 @@ class DP_10_String_Switch_Or_Connect:
                 result = ""
 
             return (result, index)
-            
+
         except Exception as e:
             print(f"Error in DP_10_String_Switch_Or_Connect: {str(e)}")
             return ("", 1)
+
 
 class DP_3_String_Switch_Or_Connect:
     def __init__(self):
         self.selected_index = 1
         self.id = str(random.randint(0, 2**64))
-        
+
     @classmethod
     def INPUT_TYPES(s):
         return {
             "required": {
-                "mode": ([
-                    "Switch", 
-                    "Connected",
-                    "Connected with comma",
-                    "Connected with line break",
-                    "Connected with line break+"
-                ], {"default": "Switch"}),
+                "mode": (
+                    [
+                        "Switch",
+                        "Connected",
+                        "Connected with comma",
+                        "Connected with line break",
+                        "Connected with line break+",
+                    ],
+                    {"default": "Switch"},
+                ),
                 "index": ("INT", {"default": 1, "min": 1, "max": 3, "step": 1}),
             },
             "optional": {
                 "String_01": ("STRING", {"multiline": True, "forceInput": True}),
                 "String_02": ("STRING", {"multiline": True, "forceInput": True}),
                 "String_03": ("STRING", {"multiline": True, "forceInput": True}),
-            }
+            },
         }
-    
-    RETURN_TYPES = ("STRING", "INT",)
-    RETURN_NAMES = ("TEXT", "CURRENT_INDEX",)
+
+    RETURN_TYPES = (
+        "STRING",
+        "INT",
+    )
+    RETURN_NAMES = (
+        "TEXT",
+        "CURRENT_INDEX",
+    )
     FUNCTION = "process"
     CATEGORY = "DP/text"
 
@@ -146,18 +169,20 @@ class DP_3_String_Switch_Or_Connect:
             if mode == "Switch":
                 selected_key = f"String_{index:02d}"
                 selected = kwargs.get(selected_key)
-                
+
                 if selected is not None:
                     if isinstance(selected, list):
                         selected = " ".join(str(x) for x in selected)
                     selected = str(selected).strip()
                 else:
                     selected = ""
-                    
+
                 return (selected, index)
 
             # Get sorted strings
-            sorted_strings = [connected_strings[k] for k in sorted(connected_strings.keys())]
+            sorted_strings = [
+                connected_strings[k] for k in sorted(connected_strings.keys())
+            ]
 
             if mode == "Connected":
                 result = " ".join(sorted_strings)
@@ -171,27 +196,31 @@ class DP_3_String_Switch_Or_Connect:
                 result = ""
 
             return (result, index)
-            
+
         except Exception as e:
             print(f"Error in DP_3_String_Switch_Or_Connect: {str(e)}")
             return ("", 1)
+
 
 class DP_5_String_Switch_Or_Connect:
     def __init__(self):
         self.selected_index = 1
         self.id = str(random.randint(0, 2**64))
-        
+
     @classmethod
     def INPUT_TYPES(s):
         return {
             "required": {
-                "mode": ([
-                    "Switch", 
-                    "Connected",
-                    "Connected with comma",
-                    "Connected with line break",
-                    "Connected with line break+"
-                ], {"default": "Switch"}),
+                "mode": (
+                    [
+                        "Switch",
+                        "Connected",
+                        "Connected with comma",
+                        "Connected with line break",
+                        "Connected with line break+",
+                    ],
+                    {"default": "Switch"},
+                ),
                 "index": ("INT", {"default": 1, "min": 1, "max": 5, "step": 1}),
             },
             "optional": {
@@ -200,11 +229,17 @@ class DP_5_String_Switch_Or_Connect:
                 "String_03": ("STRING", {"multiline": True, "forceInput": True}),
                 "String_04": ("STRING", {"multiline": True, "forceInput": True}),
                 "String_05": ("STRING", {"multiline": True, "forceInput": True}),
-            }
+            },
         }
-    
-    RETURN_TYPES = ("STRING", "INT",)
-    RETURN_NAMES = ("TEXT", "CURRENT_INDEX",)
+
+    RETURN_TYPES = (
+        "STRING",
+        "INT",
+    )
+    RETURN_NAMES = (
+        "TEXT",
+        "CURRENT_INDEX",
+    )
     FUNCTION = "process"
     CATEGORY = "DP/text"
 
@@ -228,18 +263,20 @@ class DP_5_String_Switch_Or_Connect:
             if mode == "Switch":
                 selected_key = f"String_{index:02d}"
                 selected = kwargs.get(selected_key)
-                
+
                 if selected is not None:
                     if isinstance(selected, list):
                         selected = " ".join(str(x) for x in selected)
                     selected = str(selected).strip()
                 else:
                     selected = ""
-                    
+
                 return (selected, index)
 
             # Get sorted strings
-            sorted_strings = [connected_strings[k] for k in sorted(connected_strings.keys())]
+            sorted_strings = [
+                connected_strings[k] for k in sorted(connected_strings.keys())
+            ]
 
             if mode == "Connected":
                 result = " ".join(sorted_strings)
@@ -253,7 +290,7 @@ class DP_5_String_Switch_Or_Connect:
                 result = ""
 
             return (result, index)
-            
+
         except Exception as e:
             print(f"Error in DP_5_String_Switch_Or_Connect: {str(e)}")
-            return ("", 1) 
+            return ("", 1)

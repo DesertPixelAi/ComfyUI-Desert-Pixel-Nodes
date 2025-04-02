@@ -1,26 +1,33 @@
-import random
 import os
+import random
 import re
+
 
 class DP_Random_Superhero_Prompt_Generator:
     def __init__(self):
         # Get the directory where the files are located
         node_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
         data_dir = os.path.join(node_dir, "data", "super_hero_prompt_generator")
-        
+
         # Add gender list
         self.gender = ["male", "female"]
-        
+
         # Load all text files
         self.hero_names = self.load_file(os.path.join(data_dir, "hero_names.txt"))
         self.hero_base = self.load_file(os.path.join(data_dir, "hero_base.txt"))
         self.power_source = self.load_file(os.path.join(data_dir, "power_source.txt"))
-        self.costume_material = self.load_file(os.path.join(data_dir, "costume_material.txt"))
-        self.costume_design = self.load_file(os.path.join(data_dir, "costume_design.txt"))
+        self.costume_material = self.load_file(
+            os.path.join(data_dir, "costume_material.txt")
+        )
+        self.costume_design = self.load_file(
+            os.path.join(data_dir, "costume_design.txt")
+        )
         self.powers_visual = self.load_file(os.path.join(data_dir, "powers_visual.txt"))
         self.scene_setting = self.load_file(os.path.join(data_dir, "scene_setting.txt"))
         self.action_pose = self.load_file(os.path.join(data_dir, "action_pose.txt"))
-        self.lighting_effects = self.load_file(os.path.join(data_dir, "lighting_effects.txt"))
+        self.lighting_effects = self.load_file(
+            os.path.join(data_dir, "lighting_effects.txt")
+        )
         self.atmosphere = self.load_file(os.path.join(data_dir, "atmosphere.txt"))
         self.styles = self.load_file(os.path.join(data_dir, "styles.txt"))
         self.color_schemes = self.load_file(os.path.join(data_dir, "color_schemes.txt"))
@@ -29,7 +36,7 @@ class DP_Random_Superhero_Prompt_Generator:
         self.hair_colors = self.load_file(os.path.join(data_dir, "hair_colors.txt"))
         self.face_masks = self.load_file(os.path.join(data_dir, "face_masks.txt"))
         self.ethnicities = self.load_file(os.path.join(data_dir, "ethnicities.txt"))
-        
+
         # Store last fixed selections
         self.fixed_selections = {
             "hero_base": 0,
@@ -49,42 +56,122 @@ class DP_Random_Superhero_Prompt_Generator:
             "face_mask": 0,
             "color_scheme": 0,
             "logo_design": 0,
-            "hero_name": 0
+            "hero_name": 0,
         }
         self.last_seed = 0
 
         # Add name generation lists
         self.prefixes = [
-            "Ultra", "Mega", "Super", "Hyper", "Omega", "Alpha", "Neo", "Quantum", 
-            "Cosmic", "Thunder", "Shadow", "Star", "Night", "Storm", "Crystal",
-            "Solar", "Lunar", "Cyber", "Techno", "Bio", "Psy", "Meta", "Astro",
-            "Pyro", "Cryo", "Aero", "Terra", "Electro", "Photo", "Hydro", "Gyro",
-            "Mecha", "Fusion", "Prime", "Proto", "Spectral", "Phantom", "Ghost"
+            "Ultra",
+            "Mega",
+            "Super",
+            "Hyper",
+            "Omega",
+            "Alpha",
+            "Neo",
+            "Quantum",
+            "Cosmic",
+            "Thunder",
+            "Shadow",
+            "Star",
+            "Night",
+            "Storm",
+            "Crystal",
+            "Solar",
+            "Lunar",
+            "Cyber",
+            "Techno",
+            "Bio",
+            "Psy",
+            "Meta",
+            "Astro",
+            "Pyro",
+            "Cryo",
+            "Aero",
+            "Terra",
+            "Electro",
+            "Photo",
+            "Hydro",
+            "Gyro",
+            "Mecha",
+            "Fusion",
+            "Prime",
+            "Proto",
+            "Spectral",
+            "Phantom",
+            "Ghost",
         ]
         self.elements = [
-            "Fire", "Ice", "Wind", "Earth", "Lightning", "Light", "Dark", "Time",
-            "Space", "Metal", "Plasma", "Energy", "Gravity", "Force", "Mind",
-            "Spirit", "Nature", "Tech", "Void", "Quantum", "Cosmic", "Solar",
-            "Flame", "Frost", "Storm", "Stone", "Thunder", "Shadow", "Chaos"
+            "Fire",
+            "Ice",
+            "Wind",
+            "Earth",
+            "Lightning",
+            "Light",
+            "Dark",
+            "Time",
+            "Space",
+            "Metal",
+            "Plasma",
+            "Energy",
+            "Gravity",
+            "Force",
+            "Mind",
+            "Spirit",
+            "Nature",
+            "Tech",
+            "Void",
+            "Quantum",
+            "Cosmic",
+            "Solar",
+            "Flame",
+            "Frost",
+            "Storm",
+            "Stone",
+            "Thunder",
+            "Shadow",
+            "Chaos",
         ]
         self.animals = [
-            "Wolf", "Lion", "Tiger", "Dragon", "Phoenix", "Eagle", "Hawk", "Bear",
-            "Panther", "Falcon", "Cobra", "Viper", "Fox", "Owl", "Raven", "Shark",
-            "Scorpion", "Mantis", "Jaguar", "Leopard", "Griffin", "Hydra", "Wyrm",
-            "Basilisk", "Chimera", "Manticore", "Kraken", "Leviathan", "Behemoth"
+            "Wolf",
+            "Lion",
+            "Tiger",
+            "Dragon",
+            "Phoenix",
+            "Eagle",
+            "Hawk",
+            "Bear",
+            "Panther",
+            "Falcon",
+            "Cobra",
+            "Viper",
+            "Fox",
+            "Owl",
+            "Raven",
+            "Shark",
+            "Scorpion",
+            "Mantis",
+            "Jaguar",
+            "Leopard",
+            "Griffin",
+            "Hydra",
+            "Wyrm",
+            "Basilisk",
+            "Chimera",
+            "Manticore",
+            "Kraken",
+            "Leviathan",
+            "Behemoth",
         ]
 
     @classmethod
     def INPUT_TYPES(cls):
         return {
             "required": {
-                "style_complexity": ("INT", {
-                    "default": 3,
-                    "min": 1,
-                    "max": 5,
-                    "step": 1,
-                    "display": "number"
-                }),
+                "style_complexity": (
+                    "INT",
+                    {"default": 3, "min": 1, "max": 5, "step": 1, "display": "number"},
+                ),
                 "generation_mode": (["fixed", "randomize"], {"default": "randomize"}),
             }
         }
@@ -95,12 +182,15 @@ class DP_Random_Superhero_Prompt_Generator:
 
     def load_file(self, path):
         try:
-            with open(path, 'r', encoding='utf-8') as f:
+            with open(path, "r", encoding="utf-8") as f:
                 # Skip comments, empty lines, and lines starting with '/'
-                return [line.strip() for line in f 
-                       if line.strip() 
-                       and not line.strip().startswith(('#', '/'))
-                       and not line.strip().startswith('/*')]
+                return [
+                    line.strip()
+                    for line in f
+                    if line.strip()
+                    and not line.strip().startswith(("#", "/"))
+                    and not line.strip().startswith("/*")
+                ]
         except Exception as e:
             print(f"Error loading file {path}: {e}")
             return []
@@ -115,8 +205,8 @@ class DP_Random_Superhero_Prompt_Generator:
         return items[index % len(items)]
 
     def generate_code(self, rng):
-        chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-        return ''.join(rng.choice(chars) for _ in range(4))
+        chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        return "".join(rng.choice(chars) for _ in range(4))
 
     def generate_hero_name(self, rng):
         patterns = [
@@ -128,52 +218,84 @@ class DP_Random_Superhero_Prompt_Generator:
 
     def clean_prompt(self, prompt):
         # Remove multiple spaces
-        cleaned = ' '.join(prompt.split())
-        
+        cleaned = " ".join(prompt.split())
+
         # Remove spaces before punctuation
-        cleaned = re.sub(r'\s+([,.!?])', r'\1', cleaned)
-        
+        cleaned = re.sub(r"\s+([,.!?])", r"\1", cleaned)
+
         # Ensure single space after punctuation
-        cleaned = re.sub(r'([,.!?])\s*', r'\1 ', cleaned)
-        
+        cleaned = re.sub(r"([,.!?])\s*", r"\1 ", cleaned)
+
         # Remove any trailing/leading whitespace
         cleaned = cleaned.strip()
-        
+
         return cleaned
 
     def generate(self, style_complexity, generation_mode):
         if generation_mode == "randomize":
-            seed = random.randint(0, 0xffffffffffffffff)
+            seed = random.randint(0, 0xFFFFFFFFFFFFFFFF)
             self.last_seed = seed
         else:
             seed = self.last_seed
 
         rng = random.Random(seed)
-        
+
         style_counts = {1: 2, 2: 3, 3: 4, 4: 6, 5: 8}
         num_styles = style_counts[style_complexity]
 
         if generation_mode == "fixed":
             # Use fixed selections
-            hero_base = self.get_fixed_selection(self.hero_base, self.fixed_selections['hero_base'])
-            power_source = self.get_fixed_selection(self.power_source, self.fixed_selections['power_source'])
-            costume_material = self.get_fixed_selection(self.costume_material, self.fixed_selections['costume_material'])
-            costume_design = self.get_fixed_selection(self.costume_design, self.fixed_selections['costume_design'])
-            powers_visual = self.get_fixed_selection(self.powers_visual, self.fixed_selections['powers_visual'])
-            scene_setting = self.get_fixed_selection(self.scene_setting, self.fixed_selections['scene_setting'])
-            action_pose = self.get_fixed_selection(self.action_pose, self.fixed_selections['action_pose'])
-            lighting = self.get_fixed_selection(self.lighting_effects, self.fixed_selections['lighting_effects'])
-            atmosphere = self.get_fixed_selection(self.atmosphere, self.fixed_selections['atmosphere'])
-            gender = self.get_fixed_selection(self.gender, self.fixed_selections['gender'])
-            ethnicity = self.get_fixed_selection(self.ethnicities, self.fixed_selections['ethnicity'])
-            face_mask = self.get_fixed_selection(self.face_masks, self.fixed_selections['face_mask'])
-            color_scheme = self.get_fixed_selection(self.color_schemes, self.fixed_selections['color_scheme'])
-            logo_design = self.get_fixed_selection(self.hero_logos, self.fixed_selections['logo_design'])
-            hero_name = self.get_fixed_selection(self.hero_names, self.fixed_selections['hero_name'])
-            
-            if not self.fixed_selections['styles']:
-                self.fixed_selections['styles'] = self.get_random_styles(num_styles, rng)
-            selected_styles = self.fixed_selections['styles']
+            hero_base = self.get_fixed_selection(
+                self.hero_base, self.fixed_selections["hero_base"]
+            )
+            power_source = self.get_fixed_selection(
+                self.power_source, self.fixed_selections["power_source"]
+            )
+            costume_material = self.get_fixed_selection(
+                self.costume_material, self.fixed_selections["costume_material"]
+            )
+            costume_design = self.get_fixed_selection(
+                self.costume_design, self.fixed_selections["costume_design"]
+            )
+            powers_visual = self.get_fixed_selection(
+                self.powers_visual, self.fixed_selections["powers_visual"]
+            )
+            scene_setting = self.get_fixed_selection(
+                self.scene_setting, self.fixed_selections["scene_setting"]
+            )
+            action_pose = self.get_fixed_selection(
+                self.action_pose, self.fixed_selections["action_pose"]
+            )
+            lighting = self.get_fixed_selection(
+                self.lighting_effects, self.fixed_selections["lighting_effects"]
+            )
+            atmosphere = self.get_fixed_selection(
+                self.atmosphere, self.fixed_selections["atmosphere"]
+            )
+            gender = self.get_fixed_selection(
+                self.gender, self.fixed_selections["gender"]
+            )
+            ethnicity = self.get_fixed_selection(
+                self.ethnicities, self.fixed_selections["ethnicity"]
+            )
+            face_mask = self.get_fixed_selection(
+                self.face_masks, self.fixed_selections["face_mask"]
+            )
+            color_scheme = self.get_fixed_selection(
+                self.color_schemes, self.fixed_selections["color_scheme"]
+            )
+            logo_design = self.get_fixed_selection(
+                self.hero_logos, self.fixed_selections["logo_design"]
+            )
+            hero_name = self.get_fixed_selection(
+                self.hero_names, self.fixed_selections["hero_name"]
+            )
+
+            if not self.fixed_selections["styles"]:
+                self.fixed_selections["styles"] = self.get_random_styles(
+                    num_styles, rng
+                )
+            selected_styles = self.fixed_selections["styles"]
         else:
             # Generate new random selections
             hero_base = rng.choice(self.hero_base)
@@ -190,32 +312,36 @@ class DP_Random_Superhero_Prompt_Generator:
             face_mask = rng.choice(self.face_masks)
             color_scheme = rng.choice(self.color_schemes)
             logo_design = rng.choice(self.hero_logos)
-            hero_name = rng.choice(self.hero_names) if self.hero_names else "Unknown Hero"
+            hero_name = (
+                rng.choice(self.hero_names) if self.hero_names else "Unknown Hero"
+            )
             selected_styles = self.get_random_styles(num_styles, rng)
-            
+
             # Store selections for fixed mode
-            self.fixed_selections.update({
-                'hero_base': self.hero_base.index(hero_base),
-                'power_source': self.power_source.index(power_source),
-                'costume_material': self.costume_material.index(costume_material),
-                'costume_design': self.costume_design.index(costume_design),
-                'powers_visual': self.powers_visual.index(powers_visual),
-                'scene_setting': self.scene_setting.index(scene_setting),
-                'action_pose': self.action_pose.index(action_pose),
-                'lighting_effects': self.lighting_effects.index(lighting),
-                'atmosphere': self.atmosphere.index(atmosphere),
-                'gender': self.gender.index(gender),
-                'ethnicity': self.ethnicities.index(ethnicity),
-                'face_mask': self.face_masks.index(face_mask),
-                'color_scheme': self.color_schemes.index(color_scheme),
-                'logo_design': self.hero_logos.index(logo_design),
-                'hero_name': self.hero_names.index(hero_name),
-                'styles': selected_styles
-            })
+            self.fixed_selections.update(
+                {
+                    "hero_base": self.hero_base.index(hero_base),
+                    "power_source": self.power_source.index(power_source),
+                    "costume_material": self.costume_material.index(costume_material),
+                    "costume_design": self.costume_design.index(costume_design),
+                    "powers_visual": self.powers_visual.index(powers_visual),
+                    "scene_setting": self.scene_setting.index(scene_setting),
+                    "action_pose": self.action_pose.index(action_pose),
+                    "lighting_effects": self.lighting_effects.index(lighting),
+                    "atmosphere": self.atmosphere.index(atmosphere),
+                    "gender": self.gender.index(gender),
+                    "ethnicity": self.ethnicities.index(ethnicity),
+                    "face_mask": self.face_masks.index(face_mask),
+                    "color_scheme": self.color_schemes.index(color_scheme),
+                    "logo_design": self.hero_logos.index(logo_design),
+                    "hero_name": self.hero_names.index(hero_name),
+                    "styles": selected_styles,
+                }
+            )
 
         # Select one style as the medium
         prompt_style = selected_styles[0]
-        
+
         # Get character details
         character_details = f"wearing {face_mask}"
 
@@ -229,9 +355,9 @@ class DP_Random_Superhero_Prompt_Generator:
         #  highly detailed, hyper-realistic comics art,
         # Clean and format the prompt
         cleaned_prompt = self.clean_prompt(prompt)
-        
+
         return (cleaned_prompt,)
 
     @classmethod
     def IS_CHANGED(cls, **kwargs):
-        return float("NaN") 
+        return float("NaN")

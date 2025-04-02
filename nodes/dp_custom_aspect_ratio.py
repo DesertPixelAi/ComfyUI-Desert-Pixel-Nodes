@@ -3,18 +3,11 @@ class DP_Custom_Aspect_Ratio:
     def INPUT_TYPES(cls):
         return {
             "required": {
-                "width": ("INT", {
-                    "default": 1024,
-                    "min": 256,
-                    "max": 2048,
-                    "step": 8
-                }),
-                "height": ("INT", {
-                    "default": 1024,
-                    "min": 256,
-                    "max": 2048,
-                    "step": 8
-                }),
+                "width": ("INT", {"default": 1024, "min": 256, "max": 2048, "step": 8}),
+                "height": (
+                    "INT",
+                    {"default": 1024, "min": 256, "max": 2048, "step": 8},
+                ),
             }
         }
 
@@ -25,4 +18,4 @@ class DP_Custom_Aspect_Ratio:
 
     def get_dimensions(self, width, height):
         custom_settings = (width, height)
-        return (custom_settings,) 
+        return (custom_settings,)

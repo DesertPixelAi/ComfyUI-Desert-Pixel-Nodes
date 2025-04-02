@@ -1,5 +1,7 @@
 import random
+
 from server import PromptServer
+
 
 class DP_Line_Cycler:
     def __init__(self):
@@ -12,11 +14,9 @@ class DP_Line_Cycler:
             "required": {
                 "Text": ("STRING", {"multiline": True, "default": ""}),
                 "Cycler_Mode": (["increment", "decrement", "randomize", "fixed"],),
-                "index": ("INT", {"default": 0, "min": 0, "max": 0xffffffffffffffff}),
+                "index": ("INT", {"default": 0, "min": 0, "max": 0xFFFFFFFFFFFFFFFF}),
             },
-            "hidden": {
-                "unique_id": "UNIQUE_ID"
-            },
+            "hidden": {"unique_id": "UNIQUE_ID"},
         }
 
     RETURN_TYPES = ("STRING",)
@@ -31,7 +31,7 @@ class DP_Line_Cycler:
     def cycle(self, Text, Cycler_Mode, index, unique_id):
         try:
             # Clean and validate text lines
-            lines = [line.strip() for line in Text.split('\n') if line.strip()]
+            lines = [line.strip() for line in Text.split("\n") if line.strip()]
 
             # Handle empty text case
             if not lines:
@@ -67,17 +67,20 @@ class DP_Line_Cycler:
 
             # Update UI
             try:
-                PromptServer.instance.send_sync("update_node", {
-                    "node_id": unique_id,
-                    "index_value": self.current_index,
-                    "widget_name": "index",
-                    "force_widget_update": True
-                })
+                PromptServer.instance.send_sync(
+                    "update_node",
+                    {
+                        "node_id": unique_id,
+                        "index_value": self.current_index,
+                        "widget_name": "index",
+                        "force_widget_update": True,
+                    },
+                )
             except Exception as e:
                 print(f"Error sending WebSocket message: {str(e)}")
 
             return (selected_line,)
-            
+
         except Exception as e:
             print(f"Error in DP_Line_Cycler: {str(e)}")
-            return ("",) 
+            return ("",)

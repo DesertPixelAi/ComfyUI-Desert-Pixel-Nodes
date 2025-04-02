@@ -8,7 +8,7 @@ app.registerExtension({
             const onNodeCreated = nodeType.prototype.onNodeCreated;
             nodeType.prototype.onNodeCreated = function () {
                 const result = onNodeCreated ? onNodeCreated.apply(this, arguments) : undefined;
-                
+
                 // Handle WebSocket messages
                 api.addEventListener("update_node", ({ detail }) => {
                     if (detail.node_id === this.id) {
@@ -19,7 +19,7 @@ app.registerExtension({
                         }
                     }
                 });
-                
+
                 return result;
             };
         }

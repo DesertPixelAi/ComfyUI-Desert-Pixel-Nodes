@@ -3,7 +3,7 @@ import { api } from "../../scripts/api.js";
 
 app.registerExtension({
     name: "dp.art.style.generator",
-    
+
     async nodeCreated(node) {
         if (node.comfyClass !== "DP_Art_Style_Generator") return;
 
@@ -16,7 +16,7 @@ app.registerExtension({
 
         // Handle style name selection
         const originalStyleCallback = styleNameWidget.callback;
-        styleNameWidget.callback = function(value) {
+        styleNameWidget.callback = function (value) {
             if (value !== "None" && modeWidget.value === "fixed") {
                 // Find index of selected style
                 const styleIndex = styleNameWidget.options.findIndex(opt => opt === value);
@@ -24,7 +24,7 @@ app.registerExtension({
                     indexWidget.value = styleIndex;
                 }
             }
-            
+
             if (originalStyleCallback) {
                 return originalStyleCallback.call(this, value);
             }
@@ -32,7 +32,7 @@ app.registerExtension({
 
         // Handle mode changes
         const originalModeCallback = modeWidget.callback;
-        modeWidget.callback = function(value) {
+        modeWidget.callback = function (value) {
             // When switching to fixed mode, update index based on current style
             if (value === "fixed" && styleNameWidget.value !== "None") {
                 const styleIndex = styleNameWidget.options.findIndex(opt => opt === styleNameWidget.value);
@@ -40,7 +40,7 @@ app.registerExtension({
                     indexWidget.value = styleIndex;
                 }
             }
-            
+
             if (originalModeCallback) {
                 return originalModeCallback.call(this, value);
             }
@@ -51,7 +51,7 @@ app.registerExtension({
 // Listen for style updates from server
 api.addEventListener("dp_style_update", (event) => {
     const { node_id, index, style_name } = event.detail;
-    
+
     const node = app.graph.getNodeById(node_id);
     if (!node) return;
 

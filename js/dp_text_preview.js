@@ -78,4 +78,4 @@ app.registerExtension({
             return result;
         };
     }
-}); 
+});
