@@ -65,6 +65,8 @@ try:
     from .nodes.dp_load_image_small import DP_Load_Image_Effects_Small
     from .nodes.dp_save_preview_image import DP_Save_Preview_Image
     from .nodes.dp_load_image_minimal import DP_Load_Image_Minimal
+    from .nodes.dp_5_image_and_mask_switch import DP_5_Image_And_Mask_Switch
+    from .nodes.dp_resize_image_and_mask import DP_Resize_Image_And_Mask
     
     # Text and prompt nodes
     from .nodes.dp_prompt_inverter import DP_Prompt_Inverter
@@ -202,6 +204,15 @@ try:
     # Add this import near the other imports:
     from .nodes.dp_load_image_with_seed import DP_Load_Image_With_Seed
 
+    # Add this import near the other imports:
+    from .nodes.dp_load_image_folder import DP_Load_Image_Folder
+
+    # Add this import near the other image processing nodes:
+    from .nodes.dp_stitch_2_images import DP_Stitch_2_Images
+
+    # Add this import near the other image processing nodes:
+    from .nodes.dp_image_to_pixelgrid import DP_Image_To_Pixelgrid
+
     # Add to NODE_CLASS_MAPPINGS dictionary:
     NODE_CLASS_MAPPINGS.update({
         "DP ControlNet Apply Advanced": DP_ControlNetApplyAdvanced,
@@ -232,6 +243,11 @@ try:
         "DP Prompt Travel Prompt": DP_Prompt_Travel_Prompt,
         "DP Sampler With Info": DP_Sampler_With_Info,
         "DP Load Image With Seed": DP_Load_Image_With_Seed,
+        "DP Load Image Folder": DP_Load_Image_Folder,
+        "DP Stitch 2 Images": DP_Stitch_2_Images,
+        "DP Image To Pixelgrid": DP_Image_To_Pixelgrid,
+        "DP 5 Image And Mask Switch": DP_5_Image_And_Mask_Switch,
+        "DP Resize Image And Mask": DP_Resize_Image_And_Mask,
     })
 
     # Add this to NODE_DISPLAY_NAME_MAPPINGS:
@@ -262,7 +278,12 @@ try:
     NODE_DISPLAY_NAME_MAPPINGS["DP Prompt Travel Prompt"] = "DP Prompt Travel Prompt"
     NODE_DISPLAY_NAME_MAPPINGS["DP Sampler With Info"] = "DP Sampler With Info"
     NODE_DISPLAY_NAME_MAPPINGS["DP Load Image With Seed"] = "DP Load Image With Seed"
+    NODE_DISPLAY_NAME_MAPPINGS["DP Load Image Folder"] = "DP Load Image Folder"
     NODE_DISPLAY_NAME_MAPPINGS["DP Line Cycler"] = "DP Line Cycler"
+    NODE_DISPLAY_NAME_MAPPINGS["DP Stitch 2 Images"] = "DP Stitch 2 Images"
+    NODE_DISPLAY_NAME_MAPPINGS["DP Image To Pixelgrid"] = "DP Image To Pixelgrid"
+    NODE_DISPLAY_NAME_MAPPINGS["DP 5 Image And Mask Switch"] = "DP 5 Image And Mask Switch"
+    NODE_DISPLAY_NAME_MAPPINGS["DP Resize Image And Mask"] = "DP Resize Image And Mask"
 
     # Add all nodes to the mappings
     NODE_CLASS_MAPPINGS = {
@@ -355,6 +376,11 @@ try:
         "DP Float Stepper": DP_Float_Stepper,
         "DP Prompt Travel Prompt": DP_Prompt_Travel_Prompt,
         "DP Load Image With Seed": DP_Load_Image_With_Seed,
+        "DP Load Image Folder": DP_Load_Image_Folder,
+        "DP Stitch 2 Images": DP_Stitch_2_Images,
+        "DP Image To Pixelgrid": DP_Image_To_Pixelgrid,
+        "DP 5 Image And Mask Switch": DP_5_Image_And_Mask_Switch,
+        "DP Resize Image And Mask": DP_Resize_Image_And_Mask,
     }
 
     # Create display names
@@ -375,6 +401,8 @@ try:
     NODE_DISPLAY_NAME_MAPPINGS["DP 3 Images Switch Or Batch"] = "DP 3 Images Switch Or Batch"
     NODE_DISPLAY_NAME_MAPPINGS["DP 5 Images Switch Or Batch"] = "DP 5 Images Switch Or Batch"
     NODE_DISPLAY_NAME_MAPPINGS["DP String Text With Sdxl Weight"] = "DP String Text With SDXL Weight"
+    NODE_DISPLAY_NAME_MAPPINGS["DP 5 Image And Mask Switch"] = "DP 5 Image And Mask Switch"
+    NODE_DISPLAY_NAME_MAPPINGS["DP Resize Image And Mask"] = "DP Resize Image And Mask"
 
     # Set web directory
     WEB_DIRECTORY = "js"
@@ -397,6 +425,17 @@ try:
     # Add to NODE_DISPLAY_NAME_MAPPINGS:
     NODE_DISPLAY_NAME_MAPPINGS["DP Image Slice To Grid"] = "DP Image Slice To Grid"
     NODE_DISPLAY_NAME_MAPPINGS["DP Image Grid To Image"] = "DP Image Grid To Image"
+
+    # Add this import near the other imports:
+    from .nodes.dp_versatile_prompt_subjects_generator import DP_Versatile_Prompt_Subjects_Generator
+
+    # Add to NODE_CLASS_MAPPINGS dictionary:
+    NODE_CLASS_MAPPINGS.update({
+        "DP Versatile Prompt Subjects Generator": DP_Versatile_Prompt_Subjects_Generator,
+    })
+
+    # Add to NODE_DISPLAY_NAME_MAPPINGS:
+    NODE_DISPLAY_NAME_MAPPINGS["DP Versatile Prompt Subjects Generator"] = "DP Versatile Prompt Subjects Generator"
 
 except Exception as e:
     logger.critical(f"Critical error initializing DP_Nodes: {str(e)}", exc_info=True)
