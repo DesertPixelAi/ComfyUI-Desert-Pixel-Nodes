@@ -30,8 +30,12 @@ class DP_Line_Cycler:
 
     def cycle(self, Text, Cycler_Mode, index, unique_id):
         try:
-            # Clean and validate text lines
-            lines = [line.strip() for line in Text.split('\n') if line.strip()]
+            # Clean and validate text lines, ignore comments and empty lines
+            lines = [
+                line.strip() 
+                for line in Text.split('\n') 
+                if line.strip() and not line.strip().startswith(('/', '//', '#'))
+            ]
 
             # Handle empty text case
             if not lines:
