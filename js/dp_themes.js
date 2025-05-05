@@ -321,7 +321,14 @@ export const DPThemes = {
         "DP Advanced Sampler",
         "DP Float Stepper",
         "DP Prompt Travel Prompt",
+        "DP Versatile Prompt Subjects Generator",
         "DP Image Slice To Grid",
-        "DP Image Grid To Image"
+        "DP Image Grid To Image",
+        "DP 5 Image And Mask Switch",
+        "DP Resize Image And Mask",
+        "DP Load Image With Seed",
+        "DP Load Image Folder",
+        "DP Stitch 2 Images",
+        "DP Image To Pixelgrid"
     ]
 };
