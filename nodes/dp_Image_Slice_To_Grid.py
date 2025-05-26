@@ -1,5 +1,6 @@
 import torch
 import numpy as np
+import os
 
 class DP_Image_Slice_To_Grid:
     def __init__(self):
@@ -11,18 +12,16 @@ class DP_Image_Slice_To_Grid:
         return {
             "required": {
                 "image": ("IMAGE",),
-                "rows": ("INT", {"default": 2, "min": 1, "max": 32}),
-                "columns": ("INT", {"default": 2, "min": 1, "max": 32}),
-                "overlap_pixels": ("INT", {"default": 0, "min": 0, "max": 512}),
+                "grid_size": ("INT", {"default": 2, "min": 1, "max": 10}),
             },
         }
 
-    RETURN_TYPES = ("IMAGE", "INT", "INT", "INT", "INT", "INT")
-    RETURN_NAMES = ("slices", "original_height", "original_width", "rows", "columns", "overlap")
-    FUNCTION = "slice_image"
-    CATEGORY = "image/processing"
+    RETURN_TYPES = ("IMAGE",)
+    RETURN_NAMES = ("image",)
+    FUNCTION = "slice_to_grid"
+    CATEGORY = "DP/Image"
 
-    def slice_image(self, image, rows, columns, overlap_pixels):
+    def slice_to_grid(self, image, grid_size):
         # Convert from tensor format
         if isinstance(image, torch.Tensor):
             image = image.cpu().numpy()
@@ -31,20 +30,20 @@ class DP_Image_Slice_To_Grid:
         height, width = image.shape[1:3]
         
         # Calculate slice dimensions
-        slice_height = height // rows
-        slice_width = width // columns
+        slice_height = height // grid_size
+        slice_width = width // grid_size
         
         # Prepare list for slices
         slices = []
         
         # Create slices with overlap
-        for i in range(rows):
-            for j in range(columns):
+        for i in range(grid_size):
+            for j in range(grid_size):
                 # Calculate boundaries with overlap
-                y_start = max(0, i * slice_height - overlap_pixels)
-                y_end = min(height, (i + 1) * slice_height + overlap_pixels)
-                x_start = max(0, j * slice_width - overlap_pixels)
-                x_end = min(width, (j + 1) * slice_width + overlap_pixels)
+                y_start = max(0, i * slice_height - 0)
+                y_end = min(height, (i + 1) * slice_height + 0)
+                x_start = max(0, j * slice_width - 0)
+                x_end = min(width, (j + 1) * slice_width + 0)
                 
                 # Extract slice
                 slice_img = image[:, y_start:y_end, x_start:x_end, :]
@@ -53,4 +52,4 @@ class DP_Image_Slice_To_Grid:
         # Stack all slices vertically
         result = torch.cat(slices, dim=0)
         
-        return (result, height, width, rows, columns, overlap_pixels)
+        return (result,)

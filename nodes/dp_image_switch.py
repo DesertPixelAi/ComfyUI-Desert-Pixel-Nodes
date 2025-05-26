@@ -40,7 +40,7 @@ class DP_Image_And_String_Pairs_Switch:
     RETURN_TYPES = ("IMAGE", "STRING", "INT")
     RETURN_NAMES = ("IMAGE", "TEXT", "INDEX")
     FUNCTION = "process"
-    CATEGORY = "DP/image"
+    CATEGORY = "DP/Image"
 
     @classmethod
     def IS_CHANGED(cls, **kwargs):
@@ -142,7 +142,7 @@ class DP_10_Images_Switch_Or_Batch:
     RETURN_TYPES = ("IMAGE", "INT",)
     RETURN_NAMES = ("IMAGE", "CURRENT_INDEX",)
     FUNCTION = "process"
-    CATEGORY = "DP/image"
+    CATEGORY = "DP/Image"
 
     def process(self, mode, index, **kwargs):
         try:
@@ -201,12 +201,12 @@ class DP_10_Images_Switch_Or_Batch:
                         result = result.permute(0, 2, 3, 1)
                     return (result, len(images))
                 else:
-                    print("Warning: No connected images found")
+                    print("Warning: No connected inputs found")
                     return (None, 0)
             
         except Exception as e:
             print(f"Error in DP_10_Images_Switch_Or_Batch: {str(e)}")
-            return (None, 1)
+            return (None, 0)
 
 class DP_3_Images_Switch_Or_Batch:
     def __init__(self):
@@ -229,7 +229,7 @@ class DP_3_Images_Switch_Or_Batch:
     RETURN_TYPES = ("IMAGE", "INT",)
     RETURN_NAMES = ("IMAGE", "CURRENT_INDEX",)
     FUNCTION = "process"
-    CATEGORY = "DP/image"
+    CATEGORY = "DP/Image"
 
     def process(self, mode, index, **kwargs):
         try:
@@ -269,8 +269,11 @@ class DP_3_Images_Switch_Or_Batch:
                             if (current_h, current_w) != (target_h, target_w):
                                 print(f"Resizing Image_{i:02d} from {(current_h, current_w)} to {(target_h, target_w)}")
                                 try:
+                                    # Move channels to correct position for resizing
                                     samples = img.movedim(-1,1)
+                                    # Resize using lanczos
                                     resized = comfy.utils.common_upscale(samples, target_w, target_h, "lanczos", "center")
+                                    # Move channels back
                                     img = resized.movedim(1,-1)
                                 except Exception as e:
                                     print(f"Warning: Failed to resize Image_{i:02d}: {str(e)}")
@@ -278,12 +281,14 @@ class DP_3_Images_Switch_Or_Batch:
                             images.append(img)
                 
                 if images:
+                    # Concatenate all images into a batch
                     result = torch.cat(images, dim=0)
+                    # Ensure proper channel order
                     if result.shape[-1] != 3:
                         result = result.permute(0, 2, 3, 1)
-                    return (result, len(images) - 1)
+                    return (result, len(images))
                 else:
-                    print("Warning: No connected images found")
+                    print("Warning: No connected inputs found")
                     return (None, 0)
             
         except Exception as e:
@@ -313,7 +318,7 @@ class DP_5_Images_Switch_Or_Batch:
     RETURN_TYPES = ("IMAGE", "INT",)
     RETURN_NAMES = ("IMAGE", "CURRENT_INDEX",)
     FUNCTION = "process"
-    CATEGORY = "DP/image"
+    CATEGORY = "DP/Image"
 
     def process(self, mode, index, **kwargs):
         try:
@@ -353,8 +358,11 @@ class DP_5_Images_Switch_Or_Batch:
                             if (current_h, current_w) != (target_h, target_w):
                                 print(f"Resizing Image_{i:02d} from {(current_h, current_w)} to {(target_h, target_w)}")
                                 try:
+                                    # Move channels to correct position for resizing
                                     samples = img.movedim(-1,1)
+                                    # Resize using lanczos
                                     resized = comfy.utils.common_upscale(samples, target_w, target_h, "lanczos", "center")
+                                    # Move channels back
                                     img = resized.movedim(1,-1)
                                 except Exception as e:
                                     print(f"Warning: Failed to resize Image_{i:02d}: {str(e)}")
@@ -362,12 +370,14 @@ class DP_5_Images_Switch_Or_Batch:
                             images.append(img)
                 
                 if images:
+                    # Concatenate all images into a batch
                     result = torch.cat(images, dim=0)
+                    # Ensure proper channel order
                     if result.shape[-1] != 3:
                         result = result.permute(0, 2, 3, 1)
-                    return (result, len(images) - 1)
+                    return (result, len(images))
                 else:
-                    print("Warning: No connected images found")
+                    print("Warning: No connected inputs found")
                     return (None, 0)
             
         except Exception as e:

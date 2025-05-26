@@ -51,7 +51,7 @@ class DP_Aspect_Ratio_Picker:
     RETURN_TYPES = ("INT", "INT")
     RETURN_NAMES = ("width", "height")
     FUNCTION = "pick_aspect_ratio"
-    CATEGORY = "DP/utils"
+    CATEGORY = "DP/Utils"
 
     def get_dimensions_for_ratio(self, aspect_ratio_name):
         ratios = self._cached_ratios  # Use cached ratios

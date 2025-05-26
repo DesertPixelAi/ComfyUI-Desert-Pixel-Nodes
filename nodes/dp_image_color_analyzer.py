@@ -127,7 +127,7 @@ class DP_Image_Color_Analyzer:
     RETURN_TYPES = ("IMAGE", "STRING", "STRING", "STRING", "STRING",)
     RETURN_NAMES = ("color_images", "color_names", "color_theme", "detailed_info", "hex_values",)
     FUNCTION = "analyze_image"
-    CATEGORY = "DP/image"
+    CATEGORY = "DP/Image"
 
     def create_color_panel(self, width, height, hex_color):
         """Create a color panel for a given hex color"""

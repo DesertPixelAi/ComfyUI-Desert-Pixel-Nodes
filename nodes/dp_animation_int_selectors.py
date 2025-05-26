@@ -52,8 +52,9 @@ class DP_Transition_Frames_Selector:
         }
 
     RETURN_TYPES = ("INT",)
+    RETURN_NAMES = ("value",)
     FUNCTION = "get_value"
-    CATEGORY = "DP/utils"
+    CATEGORY = "DP/Utils"
 
     def get_value(self, value):
         return (value,)
@@ -73,6 +74,7 @@ class DP_Diff_Int_8step_selector:
         }
 
     RETURN_TYPES = ("INT",)
+    RETURN_NAMES = ("value",)
     FUNCTION = "get_value"
     CATEGORY = "DP/Utils"
 
@@ -94,6 +96,7 @@ class DP_Int_0_1000:
         }
 
     RETURN_TYPES = ("INT",)
+    RETURN_NAMES = ("value",)
     FUNCTION = "get_value"
     CATEGORY = "DP/Utils"
 
@@ -116,6 +119,7 @@ class DP_Draggable_Int_1step:
         }
 
     RETURN_TYPES = ("INT",)
+    RETURN_NAMES = ("value",)
     FUNCTION = "get_value"
     CATEGORY = "DP/Utils"
 
@@ -138,6 +142,7 @@ class DP_Draggable_Int_4step:
         }
 
     RETURN_TYPES = ("INT",)
+    RETURN_NAMES = ("value",)
     FUNCTION = "get_value"
     CATEGORY = "DP/Utils"
 
@@ -160,6 +165,7 @@ class DP_Draggable_Int_8step:
         }
 
     RETURN_TYPES = ("INT",)
+    RETURN_NAMES = ("value",)
     FUNCTION = "get_value"
     CATEGORY = "DP/Utils"
 

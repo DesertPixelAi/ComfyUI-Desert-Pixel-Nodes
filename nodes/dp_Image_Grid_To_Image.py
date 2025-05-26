@@ -1,16 +1,14 @@
 import torch
 import numpy as np
+import os
 
 class DP_Image_Grid_To_Image:
     @classmethod
     def INPUT_TYPES(cls):
         return {
             "required": {
-                "slices": ("IMAGE",),
-                "rows": ("INT", {"default": 2}),
-                "columns": ("INT", {"default": 2}),
-                "overlap": ("INT", {"default": 64}),
-                "feather": ("INT", {"default": 32, "min": 0, "max": 256}),
+                "image": ("IMAGE",),
+                "grid_size": ("INT", {"default": 2, "min": 1, "max": 10}),
             },
             "optional": {
                 "stroke_size": ("INT", {"default": 0, "min": 0, "max": 100}),
@@ -19,8 +17,9 @@ class DP_Image_Grid_To_Image:
         }
 
     RETURN_TYPES = ("IMAGE",)
-    FUNCTION = "stitch_image"
-    CATEGORY = "image/processing"
+    RETURN_NAMES = ("image",)
+    FUNCTION = "grid_to_image"
+    CATEGORY = "DP/Image"
 
     def get_stroke_color(self, color_name):
         colors = {
@@ -45,22 +44,25 @@ class DP_Image_Grid_To_Image:
             mask[-i-1] = i / feather
         return mask
 
-    def stitch_image(self, slices, rows, columns, overlap, feather, stroke_size=0, stroke_color="white"):
-        slice_list = torch.split(slices, 1, dim=0)
+    def grid_to_image(self, image, grid_size, stroke_size=0, stroke_color="white"):
+        slice_list = torch.split(image, 1, dim=0)
         _, slice_height, slice_width, channels = slice_list[0].shape
         
-        output_height = (slice_height - overlap) * rows + overlap
-        output_width = (slice_width - overlap) * columns + overlap
+        rows = grid_size
+        columns = grid_size
+        
+        output_height = (slice_height - 64) * rows + 64
+        output_width = (slice_width - 64) * columns + 64
         
         # Initialize output and weight accumulator
         result = torch.zeros((1, output_height, output_width, channels), 
-                           device=slices.device, dtype=slices.dtype)
+                           device=image.device, dtype=image.dtype)
         weights = torch.zeros((1, output_height, output_width, 1), 
-                            device=slices.device, dtype=slices.dtype)
+                            device=image.device, dtype=image.dtype)
         
         # Create feather masks
-        vertical_mask = self.create_feather_mask(slice_height, feather)
-        horizontal_mask = self.create_feather_mask(slice_width, feather)
+        vertical_mask = self.create_feather_mask(slice_height, 32)
+        horizontal_mask = self.create_feather_mask(slice_width, 32)
         
         # Convert to 2D masks
         vertical_mask = vertical_mask.view(-1, 1).expand(-1, slice_width)
@@ -68,14 +70,14 @@ class DP_Image_Grid_To_Image:
         
         # Combine masks
         blend_mask = (vertical_mask * horizontal_mask).unsqueeze(0).unsqueeze(-1)
-        blend_mask = blend_mask.to(device=slices.device, dtype=slices.dtype)
+        blend_mask = blend_mask.to(device=image.device, dtype=image.dtype)
 
         for idx, slice_img in enumerate(slice_list):
             i = idx // columns
             j = idx % columns
             
-            y_start = i * (slice_height - overlap)
-            x_start = j * (slice_width - overlap)
+            y_start = i * (slice_height - 64)
+            x_start = j * (slice_width - 64)
             y_end = y_start + slice_height
             x_end = x_start + slice_width
             
