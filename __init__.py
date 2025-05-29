@@ -78,6 +78,7 @@ try:
     from .nodes.dp_get_seed_from_image import DP_Get_Seed_From_Image
     from .nodes.dp_Image_Grid_To_Image import DP_Image_Grid_To_Image
     from .nodes.dp_Image_Slice_To_Grid import DP_Image_Slice_To_Grid
+    from .nodes.dp_if_int_condition import DP_IF_INT_CONDITION
     from .nodes.dp_image_color_analyzer import DP_Image_Color_Analyzer
     from .nodes.dp_image_color_analyzer_small import DP_Image_Color_Analyzer_Small
     from .nodes.dp_image_color_effect import DP_Image_Color_Effect
@@ -253,6 +254,7 @@ try:
         "DP 5 Images Switch Or Batch": DP_5_Images_Switch_Or_Batch,
         "DP 10 Images Switch Or Batch": DP_10_Images_Switch_Or_Batch,
         "DP Quick Model Link": DP_symlink,
+        "DP IF Int Condition": DP_IF_INT_CONDITION,
     })
 
     # Update NODE_DISPLAY_NAME_MAPPINGS with all nodes
@@ -361,6 +363,7 @@ try:
         "DP 5 Images Switch Or Batch": "DP 5 Images Switch Or Batch",
         "DP 10 Images Switch Or Batch": "DP 10 Images Switch Or Batch",
         "DP Quick Model Link": "DP Quick Model Link",
+        "DP IF Int Condition": "IF Int Condition",
     })
 
     # Set web directory
