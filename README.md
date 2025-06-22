@@ -1,180 +1,365 @@
-# ComfyUI Custom Nodes by Desert Pixel
+# 🌵 ComfyUI Desert Pixel Nodes - Complete Documentation
 
-A collection of custom nodes for ComfyUI focused on animation, image processing, and workflow optimization.
+A comprehensive collection of 105+ custom nodes for ComfyUI, designed to enhance your image generation and processing workflows with advanced features, utilities, and specialized tools.
 
-## Features
+## 📚 Table of Contents
 
-### Animation & Video
-- **Animation Calculator (5 Inputs)**: Complex animation timing calculator
-- **Fast/Slow Motion**: Control video playback speed
-- **Image Slide Show**: Create blend mode transitions
-- **Logo Animator**: Create animated logos
-- **Video Effects**: 
-  - Sender/Receiver system for effect application
-  - Flicker effects
-  - Transition effects
+- [Installation & Setup](#-installation--setup)
+- [🎨 Theming System](#-theming-system)
+- [📝 Node Categories](#-node-categories)
+  - [🖼️ Image Processing & Analysis](#️-image-processing--analysis)
+  - [🎬 Animation & Video](#-animation--video)
+  - [📝 Text & Prompt Management](#-text--prompt-management)
+  - [🔄 Switches & Controllers](#-switches--controllers)
+  - [🎯 Loaders & Models](#-loaders--models)
+  - [🔧 Utilities & Tools](#-utilities--tools)
+  - [🎲 Random Generators](#-random-generators)
+  - [🎪 Creative Effects](#-creative-effects)
 
-### Image Processing
-- **Big Letters**: Create text-based images
-- **Color Analyzer**: Analyze and generate color palettes
-- **Smart Image Saver**: Enhanced image saving with metadata
-- **Image Effects**: Various image processing effects
-  - Small Loader: Basic effects
-  - Medium Loader: Extended effects
-  - Big Loader: Full effect suite
+---
 
-### Utility Nodes
-- **Random Min/Max**: Generate random numbers with control
-- **Random Characters**: Generate random characters/strings
-- **Aspect Ratio Picker**: Easy aspect ratio selection
-- **Clean Prompt**: Clean and format prompt text
-- **Multi Styler**: Apply multiple styles to prompts
-- **Zero-One Floats**: Simple float input/output controls
-- **Five LoRA**: Load and manage multiple LoRA models
-- **Five LoRA Random**: Random strength LoRA loading
-- **Empty Latent Switch**: Switch between empty latent and images
-- **Quick Link**: Manage model symbolic links
-- **Create JSON**: Create formatted JSON files
-- **Broken Token**: Analyze and split Flux prompts
+## 🚀 Installation & Setup
 
-## Installation
+1. Clone or download this repository to your ComfyUI custom_nodes folder
+2. Install required dependencies (if any)
+3. Restart ComfyUI
+4. Find nodes under the "DP" category in your node browser
 
-Clone this repository into your ComfyUI custom_nodes folder:
+---
 
-```bash
-git clone https://github.com/DesertPixelAi/ComfyUI-Desert-Pixel-Nodes custom_nodes/desert-pixel-nodes
-```
+## 🎨 Theming System
 
-## Node Documentation
-For detailed node documentation, see [Documentation](./nodes_documentation/index.md)
+### Overview
+The Desert Pixel node pack includes a comprehensive theming system that allows you to customize the appearance of ALL ComfyUI nodes (not just DP nodes). Each node gets a unique icon and custom colors for better workflow organization.
 
-### DP_Animation_Calculator_5Inputs
-<img src="https://github.com/user-attachments/assets/fa45806e-76f5-4d25-a0a5-8b6d494d9f90" alt="DP_Animation_Calculator_5Inputs_detailed" style="float: left; margin-right: 10px;"/>
+### Features
+- **Universal Node Theming**: Apply custom colors to any ComfyUI node
+- **Preset Themes**: 22+ built-in color themes including Ocean, Purple, Forest, etc.
+- **Custom Colors**: Individual title and body color selection
+- **Favorite Themes**: Save and apply your preferred color combinations
+- **Automatic Icons**: DP nodes get random emoji icons for visual identification
+- **Theme Persistence**: Colors are saved with your workflow
 
-A utility node for managing animations with image transitions and prompt scheduling. Helps create timing data for prompt schedules, fade masks, and IP adapter batches. Can generate timing data with or without image inputs, perfect for keyframe-based animations. [doc DP Animation Calculator](./nodes_documentation/animation/animation_calculator.md)
+### How to Use Themes
+1. **Right-click any node** in ComfyUI
+2. Navigate to **"DP Color Themes"** in the context menu
+3. Choose from:
+   - **Preset Themes**: Pre-configured color combinations
+   - **Title Color**: Change just the node title color
+   - **Body Color**: Change just the node body color
+   - **Save As Favorite**: Save current colors as your favorite
+   - **Apply Favorite Theme**: Apply your saved favorite
+   - **Reset to Default**: Return to default colors
 
-### DP_Image_Slide_Show
-<img src="https://github.com/user-attachments/assets/c3001c1e-4d57-46fd-9d0f-4a62109a46dd" alt="DP_Image_Slide_Show" style="float: left; margin-right: 10px;"/>
+### Available Preset Themes
+- **DP Ocean** (Default): Dark gray title with ocean blue body
+- **Black**: Charcoal and dark gray combination
+- **Purple**: Deep purple variations
+- **Royal Blue**: Bright blue styling
+- **Forest**: Nature-inspired greens
+- **Golden**: Warm gold tones
+- **Burgundy**: Rich wine colors
+- **Emerald**: Vibrant green shades
+- **Midnight**: Deep navy blues
+- **And many more...**
 
-Creates image sequences with customizable blend mode transitions. Supports up to 5 images with various blend modes including Normal Blend, Dissolve, Overlay, Multiply, Screen, and Soft Light. Perfect for creating GIFs and videos with smooth transitions. [doc DP Image Slide Show](./nodes_documentation/animation/image_slide_show.md)
+---
 
-### DP_Logo_Animator
-<img src="https://github.com/user-attachments/assets/d56d6536-ea7a-4819-98b6-cc5c4b19f5f3" alt="DP_Logo_Animator" style="float: left; margin-right: 10px;"/>
+## 📝 Node Categories
 
-Creates looping animations for logos with smooth scale effects and automatic background handling. Features customizable minimum shrink size and background detection, ideal for creating professional logo animations for video content. [doc DP Logo Animator](./nodes_documentation/animation/logo_animator.md)
+### 🖼️ Image Processing & Analysis
 
-### DP_Video_Effect_Sender & DP_Video_Effect_Receiver
-<img src="https://github.com/user-attachments/assets/d6fb3fb7-f58a-452c-9454-1d23092e5461" alt="DP_Video_Effect_Sender_reciver" style="float: left; margin-right: 10px;"/>
+#### **DP_Image_Color_Analyzer**
+Advanced image color analysis tool that extracts dominant colors, generates color palettes, and provides detailed color information including theme detection and SD-friendly color descriptions.
+
+#### **DP_Image_Color_Analyzer_Small**
+Simplified version of the color analyzer with streamlined interface for basic color extraction and analysis tasks.
+![image](https://github.com/user-attachments/assets/725f01e6-af77-4180-aaca-aec363790f6e)
 
 
-A paired system for applying effects to specific frames in video sequences. The Sender extracts frames in a pattern for processing, while the Receiver places the processed frames back into their original positions. [doc DP Video Effects](./nodes_documentation/animation/video_effects_sender_receiver.md)
+#### **DP_Image_Color_Effect**
+Apply various color effects and transformations to images with customizable parameters for artistic and stylistic modifications.
 
-### DP_Video_Flicker
-<img src="https://github.com/user-attachments/assets/ffe900e0-2cac-445e-8b39-64e77d6f6081" alt="DP_Video_Flicker" style="float: left; margin-right: 10px;"/>
+#### **DP_Image_Effect_Processor**
+Comprehensive image effects processor with multiple effect types, blend modes, and intensity controls for advanced image manipulation.
 
-Creates customizable flicker effects for video sequences with up to three flicker points. Features adjustable colors, sizes, and speeds for each flicker effect, perfect for creating dynamic video transitions. [doc DP Video Flicker](./nodes_documentation/animation/video_flicker.md)
+#### **DP_Image_Effect_Processor_Small**
+Lightweight version of the image effect processor with essential effects and simplified controls.
 
-### DP_Video_Transition
-<img src="https://github.com/user-attachments/assets/67234ca8-2496-405b-a1a7-3211fb225887" alt="DP_Video_Transition" style="float: left; margin-right: 10px;"/>
+#### **DP_Load_Image_V2**
+Enhanced image loader with built-in resizing, alpha channel preservation, metadata extraction, and format conversion capabilities.
 
-Handles video transitions with multiple blend modes and timing controls. Creates smooth transitions between two video sequences with customizable duration and blend effects. [doc DP Video Transition](./nodes_documentation/animation/video_transition.md)
+#### **DP_Load_Image_Effects**
+Load images with simultaneous effect application, combining loading and processing in a single efficient node.
 
-### DP_Smart_Saver
-<img src="https://github.com/user-attachments/assets/704ed83f-daa9-46aa-aadc-7e89a3943010" alt="DP_Smart_Saver" style="float: left; margin-right: 10px;"/>
+#### **DP_Load_Image_Effects_Small**
+Streamlined image loader with basic effect applications and optimized performance.
 
-Enhanced image saving with metadata preservation, customizable folder/file naming, and caption text file support. Features preview mode and optional dimension inclusion in filenames. [doc DP Smart Saver](./nodes_documentation/image_processing/smart_saver.md)
+#### **DP_Load_Image_Minimal**
+Minimal image loader focused on speed and simplicity with essential loading features only.
 
-### DP_Big_Letters
-<img src="https://github.com/user-attachments/assets/c40205d0-6327-47f3-b9f0-29fb3d048ef8" alt="DP_Big_Letters" style="float: left; margin-right: 10px;"/>
+#### **DP_Load_Image_With_Seed**
+Load images with seed-based random selection and processing, useful for controlled randomization in workflows.
 
-Creates text-based images by splitting text into individual letters. Features customizable size, padding, font, color, and background settings for each letter. [doc DP Big Letters](./nodes_documentation/image_processing/big_letters.md)
+#### **DP_Load_Image_Folder**
+Batch load multiple images from a folder with filtering, sorting, and batch processing capabilities.
 
-### DP_Broken_Token
-<img src="https://github.com/user-attachments/assets/f9bfacd1-1b87-4225-ab67-12d5804ef2aa" alt="DP_Broken_Token" style="float: left; margin-right: 10px;"/>
+#### **DP_Save_Image_V2**
+Advanced image saving with metadata preservation, custom formatting, and batch processing support.
 
-Analyzes and splits Flux prompts based on user-defined token counts. Outputs multiple text parts with configurable maximum token limits. [doc DP Broken Token](./nodes_documentation/utility/broken_token.md)
+#### **DP_Save_Preview_Image**
+Save images with preview generation and metadata embedding for workflow documentation.
 
-### DP_Clean_Prompt
-<img src="https://github.com/user-attachments/assets/678363ab-5a2d-473f-9132-2487152f588b" alt="DP_Clean_Prompt" style="float: left; margin-right: 10px;"/>
+#### **DP_Get_Seed_From_Image**
+Extract seed information from image metadata for workflow reproducibility and debugging.
 
-Cleans and formats prompt text by removing unnecessary characters and fixing formatting issues for consistent results. [doc DP Clean Prompt](./nodes_documentation/utility/clean_prompt.md)
+#### **DP_Image_Grid_To_Image**
+Convert image grids back to individual images with automatic detection and separation.
 
-### DP_Create_JSON
-<img src="https://github.com/user-attachments/assets/e3c210b5-d718-4b8b-8e9b-c0963497b22b" alt="DP_Create_JSON" style="float: left; margin-right: 10px;"/>
+#### **DP_Image_Slice_To_Grid**
+Slice images into grids with customizable dimensions and spacing for tiling effects.
 
-Creates JSON files from structured data with customizable formatting, file naming, and save options. Supports data separation and file overwrite controls. [doc DP Create JSON](./nodes_documentation/utility/create_json.md)
+#### **DP_Image_Slide_Show**
+Create animated slideshows from multiple images with transition effects and timing controls.
 
-### DP_Crazy_Prompt
-<img src="https://github.com/user-attachments/assets/d5d970b6-0db3-4f02-9769-194807547d52" alt="DP_Crazy_Prompt" style="float: left; margin-right: 10px;"/>
+#### **DP_Image_Strip**
+Create horizontal or vertical image strips from multiple inputs with alignment options.
 
-Generates creative prompt combinations from predefined categories including styles, subjects, composition, lighting, color palettes, and atmospheres. [doc DP Crazy Prompt](./nodes_documentation/utility/crazy_prompt.md)
+#### **DP_Strip_Edge_Masks**
+Generate edge masks for image strips to create seamless blending and transition effects.
 
-### DP_Image_Color_Analyzer
-<img src="https://github.com/user-attachments/assets/bf90ffac-3925-40ed-9873-2ea3a7d42d1c" alt="DP_Image_Color_Analyzer" style="float: left; margin-right: 10px;"/>
+#### **DP_Image_To_Pixelgrid**
+Convert images to pixel grid format with customizable pixel sizes and grid arrangements.
 
-Analyzes image colors and generates detailed color descriptions including RGB values, hex codes, and overall theme detection. Creates color palettes with customizable number of colors. [doc DP Color Analyzer](./nodes_documentation/image_processing/color_analyzer.md)
+#### **DP_Stitch_2_Images**
+Intelligently stitch two images together with blending and alignment options.
 
-### DP_Fast_Slow_Motion
-<img src="https://github.com/user-attachments/assets/b64a26ea-54ad-421a-a8bf-a573389fbae9" alt="DP_Fast_Slow_Motion" style="float: left; margin-right: 10px;"/>
+#### **DP_Add_Background_To_Png**
+Add solid or gradient backgrounds to PNG images with transparency handling.
 
-Controls video playback speed by manipulating frame sequences. Features adjustable speed factors for creating fast or slow motion effects within specified frame ranges. [doc DP Fast Slow Motion](./nodes_documentation/animation/fast_slow_motion.md)
+#### **DP_Resize_Image_And_Mask**
+Resize images and their corresponding masks simultaneously while maintaining proper alignment.
 
-### DP_Five_Lora
-<img src="https://github.com/user-attachments/assets/7de97607-c5cc-4186-a9c0-250ee55548b4" alt="DP_Five_Lora" style="float: left; margin-right: 10px;"/>
+#### **DP_Place_Image**
+Precisely place images on canvases with position, scale, and blend mode controls.
 
-Loads up to five LoRA models with individual strength control. Provides detailed information about applied LoRAs and their settings. [doc DP LoRA Loaders](./nodes_documentation/utility/lora_loaders.md)
+#### **DP_Extract_Mask**
+Extract masks from images using various methods including alpha channels and color thresholds.
 
-### DP_Five_Lora_Random
-<img src="https://github.com/user-attachments/assets/1a0fcc29-de16-4efc-bc96-f3d51e94352a" alt="DP_Five_Lora_Random" style="float: left; margin-right: 10px;"/>
+### 🎬 Animation & Video
 
-Loads LoRA models with randomized strength values within specified ranges. Features individual min/max controls for each LoRA's strength. [doc DP LoRA Loaders](./nodes_documentation/utility/lora_loaders.md)
+#### **DP_Gif_Maker**
+Professional GIF creation tool with frame control, transition effects, quality settings, and optimization options.
 
-### DP_Float_0_1 | DP_2Floats_0_1 | DP_3Floats_0_1
-<img src="https://github.com/user-attachments/assets/64a249c6-4c48-4dcf-a4ba-ddcb6e70736c" alt="DP_Float_0_1" style="float: left; margin-right: 10px;"/>
+#### **DP_Video_Flicker**
+Add realistic flicker effects to video sequences with customizable intensity and patterns.
 
-Simple float input/output controls with customizable ranges, defaults, and slider appearance. Available in single, double, and triple float variants. [doc DP Float Controls](./nodes_documentation/utility/float_controls.md)
+#### **DP_Video_Looper**
+Create seamless video loops with crossfade transitions and perfect loop point detection.
 
-### DP_Image_Empty_Latent_Switch
-<img src="https://github.com/user-attachments/assets/04c21510-a1d2-41d6-901c-ad70dd4f8ec6" alt="DP_Image_Empty_Latent_Switch" style="float: left; margin-right: 10px;"/>
+#### **DP_Video_Transition**
+Apply smooth transitions between video clips with various blend modes and timing controls.
 
-Switches between empty latent (for txt2img) and up to 5 input images (for img2img). Automatically adjusts strength and denoise settings based on mode. [doc DP Empty Latent Switch](./nodes_documentation/utility/empty_latent_switch.md)
+#### **DP_Video_Effect_Sender** / **DP_Video_Effect_Receiver**
+Network-based video effect transmission system for distributed processing workflows.
 
-### DP_Image_Loader_Small
-<img src="https://github.com/user-attachments/assets/14545cb5-6868-4446-b6ec-711bed60c956" alt="DP_Image_Loader_Small" style="float: left; margin-right: 10px;"/>
+#### **DP_FastSlowMotion**
+Apply variable speed effects to video sequences with smooth interpolation and timing controls.
 
-Basic image loader with essential effects including grayscale, enhance, flip, and posterize. [doc DP Image Loaders](./nodes_documentation/image_processing/image_loaders.md)
+#### **DP_Logo_Animator**
+Animate logos and text with built-in effects, transitions, and customizable motion paths.
 
-### DP_Image_Loader_Medium
-<img src="https://github.com/user-attachments/assets/5ab0c438-8841-4e1f-b7e2-23ac449d7475" alt="DP_Image_Loader_Medium" style="float: left; margin-right: 10px;"/>
+#### **DP_Animation_Calculator_5_Inputs** / **DP_Animation_Calculator_10_Inputs**
+Advanced animation calculators for complex motion interpolation with multiple input parameters.
 
-Image loader with expanded effect options including artistic effects like sepia, emboss, and lineart. [doc DP Image Loaders](./nodes_documentation/image_processing/image_loaders.md)
+#### **DP_Big_Letters**
+Generate large animated text with font selection, effects, and batch processing capabilities.
 
-### DP_Image_Loader_Big
-<img src="https://github.com/user-attachments/assets/c76ec189-1634-4972-bdc4-81f32167abe9" alt="DP_Image_Loader_Big" style="float: left; margin-right: 10px;"/>
+### 📝 Text & Prompt Management
 
-Comprehensive image loader with full effect suite including technical and enhancement options. [doc DP Image Loaders](./nodes_documentation/image_processing/image_loaders.md)
+#### **DP_Words**
+Advanced text rendering with font selection, formatting, and layout controls for creating text images.
 
-### DP_Prompt_Styler
-<img src="https://github.com/user-attachments/assets/5a2eec5a-000d-4837-aaf5-f098273d1e2d" alt="DP_Prompt_Styler" style="float: left; margin-right: 10px;"/>
+#### **DP_Text_Preview**
+Preview and format text with various styling options before using in other nodes.
 
-Applies multiple style modifiers to prompts with customizable categories including depth, camera angles, color themes, moods, and effects. [doc DP Prompt Styler](./nodes_documentation/utility/prompt_styler.md)
+#### **DP_Prompt_Styler**
+Apply consistent styling to prompts with categorized style options including depth, camera angles, lighting, and mood.
 
-### DP_Quick_Link
-<img src="https://github.com/user-attachments/assets/b58b9557-e3be-4639-9958-ea0a901210e8" alt="DP_Quick_Link" style="float: left; margin-right: 10px;"/>
+#### **DP_Prompt_Manager_Small**
+Streamlined prompt management with organization, tagging, and quick access features.
 
-Manages symbolic links for model organization. Creates shortcuts to external model folders without copying files, saving disk space. [doc DP Quick Link](./nodes_documentation/utility/quick_link.md)
+#### **DP_Prompt_Mode_Controller**
+Control prompt generation modes with conditional logic and parameter switching.
 
-### DP_Random_Char
-<img src="https://github.com/user-attachments/assets/414bfb42-9cef-4aed-afa4-7938449ae6e8" alt="DP_Random_Char" style="float: left; margin-right: 10px;"/>
+#### **DP_SmartPromptCompressor**
+Intelligently compress prompts while maintaining meaning and important keywords for token optimization.
 
-Generates random characters with intelligent selection to avoid similar-looking characters and recent repetitions. Perfect for creating readable random strings and passwords. [doc DP Random Char](./nodes_documentation/utility/random_char.md)
+#### **DP_Prompt_Inverter**
+Reverse engineer prompts from images or generate negative prompts from positive ones.
 
-### DP_Random_MinMax
-<img src="https://github.com/user-attachments/assets/99bb875f-3d9b-462c-b781-0c179077af6c" alt="DP_Random_MinMax" style="float: left; margin-right: 10px;"/>
+#### **DP_Prompt_Travel_Prompt**
+Create smooth prompt transitions for prompt travel animations and morphing effects.
 
-Generates random numbers within specified ranges with configurable step sizes. Provides both float and integer outputs. [doc DP Random MinMax](./nodes_documentation/utility/random_minmax.md)
+#### **DP_clean_prompt**
+Clean and optimize prompts by removing redundant words, fixing formatting, and standardizing syntax.
 
-### DP_Aspect_Ratio
-<img src="https://github.com/user-attachments/assets/514f81d2-3b50-442c-b9e1-d95f93647747" alt="DP_Aspect_Ratio" style="float: left; margin-right: 10px;"/>
+#### **DP_Clean_Prompt_Travel**
+Specialized prompt cleaning for prompt travel workflows with transition-aware optimization.
 
-Quick aspect ratio selection for common image sizes. Supports custom ratios through configuration file and provides standard presets. [doc DP Aspect Ratio](./nodes_documentation/utility/aspect_ratio.md)
+#### **DP_Broken_Token**
+Handle and repair broken tokens in prompts with automatic detection and correction.
+
+#### **DP_5_Find_And_Replace**
+Perform multiple find and replace operations on text with regex support and batch processing.
+
+### 🔄 Switches & Controllers
+
+#### **DP_Image_And_String_Pairs_Switch**
+Switch between paired image and text combinations with cycle modes and index control.
+
+#### **DP_10_Images_Switch_Or_Batch** / **DP_3_Images_Switch_Or_Batch** / **DP_5_Images_Switch_Or_Batch**
+Flexible image switching with batch mode support for multiple input handling.
+
+#### **DP_5_Image_And_Mask_Switch**
+Switch between image and mask pairs with synchronized control and batch processing.
+
+#### **DP_10_String_Switch_Or_Connect** / **DP_3_String_Switch_Or_Connect** / **DP_5_String_Switch_Or_Connect**
+String switching nodes with connection and concatenation modes for text management.
+
+#### **DP_2_String_Switch**
+Simple two-way string switch with toggle functionality.
+
+#### **DP_String_Text** / **DP_String_Text_With_Sdxl_Weight**
+Text input nodes with optional SDXL weight formatting for prompt enhancement.
+
+#### **DP_Switch_Controller**
+Universal switch controller for managing multiple switch states across complex workflows.
+
+#### **DP_Condition_Switch**
+Conditional switching based on boolean logic and comparison operations.
+
+#### **DP_Random_Mode_Switch** / **DP_Random_Mode_Controller**
+Random-based switching with controllable probability and mode selection.
+
+### 🎯 Loaders & Models
+
+#### **DP_Five_Lora** / **DP_Five_Lora_Random**
+Load up to five LoRA models simultaneously with strength control and random selection options.
+
+#### **DP_Lora_Strength_Controller** / **DP_Lora_Random_Strength_Controller**
+Precise control over LoRA strength parameters with random and fixed value options.
+
+#### **DP_Load_Checkpoint_With_Info**
+Load checkpoints with detailed information display and metadata extraction.
+
+#### **DP_Load_UNET_With_Info** / **DP_Load_Dual_CLIP_With_Info**
+Load UNET and CLIP models with comprehensive information and version details.
+
+#### **DP_ControlNetApplyAdvanced** / **DP_Load_Controlnet_Model_With_Name**
+Advanced ControlNet loading and application with detailed parameter control.
+
+#### **DP_Quick_Model_Link**
+Create symbolic links for quick model access and organization.
+
+### 🔧 Utilities & Tools
+
+#### **DP_Aspect_Ratio_Picker**
+Select from predefined aspect ratios with custom ratio support for consistent sizing.
+
+#### **DP_Custom_Aspect_Ratio**
+Define custom aspect ratios with calculation and preview features.
+
+#### **DP_Draggable_Floats_1** / **DP_Draggable_Floats_2** / **DP_Draggable_Floats_3**
+Interactive float value controls with draggable interfaces and precision settings.
+
+#### **DP_Float_Stepper**
+Step through float values with increment/decrement controls and range limiting.
+
+#### **DP_Transition_Frames_Selector** / **DP_Diff_Int_8step_selector**
+Specialized selectors for animation frame counts and stepped integer values.
+
+#### **DP_Draggable_Int_1step** / **DP_Draggable_Int_4step** / **DP_Draggable_Int_8step**
+Integer value controls with different step sizes and draggable interfaces.
+
+#### **DP_Int_0_1000**
+Simple integer selector with 0-1000 range for common parameter needs.
+
+#### **DP_Mask_Settings**
+Configure mask parameters with feathering, inversion, and adjustment options.
+
+#### **DP_Latent_Split**
+Split latent tensors for parallel processing and advanced workflow architectures.
+
+#### **DP_Line_Cycler**
+Cycle through lines of text with various modes and timing controls.
+
+#### **DP_create_json_file**
+Generate JSON files from workflow data for configuration and batch processing.
+
+#### **DP_Sampler_With_Info** / **DP_Advanced_Sampler**
+Enhanced samplers with detailed information display and advanced parameter control.
+
+### 🎲 Random Generators
+
+#### **DP_Random_Crazy_Prompt_Generator**
+Generate wild and creative prompts with adjustable randomness and style combinations.
+
+#### **DP_Random_Superhero_Prompt_Generator**
+Create superhero-themed prompts with powers, costumes, and background generation.
+
+#### **DP_Random_Vehicle_Generator**
+Generate vehicle descriptions with types, modifications, and environmental settings.
+
+#### **DP_Random_Psychedelic_Punk_Generator**
+Create psychedelic and punk-themed prompts with style and color combinations.
+
+#### **DP_Random_Logo_Style_Generator**
+Generate logo style descriptions with typography, effects, and design elements.
+
+#### **DP_Art_Style_Generator**
+Create art style descriptions combining movements, techniques, and artistic elements.
+
+#### **DP_Random_Character**
+Generate character descriptions with appearance, clothing, and personality traits.
+
+#### **DP_random_min_max**
+Generate random numbers within specified ranges with various distribution options.
+
+#### **DP_Versatile_Prompt_Subjects_Generator**
+Create diverse subject prompts across multiple categories and themes.
+
+#### **DP_Crazy_Prompt_Mixer**
+Mix and combine existing prompts in creative ways with randomization options.
+
+### 🎪 Creative Effects
+
+#### **DP_Add_Weight_To_String_Sdxl** / **DP_Advanced_Weight_String_Sdxl**
+Add SDXL-compatible weight formatting to text strings with advanced syntax support.
+
+#### **DP_IF_INT_CONDITION**
+Conditional integer operations with comparison logic and branching support.
+
+#### **DP_Image_Empty_Latent_Switch_Flux** / **DP_Image_Empty_Latent_Switch_SDXL**
+Switch between images and empty latents for conditional generation workflows.
+
+---
+
+## 🔧 Technical Requirements
+
+- ComfyUI (latest version recommended)
+- Python 3.8+
+- PyTorch with CUDA support (for GPU acceleration)
+- Additional dependencies as specified in requirements.txt
+
+## 🤝 Support & Contribution
+
+This node pack is actively maintained and updated. For issues, feature requests, or contributions, please visit the project repository.
+
+## 📄 License
+
+Licensed under the appropriate open-source license. See LICENSE file for details.
+
+---
+
+*🌵 Desert Pixel Nodes - Enhancing your ComfyUI experience with powerful, creative, and efficient tools.*
