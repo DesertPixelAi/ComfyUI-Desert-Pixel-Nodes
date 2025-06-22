@@ -74,8 +74,6 @@ Advanced image color analysis tool that extracts dominant colors, generates colo
 
 #### **DP_Image_Color_Analyzer_Small**
 Simplified version of the color analyzer with streamlined interface for basic color extraction and analysis tasks.
-![image](https://github.com/user-attachments/assets/725f01e6-af77-4180-aaca-aec363790f6e)
-
 
 #### **DP_Image_Color_Effect**
 Apply various color effects and transformations to images with customizable parameters for artistic and stylistic modifications.
